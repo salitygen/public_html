@@ -10,4 +10,8 @@ $opt = [
 
 $db = new PDO($dsn, $main->dbUser, $main->dbPass, $opt);
 
+class dataBase {
+	global $db;
+}
+
 ?>
