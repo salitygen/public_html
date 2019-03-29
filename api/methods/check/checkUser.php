@@ -9,13 +9,13 @@ class checkUser {
 			
 			$login = checkInput::strip($data['login']);
 			$searchUserLogin = $db->query("SELECT user_id FROM crm_users WHERE user_login='{$login}'");
-			$sLogin = $searchUserLogin->fetch();
+			$sLogin = $searchUserLogin->fetch(PDO::FETCH_ASSOC);
 			
 			var_dump($sLogin);
 			
 			$pass = md5(checkInput::strip($data['password']));
 			$searchUserPass = $db->query("SELECT user_id FROM crm_users WHERE user_pass='{$pass}'");
-			$sPass = $searchUserPassword->fetch();
+			$sPass = $searchUserPassword->fetch(PDO::FETCH_ASSOC);
 			
 			var_dump($sPass);
 			
