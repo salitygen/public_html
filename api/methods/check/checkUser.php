@@ -2,7 +2,9 @@
 defined('EXEC') or die;
 
 class checkUser {
-	public function dataBase($data){
+	
+	public function dataBase($data,$db){
+		
 		if(isset($data['login']) && isset($data['password'])){
 			
 			$login = checkInput::strip($data['login']);
@@ -24,7 +26,9 @@ class checkUser {
 			return false;
 			
 		}
+		
 	}
+	
 }
 
 
