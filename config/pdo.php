@@ -8,7 +8,6 @@ $opt = [
 	PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 
-global $db;
 $db = new PDO($dsn, $main->dbUser, $main->dbPass, $opt);
 
 ?>
