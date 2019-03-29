@@ -12,7 +12,7 @@ if(isset($_GET['task'])){
 				if(!$session){
 					$session = Session::create($arrUser->user_id);
 				}else{
-					Session::drop($arrUser->user_id);
+					//Session::drop($arrUser->user_id);
 					$session = Session::create($arrUser->user_id);
 				}
 			}
