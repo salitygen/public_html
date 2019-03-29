@@ -2,8 +2,11 @@
 defined('EXEC') or die;
 include $main->root.'/api/methods/main.php';
 
-$task = checkInput::strip($_GET['task']);
+if(isset($_GET['task'])){
+	$task = checkInput::strip($_GET['task']);
+	if($task == 'login'){
+		$arr = checkUser::dataBase($_POST);
+	}
+}
 
-$arr = checkUser::dataBase($_POST);
-var_dump($arr);
 ?>
