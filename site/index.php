@@ -6,7 +6,7 @@ defined('EXEC') or die;
 	<link href="/site/them/css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<form action="/?task=login">
+		<form action="/?task=login" method="POST">
 			<label>login</label>
 			<input type="text" name="login">
 			<label>Password</label>
