@@ -8,12 +8,16 @@ if(isset($_GET['task'])){
 		$arrUser = User::findBase($_POST);
 		if($arrUser){
 			if($arrUser->user_status == 1){
-				$session = Session::check($arrUser->user_id);
+				//$session = Session::getAll($arrUser->user_id);
 				if(!$session){
-					$session = Session::create($arrUser->user_id);
+					$sessionId = Session::create($arrUser->user_id);
+					$session = Session::get($arrUser->user_id,$sessionId);
 				}else{
-					Session::drop($arrUser->user_id);
+					Session::dropAll($arrUser->user_id);
 					$session = Session::create($arrUser->user_id);
+					if($session){
+						$session = Session::get($arrUser->user_id);
+					}
 				}
 			}
 		}

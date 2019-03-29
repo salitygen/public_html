@@ -3,15 +3,11 @@ defined('EXEC') or die;
 
 class Session {
 	
-	public function check($userId){
+	public function get($userId,$sessionId){
 
 		$db = dataBase::pdo();
-		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId}");
+		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
 		$sessions = $searchUserSession->fetch();
-		
-		print 'check:';
-		var_dump($sessions);
-		
 		
 		if($sessions){
 			return $sessions;
@@ -21,21 +17,43 @@ class Session {
 	
 	}
 	
-	public function drop($userId){
+	public function getAll($userId){
 
 		$db = dataBase::pdo();
-		//$dropAllUserSession = $db->query("DELETE FROM crm_sessions WHERE session_user_id={$userId}");
-		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId}");
-	//	$sessions = $dropAllUserSession->fetch(PDO::FETCH_COLUMN);
+		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
+		$sessions = $searchUserSession->fetch();
 		
-		print 'drop:';
-		var_dump($sessions);
-
-		//if($sessions->sess_id){
+		if($sessions){
 			return $sessions;
-		//}else{
-		//	return false;
-		//}
+		}else{
+			return false;
+		}
+	
+	}
+	
+	public function dropAll($userId){
+
+		$db = dataBase::pdo();
+		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId}");
+		
+		if($sessions){
+			return true;
+		}else{
+			return false;
+		}
+	
+	}
+	
+	public function dropId($userId,$sessionId){
+
+		$db = dataBase::pdo();
+		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
+		
+		if($sessions){
+			return true;
+		}else{
+			return false;
+		}
 	
 	}
 	
@@ -48,17 +66,13 @@ class Session {
 			$sessIp = $_SERVER['REMOTE_ADDR'];
 			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
 			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
-			//$createUserSession = $db->query("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
-			//$sessions = $createUserSession->fetchAll(PDO::FETCH_COLUMN);
 			
-			print 'create:';
-			var_dump($sessions);
-
-			//if($user->user_id){
-				return $sessions;
-			//}else{
-			//	return false;
-			//}
+			if($sessions){
+				$id = $db->lastInsertId();
+				return $id;
+			}else{
+				return false;
+			}
 			
 		}else{
 			return false;
