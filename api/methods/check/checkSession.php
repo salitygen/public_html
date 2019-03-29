@@ -10,7 +10,7 @@ class Session {
 		$sessions = $searchUserSession->fetch();
 		
 		print 'check:';
-		var_dump($session);
+		var_dump($sessions);
 		
 		
 		if($sessions){
@@ -28,7 +28,7 @@ class Session {
 		$sessions = $dropAllUserSession->fetch(PDO::FETCH_NUM);
 		
 		print 'drop:';
-		var_dump($session);
+		var_dump($sessions);
 
 		//if($sessions->sess_id){
 			return $sessions;
@@ -48,13 +48,13 @@ class Session {
 			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
 			
 			$createUserSession = $db->query("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
-			$session = $createUserSession->fetch();
+			$sessions = $createUserSession->fetch();
 			
 			print 'create:';
-			var_dump($session);
+			var_dump($sessions);
 
 			//if($user->user_id){
-				return $session;
+				return $sessions;
 			//}else{
 			//	return false;
 			//}
