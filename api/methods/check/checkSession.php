@@ -38,7 +38,7 @@ class Session {
 		if($_SERVER['REMOTE_ADDR']){
 			
 			$sessIp = $_SERVER['REMOTE_ADDR'];
-			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time());
+			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
 			
 			$createUserSession = $db->query("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
 			$session = $createUserSession->fetch();
