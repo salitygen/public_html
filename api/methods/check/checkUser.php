@@ -8,18 +8,15 @@ class checkUser {
 		if(isset($data['login']) && isset($data['password'])){
 			
 			$login = checkInput::strip($data['login']);
-			$searchUserLogin = $db->query("SELECT user_id FROM crm_users WHERE user_login='{$login}'");
+			$pass = md5(checkInput::strip($data['password']));
+			$searchUserLogin = $db->query("SELECT user_id FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
 			$sLogin = $searchUserLogin->fetch(PDO::FETCH_ASSOC);
 			
-			var_dump($sLogin);
-			
-			$pass = md5(checkInput::strip($data['password']));
-			$searchUserPass = $db->query("SELECT user_id FROM crm_users WHERE user_pass='{$pass}'");
-			$sPass = $searchUserPass->fetch(PDO::FETCH_ASSOC);
-			
-			var_dump($sPass);
-			
-			return true;
+			if($sLogin['user_id']){
+				return true;
+			}else{
+				return false;
+			}
 			
 		}else{
 			
