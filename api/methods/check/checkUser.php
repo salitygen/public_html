@@ -11,7 +11,7 @@ class User {
 			$login = checkInput::strip($data['login']);
 			$pass = md5(checkInput::strip($data['password']));
 			$searchUserLogin = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
-			$user = $searchUserLogin->fetch(PDO::FETCH_OBJ);
+			$user = $searchUserLogin->fetch();
 
 			if($user->user_id){
 				return $user;
