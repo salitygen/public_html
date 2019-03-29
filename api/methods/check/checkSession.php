@@ -11,7 +11,7 @@ class Session {
 		
 		var_dump($sessions);
 
-		if($sessions->sess_id){
+		if($sessions){
 			return $sessions;
 		}else{
 			return false;
