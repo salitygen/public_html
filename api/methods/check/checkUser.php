@@ -1,20 +1,20 @@
 <?php
 defined('EXEC') or die;
 
-class checkUser {
+class User {
 	
-	public function dataBase($data){
+	public function findBase($data){
 		
 		if(isset($data['login']) && isset($data['password'])){
 			
 			$db = dataBase::pdo();
 			$login = checkInput::strip($data['login']);
 			$pass = md5(checkInput::strip($data['password']));
-			$searchUserLogin = $db->query("SELECT user_id FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
-			$sLogin = $searchUserLogin->fetch(PDO::FETCH_ASSOC);
+			$searchUserLogin = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
+			$user = $searchUserLogin->fetch(PDO::FETCH_ASSOC);
 
-			if($sLogin['user_id']){
-				return true;
+			if($user['user_id']){
+				return $user;
 			}else{
 				return false;
 			}
