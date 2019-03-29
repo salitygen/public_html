@@ -44,7 +44,7 @@ class Session {
 	
 	}
 	
-	public function dropId($userId,$sessionId){
+	public function drop($userId,$sessionId){
 
 		$db = dataBase::pdo();
 		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
