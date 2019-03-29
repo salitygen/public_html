@@ -25,7 +25,7 @@ class Session {
 
 		$db = dataBase::pdo();
 		$dropAllUserSession = $db->query("DELETE FROM crm_sessions WHERE session_user_id={$userId}");
-		$sessions = $dropAllUserSession->fetch(PDO::FETCH_NUM);
+		$sessions = $dropAllUserSession->fetch(PDO::FETCH_COLUMN);
 		
 		print 'drop:';
 		var_dump($sessions);
@@ -48,7 +48,7 @@ class Session {
 			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
 			
 			$createUserSession = $db->query("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
-			$sessions = $createUserSession->fetch();
+			$sessions = $createUserSession->fetchAll(PDO::FETCH_COLUMN);
 			
 			print 'create:';
 			var_dump($sessions);
