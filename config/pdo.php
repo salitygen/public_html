@@ -1,13 +1,12 @@
 <?php
 defined('EXEC') or die;
 
-$dsn = "mysql:dbname={$main->dbname};host=localhost";
-
-try {
-    $db = new PDO($dsn, $main->dbUser, $main->dbPass);
-	$db->exec("set names utf8");
-} catch (PDOException $e) {
-    echo 'Error connect database: ' . $e->getMessage();
-}
+$dsn = "mysql:host=localhost;dbname={$main->dbname};charset=utf8";
+$opt = [
+	PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+	PDO::ATTR_EMULATE_PREPARES   => false,
+];
+$db = new PDO($dsn, $main->dbUser, $main->dbPass, $opt);
 
 ?>
