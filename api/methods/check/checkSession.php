@@ -9,8 +9,6 @@ class Session {
 		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId}");
 		$sessions = $searchUserSession->fetch();
 		
-		var_dump($sessions);
-
 		if($sessions){
 			return $sessions;
 		}else{

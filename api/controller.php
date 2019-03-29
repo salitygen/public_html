@@ -9,6 +9,12 @@ if(isset($_GET['task'])){
 		if($arrUser){
 			if($arrUser->user_status == 1){
 				$session = Session::check($arrUser->user_id);
+				if(!$session){
+					$session = Session::create($arrUser->user_id);
+				}else{
+					Session::drop($arrUser->user_id);
+					$session = Session::create($arrUser->user_id);
+				}
 				var_dump($session);
 			}
 		}
