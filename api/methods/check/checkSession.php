@@ -9,6 +9,10 @@ class Session {
 		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId}");
 		$sessions = $searchUserSession->fetch();
 		
+		print 'check:';
+		var_dump($session);
+		
+		
 		if($sessions){
 			return $sessions;
 		}else{
@@ -22,6 +26,9 @@ class Session {
 		$db = dataBase::pdo();
 		$dropAllUserSession = $db->query("DELETE FROM crm_sessions WHERE session_user_id={$userId}");
 		$sessions = $dropAllUserSession->fetch(PDO::FETCH_NUM);
+		
+		print 'drop:';
+		var_dump($session);
 
 		//if($sessions->sess_id){
 			return $sessions;
@@ -42,6 +49,9 @@ class Session {
 			
 			$createUserSession = $db->query("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
 			$session = $createUserSession->fetch();
+			
+			print 'create:';
+			var_dump($session);
 
 			//if($user->user_id){
 				return $session;

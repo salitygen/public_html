@@ -15,7 +15,6 @@ if(isset($_GET['task'])){
 					Session::drop($arrUser->user_id);
 					$session = Session::create($arrUser->user_id);
 				}
-				var_dump($session);
 			}
 		}
 	}
