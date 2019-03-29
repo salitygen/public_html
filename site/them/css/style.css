@@ -1,17 +1,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #006d84;
+    background: linear-gradient(to top, #dadada, #ffffff);
 }
 
 form {
     background-color: #fff;
     width: 280px;
-    height: 200px;
+    height: 178px;
     margin: 0 auto;
-    margin-top: 140px;
+    margin-top: 200px;
     border-radius: 4px;
-    padding: 20px;
+    padding: 20px 30px;
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -30,4 +30,14 @@ form input {
     padding: 4px;
     float: left;
     width: 100%;
+}
+button {
+    font-size: 18px;
+    border: none;
+    background-color: #004984;
+    color: #fff;
+    margin: 15px 95px;
+    padding: 6px 20px;
+    cursor: pointer;
+    border-radius: 2px;
 }
