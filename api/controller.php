@@ -7,7 +7,7 @@ if(isset($_GET['task'])){
 	if($task == 'login'){
 		$arrUser = User::findBase($_POST);
 		if($arrUser){
-			if($arrUser->status == 1){
+			if($arrUser->user_status == 1){
 				$session = Session::check($arrUser->user_id);
 				var_dump($session);
 			}
