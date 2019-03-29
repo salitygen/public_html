@@ -8,7 +8,7 @@ if(isset($_GET['task'])){
 		$arrUser = User::findBase($_POST);
 		if($arrUser){
 			if($arrUser->status == 1){
-				$session = Session:check($arrUser->user_id);
+				$session = Session::check($arrUser->user_id);
 				var_dump($session);
 			}
 		}
