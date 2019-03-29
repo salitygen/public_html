@@ -7,6 +7,7 @@ if(isset($_GET['task'])){
 	if($task == 'login'){
 		$arrUser = User::findBase($_POST);
 		if($arrUser){
+			//if($arrUser['status'])
 			var_dump($arrUser);
 		}
 	}
