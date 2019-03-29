@@ -1,7 +1,6 @@
 <?php
 defined('EXEC') or die;
 
-
 class checkUser {
 	public function dataBase($data){
 		if(isset($data['login']) && isset($data['password'])){
