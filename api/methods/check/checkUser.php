@@ -13,7 +13,7 @@ class User {
 			$searchUserLogin = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
 			$user = $searchUserLogin->fetch();
 
-			if($user->user_id){
+			if($user){
 				return $user;
 			}else{
 				return false;
