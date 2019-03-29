@@ -20,7 +20,7 @@ class Session {
 	public function getAll($userId){
 
 		$db = dataBase::pdo();
-		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
+		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId}");
 		$sessions = $searchUserSession->fetch();
 		
 		if($sessions){
