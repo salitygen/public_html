@@ -12,7 +12,7 @@ class checkUser {
 			$db = dataBase::pdo();
 			$searchUserLogin = $db->query("SELECT user_id FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
 			$sLogin = $searchUserLogin->fetch(PDO::FETCH_ASSOC);
-			
+			var_dump($sLogin);
 			if($sLogin['user_id']){
 				return true;
 			}else{
