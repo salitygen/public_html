@@ -8,6 +8,8 @@ class Session {
 		$db = dataBase::pdo();
 		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_user_id={$userId}");
 		$sessions = $searchUserSession->fetch();
+		
+		var_dump($sessions);
 
 		if($sessions->sess_id){
 			return $sessions;
