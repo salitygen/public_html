@@ -20,9 +20,7 @@ class User {
 			}
 			
 		}else{
-			
 			return false;
-			
 		}
 		
 	}
