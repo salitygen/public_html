@@ -11,5 +11,8 @@ defined('EXEC') or die;
 		</div>
 		<div id="leftPanel">
 		</div>
+		<div id="dashBoard">
+		
+		</div>
 	</body>
 </html>
