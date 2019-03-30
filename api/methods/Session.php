@@ -50,6 +50,8 @@ class Session {
 		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
 		
 		if($sessions){
+			session_destroy();
+			Session::setHash(null);
 			return true;
 		}else{
 			return false;
