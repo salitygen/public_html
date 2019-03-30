@@ -68,8 +68,10 @@ class Session {
 			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_hash,session_status,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId},NOW())");
 			
 			if($sessions){
-				$id = $db->lastInsertId();
-				return $id;
+				$sessionId = $db->lastInsertId();
+				$session = Session::get($userId,$sessionId);
+				Session::setHash($session->session_hash);
+				return $session;
 			}else{
 				return false;
 			}
@@ -78,6 +80,33 @@ class Session {
 			return false;
 		}
 	
+	}
+	
+	public function check($sHash){
+		
+		$db = dataBase::pdo();
+		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_hash={$sHash}");
+		$sessions = $searchUserSession->fetch();
+		
+		if($sessions){
+			return $sessions;
+		}else{
+			return false;
+		}
+
+	}
+	
+	public function getHash(){
+		if($_SESSION["session_hash"]){
+			return $_SESSION["session_hash"];
+		}else{
+			return false;
+		}
+	}
+	
+	public function setHash($sHash){
+		$_SESSION["session_hash"] = $sHash;
+		return true;
 	}
 	
 }
