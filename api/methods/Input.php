@@ -1,9 +1,9 @@
 <?php
 defined('EXEC') or die;
 
-class checkInput {
+class Input {
 
-	public function strip($text){
+	public function sanitise($text){
 		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r");
 		$goodquotes = array('-', '+', '#','"',"*", "%", "<", ">", "?", "!");
 		$repquotes = array("\-", "\+", "\#","&quot;","\*","\%","\<","\>","\?","\!");

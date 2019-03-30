@@ -3,7 +3,7 @@ defined('EXEC') or die;
 include $main->root.'/api/methods/main.php';
 
 if(isset($_GET['task'])){
-	$task = checkInput::strip($_GET['task']);
+	$task = Input::sanitise($_GET['task']);
 	if($task == 'login'){
 		$user = User::findBase($_POST);
 		if($user){
