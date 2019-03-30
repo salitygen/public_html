@@ -64,14 +64,14 @@ class Session {
 		if($_SERVER['REMOTE_ADDR']){
 			
 			$sessIp = $_SERVER['REMOTE_ADDR'];
-			$sessionHashSession = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
-			$sessionHash = md5(session_id().''.$sessionHashSession);
-			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_hash,session_stat,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionHash}',1,{$userId},NOW())");
+			$sessionHash = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
+			$sessionHashDb = md5(session_id().''.$sessionHashSession);
+			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_hash,session_stat,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionHashDb}',1,{$userId},NOW())");
 			
 			if($sessions){
 				$sessionId = $db->lastInsertId();
 				$session = Session::get($userId,$sessionId);
-				Session::setHash($sessionHashSession);
+				Session::setHash($sessionHash);
 				return $session;
 			}else{
 				return false;
