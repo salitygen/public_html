@@ -7,7 +7,7 @@ defined('EXEC') or die;
 	</head>
 	<body>
 		<form action="/?task=login" method="POST">
-			<label>login</label>
+			<label>Login</label>
 			<input type="text" name="login">
 			<label>Password</label>
 			<input type="password" name="password">
