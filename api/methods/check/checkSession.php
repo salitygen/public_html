@@ -64,14 +64,14 @@ class Session {
 		if($_SERVER['REMOTE_ADDR']){
 			
 			$sessIp = $_SERVER['REMOTE_ADDR'];
-			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
-			$sessionHash = md5(session_id().''.$sessionCookie);
+			$sessionHashSession = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
+			$sessionHash = md5(session_id().''.$sessionHashSession);
 			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_hash,session_stat,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionHash}',1,{$userId},NOW())");
 			
 			if($sessions){
 				$sessionId = $db->lastInsertId();
 				$session = Session::get($userId,$sessionId);
-				Session::setHash($sessionCookie);
+				Session::setHash($sessionHashSession);
 				return $session;
 			}else{
 				return false;
@@ -99,15 +99,15 @@ class Session {
 	}
 	
 	public function getHash(){
-		if(isset($_COOKIE["session"])){
-			return $_COOKIE["session"];
+		if(isset($_SESSION["session_hash"])){
+			return $_SESSION["session_hash"];
 		}else{
 			return false;
 		}
 	}
 	
 	public function setHash($sHash){
-		setcookie("session",$sHash);
+		$_SESSION["session_hash"] = $sHash;
 		return true;
 	}
 	
