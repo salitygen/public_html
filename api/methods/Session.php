@@ -65,7 +65,7 @@ class Session {
 			
 			$sessIp = $_SERVER['REMOTE_ADDR'];
 			$sessionHash = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
-			$sessionHashDb = md5(session_id().''.$sessionHashSession);
+			$sessionHashDb = md5(session_id().''.$sessionHash);
 			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_hash,session_stat,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionHashDb}',1,{$userId},NOW())");
 			
 			if($sessions){
