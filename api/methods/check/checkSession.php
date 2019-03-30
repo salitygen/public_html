@@ -65,7 +65,7 @@ class Session {
 			
 			$sessIp = $_SERVER['REMOTE_ADDR'];
 			$sessionCookie = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
-			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId})");
+			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_cookie,session_status,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionCookie}',1,{$userId},NOW())");
 			
 			if($sessions){
 				$id = $db->lastInsertId();
