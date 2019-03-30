@@ -85,7 +85,7 @@ class Session {
 	public function check($sHash){
 		
 		$db = dataBase::pdo();
-		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_hash={$sHash}");
+		$searchUserSession = $db->query("SELECT * FROM crm_sessions WHERE session_hash='{$sHash}'");
 		$sessions = $searchUserSession->fetch();
 		
 		if($sessions){
