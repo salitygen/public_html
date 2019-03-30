@@ -38,7 +38,7 @@ class Session {
 		
 		if($sessions){
 			session_destroy();
-			Session::setHash(null);
+			Session::unsetHash();
 			return true;
 		}else{
 			return false;
@@ -112,6 +112,11 @@ class Session {
 	
 	public function setHash($sHash){
 		$_SESSION["session_hash"] = $sHash;
+		return true;
+	}
+	
+	public function unsetHash(){
+		unset($_SESSION["session_hash"]);
 		return true;
 	}
 	
