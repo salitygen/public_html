@@ -37,7 +37,6 @@ class Session {
 		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId}");
 		
 		if($sessions){
-			session_destroy();
 			Session::unsetHash();
 			return true;
 		}else{
@@ -52,7 +51,6 @@ class Session {
 		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
 		
 		if($sessions){
-			session_destroy();
 			Session::unsetHash();
 			return true;
 		}else{
@@ -117,6 +115,7 @@ class Session {
 	
 	public function unsetHash(){
 		unset($_SESSION["session_hash"]);
+		session_destroy();
 		return true;
 	}
 	
