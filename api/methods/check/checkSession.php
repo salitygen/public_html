@@ -97,7 +97,7 @@ class Session {
 	}
 	
 	public function getHash(){
-		if($_SESSION["session_hash"]){
+		if(isset($_SESSION["session_hash"])){
 			return $_SESSION["session_hash"];
 		}else{
 			return false;
