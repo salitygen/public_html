@@ -9,6 +9,7 @@ include 'api/controller.php';
 $sessionHash = Session::getHash();
 if($sessionHash){
 	$session = Session::check($sessionHash);
+	var_dump($session);
 	if($session){
 		if($session->session_stat){
 			// Admin panel template connection
