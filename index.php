@@ -7,9 +7,8 @@ include 'config/pdo.php';
 include 'api/controller.php';
 
 $sessionHash = Session::getHash();
-
 if($sessionHash){
-	$session = Session::check($sessionHash)
+	$session = Session::check($sessionHash);
 	if($session){
 		if($session->session_stat){
 			// Admin panel template connection
