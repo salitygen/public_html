@@ -53,7 +53,7 @@ class Session {
 		
 		if($sessions){
 			session_destroy();
-			Session::setHash(null);
+			Session::unsetHash();
 			return true;
 		}else{
 			return false;
