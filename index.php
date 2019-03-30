@@ -5,7 +5,7 @@ session_start();
 include 'config/config.php';
 include 'config/pdo.php';
 include 'api/controller.php';
-print session_id;
+print session_id();
 $sessionHash = Session::getHash();
 if($sessionHash){
 	$session = Session::check($sessionHash);
