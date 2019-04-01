@@ -10,6 +10,7 @@ class Render {
 			return 'View "'.$view.'" not exists';
 		}else{
 			ob_start();
+			$params = $params;
 			include($view);
 			return ob_get_clean();
 		}
