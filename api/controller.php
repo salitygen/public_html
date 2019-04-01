@@ -4,7 +4,9 @@ include $main->root.'/api/methods/main.php';
 
 $task = null;
 if(isset($_GET['task'])){
-	$task = Input::sanitise($_GET['task']);
+	if(strlen($_GET['task']) <= 50){
+		$task = Input::sanitise($_GET['task']);
+	}
 }
 
 if($task == 'login'){
