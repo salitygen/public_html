@@ -17,12 +17,6 @@ class Render {
 	
 }
 
-$page = null;
-$view = Input::view();
-if($view){
-	$params = Input::getParams();
-}
-
 switch($view){
     case 'workshop':
 		$page = Render::view($path.'workShop',$params);

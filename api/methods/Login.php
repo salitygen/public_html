@@ -21,7 +21,9 @@ if(!defined('ISLOGIN')){
 		}
 	}
 }else{
-	if($task){
+	$page = null;
+	$view = Input::view();
+	if($task || $view){
 		$params = Input::getParams();
 	}
 }
