@@ -1,11 +1,11 @@
 <?php
 defined('EXEC') or die;
-$path = $main->root.'/panel/them/views/';
+$includePath = $main->root.'/panel/them/views/';
 
 class Render {
 	
-	public function view($path,$params){
-		$view = $path.'.php';
+	public function view($includePath,$viewFile,$params){
+		$view = $includePath.'/'.$viewFile.'.php';
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
@@ -19,9 +19,9 @@ class Render {
 
 switch($view){
     case 'workshop':
-		$page = Render::view($path.'workShop',$params);
+		$page = Render::view($includePath . 'workshop' , 'default' , $params );
     break;
-    case '':
+    case 'users':
 
     break;
     case '':
