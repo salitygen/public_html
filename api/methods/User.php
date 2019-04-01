@@ -8,6 +8,7 @@ class User {
 		if(isset($data['login']) && isset($data['password'])){
 			
 			$db = dataBase::pdo();
+			
 			if(strlen($data['login']) <= 50 && strlen($data['password']) <= 50){
 				
 				$login = Input::sanitise($data['login']);
