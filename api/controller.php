@@ -25,7 +25,7 @@ if($sessionHash){
 		}
 	}
 }
-//defined('ISLOGIN') or die();
+defined('ISLOGIN') or header('Location: /');
 // NOT REMOVE! IS CHECK LOGINED USER!!!
 
 ?>
