@@ -15,9 +15,9 @@ $task = Input::task();
 if(!defined('ISLOGIN')){
 	if(isset($_GET) && isset($_POST)){	
 		unset($_GET);
-		unset($_POST);
 		if($task !== 'login'){
 			$task = false;
+			unset($_POST);
 		}
 	}
 }else{
