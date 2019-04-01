@@ -1,4 +1,5 @@
 <?php
+
 defined('EXEC') or die;
 $includePath = $main->root.'/panel/them/views/';
 
