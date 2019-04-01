@@ -17,7 +17,7 @@ class Render {
 	}
 	
 }
-
+var_dump($params);
 switch($view){
     case 'workshop':
 		$page = Render::view($path.'workShop',$params);
