@@ -9,7 +9,6 @@ class Render {
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
-			var_dump($params);
 			ob_start();
 			include($view);
 			return ob_get_clean();
@@ -17,7 +16,7 @@ class Render {
 	}
 	
 }
-var_dump($params);
+
 switch($view){
     case 'workshop':
 		$page = Render::view($path.'workShop',$params);
