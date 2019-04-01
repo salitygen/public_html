@@ -31,7 +31,8 @@ if(!defined('ISLOGIN')){
 		unset($_POST);
 	}
 }
-print $_GET['test'];
 // NOT REMOVE! IS CHECK LOGINED USER!!!
+
+
 
 ?>
