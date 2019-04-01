@@ -1,5 +1,6 @@
 <?php
 defined('EXEC') or die;
+include $main->root.'/panel/them/controller.php';
 ?>
 <html>
 	<head>
