@@ -15,4 +15,8 @@ if(isset($_GET['task'])){
 	}
 }
 
+// NOT REMOVE! IS CHECK LOGINED USER!!!
+defined('ISLOGIN') or die();
+// NOT REMOVE! IS CHECK LOGINED USER!!!
+
 ?>
