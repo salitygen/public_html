@@ -2,6 +2,7 @@
 defined('EXEC') or die;
 include $main->root.'/api/methods/main.php';
 
+$task = null;
 if(isset($_GET['task'])){
 	$task = Input::sanitise($_GET['task']);
 }
