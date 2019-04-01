@@ -9,19 +9,13 @@ class User {
 			
 			$db = dataBase::pdo();
 			
-			if(strlen($data['login']) <= 50 && strlen($data['password']) <= 50){
-				
-				$login = Input::sanitise($data['login']);
-				$pass = md5($data['password']);
-				$searchUser = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
-				$user = $searchUser->fetch();
+			$login = Input::sanitise($data['login']);
+			$pass = md5(Input::sanitise($data['password']));
+			$searchUser = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
+			$user = $searchUser->fetch();
 
-				if($user){
-					return $user;
-				}else{
-					return false;
-				}
-				
+			if($user){
+				return $user;
 			}else{
 				return false;
 			}
