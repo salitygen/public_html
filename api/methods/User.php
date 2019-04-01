@@ -7,7 +7,7 @@ class User {
 		
 		if(isset($data['login']) && isset($data['password'])){
 			
-			if(strlen($data['login']) > 50 && strlen($data['password']) > 50){
+			if(strlen($data['login']) > 50 || strlen($data['password']) > 50){
 				return false;
 			}
 			
