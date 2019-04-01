@@ -4,8 +4,8 @@ $path = $main->root.'/panel/them/views/';
 
 class Render {
 	
-	public function view($view,$params){
-		$view = $view.'.php';
+	public function view($path,$params){
+		$view = $path.'.php';
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
