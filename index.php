@@ -4,6 +4,7 @@ session_start();
 // The order of connection is important!
 include 'config/config.php';
 include 'config/pdo.php';
+include 'api/controller.php';
 
 $sessionHash = Session::getHash();
 if($sessionHash){
@@ -26,7 +27,5 @@ if($sessionHash){
 	// Site template connection
 	include 'site/index.php';
 }
-
-include 'api/controller.php';
 
 ?>
