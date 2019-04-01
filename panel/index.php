@@ -2,7 +2,6 @@
 defined('EXEC') or die;
 include $main->root.'/panel/them/controller.php';
 ?>
-
 <html>
 	<head>
 	<link href="/panel/them/css/style.css" rel="stylesheet">
