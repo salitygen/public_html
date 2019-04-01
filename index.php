@@ -12,7 +12,6 @@ if($sessionHash){
 	if($session){
 		if($session->session_stat){
 			// Admin panel template connection
-			define('ISLOGIN',1);
 			include 'panel/index.php';
 		}else{
 			// Site template connection
