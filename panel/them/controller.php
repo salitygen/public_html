@@ -18,6 +18,7 @@ class Render {
 }
 
 $view = Input::view();
+$page = null;
 
 switch($view){
     case 'workshop':
