@@ -26,8 +26,9 @@ if($sessionHash){
 	}
 }
 if(!defined('ISLOGIN')){
-	if(isset($_GET)){
+	if(isset($_GET) && isset($_POST)){
 		unset($_GET);
+		unset($_POST);
 	}
 }
 print $_GET['test'];
