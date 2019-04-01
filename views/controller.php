@@ -1,6 +1,6 @@
 <?php
 defined('EXEC') or die;
-$includePath = $main->root.'/panel/views/';
+$includePath = $main->root.'/views/';
 
 class Render {
 	
