@@ -12,7 +12,7 @@ include $main->root.'/panel/them/controller.php';
 		</div>
 		<div id="dashBoard">
 			<div id="topPanel">
-			<?php Render::view($path.'dashBoard');?>
+			<?php Render::view($path.'dashBoard',array());?>
 			</div>
 		</div>
 	</body>
