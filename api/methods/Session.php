@@ -46,18 +46,20 @@ class Session {
 	}
 	
 	public function drop($sessionHash){
-
-		$db = dataBase::pdo();
-		$sessionHash = md5(session_id().''.$sessionHash);
-		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_hash='{$sessionHash}'");
-		
-		if($sessions){
-			Session::unsetHash();
-			return true;
+		if($sessionHash){
+			$db = dataBase::pdo();
+			$sessionHash = md5(session_id().''.$sessionHash);
+			$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_hash='{$sessionHash}'");
+			
+			if($sessions){
+				Session::unsetHash();
+				return true;
+			}else{
+				return false;
+			}
 		}else{
 			return false;
 		}
-	
 	}
 	
 	public function create($userId){
