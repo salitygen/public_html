@@ -18,6 +18,8 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
+$page = null;
+
 switch($task){
     case 'workshop':
 		$page = Render::view($path.'workShop',$params);
