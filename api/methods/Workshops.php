@@ -1,4 +1,4 @@
-<?
+<?php
 defined('EXEC') or die;
 
 class Workshop {
