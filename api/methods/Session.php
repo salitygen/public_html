@@ -45,10 +45,11 @@ class Session {
 	
 	}
 	
-	public function drop($userId,$sessionId){
+	public function drop($sessionHash){
 
 		$db = dataBase::pdo();
-		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_user_id={$userId} AND sess_id={$sessionId}");
+		$sessionHash = md5(session_id().''.$sessionHash);
+		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_hash={$sessionHash}");
 		
 		if($sessions){
 			Session::unsetHash();
