@@ -4,7 +4,7 @@ include $main->root.'/views/controller.php';
 ?>
 <html>
 	<head>
-	<link href="/panel/them/css/style.css" rel="stylesheet">
+	<link href="/panel/css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<div id="leftPanel">
