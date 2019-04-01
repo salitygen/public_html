@@ -9,7 +9,7 @@ if($task == 'login'){
 			Session::create($user->user_id);
 		}
 	}
-	header('Location: /');
+	//header('Location: /');
 }
 
 if($task == 'logout'){
