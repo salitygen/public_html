@@ -9,8 +9,8 @@ class Render {
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
+			extract($params);
 			ob_start();
-			$params = $params;
 			include($view);
 			return ob_get_clean();
 		}
