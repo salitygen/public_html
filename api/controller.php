@@ -1,6 +1,9 @@
 <?php
 defined('EXEC') or die;
 include $main->root.'/api/methods/main.php';
+if(defined('ISLOGIN')){
+	include $main->root.'/panel/them/controller.php';
+}
 
 if($task == 'login'){
 	$user = User::find($_POST);
