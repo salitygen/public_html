@@ -4,8 +4,8 @@ $includePath = $main->root.'/panel/them/views/';
 
 class Render {
 	
-	public function view($includePath,$viewFile,$params){
-		$view = $includePath.'/'.$viewFile.'.php';
+	public function view($includePath,$params){
+		$view = $includePath.'/default.php';
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
@@ -17,16 +17,9 @@ class Render {
 	
 }
 
-switch($view){
-    case 'workshop':
-		$page = Render::view($includePath . 'workshop' , 'default' , $params );
-    break;
-    case 'users':
-
-    break;
-    case '':
-
-    break;
+if($view){
+	$page = Render::view($includePath.$view,$params);
 }
+
 
 ?>
