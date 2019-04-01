@@ -3,7 +3,7 @@ defined('EXEC') or die;
 ?>
 <html>
 	<head>
-	<link href="/site/them/css/style.css" rel="stylesheet">
+	<link href="/site/css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<form action="/?task=login" method="POST">
