@@ -11,6 +11,12 @@ class Workshop {
 	public function add(){
 		
 	}
+	public function update(){
+		
+	}
+	public function block(){
+		
+	}
 	public function remove(){
 		
 	}
