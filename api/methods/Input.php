@@ -28,6 +28,19 @@ class Input {
 		}
 	}
 	
+	public function view(){
+		if(isset($_GET['view'])){
+			if(strlen($_GET['view']) <= 50){
+				$view = Input::sanitise($_GET['view']);
+				return $view;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
+	
 	public function getParams(){
 		if(isset($_GET['params'])){
 			if(strlen($_GET['params']) <= 50){

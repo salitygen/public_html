@@ -17,4 +17,18 @@ class Render {
 	
 }
 
+$view = Input::view();
+
+switch($view){
+    case 'workshop':
+		$page = Render::view($path.'workShop',$params);
+    break;
+    case '':
+
+    break;
+    case '':
+
+    break;
+}
+
 ?>
