@@ -15,6 +15,32 @@ class Input {
 		return $text;
 	}
 	
+	public function task(){
+		if(isset($_GET['task'])){
+			if(strlen($_GET['task']) <= 50){
+				$task = Input::sanitise($_GET['task']);
+				return $task;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
+	
+	public function getParams(){
+		if(isset($_GET['params'])){
+			if(strlen($_GET['params']) <= 50){
+				$params = Input::sanitise($_GET['params']);
+				return $params;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
+	
 }
 
 
