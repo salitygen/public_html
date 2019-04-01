@@ -49,7 +49,7 @@ class Session {
 
 		$db = dataBase::pdo();
 		$sessionHash = md5(session_id().''.$sessionHash);
-		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_hash={$sessionHash}");
+		$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_hash='{$sessionHash}'");
 		
 		if($sessions){
 			Session::unsetHash();
