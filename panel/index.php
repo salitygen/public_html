@@ -2,6 +2,7 @@
 defined('EXEC') or die;
 include $main->root.'/panel/them/controller.php';
 ?>
+
 <html>
 	<head>
 	<link href="/panel/them/css/style.css" rel="stylesheet">
@@ -11,7 +12,7 @@ include $main->root.'/panel/them/controller.php';
 		</div>
 		<div id="dashBoard">
 			<div id="topPanel">
-			
+			<?php Render::view($path.'dashBoard');?>
 			</div>
 		</div>
 	</body>
