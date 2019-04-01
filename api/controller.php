@@ -14,17 +14,15 @@ if($task == 'login'){
 	if($user){
 		if($user->user_status == 1){
 			Session::create($user->user_id);
-			header('Location: /');
 		}
 	}
+	header('Location: /');
 }
 
 if($task == 'logout'){
 	$sessionHash = Session::getHash();
-	$result = Session::drop($sessionHash);
-	if($result){
-		header('Location: /');
-	}
+	Session::drop($sessionHash);
+	header('Location: /');
 }
 
 // NOT REMOVE! IS CHECK LOGINED USER!!!
