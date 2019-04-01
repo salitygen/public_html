@@ -9,6 +9,7 @@ include $main->root.'/panel/them/controller.php';
 	</head>
 	<body>
 		<div id="leftPanel">
+		<?php print Render::view($includePath.'menu',true);?>
 		</div>
 		<div id="dashBoard">
 			<div id="topPanel">
