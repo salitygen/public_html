@@ -16,6 +16,15 @@ if(isset($_GET['task'])){
 }
 
 // NOT REMOVE! IS CHECK LOGINED USER!!!
+$sessionHash = Session::getHash();
+if($sessionHash){
+	$session = Session::check($sessionHash);
+	if($session){
+		if($session->session_stat){
+			define('ISLOGIN',1);
+		}
+	}
+}
 defined('ISLOGIN') or die();
 // NOT REMOVE! IS CHECK LOGINED USER!!!
 
