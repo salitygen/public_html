@@ -25,7 +25,11 @@ if($sessionHash){
 		}
 	}
 }
-defined('ISLOGIN') or unset($_REQUEST);
+if(!defined('ISLOGIN')){
+	if(isset($_REQUEST)){
+		unset($_REQUEST);
+	}
+}
 print $_GET['test'];
 // NOT REMOVE! IS CHECK LOGINED USER!!!
 
