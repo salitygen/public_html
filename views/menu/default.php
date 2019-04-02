@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
-var_dump($main);
 ?>
+<?php if($main->view == 'settings') print 'active';?>" 
 <div class="menu">
 	<ul>
 		<li><a class="icon-gauge" href="/?view=dashboard">Показатели</a></li>
