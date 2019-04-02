@@ -1,9 +1,10 @@
 <?php
 defined('EXEC') or die;
 
+$main->view = $view;
+$main->params = $params;
+
 if($view){
-	$main->view = $view;
-	$main->params = $params;
 	$page = Render::page($main);
 }
 
