@@ -1,6 +1,12 @@
 <?php
 defined('EXEC') or die;
 
+if($view){
+	$main->view = $view;
+	$main->params = $params;
+	$page = Render::page($main);
+}
+
 class Render {
 	
 	public function page($main){
@@ -26,12 +32,5 @@ class Render {
 	}
 	
 }
-
-if($view){
-	$main->view = $view;
-	$main->params = $params;
-	$page = Render::page($main);
-}
-
 
 ?>
