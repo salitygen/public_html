@@ -27,11 +27,11 @@ defined('EXEC') or die;
 	
 } */
 
-class This{
+class ThisPage {
 	public $test = '123';
 }
 
-$this = new This;
+$this = new ThisPage;
 
 if($view){
 	$this->path = $main->root.'/views/';
