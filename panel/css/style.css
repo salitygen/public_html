@@ -82,6 +82,7 @@ div#dashBoard {
 .menu ul.level2 a.active {
     background-color: #4b4b4b;
     border-color: #4b4b4b;
+    color: #d4d4d4;
 }
 .level2 .menu ul {
     overflow: unset;
