@@ -12,9 +12,7 @@ include $main->root.'/views/controller.php';
 		<?php print Render::view($includePath.'menu',true);?>
 		</div>
 		<div id="dashBoard">
-			<div id="topPanel">
 			<?php print $page;?>
-			</div>
 		</div>
 	</body>
 </html>
