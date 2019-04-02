@@ -1,5 +1,6 @@
 <?php
 defined('EXEC') or die;
+var_dump($main);
 ?>
 <div class="menu">
 	<ul>
