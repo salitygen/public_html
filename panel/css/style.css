@@ -12,7 +12,7 @@ body {
 .menu {
     float: left;
 }
-div#dashBoard.level2 {
+.level2 div#dashBoard {
     float: left;
     margin-left: 380px;
 }
