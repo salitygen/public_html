@@ -2,7 +2,7 @@
 defined('EXEC') or die;
 
 class This{
-	$includePath = $main->root.'/views/';
+	public $includePath = $main->root.'/views/';
 }
 
 $this = new This;
