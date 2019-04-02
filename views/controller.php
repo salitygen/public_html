@@ -2,6 +2,11 @@
 defined('EXEC') or die;
 $includePath = $main->root.'/views/';
 
+class This{
+	
+}
+$this = new This;
+
 class Render {
 	
 	public function view($includePath,$view,$params){
