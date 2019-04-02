@@ -20,6 +20,7 @@ body {
     padding: 0;
     float: left;
     list-style-type: none;
+    border-bottom: 1px solid #4a4a4a;
 }
 
 .menu ul a {
@@ -29,7 +30,9 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-family: sans-serif;
-    padding: 5px;
+    border-bottom: 1px solid #161719;
+    border-top: 1px solid #4a4a4a;
+    padding: 10px 5px;
 }
 
 .menu ul li {
@@ -39,4 +42,9 @@ body {
 
 .menu ul a:hover {
     color: #fff;
+}
+.menu ul a:before {
+    font-size: 18px;
+    margin-right: 12px;
+    float: left;
 }
