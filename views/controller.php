@@ -11,18 +11,14 @@ if($view){
 class Render {
 	
 	public function page($main){
-		$view = $main->root.'/views/'.$main->view.'/default.php';
-		if(!is_file($view)){
-			return 'view page not exists';
+		if($main->params){
+			$view = $main->root.'/views/'.$main->view.'/'.$main->params.'.php';
+			if(!is_file($view)){
+				$view = $main->root.'/views/'.$main->view.'/default.php';
+			}
 		}else{
-			ob_start();
-			include($view);
-			return ob_get_clean();
+			$view = $main->root.'/views/'.$main->view.'/default.php';
 		}
-	}
-	
-	public function view($main){
-		$view = $main->root.'/views/'.$main->view.'/'.$main->params.'.php';
 		if(!is_file($view)){
 			return 'view page not exists';
 		}else{
