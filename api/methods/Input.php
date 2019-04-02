@@ -12,7 +12,11 @@ class Input {
 		$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
 		$text = str_replace($repquotes,$goodquotes,$text);
-		return $text;
+		if($text != ''){
+			return $text;
+		}else{
+			return false;
+		}
 	}
 	
 	public function getSanitise($text){
@@ -24,7 +28,11 @@ class Input {
 		$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
 		$text = str_replace($repquotes,$goodquotes,$text);
-		return $text;
+		if($text != ''){
+			return $text;
+		}else{
+			return false;
+		}
 	}
 	
 	public function task(){
@@ -56,7 +64,7 @@ class Input {
 	public function getParams(){
 		if(isset($_GET['params'])){
 			if(strlen($_GET['params']) <= 50 && $_GET['params'] != ''){
-				$params = Input::sanitise($_GET['params']);
+				$params = Input::getSanitise($_GET['params']);
 				return $params;
 			}else{
 				return false;
