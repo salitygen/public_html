@@ -28,7 +28,7 @@ class Render {
 }
 
 if($view){
-	$this = new This;
+	$this = new ArrayObject;
 	$this->path = $main->root.'/views/';
 	$this->view = $view;
 	$this->params = $params;
