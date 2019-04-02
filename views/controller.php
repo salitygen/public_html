@@ -4,8 +4,9 @@ $includePath = $main->root.'/views/';
 
 class Render {
 	
-	public function view($includePath,$params){
-		$view = $includePath.'/default.php';
+	public function view($includePath,$view,$params){
+		$this->page = $view;
+		$view = $includePath.$view'/default.php';
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
@@ -18,7 +19,7 @@ class Render {
 }
 
 if($view){
-	$page = Render::view($includePath.$view,$params);
+	$page = Render::view($includePath,$view,$params);
 }
 
 
