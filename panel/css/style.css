@@ -14,7 +14,10 @@ body {
     float: left;
     width: 100%;
 }
-
+div#dashBoard {
+    float: left;
+    margin-left: 180px;
+}
 .menu ul {
     margin: 0;
     padding: 0;
