@@ -1,15 +1,18 @@
 <?php
 defined('EXEC') or die;
-$includePath = $main->root.'/views/';
 
-class This;
+class This{
+	$includePath = $main->root.'/views/';
+}
+
 $this = new This;
+$this->view = $view;
+$this->params = $params;
 
 class Render {
 	
-	public function view($includePath,$view,$params){
-		$this->page = $view;
-		$view = $includePath.$view.'/default.php';
+	public function view($this){
+		$view = $this->includePath.$this->view.'/default.php';
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
@@ -22,7 +25,7 @@ class Render {
 }
 
 if($view){
-	$page = Render::view($includePath,$view,$params);
+	$page = Render::view($this);
 }
 
 
