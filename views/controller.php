@@ -28,7 +28,7 @@ defined('EXEC') or die;
 } */
 
 if($view){
-	$this = new ArrayObject;
+	$this = Object;
 	$this->path = $main->root.'/views/';
 	$this->view = $view;
 	$this->params = $params;
