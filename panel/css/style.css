@@ -12,7 +12,7 @@ body {
 .menu {
     float: left;
 }
-div#dashBoard {
+div#dashBoard.level2 {
     float: left;
     margin-left: 380px;
 }
@@ -70,4 +70,7 @@ div#dashBoard {
 }
 .menu ul.level2 a:hover {
     color: #fff;
+}
+div#dashBoard {
+    margin-left: 180px;
 }
