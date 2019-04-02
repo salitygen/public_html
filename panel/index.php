@@ -5,6 +5,7 @@ include $main->root.'/views/controller.php';
 <html>
 	<head>
 	<link href="/panel/css/style.css" rel="stylesheet">
+	<link href="/panel/css/fontello.css" rel="stylesheet">
 	</head>
 	<body>
 		<div id="leftPanel">
