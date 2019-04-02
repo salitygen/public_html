@@ -10,18 +10,18 @@ defined('EXEC') or die;
 		<li><a class="icon-users <?php if($main->view == 'contractor') print 'active';?>" href="/?view=contractor">Контрагенты</a></li>
 		<li><a class="icon-cubes <?php if($main->view == 'storage') print 'active';?>" href="/?view=storage">Склад</a></li>
 		<li><a class="icon-chart-area <?php if($main->view == 'reports') print 'active';?>" href="/?view=reports">Отчеты</a></li>
-		<li><a class="icon-sliders <?php if($main->view == 'settings') print 'active';?>" href="/?view=settings">Настройки</a></li>
+		<li><a class="icon-sliders <?php if($main->view == 'settings') print 'active';?>" href="/?view=settings&params=all">Настройки</a></li>
 	</ul>
 	<?php if($main->view == 'settings') : ?>
 		<ul class="level2">
-			<li><a href="/?view=">Показатели</a></li>
-			<li><a href="/?view=order">Заказы</a></li>
-			<li><a href="/?view=">Задачи</a></li>
-			<li><a href="/?view=">Платежи</a></li>
-			<li><a href="/?view=">Контрагенты</a></li>
-			<li><a href="/?view=">Склад</a></li>
-			<li><a href="/?view=">Отчеты</a></li>
-			<li><a href="/?view=">Настройки</a></li>
+			<li><a <?php if($main->params == 'all') print 'class="active"';?> href="/?view=settings&params=all">Общие</a></li>
+			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
+			<li><a <?php if($main->params == 'worker') print 'class="active"';?> href="/?view=settings&params=worker">Сотрудники</a></li>
+			<li><a <?php if($main->params == 'status') print 'class="active"';?> href="/?view=settings&params=status">Статусы</a></li>
+			<li><a <?php if($main->params == 'notification') print 'class="active"';?> href="/?view=settings&params=notification">Оповещения</a></li>
+			<li><a <?php if($main->params == 'services') print 'class="active"';?> href="/?view=settings&params=services">Перечень услуг</a></li>
+			<li><a <?php if($main->params == 'handbook') print 'class="active"';?> href="/?view=settings&params=handbook">Справочники</a></li>
+			<li><a <?php if($main->params == 'pricesdiscounts') print 'class="active"';?> href="/?view=settings&params=pricesdiscounts">Цены и скидки</a></li>
 		</ul>
 	<?php endif;?>
 </div>
