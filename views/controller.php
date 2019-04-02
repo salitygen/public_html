@@ -7,7 +7,7 @@ $main->params = $params;
 if($view){
 	$page = Render::page($main);
 }else{
-	header("location /?view=dashboard");
+	header("location: /?view=dashboard");
 }
 
 class Render {
