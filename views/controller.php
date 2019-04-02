@@ -32,7 +32,8 @@ if($view){
 	$this->path = $main->root.'/views/';
 	$this->view = $view;
 	$this->params = $params;
-	$page = Render::page($this);
+	var_dump($this);
+	//$page = Render::page($this);
 }
 
 
