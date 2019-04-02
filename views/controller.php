@@ -6,7 +6,7 @@ class Render {
 	
 	public function view($includePath,$view,$params){
 		$this->page = $view;
-		$view = $includePath.$view'/default.php';
+		$view = $includePath.$view.'/default.php';
 		if(!is_file($view)){
 			return 'View "'.$view.'" not exists';
 		}else{
