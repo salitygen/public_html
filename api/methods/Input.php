@@ -43,7 +43,7 @@ class Input {
 	
 	public function getParams(){
 		if(isset($_GET['params'])){
-			if(strlen($_GET['params']) <= 50){
+			if(strlen($_GET['params']) <= 50 && $_GET['params'] != ''){
 				$params = Input::sanitise($_GET['params']);
 				return $params;
 			}else{
