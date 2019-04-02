@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 
-class Render {
+/* class Render {
 	
 	public function page($this){
 		$view = $this->path.$this->view.'/default.php';
@@ -25,7 +25,7 @@ class Render {
 		}
 	}
 	
-}
+} */
 
 if($view){
 	$this = new ArrayObject;
