@@ -38,7 +38,9 @@ div#dashBoard {
     border-top: 1px solid #4a4a4a;
     padding: 10px 5px;
 }
-
+.menu ul.level2 a:hover {
+    color: #fff;
+}
 .menu ul li {
     float: left;
     width: 100%;
@@ -60,8 +62,10 @@ div#dashBoard {
 }
 
 .menu ul.level2 a {
-    border: none;
+    border-bottom: 1px solid #222426;
     color: #a6a6a6;
     padding: 10px 0px 10px 30px;
     width: calc(100% - 30px);
+    height: 18px;
+    border-top: 1px solid #222426;
 }
