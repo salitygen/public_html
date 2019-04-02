@@ -9,7 +9,7 @@ include $main->root.'/views/controller.php';
 	</head>
 	<body>
 		<div id="leftPanel">
-		<?php print Render::view($includePath.'menu',true);?>
+		<?php print Render::module($this.'menu',true);?>
 		</div>
 		<div id="dashBoard">
 			<?php print $page;?>
