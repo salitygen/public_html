@@ -56,10 +56,12 @@ div#dashBoard {
     position: relative;
     height: 100%;
     background-color: #222426;
-    padding-left: 20px;
-    width: 160px;
+    width: 180px;
 }
 
 .menu ul.level2 a {
     border: none;
+    color: #a6a6a6;
+    padding: 10px 0px 10px 30px;
+    width: calc(100% - 30px);
 }
