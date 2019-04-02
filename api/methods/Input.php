@@ -30,7 +30,7 @@ class Input {
 	
 	public function view(){
 		if(isset($_GET['view'])){
-			if(strlen($_GET['view']) <= 50){
+			if(strlen($_GET['view']) <= 50 && $_GET['view'] != ''){
 				$view = Input::sanitise($_GET['view']);
 				return $view;
 			}else{
