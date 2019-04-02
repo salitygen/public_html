@@ -1,6 +1,5 @@
 div#leftPanel {
     float: left;
-    width: 180px;
     background-color: #2f343a;
     height: 100%;
     position: fixed;
@@ -12,11 +11,10 @@ body {
 }
 .menu {
     float: left;
-    width: 100%;
 }
 div#dashBoard {
     float: left;
-    margin-left: 180px;
+    margin-left: 380px;
 }
 .menu ul {
     margin: 0;
@@ -24,6 +22,7 @@ div#dashBoard {
     float: left;
     list-style-type: none;
     border-bottom: 1px solid #4a4a4a;
+    width: 180px;
 }
 .menu ul a.active {
     background-color: #222426;
@@ -52,4 +51,15 @@ div#dashBoard {
     font-size: 18px;
     margin-right: 12px;
     float: left;
+}
+.menu ul.level2 {
+    position: relative;
+    height: 100%;
+    background-color: #222426;
+    padding-left: 20px;
+    width: 160px;
+}
+
+.menu ul.level2 a {
+    border: none;
 }
