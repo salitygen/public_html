@@ -27,8 +27,13 @@ defined('EXEC') or die;
 	
 } */
 
+class This{
+	public $test = '123';
+}
+
+$this = new This;
+
 if($view){
-	$this = Object;
 	$this->path = $main->root.'/views/';
 	$this->view = $view;
 	$this->params = $params;
