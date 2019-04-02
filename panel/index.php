@@ -11,7 +11,7 @@ include $main->root.'/views/controller.php';
 		<div id="leftPanel">
 		<?php print Render::module($main,'menu',true);?>
 		</div>
-		<div id="dashBoard">
+		<div id="dashBoard" <?php if($main->view == 'settings') print 'class="level2"'; ?>>
 			<?php print $page;?>
 		</div>
 	</body>
