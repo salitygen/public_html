@@ -4,7 +4,7 @@ defined('EXEC') or die;
 class Render {
 	
 	public function page($main){
-		$view = $main->path.$main->view.'/default.php';
+		$view = $main->root.'/views/'.$main->view.'/default.php';
 		if(!is_file($view)){
 			return 'view page not exists';
 		}else{
@@ -15,7 +15,7 @@ class Render {
 	}
 	
 	public function module($main,$module,$params){
-		$view = $main->path.$module.'/default.php';
+		$view = $main->root.'/views/'.$module.'/default.php';
 		if(!is_file($view)){
 			return 'view module not exists';
 		}else{
@@ -28,7 +28,6 @@ class Render {
 }
 
 if($view){
-	$main->path = $main->root.'/views/';
 	$main->view = $view;
 	$main->params = $params;
 	$page = Render::page($main);
