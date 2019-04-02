@@ -1,10 +1,6 @@
 <?php
 defined('EXEC') or die;
 
-class This{
-	public $path = $main->root.'/views/';
-}
-
 class Render {
 	
 	public function page($this){
@@ -32,7 +28,9 @@ class Render {
 }
 
 if($view){
+	class This;
 	$this = new This;
+	$this->path = $main->root.'/views/';
 	$this->view = $view;
 	$this->params = $params;
 	$page = Render::page($this);
