@@ -2,9 +2,7 @@
 defined('EXEC') or die;
 $includePath = $main->root.'/views/';
 
-class This{
-	
-}
+class This;
 $this = new This;
 
 class Render {
