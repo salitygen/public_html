@@ -10,11 +10,11 @@ defined('EXEC') or die;
 		<li><a class="icon-users <?php if($main->view == 'contractor') print 'active';?>" href="/?view=contractor">Контрагенты</a></li>
 		<li><a class="icon-cubes <?php if($main->view == 'storage') print 'active';?>" href="/?view=storage">Склад</a></li>
 		<li><a class="icon-chart-area <?php if($main->view == 'reports') print 'active';?>" href="/?view=reports">Отчеты</a></li>
-		<li><a class="icon-sliders <?php if($main->view == 'settings') print 'active';?>" href="/?view=settings&params=all">Настройки</a></li>
+		<li><a class="icon-sliders <?php if($main->view == 'settings') print 'active';?>" href="/?view=settings&params=general">Настройки</a></li>
 	</ul>
 	<?php if($main->view == 'settings') : ?>
 		<ul class="level2">
-			<li><a <?php if($main->params == 'all') print 'class="active"';?> href="/?view=settings&params=all">Общие</a></li>
+			<li><a <?php if($main->params == 'all') print 'class="active"';?> href="/?view=settings&params=general">Общие</a></li>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
 			<li><a <?php if($main->params == 'worker') print 'class="active"';?> href="/?view=settings&params=worker">Сотрудники</a></li>
 			<li><a <?php if($main->params == 'status') print 'class="active"';?> href="/?view=settings&params=status">Статусы</a></li>
