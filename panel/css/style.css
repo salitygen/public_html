@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSansCondensed-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSansCondensed-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
 div#leftPanel {
     float: left;
     background-color: #2f343a;
