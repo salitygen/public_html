@@ -79,6 +79,7 @@ body {
     background-color: #222426;
     width: 180px;
     border-left: 1px solid #636363;
+    margin: 0;
 }
 
 .menu ul.level2 a {
