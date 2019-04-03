@@ -93,7 +93,7 @@ class Session {
 		$db = dataBase::pdo();
 		$sHash = md5(session_id().''.$sHash);
 		$searchUserSession = $db->query("
-		SELECT * FROM crm_sessions,crm_users,crm_rules_groups,crm_rules_users WHERE session_hash='{$sHash}' AND crm_sessions.session_user_id = crm_users.user_id AND crm_users.user_group_id = crm_rules_groups.rules_id AND crm_users.user_rules_id = crm_rules_users.rules_id");
+		SELECT * FROM crm_sessions,crm_users,crm_groups,crm_rules_users WHERE session_hash='{$sHash}' AND crm_sessions.session_user_id = crm_users.user_id AND crm_users.user_group_id = crm_groups.group_id AND crm_users.user_rules_id = crm_rules_users.rules_id");
 		$sessions = $searchUserSession->fetch();
 		
 		if($sessions){
