@@ -14,7 +14,7 @@ defined('EXEC') or die;
 	</ul>
 	<?php if($main->view == 'settings') : ?>
 		<ul class="level2">
-			<li><a <?php if($main->params == 'all') print 'class="active"';?> href="/?view=settings&params=general">Общие</a></li>
+			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Общие</a></li>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
 			<li><a <?php if($main->params == 'worker') print 'class="active"';?> href="/?view=settings&params=worker">Сотрудники</a></li>
 			<li><a <?php if($main->params == 'status') print 'class="active"';?> href="/?view=settings&params=status">Статусы</a></li>
