@@ -6,6 +6,7 @@ if($sessionHash){
 	$session = Session::check($sessionHash);
 	if($session){
 		if($session->session_stat){
+			$main->session = $session;
 			define('ISLOGIN',1);
 		}
 	}
