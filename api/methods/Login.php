@@ -5,7 +5,7 @@ $sessionHash = Session::getHash();
 if($sessionHash){
 	$session = Session::check($sessionHash);
 	if($session){
-		if($session->session_stat){
+		if($session->session_stat && $session->user_status){
 			$main->session = $session;
 			define('ISLOGIN',1);
 		}
