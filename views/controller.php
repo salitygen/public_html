@@ -12,7 +12,7 @@ if($view){
 class Render {
 	
 	public function page($main){
-		$view = $main->root.'/views/'.$main->view.'/default.php';
+		$view = $main->root.'/views/pages/'.$main->view.'/default.php';
 		if(!is_file($view)){
 			return 'view page not exists';
 		}else{
@@ -23,7 +23,7 @@ class Render {
 	}
 	
 	public function view($main){
-		$view = $main->root.'/views/'.$main->view.'/'.$main->params.'.php';
+		$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
 		if(!is_file($view)){
 			return 'view page not exists';
 		}else{
@@ -34,7 +34,7 @@ class Render {
 	}
 	
 	public function module($main,$module,$params){
-		$view = $main->root.'/views/'.$module.'/default.php';
+		$view = $main->root.'/views/modules/'.$module.'/default.php';
 		if(!is_file($view)){
 			return 'view module not exists';
 		}else{
