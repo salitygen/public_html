@@ -9,7 +9,6 @@ include $main->root.'/views/controller.php';
 	</head>
 	<body <?php if($main->view == 'settings') print 'class="level2"'; ?>>
 		<div id="leftPanel">
-		<?php print Render::module($main,'user',true);?>
 		<?php print Render::module($main,'menu',true);?>
 		</div>
 		<div id="dashBoard">

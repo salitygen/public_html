@@ -2,6 +2,7 @@
 defined('EXEC') or die;
 ?>
 <div class="menu">
+	<?php print Render::module($main,'user',true);?>
 	<ul>
 		<li><a class="icon-gauge <?php if($main->view == 'dashboard') print 'active';?>" href="/?view=dashboard">Показатели</a></li>
 		<li><a class="icon-th <?php if($main->view == 'order') print 'active';?>" href="/?view=order">Заказы</a></li>
