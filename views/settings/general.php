@@ -1,4 +1,4 @@
 <?php
 defined('EXEC') or die;
 ?>
-<p>TEST</p>
+<p>Информация о вашей компании</p>
