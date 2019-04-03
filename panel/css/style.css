@@ -92,6 +92,7 @@ body {
 div#dashBoard {
     margin-left: 200px;
     float: left;
+    width: calc(100% - 220px);
 }
 .menu ul.level2 a.active {
     background-color: #4b4b4b;
@@ -100,4 +101,15 @@ div#dashBoard {
 }
 .level2 .menu ul {
     overflow: unset;
+}
+h1 {
+    font-family: OpenSans;
+    font-weight: normal;
+    font-size: 28px;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #a9a9a9;
+    margin: 13px 0 0 0;
+    padding-bottom: 15px;
+    color: #4f4f4f;
 }
