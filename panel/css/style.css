@@ -30,6 +30,7 @@ body {
     margin-left: 380px;
     width: calc(100% - 400px);
     font-family: sans-serif;
+    color: #4f4f4f;
 }
 .menu ul {
     margin: 0;
