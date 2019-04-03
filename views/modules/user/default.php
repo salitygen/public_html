@@ -4,7 +4,7 @@ defined('EXEC') or die;
 <div class="user">
 	<div class="statusbar"><?php print $main->session->user_statusbar; ?></div>
 	<div class="avatar">
-		<img src="<?php print $main->session->user_avatar; ?>">
+		<img src="/files/avatars/<?php print $main->session->user_avatar; ?>">
 	</div>
 	<div class="userInfo">
 		<p class="username"><?php print $main->session->user_name; ?></p>
