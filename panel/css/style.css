@@ -28,6 +28,7 @@ body {
 .level2 div#dashBoard {
     float: left;
     margin-left: 380px;
+    width: calc(100% - 400px);
 }
 .menu ul {
     margin: 0;
