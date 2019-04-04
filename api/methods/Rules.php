@@ -3,6 +3,8 @@ defined('EXEC') or die;
 
 class Rules {
 	
+	//START =========== Global | Глобальное  ===== //
+	
 	// Может ли видеть закупочную цену товаров
 	public function seePurchasePrice($main){
 		if(!$main->session->group_super_users){
@@ -94,6 +96,10 @@ class Rules {
 		}
 	}
 	
+	//END ============= Global | Глобальное  ===== //
+	
+	//START ============= Task | Задачи  ========= //
+	
 	//Может ли создавать задачи	
 	public function taskСreate($main){
 		if(!$main->session->group_super_users){
@@ -145,6 +151,10 @@ class Rules {
 			return true;
 		}
 	}
+	
+	//END =============== Task | Задачи  ========= //
+	
+	//START =========== Orders | Заказы  ========= //
 	
 	//Может ли создавать заказы
 	public function ordersCreate($main){
@@ -341,6 +351,10 @@ class Rules {
 		}
 	}
 	
+	//END ============= Orders | Заказы  ========= //
+	
+	//START ============= Shop | Магазин  ======== //
+	
 	//Может ли создавать продажи	
 	public function shopCreateSales($main){
 		if(!$main->session->group_super_users){
@@ -393,7 +407,9 @@ class Rules {
 		}
 	}
 	
-	//START   =======    Tills | Кассы  ========== //
+	//END =============== Shop | Магазин  ======== //
+
+	//START ============ Tills | Кассы  ========== //
 	
 	//Может ли вносить деньги	
 	public function tillsMakeMoney($main){
@@ -551,7 +567,7 @@ class Rules {
 		}
 	}
 	
-	//END   =========    Tills | Кассы  ========== //
+	//END ============== Tills | Кассы  ========== //
 	
 	//START =========  Account | Счета  ========== //
 	
