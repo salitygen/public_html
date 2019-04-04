@@ -126,6 +126,24 @@ class Rules {
 		}
 	}
 	
+	// Раздел Контрагенты ( CONTACTORS ) ==========================================================================
+	public function seeContractors($main){
+		if(!$main->session->group_super_users){
+			if(Rules::contractorsSeeCustomer($main)				//Может видеть покупателей
+			||Rules::contractorsSeeSupplier($main)				//Может видеть поставщиков
+			||Rules::contractorsEditCard($main)					//Может редактировать карточку контрагента
+			||Rules::contractorsEditDiscountCustomer($main)		//Может редактировать персональную скидку клиента
+			||Rules::contractorsExportData($main)				//Может экспортировать данные
+			||Rules::contractorsImportData($main)){				//Может импортировать данные
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
 	//END   Rights by sections | Права по разделам //
 	
 	//START =========== Global | Глобальное  ===== //
