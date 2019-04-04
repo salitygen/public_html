@@ -883,20 +883,7 @@ class Rules {
 		}
 	}
 	
-	//Может ли формировать по зарплате
-	public function reportsSalary($main){
-		if(!$main->session->group_super_users){
-			if(!$main->session->group_reports_salary){
-				return false;
-			}else{
-				return true;
-			}
-		}else{
-			return true;
-		}
-	}
-	
-	//Может ли формировать по зарплате
+	//Может ли формировать отчет по зарплате
 	public function reportsSalary($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_reports_salary){
