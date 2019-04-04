@@ -5,27 +5,98 @@ class Rules {
 	
 	//START Rights by sections | Права по разделам //
 	
-	// Раздел заявки ( ORDERS )
+	// Раздел заявки ( ORDERS ) ==============================================================================
 	public function seeOrders($main){
 		if(!$main->session->group_super_users){
-			if(Rules::ordersCreate($main)					//Может создавать заказы
-			||Rules::ordersMoving($main)					//Может перемещать заказы
-			||Rules::ordersDelete($main)					//Может удалять заказы
-			||Rules::ordersAppManagerWorker($main)			//Может назначать менеджера и исполнителя в заказ
-			||Rules::ordersSeeInfoCustomer($main)			//Может видеть информацию о клиенте	
-			||Rules::ordersEditFieldInfo($main)				//Может редактировать поля "Информация о заказе"
-			||Rules::ordersEditFieldWorksMaterials($main)	//Может редактировать поля "Работы и материалы"	
-			||Rules::ordersAddServicesPrice($main)			//Может добавлять услуги из прейскуранта
-			||Rules::ordersAddNewServicesPrice($main)		//Может добавлять услуги которых нет в прейскуранте	
-			||Rules::ordersAddMaterialsStock($main)			//Может добавлять материалы со склада	
-			||Rules::ordersAddNewMaterialsStock($main)		//Может добавлять материалы которых нет на складе
-			||Rules::ordersEditPriceService($main)			//Может редактировать цену услуг	
-			||Rules::ordersEditPriceMaterials($main)		//Может редактировать цену материалов
-			||Rules::ordersEditCloseOrder($main)			//Может редактировать закрытый заказ
-			||Rules::ordersSeeAll($main)){					//Может видеть все заказы
-				return false;
-			}else{
+			if(Rules::ordersCreate($main)						//Может создавать заказы
+			||Rules::ordersMoving($main)						//Может перемещать заказы
+			||Rules::ordersDelete($main)						//Может удалять заказы
+			||Rules::ordersAppManagerWorker($main)				//Может назначать менеджера и исполнителя в заказ
+			||Rules::ordersSeeInfoCustomer($main)				//Может видеть информацию о клиенте	
+			||Rules::ordersEditFieldInfo($main)					//Может редактировать поля "Информация о заказе"
+			||Rules::ordersEditFieldWorksMaterials($main)		//Может редактировать поля "Работы и материалы"	
+			||Rules::ordersAddServicesPrice($main)				//Может добавлять услуги из прейскуранта
+			||Rules::ordersAddNewServicesPrice($main)			//Может добавлять услуги которых нет в прейскуранте	
+			||Rules::ordersAddMaterialsStock($main)				//Может добавлять материалы со склада	
+			||Rules::ordersAddNewMaterialsStock($main)			//Может добавлять материалы которых нет на складе
+			||Rules::ordersEditPriceService($main)				//Может редактировать цену услуг	
+			||Rules::ordersEditPriceMaterials($main)			//Может редактировать цену материалов
+			||Rules::ordersEditCloseOrder($main)				//Может редактировать закрытый заказ
+			||Rules::ordersSeeAll($main)){						//Может видеть все заказы
 				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Задачи ( TASK ) ==================================================================================
+	public function seeTask($main){
+		if(!$main->session->group_super_users){
+			if(Rules::taskСreate($main)							//Может создавать задачи	
+			||Rules::taskOfWorkers($main)						//Может быть исполнителем
+			||Rules::taskSeeAll($main)							//Может видеть задачи всех сотрудников
+			||Rules::taskEditAll($main)){						//Может редактировать задачи всех сотрудников
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Магазин ( SHOP ) ==================================================================================
+	public function seeShop($main){
+		if(!$main->session->group_super_users){
+			if(Rules::shopCreateSales($main)					//Может создавать продажи
+			||Rules::shopDeleteSales($main)						//Может удалять продажи	
+			||Rules::shopEditPrice($main)						//Может редактировать цену	
+			||Rules::shopExportSales($main)){					//Может экспортировать продажи
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Кассы ( TILLS ) ===================================================================================
+	public function seeTills($main){
+		if(!$main->session->group_super_users){
+			if(Rules::tillsMakeMoney($main)						//Может вносить деньги
+			||Rules::tillsMoveMoney($main)						//Может перемещать деньги
+			||Rules::tillsSpendMoney($main)						//Может расходовать деньги
+			||Rules::tillsMakeMoveSpendHindsightMoney($main)	//Может вносить, перемещать и расходовать деньги задним числом
+			||Rules::tillsSeeMovementMoney($main)				//Может видеть движение денег
+			||Rules::tillsSeeMovementMoneyAllDate($main)		//Может видеть движение денег за произвольный период дат
+			||Rules::tillsDeleteTransaction($main)				//Может удалять операции в кассе
+			||Rules::tillsPrintMovementMoney($main)				//Может печатать движение денег
+			||Rules::tillsExportMovementMoney($main)			//Может экспортировать движение денег
+			||Rules::tillsSeeRestMoney($main)					//Может видеть остаток денег в кассе
+			||Rules::tillsAddEditRemoveCash($main)				//Может создавать, редактировать и удалять кассы
+			||Rules::tillsSelectWorkersList($main)){			//Может выбирать любого сотрудника из списка
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Возвраты ( RETURNS ) ===============================================================================
+	public function seeReturns($main){
+		if(!$main->session->group_super_users){
+			if(Rules::function returnsСreate($main)				//Может создавать возвраты
+			||Rules::returnsDelete($main)						//Может удалять возвраты
+			||Rules::returnsEditPrice($main)){					//Может редактировать цену возвратов
+				return true;
+			}else{
+				return false;
 			}
 		}else{
 			return true;
