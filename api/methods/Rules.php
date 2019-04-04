@@ -3,6 +3,38 @@ defined('EXEC') or die;
 
 class Rules {
 	
+	//START Rights by sections | Права по разделам //
+	
+	// Раздел заявки ( ORDERS )
+	public function seeOrders($main){
+		if(!$main->session->group_super_users){
+			if(Rules::ordersCreate($main)
+			||Rules::ordersMoving($main)
+			||Rules::ordersDelete($main)
+			||Rules::ordersAppManagerWorker($main)
+			||Rules::ordersSeeInfoCustomer($main)
+			||Rules::ordersEditFieldInfo($main)
+			||Rules::ordersEditFieldWorksMaterials($main)
+			||Rules::ordersAddServicesPrice($main)
+			||Rules::ordersAddNewServicesPrice($main)
+			||Rules::ordersAddMaterialsStock($main)
+			||Rules::ordersAddNewMaterialsStock($main)
+			||Rules::ordersEditPriceService($main)
+			||Rules::ordersEditPriceMaterials($main)
+			||Rules::ordersEditCloseOrder($main)
+			||Rules::ordersSeeAll($main)
+			){
+				return false;
+			}else{
+				return true;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	//END   Rights by sections | Права по разделам //
+	
 	//START =========== Global | Глобальное  ===== //
 	
 	// Может ли видеть закупочную цену товаров
