@@ -276,19 +276,6 @@ class Rules {
 		}
 	}
 	
-	//Может ли добавлять материалы со склада	
-	public function ordersAddMaterialsStock($main){
-		if(!$main->session->group_super_users){
-			if(!$main->session->group_orders_add_materials_stock){
-				return false;
-			}else{
-				return true;
-			}
-		}else{
-			return true;
-		}
-	}
-	
 	//Может ли добавлять материалы которых нет на складе	
 	public function ordersAddNewMaterialsStock($main){
 		if(!$main->session->group_super_users){
