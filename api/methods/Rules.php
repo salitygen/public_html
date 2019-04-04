@@ -57,7 +57,7 @@ class Rules {
 		}
 	}
 	
-	//Отображать ли сотрудника в списке менеджеров
+	//Отображать ли сотрудника в списке менеджеров // ?
 	public function listOfManagers($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_general_list_of_managers){
@@ -70,7 +70,7 @@ class Rules {
 		}
 	}
 	
-	//Отображать ли сотрудника в списке исполнителей
+	//Отображать ли сотрудника в списке исполнителей // ?
 	public function listOfWorkers($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_general_list_of_workers){
@@ -113,7 +113,7 @@ class Rules {
 		}
 	}
 	
-	//Может ли быть исполнителем
+	//Может ли быть исполнителем // ?
 	public function taskOfWorkers($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_tasks_of_workers){
@@ -614,7 +614,7 @@ class Rules {
 		}
 	}
 	
-	//Может ли редактировать цену
+	//Может ли редактировать цену возвратов
 	public function returnsEditPrice($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_returns_edit_price){
@@ -631,7 +631,7 @@ class Rules {
 	
 	//START =========  Storage | Склад  ========== //
 	
-	//Может ли видеть остатки
+	//Может ли видеть остатки на складе
 	public function storageTailings($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_storage_tailings){
