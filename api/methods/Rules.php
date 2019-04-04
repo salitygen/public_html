@@ -8,21 +8,21 @@ class Rules {
 	// Раздел заявки ( ORDERS )
 	public function seeOrders($main){
 		if(!$main->session->group_super_users){
-			if(Rules::ordersCreate($main)
-			||Rules::ordersMoving($main)
-			||Rules::ordersDelete($main)
-			||Rules::ordersAppManagerWorker($main)
-			||Rules::ordersSeeInfoCustomer($main)
-			||Rules::ordersEditFieldInfo($main)
-			||Rules::ordersEditFieldWorksMaterials($main)
-			||Rules::ordersAddServicesPrice($main)
-			||Rules::ordersAddNewServicesPrice($main)
-			||Rules::ordersAddMaterialsStock($main)
-			||Rules::ordersAddNewMaterialsStock($main)
-			||Rules::ordersEditPriceService($main)
-			||Rules::ordersEditPriceMaterials($main)
-			||Rules::ordersEditCloseOrder($main)
-			||Rules::ordersSeeAll($main)){
+			if(Rules::ordersCreate($main)					//Может создавать заказы
+			||Rules::ordersMoving($main)					//Может перемещать заказы
+			||Rules::ordersDelete($main)					//Может удалять заказы
+			||Rules::ordersAppManagerWorker($main)			//Может назначать менеджера и исполнителя в заказ
+			||Rules::ordersSeeInfoCustomer($main)			//Может видеть информацию о клиенте	
+			||Rules::ordersEditFieldInfo($main)				//Может редактировать поля "Информация о заказе"
+			||Rules::ordersEditFieldWorksMaterials($main)	//Может редактировать поля "Работы и материалы"	
+			||Rules::ordersAddServicesPrice($main)			//Может добавлять услуги из прейскуранта
+			||Rules::ordersAddNewServicesPrice($main)		//Может добавлять услуги которых нет в прейскуранте	
+			||Rules::ordersAddMaterialsStock($main)			//Может добавлять материалы со склада	
+			||Rules::ordersAddNewMaterialsStock($main)		//Может добавлять материалы которых нет на складе
+			||Rules::ordersEditPriceService($main)			//Может редактировать цену услуг	
+			||Rules::ordersEditPriceMaterials($main)		//Может редактировать цену материалов
+			||Rules::ordersEditCloseOrder($main)			//Может редактировать закрытый заказ
+			||Rules::ordersSeeAll($main)){					//Может видеть все заказы
 				return false;
 			}else{
 				return true;
