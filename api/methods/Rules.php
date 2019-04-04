@@ -22,8 +22,7 @@ class Rules {
 			||Rules::ordersEditPriceService($main)
 			||Rules::ordersEditPriceMaterials($main)
 			||Rules::ordersEditCloseOrder($main)
-			||Rules::ordersSeeAll($main)
-			){
+			||Rules::ordersSeeAll($main)){
 				return false;
 			}else{
 				return true;
