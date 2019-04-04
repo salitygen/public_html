@@ -91,9 +91,32 @@ class Rules {
 	// Раздел Возвраты ( RETURNS ) ===============================================================================
 	public function seeReturns($main){
 		if(!$main->session->group_super_users){
-			if(Rules::function returnsСreate($main)				//Может создавать возвраты
+			if(Rules::returnsСreate($main)						//Может создавать возвраты
 			||Rules::returnsDelete($main)						//Может удалять возвраты
 			||Rules::returnsEditPrice($main)){					//Может редактировать цену возвратов
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Склад ( STORAGE ) ==================================================================================
+	public function seeStorage($main){
+		if(!$main->session->group_super_users){
+			if(Rules::storageTailings($main)					//Может видеть остатки на складе
+			||Rules::storagePosting($main)						//Может оприходовать
+			||Rules::storageOffs($main)							//Может списовать
+			||Rules::storageMove($main)							//Может перемещать
+			||Rules::storageCreateCategory($main)				//Может создавать категории
+			||Rules::storageAddCreateDelete($main)				//Может создавать, редактировать и удалять склады
+			||Rules::storageDeleteOperations($main)				//Может удалять операции на складе
+			||Rules::storageEditArticleCard($main)				//Может редактировать карточку товара
+			||Rules::storageOnSerialAccountingArticle($main)	//Может включать серийный учет для существующих товаров
+			||Rules::storageExportArticle($main)				//Может экспортировать товары
+			||Rules::storageImportArticle($main)){				//Может импортировать товары
 				return true;
 			}else{
 				return false;
