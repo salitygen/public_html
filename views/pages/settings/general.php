@@ -7,6 +7,5 @@ if(!$main->session->group_super_users){
 	}
 }
 
-var_dump($main);
 ?>
 <p>Информация о вашей компании</p>
