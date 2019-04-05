@@ -48,6 +48,23 @@ class Rules {
 		}
 	}
 	
+	// Раздел Платежи ( PAYMENTS ) ==============================================================================
+	public function seePayments($main){
+		if(!$main->session->group_super_users){
+			if(Rules::seeShop($main)							//Имеет доступ к разделу магазин
+			||Rules::seeTills($main)							//Имеет доступ к разделу кассы
+			||Rules::seeReturns($main)){						//Имеет доступ к разделу возвраты
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	Rules::seeShop($main) || Rules::seeTills($main) || Rules::seeReturns($main))
+	
 	// Раздел Магазин ( SHOP ) ==================================================================================
 	public function seeShop($main){
 		if(!$main->session->group_super_users){

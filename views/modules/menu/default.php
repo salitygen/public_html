@@ -13,7 +13,7 @@ defined('EXEC') or die;
 		<?php if(Rules::seeTask($main)) : ?>
 		<li><a class="icon-clock <?php if($main->view == 'task') print 'active';?>" href="/?view=task">Задачи</a></li>
 		<?php endif;?>
-		<?php if(Rules::seeShop($main) || Rules::seeTills($main) || Rules::seeReturns($main)) : ?>
+		<?php if(Rules::seePayments($main)) : ?>
 		<li><a class="icon-rouble <?php if($main->view == 'payment') print 'active';?>" href="/?view=payment">Платежи</a></li>
 		<?php endif;?>
 		<?php if(Rules::seeContractors($main)) : ?>
