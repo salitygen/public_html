@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsListServices($main) or die('Access Denied');
 ?>
-<h2>Перечень услуг</h2>
+<p>Перечень услуг</p>

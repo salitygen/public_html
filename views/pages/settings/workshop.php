@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsWorkshop($main) or die('Access Denied');
 ?>
-<h2>Мастерские</h2>
+<p>Мастерские</p>

@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsSalePrices($main) or die('Access Denied');
 ?>
-<h2>Цены и скидки</h2>
+<p>Цены и скидки</p>

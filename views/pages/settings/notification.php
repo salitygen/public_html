@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsNotification($main) or die('Access Denied');
 ?>
-<h2>Оповещения</h2>
+<p>Оповещения</p>

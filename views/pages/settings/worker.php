@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsWorkers($main) or die('Access Denied');
 ?>
-<h2>Сотрудники</h2>
+<p>Сотрудники</p>

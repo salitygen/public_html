@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsStatuses($main) or die('Access Denied');
 ?>
-<h2>Статусы</h2>
+<p>Статусы</p>

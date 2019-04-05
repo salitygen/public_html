@@ -1,4 +1,5 @@
 <?php
 defined('EXEC') or die;
+Rules::settingsHandbook($main) or die('Access Denied');
 ?>
-<h2>Справочники</h2>
+<p>Справочники</p>
