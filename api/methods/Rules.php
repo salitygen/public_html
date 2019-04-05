@@ -9,7 +9,7 @@ class Rules {
 	public function seeOrders($main){
 		if(!$main->session->group_super_users){
 			if(Rules::ordersCreate($main)						//Может создавать заказы
-			||Rules::ordersMoving($main)						//Может перемещать заказы
+			||Rules::ordersMoving($main)						//Может перемещать заказы 
 			||Rules::ordersDelete($main)						//Может удалять заказы
 			||Rules::ordersAppManagerWorker($main)				//Может назначать менеджера и исполнителя в заказ
 			||Rules::ordersSeeInfoCustomer($main)				//Может видеть информацию о клиенте	
@@ -135,6 +135,70 @@ class Rules {
 			||Rules::contractorsEditDiscountCustomer($main)		//Может редактировать персональную скидку клиента
 			||Rules::contractorsExportData($main)				//Может экспортировать данные
 			||Rules::contractorsImportData($main)){				//Может импортировать данные
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Отчеты ( REPORTS ) =================================================================================
+	public function seeReports($main){
+		if(!$main->session->group_super_users){
+			if(Rules::reportsDataPrint($main)					//Может печатать данные отчета
+			||Rules::reportsDataExport($main)					//Может экспортировать данные отчета
+			||Rules::reportsDataCreateAllDate($main)			//Может формировать отчет за произвольный период дат
+			||Rules::reportsSalary($main)						//Может формировать отчет по зарплате
+			||Rules::reportsMoney($main)						//Может формировать отчет ВСЕГО ДЕНЕГ ??? // NEED_REFACTORY
+			||Rules::reportsCashFlow($main)						//Может формировать отчет движение денежных средств
+			||Rules::reportsProfitOrders($main)					//Может формировать отчет прибыль по заказам
+			||Rules::reportsProfitSales($main)					//Может формировать отчет прибыль от продаж
+			||Rules::reportsCreateOrders($main)					//Может формировать отчет созданные заказы
+			||Rules::reportsCloseOrders($main)					//Может формировать отчет закрытые заказы
+			||Rules::reportsWorkOrders($main)					//Может формировать отчет заказы в работе
+			||Rules::reportsSourceOrders($main)					//Может формировать отчет откуда о нас узнают
+			||Rules::reportsPerformers($main)					//Может формировать отчет по исполнителям
+			||Rules::reportsWork($main)							//Может формировать отчет по работам
+			||Rules::reportsTradeTurnover($main)				//Может формировать отчет обороты товаров
+			||Rules::reportsRemainsWarehouse($main)				//Может формировать отчет остатки на складе
+			||Rules::reportsOffsWarehouse($main)				//Может формировать отчет списания со склада
+			||Rules::reportsRequiringPurchase($main)			//Может формировать отчет товары требующие закупки	
+			||Rules::reportsСalls($main)						//Может формировать отчет по звонкам
+			||Rules::reportsSendSms($main)						//Может формировать отчет по отправленным SMS
+			||Rules::reportsDelayedSms($main)					//Может формировать отчет по отложенным SMS	
+			||Rules::reportsClientFeedback($main)				//Может формировать отчет по отзывам клиентов
+			||Rules::reportsHistoryLogin($main)					//Может формировать отчет истории входов в систему
+			||Rules::reportsSalaryOnly($main)					//Может формировать отчет по своей зарплате
+			||Rules::reportsSalaryAll($main)){					//Может формировать отчет по зарплате других
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	// Раздел Настройки ( SETTINGS ) ============================================================================
+	public function seeSettings($main){
+		if(!$main->session->group_super_users){
+			if(Rules::settingsGeneral($main)					//Имеет доступ к общим настройкам
+			||Rules::settingsIntegration($main)					//Имеет доступ к центру интеграций
+			||Rules::settingsWorkshop($main)					//Имеет доступ к настройкам мастерских
+			||Rules::settingsWorkers($main)						//Имеет доступ к настройкам сотрудников
+			||Rules::settingsStatuses($main)					//Имеет доступ к настройкам статусов
+			||Rules::settingsRules($main)						//Имеет доступ к настройкам групп
+			||Rules::settingsSalePrices($main)					//Имеет доступ к настройкам цен и скидок
+			||Rules::settingsFormDesigner($main)				//Имеет доступ к настройкам конструктору форм
+			||Rules::settingsListServices($main)				//Имеет доступ к настройкам переченя услуг
+			||Rules::settingsHandbook($main)					//Имеет доступ к настройкам справочников
+			||Rules::settingsDocumentTemplate($main)			//Имеет доступ к настройкам шаблонов документов
+			||Rules::settingsNotification($main)				//Имеет доступ к настройкам оповещения
+			||Rules::settingsApi($main)							//Имеет доступ к настройкам API
+			||Rules::settingsSubscription($main)				//Имеет доступ к настройкам подписки
+			||Rules::settingsPartnerProgram($main)){			//Имеет доступ к настройкам партнерской программы
 				return true;
 			}else{
 				return false;
