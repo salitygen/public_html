@@ -11,9 +11,11 @@ defined('EXEC') or die;
 		<li><a class="icon-users <?php if($main->view == 'contractor') print 'active';?>" href="/?view=contractor">Контрагенты</a></li>
 		<li><a class="icon-cubes <?php if($main->view == 'storage') print 'active';?>" href="/?view=storage">Склад</a></li>
 		<li><a class="icon-chart-area <?php if($main->view == 'reports') print 'active';?>" href="/?view=reports">Отчеты</a></li>
+		<?php if(Rules::seeSettings($main)) : ?>
 		<li><a class="icon-sliders <?php if($main->view == 'settings') print 'active';?>" href="/?view=settings&params=general">Настройки</a></li>
+		<?php endif;?>
 	</ul>
-	<?php if($main->view == 'settings') : ?>
+	<?php if($main->view == 'settings' && Rules::seeSettings($main)) : ?>
 		<ul class="level2">
 			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Общие</a></li>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
