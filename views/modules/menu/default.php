@@ -17,14 +17,30 @@ defined('EXEC') or die;
 	</ul>
 	<?php if($main->view == 'settings' && Rules::seeSettings($main)) : ?>
 		<ul class="level2">
+			<?php if(Rules::settingsGeneral($main) : ?>
 			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Общие</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsWorkshop($main) : ?>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsWorkers($main) : ?>
 			<li><a <?php if($main->params == 'worker') print 'class="active"';?> href="/?view=settings&params=worker">Сотрудники</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsStatuses($main) : ?>
 			<li><a <?php if($main->params == 'status') print 'class="active"';?> href="/?view=settings&params=status">Статусы</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsNotification($main) : ?>
 			<li><a <?php if($main->params == 'notification') print 'class="active"';?> href="/?view=settings&params=notification">Оповещения</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsListServices($main) : ?>
 			<li><a <?php if($main->params == 'services') print 'class="active"';?> href="/?view=settings&params=services">Перечень услуг</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsHandbook($main) : ?>
 			<li><a <?php if($main->params == 'handbook') print 'class="active"';?> href="/?view=settings&params=handbook">Справочники</a></li>
+			<?php endif;?>
+			<?php if(Rules::settingsSalePrices($main) : ?>
 			<li><a <?php if($main->params == 'pricesdiscounts') print 'class="active"';?> href="/?view=settings&params=pricesdiscounts">Цены и скидки</a></li>
+			<?php endif;?>
 		</ul>
 	<?php endif;?>
 </div>
