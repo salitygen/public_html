@@ -63,8 +63,6 @@ class Rules {
 		}
 	}
 	
-	Rules::seeShop($main) || Rules::seeTills($main) || Rules::seeReturns($main))
-	
 	// Раздел Магазин ( SHOP ) ==================================================================================
 	public function seeShop($main){
 		if(!$main->session->group_super_users){
