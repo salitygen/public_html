@@ -31,7 +31,7 @@ defined('EXEC') or die;
 	</ul>
 	<?php if($main->view == 'settings' && Rules::seeSettings($main)) : ?>
 		<ul class="level2">
-			<?php if(Rules::settingsGeneral($main) : ?>
+			<?php if(Rules::settingsGeneral($main)) : ?>
 			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Общие</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsWorkshop($main)) : ?>
