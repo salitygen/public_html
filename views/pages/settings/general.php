@@ -5,5 +5,6 @@ $ws = new workshop;
 $ws->data = Workshop::get($main);
 $ws->addres = Addres::get($ws->data->workshop_addres_id);
 var_dump($ws);
+var_dump($main);
 ?>
 <p>Информация о вашей компании</p>
