@@ -21,9 +21,9 @@ if($task == 'logout'){
 if($task == 'updatecompany'){
 	print 123;
 	if(Rules::settingsWorkshop($main)){
-		if(Workshop::update($main,$data)){
+		//if(Workshop::update($main,$data)){
 			//return true;
-		}
+		//}
 	}else{
 		//return false;
 	}
