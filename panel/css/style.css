@@ -198,14 +198,14 @@ div#workshopInfo {
     padding: 20px;
     border: 1px solid #e1e1e1;
     margin-top: 5px;
-    background-color: #f1f1f1;
+    background-color: #efefef;
 }
 
 .workshopName {
     float: left;
     width: 100%;
     margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: 1px dashed #d7d7d7;
 }
 
@@ -218,8 +218,84 @@ div#workshopInfo {
     font-size: 22px;
     margin-top: 10px;
     float: left;
-    width: 300px;
+    width: 358px;
     padding: 4px;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+}
+.workshopNote {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cecece;
+}
+
+.workshopNote label {
+    float: left;
+    width: 100%;
+}
+
+.workshopNote textarea {
+    float: left;
+    width: 720px;
+    height: 140px;
+    margin-top: 10px;
+    resize: none;
+    border-color: #c4c4c4;
+    border-radius: 2px;
+}
+
+.workshopPhones, .workshopMails,.workshopAddres {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    padding-top: 20px;
+}
+
+.workshopPhones label, .workshopMails label,.workshopAddres label {
+    float: left;
+    margin-bottom: 10px;
+    position: absolute;
+    top: -16px;
+    left: -21px;
+    width: 140px;
+    font-size: 14px;
+    padding: 2px 0 3px 10px;
+    background-color: rgb(109, 110, 112);
+    color: #fff;
+    text-shadow: -1px -1px 0px #5d5d5d;
+}
+
+.workshopPhones .phoneDiv, .workshopMails .mailDiv,.workshopAddres .addresDiv {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid  #cecece;
+    padding-bottom: 16px;
+}
+
+.workshopPhones .phoneDiv label, .workshopAddres .addresDiv label,.workshopMails .mailDiv label {
+    width: 110px;
+    padding: 10px 0;
+    margin: 0;
+    text-align: right;
+    font-size: 14px;
+    font-style: italic;
+    position: unset;
+    background-color: unset;
+    color: unset;
+    text-shadow: unset;
+}
+
+.workshopPhones .phoneDiv input, .workshopMails .mailDiv input,.workshopAddres .addresDiv input {
+    float: left;
+    width: 240px;
+    font-size: 22px;
+    padding: 4px;
+    margin-left: 10px;
+    margin-right: 0;
     border-radius: 3px;
     border: 1px solid #c4c4c4;
     background-color: #fff;
