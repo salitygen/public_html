@@ -24,46 +24,61 @@ var_dump($ws);
 			<input type="text" name="workshop_note" value="<?php print $ws->workshop_note; ?>">
 		</div>
 		<div class="workshopPhones">
+			<label>Номера телефонов</label>
 			<?php if($ws->phones) : ?>
 			<?php foreach($ws->phones as $k => $phone):?>
 			<div class="phoneDiv">
+				<label>Телефон</label>
 				<input type="text" name="phones[<?php print $k; ?>][value]" value="<?php print $phone->value; ?>">
+				<label>Комментарий</label>
 				<input type="text" name="phones[<?php print $k; ?>][note]" value="<?php print $phone->note; ?>">
 			</div>
 			<?php endforeach;?>
 			<?php else:?>
 			<div class="phoneDiv">
+				<label>Телефон</label>
 				<input type="text" name="phones[0][value]" value="" placeholder="">
+				<label>Комментарий</label>
 				<input type="text" name="phones[0][note]" value="" placeholder="">
 			</div>
 			<?php endif;?>
 		</div>
 		<div class="workshopMails">
+			<label>Электронная почта</label>
 			<?php if($ws->mails) : ?>
 			<?php foreach($ws->mails as $k => $mail):?>
 			<div class="mailDiv">
+				<label>Почтовый ящик</label>
 				<input type="text" name="mails[<?php print $k; ?>][value]" value="<?php print $mail->value; ?>">
+				<label>Комментарий</label>
 				<input type="text" name="mails[<?php print $k; ?>][note]" value="<?php print $mail->note; ?>">
 			</div>
 			<?php endforeach;?>
 			<?php else:?>
 			<div class="mailDiv">
+				<label>Почтовый ящик</label>
 				<input type="text" name="mails[0][value]" value="" placeholder="">
+				<label>Комментарий</label>
 				<input type="text" name="mails[0][note]" value="" placeholder="">
 			</div>
 			<?php endif;?>
 		</div>
 		<div class="workshopAddres">
+			<label>Адреса компании</label>
 			<?php if($ws->addres) : ?>
 			<?php foreach($ws->addres as $k => $adres):?>
 			<div class="addresDiv">
+				<label>Адрес</label>
 				<input type="text" name="addres[<?php print $k; ?>][value]" value="<?php print $adres->value; ?>">
+				<label>Комментарий</label>
 				<input type="text" name="addres[<?php print $k; ?>][note]" value="<?php print $adres->note; ?>">
 			</div>
 			<?php endforeach;?>
 			<?php else:?>
 			<div class="addresDiv">
+				<label>Адрес</label>
 				<input type="text" name="addres[0][value]" value="" placeholder="">
+				<label>Комментарий</label>
 				<input type="text" name="addres[0][note]" value="" placeholder="">
 			</div>
 			<?php endif;?>
