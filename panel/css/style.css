@@ -183,7 +183,7 @@ p.username {
 .companyStatus p {
     float: right;
     position: absolute;
-    right: 30px;
+    right: 20px;
     top: 82px;
     background-color: #1d880f;
     padding: 5px 15px;
