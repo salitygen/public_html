@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-$ws = new stdClass;
+$ws = new WorkshopData;
 
 $ws->data = Workshop::get($main->session->user_workshops_id);
 $ws->addres = Addres::get($ws->data->workshop_addres_id);
