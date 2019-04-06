@@ -1,8 +1,9 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-$workshop = new workshop;
-$workshop->data = Workshop::get($main);
-var_dump($workshop);
+$ws = new workshop;
+$ws->data = Workshop::get($main);
+$ws->addres = Addres::get($ws->data->workshop_addres_id);
+var_dump($ws);
 ?>
 <p>Информация о вашей компании</p>
