@@ -17,7 +17,7 @@ $ws->phones = Phone::get($ws->workshop_phone_id);
 <?php endif;?>
 </div>
 <div id="workshopInfo">
-	<form method="POST">
+	<form action="/?view=settings&params=general&task=updatecompany" method="POST">
 		<div class="workshopName">
 			<label>Название</label>
 			<input type="text" required="required" name="workshop_name" value="<?php if($ws->workshop_name != '') print $ws->workshop_name; ?>">
