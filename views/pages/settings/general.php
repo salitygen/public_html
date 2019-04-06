@@ -20,11 +20,11 @@ $ws->phones = Phone::get($ws->workshop_phone_id);
 	<form method="POST">
 		<div class="workshopName">
 			<label>Название</label>
-			<input type="text" required="required" name="workshop_name" value="<?php print $ws->workshop_name; ?>">
+			<input type="text" required="required" name="workshop_name" value="<?php if($ws->workshop_name != '') print $ws->workshop_name; ?>">
 		</div>
 		<div class="workshopNote">
 			<label>Дополнительная информация</label>
-			<input type="text" name="workshop_note" value="<?php print $ws->workshop_note; ?>">
+			<textarea name="workshop_note" ><?php if($ws->workshop_note != '') print $ws->workshop_note; ?></textarea>
 		</div>
 		<div class="workshopPhones">
 			<label>Номера телефонов</label>
