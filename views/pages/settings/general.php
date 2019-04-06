@@ -7,8 +7,6 @@ $ws->addres = Addres::get($ws->workshop_addres_id);
 $ws->mails = Mails::get($ws->workshop_mail_id);
 $ws->phones = Phone::get($ws->workshop_phone_id);
 //End info collection
-
-var_dump($main);
 ?>
 <p>Информация о вашей компании</p>
 <div class="companyStatus">
