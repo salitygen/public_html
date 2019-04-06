@@ -21,6 +21,7 @@ div#leftPanel {
 body {
     margin: 0;
     padding: 0;
+    background-color: #efefef;
 }
 .menu {
     float: left;
@@ -196,9 +197,10 @@ div#workshopInfo {
     float: left;
     width: calc(100% - 40px);
     padding: 20px;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #cdcdcd;
     margin-top: 5px;
-    background-color: #efefef;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
 
 .workshopName {
