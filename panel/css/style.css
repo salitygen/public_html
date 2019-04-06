@@ -180,3 +180,47 @@ h1 {
 p.username {
     margin: 10px 0;
 }
+.companyStatus p {
+    float: right;
+    position: absolute;
+    right: 30px;
+    top: 82px;
+    background-color: #1d880f;
+    padding: 5px 15px;
+    margin: 0;
+    border-radius: 2px;
+    color: #fff;
+}
+
+div#workshopInfo {
+    float: left;
+    width: calc(100% - 40px);
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    margin-top: 5px;
+    background-color: #f1f1f1;
+}
+
+.workshopName {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #d7d7d7;
+}
+
+.workshopName label {
+    float: left;
+    width: 100%;
+}
+
+.workshopName input {
+    font-size: 22px;
+    margin-top: 10px;
+    float: left;
+    width: 300px;
+    padding: 4px;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+}
