@@ -252,7 +252,7 @@ div#workshopInfo {
     width: 100%;
     margin-bottom: 15px;
     position: relative;
-    padding-top: 20px;
+    padding-top: 2px;
 }
 
 .workshopPhones label, .workshopMails label,.workshopAddres label {
@@ -260,7 +260,7 @@ div#workshopInfo {
     margin-bottom: 10px;
     position: absolute;
     top: -16px;
-    left: -21px;
+    right: 0;
     width: 140px;
     font-size: 14px;
     padding: 2px 0 3px 10px;
