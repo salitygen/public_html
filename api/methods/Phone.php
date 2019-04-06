@@ -32,24 +32,19 @@ class Phone {
 	}
 	
 	public function add($data){
-		//if(Rules::settingsWorkshop($main)){
-			
-		//}
+
 	}
+	
 	public function update($id,$data){
-		//if(Rules::settingsWorkshop($main)){
-			
-		//}
+
 	}
+	
 	public function block($id){
-		//if(Rules::settingsWorkshop($main)){
-			
-		//}
+
 	}
+	
 	public function remove($id){
-		//if(Rules::settingsWorkshop($main)){
-			
-		//}
+
 	}
 	
 }

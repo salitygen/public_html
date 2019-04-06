@@ -17,7 +17,7 @@ class Workshop {
 		
 	}
 	
-	public function getAll($main){
+	public function getAll(){
 		
 		$db = dataBase::pdo();
 		$getWorkshops = $db->query("SELECT * FROM crm_workshops");
@@ -31,25 +31,20 @@ class Workshop {
 		
 	}
 	
-	public function add($main){
-		if(Rules::settingsWorkshop($main)){
-			
-		}
+	public function add($data){
+
 	}
-	public function update($main){
-		if(Rules::settingsWorkshop($main)){
-			
-		}
+	
+	public function update($id,$data){
+
 	}
-	public function block($main){
-		if(Rules::settingsWorkshop($main)){
-			
-		}
+	
+	public function block($id){
+
 	}
-	public function remove($main){
-		if(Rules::settingsWorkshop($main)){
-			
-		}
+	
+	public function remove($id){
+
 	}
 	
 }
