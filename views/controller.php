@@ -4,6 +4,7 @@ defined('EXEC') or die;
 if($view){
 	$main->view = $view;
 	$main->params = $params;
+	$main->task = $task;
 	$page = Render::page($main);
 }else{
 	header("location: /?view=dashboard");
