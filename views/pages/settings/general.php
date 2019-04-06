@@ -86,6 +86,6 @@ $ws->phones = Phone::get($ws->workshop_phone_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" type="submit">Сохранить</button>
+		<button class="save" name="companyId" value="<?php print $main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
