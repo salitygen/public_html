@@ -26,7 +26,7 @@ var_dump($ws);
 			<?php foreach($ws->phones as $k => $value):?>
 				<input type="text" name="phones[<?php print $k; ?>]" value="<?php print $value; ?>">
 			<?php endforeach;?>
-			<?php elseif;?>
+			<?php else:?>
 				<input type="text" name="phones[0]" value="" placeholder="">
 			<?php endif;?>
 		</div>
@@ -35,7 +35,7 @@ var_dump($ws);
 			<?php foreach($ws->mails as $k => $value):?>
 				<input type="text" name="mails[<?php print $k; ?>]" value="<?php print $value; ?>">
 			<?php endforeach;?>
-			<?php elseif;?>
+			<?php else:?>
 				<input type="text" name="mails[0]" value="" placeholder="">
 			<?php endif;?>
 		</div>
@@ -44,7 +44,7 @@ var_dump($ws);
 			<?php foreach($ws->addres as $k => $value):?>
 				<input type="text" name="addres[<?php print $k; ?>]" value="<?php print $value; ?>">
 			<?php endforeach;?>
-			<?php elseif;?>
+			<?php else:?>
 				<input type="text" name="addres[0]" value="" placeholder="">
 			<?php endif;?>
 		</div>
