@@ -3,10 +3,10 @@ defined('EXEC') or die;
 
 class Workshop {
 	
-	public function get($main){
+	public function get($id){
 		
 		$db = dataBase::pdo();
-		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_id=1");
+		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_id={$id}");
 		$workshop = $getWorkshop->fetch();
 		
 		if($workshop){
