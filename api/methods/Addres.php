@@ -31,12 +31,12 @@ class Addres {
 		
 	}
 	
-	public function add(){
+	public function add($data){
 		//if(Rules::settingsWorkshop($main)){
 			
 		//}
 	}
-	public function update($id){
+	public function update($id,$data){
 		//if(Rules::settingsWorkshop($main)){
 			
 		//}
