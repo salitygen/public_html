@@ -10,9 +10,9 @@ class Workshop {
 		$workshop = $getWorkshop->fetch();
 		
 		if($workshop){
-			$workshop->mails = json_decode(utf8_encode($workshop->workshop_mail_json));
-			$workshop->phones = json_decode(utf8_encode($workshop->workshop_phone_json));
-			$workshop->addres = json_decode(utf8_encode($workshop->workshop_addres_json));
+			$workshop->mails = json_decode($workshop->workshop_mail_json);
+			$workshop->phones = json_decode($workshop->workshop_phone_json);
+			$workshop->addres = json_decode($workshop->workshop_addres_json);
 			return $workshop;
 		}else{
 			return false;
@@ -41,17 +41,17 @@ class Workshop {
 	public function update($data){
 		
 		if(isset($data->phones)){
-			$data->phones = json_encode($data->phones, JSON_UNESCAPED_UNICODE);
+			$data->phones = json_encode(utf8_encode($data->phones));
 		}else{
 			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		if(isset($data->mails)){
-			$data->mails = json_encode($data->mails, JSON_UNESCAPED_UNICODE);
+			$data->mails = json_encode(utf8_encode($data->mails));
 		}else{
 			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		if(isset($data->addres)){
-			$data->addres = json_encode($data->addres, JSON_UNESCAPED_UNICODE);
+			$data->addres = json_encode(utf8_encode($data->addres));
 		}else{
 			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
 		}
