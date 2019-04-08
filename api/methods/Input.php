@@ -77,67 +77,19 @@ class Input {
 	public function company($data){
 		
 		if(isset($data->phones)){
-			$newData = array();
-			$n = 0;
-			foreach($data->phones as $k => $phones){
-				foreach($phones as $i => $value){
-					if($i == 'value'){
-						$newData[$k][$i] = Input::getSanitise($value);
-						$n++;
-					}elseif($i == 'note'){
-						$newData[$k][$i] = Input::getSanitise($value);
-						$n++;
-					}
-				}
-				if($n != 2){
-					$newData[$k] = array('value'=>'','note'=>'');
-				}
-			}
-			$data->phones = json_encode($newData,JSON_UNESCAPED_UNICODE);
+			$data->phones = Input::validate($data->phones);
 		}else{
 			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		
 		if(isset($data->mails)){
-			$newData = array();
-			$n = 0;
-			foreach($data->mails as $k => $mails){
-				foreach($mails as $i => $value){
-					if($i == 'value'){
-						$newData[$k][$i] = Input::getSanitise($value);
-						$n++;
-					}elseif($i == 'note'){
-						$newData[$k][$i] = Input::getSanitise($value);
-						$n++;
-					}
-				}
-				if($n != 2){
-					$newData[$k] = array('value'=>'','note'=>'');
-				}
-			}
-			$data->mails = json_encode($newData,JSON_UNESCAPED_UNICODE);
+			$data->mails = Input::validate($data->mails);
 		}else{
 			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		
 		if(isset($data->addres)){
-			$newData = array();
-			$n = 0;
-			foreach($data->addres as $k => $addres){
-				foreach($addres as $i => $value){
-					if($i == 'value'){
-						$newData[$k][$i] = Input::getSanitise($value);
-						$n++;
-					}elseif($i == 'note'){
-						$newData[$k][$i] = Input::getSanitise($value);
-						$n++;
-					}
-				}
-				if($n != 2){
-					$newData[$k] = array('value'=>'','note'=>'');
-				}
-			}
-			$data->addres = json_encode($newData,JSON_UNESCAPED_UNICODE);
+			$data->addres = Input::validate($data->addres);
 		}else{
 			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
 		}
@@ -168,6 +120,31 @@ class Input {
 		return $data;
 		
 	}
+	
+	public function validate($data){
+		
+		$newData = array();
+		$n = 0;
+		
+		foreach($data as $k => $arr){
+			foreach($arr as $i => $value){
+				if($i == 'value'){
+					$newData[$k][$i] = Input::getSanitise($value);
+					$n++;
+				}elseif($i == 'note'){
+					$newData[$k][$i] = Input::getSanitise($value);
+					$n++;
+				}
+			}
+			if($n != 2){
+				$newData[$k] = array('value'=>'','note'=>'');
+			}
+		}
+		
+		return json_encode($newData,JSON_UNESCAPED_UNICODE);
+		
+	}
+	
 	
 }
 
