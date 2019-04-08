@@ -280,7 +280,7 @@ div#workshopInfo {
     position: relative;
     padding-top: 2px;
     border-bottom: 1px solid #cecece;
-    padding-bottom: 16px;
+    padding-bottom: 6px;
 }
 
 .workshopPhones label, .workshopMails label,.workshopAddres label {
@@ -300,6 +300,7 @@ div#workshopInfo {
 .workshopPhones .phoneDiv, .workshopMails .mailDiv,.workshopAddres .addresDiv {
     float: left;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .workshopPhones .phoneDiv label, .workshopAddres .addresDiv label,.workshopMails .mailDiv label {
