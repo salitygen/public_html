@@ -132,11 +132,14 @@ class Input {
 				if($i == 'value'){
 					$newData[$k]['value'] = Input::getSanitise($value);
 					$n++;
+					print 'a';
 				}elseif($i == 'note'){
 					$newData[$k]['note'] = Input::getSanitise($value);
 					$n++;
+					print 'b';
 				}
 			}
+			print $n;
 			if($n != 2){
 				$newData[$k] = array('value'=>'','note'=>'');
 				if($nk > 0){
