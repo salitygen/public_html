@@ -35,7 +35,7 @@ class Phone {
 
 	}
 	
-	public function update($id,$data){
+	public function update($data){
 
 	}
 	
