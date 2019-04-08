@@ -305,8 +305,8 @@ div#workshopInfo {
 .workshopPhones .phoneDiv input, .workshopMails .mailDiv input,.workshopAddres .addresDiv input {
     float: left;
     width: 240px;
-    font-size: 22px;
-    padding: 4px;
+    font-size: 16px;
+    padding: 8px;
     margin-left: 10px;
     margin-right: 0;
     border-radius: 3px;
