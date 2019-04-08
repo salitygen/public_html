@@ -8,7 +8,7 @@ $ws = Workshop::get($main->session->user_workshops_id);
 <?php if($ws->workshop_status):?>
 	<p>Работает</p>
 <?php else:?>
-	<p>Не работает</p>
+	<p class="off">Не работает</p>
 <?php endif;?>
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
