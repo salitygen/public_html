@@ -35,8 +35,37 @@ class Workshop {
 
 	}
 	
-	public function update($id,$data){
-
+	public function update($data){
+		
+		$data->phones = json_encode($data->phones);
+		$data->mails = 	json_encode($data->mails);
+		$data->addres = json_encode($data->addres);
+		$data->workshop_name = (string)$data->workshop_name;
+		$data->workshop_note = (string)$data->workshop_note;
+		$data->companyId = (int)$data->companyId;
+		
+		$db = dataBase::pdo();
+		
+		$updWorkshops = $db->query("
+			UPDATE crm_workshops SET
+			workshop_name='{$data->workshop_name}',
+			workshop_status={$int},
+			workshop_addres_json='{$data->addres}',
+			workshop_state_json='',
+			workshop_phone_json='{$data->phones}',
+			workshop_mail_json='{$data->mails}',
+			workshop_note='{$data->workshop_note}'
+			WHERE workshop_id={$data->companyId}
+		");
+		
+		$workshops = $updWorkshops->fetch();
+		var_dump($workshops);
+		if($workshops){
+			return $workshops;
+		}else{
+			return false;
+		}
+	
 	}
 	
 	public function block($id){
