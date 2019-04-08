@@ -204,9 +204,10 @@ p.username {
 .companyStatus p {
     float: right;
     position: absolute;
+    font-size: 14px;
     right: 20px;
-    top: 82px;
-    width: 94px;
+    top: 83px;
+    width: 82px;
     background-color: #1d880f;
     padding: 5px 15px;
     margin: 0;
@@ -280,7 +281,7 @@ div#workshopInfo {
     position: relative;
     padding-top: 2px;
     border-bottom: 1px solid #cecece;
-    padding-bottom: 6px;
+    padding-bottom: 16px;
 }
 
 .workshopPhones label, .workshopMails label,.workshopAddres label {
@@ -300,7 +301,6 @@ div#workshopInfo {
 .workshopPhones .phoneDiv, .workshopMails .mailDiv,.workshopAddres .addresDiv {
     float: left;
     width: 100%;
-    margin-bottom: 10px;
 }
 
 .workshopPhones .phoneDiv label, .workshopAddres .addresDiv label,.workshopMails .mailDiv label {
@@ -403,7 +403,7 @@ div#workshopInfo {
 .center {
   position: absolute;
   top: 87px;
-  right: 155px;
+  right: 144px;
 }
 button.save {
     float: right;
