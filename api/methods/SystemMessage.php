@@ -14,7 +14,7 @@ class SystemMessage {
 	
 	public function get(){
 		if(isset($main->sysmessage)){
-			return "<p class='"{$main->sysmessage->type}"'>"{$main->sysmessage->mess}"<p>";
+			return '<p class="'.$main->sysmessage->type.'">"'.$main->sysmessage->mess.'"<p>';
 		}else{
 			return false;
 		}
