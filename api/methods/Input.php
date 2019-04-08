@@ -77,19 +77,67 @@ class Input {
 	public function company($data){
 		
 		if(isset($data->phones)){
-			$data->phones = json_encode($data->phones,JSON_UNESCAPED_UNICODE);
+			$newData = array();
+			$n = 0;
+			foreach($data->phones as $k => $phones){
+				foreach($phones as $i => $value){
+					if($i == 'value'){
+						$newData[$k][$i] = Input::getSanitise($value);
+						$n++;
+					}elseif($i == 'note'){
+						$newData[$k][$i] = Input::getSanitise($value);
+						$n++;
+					}
+				}
+				if($n != 2){
+					$newData[$k] = array('value'=>'','note'=>'');
+				}
+			}
+			$data->phones = json_encode($newData,JSON_UNESCAPED_UNICODE);
 		}else{
 			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		
 		if(isset($data->mails)){
-			$data->mails = json_encode($data->mails,JSON_UNESCAPED_UNICODE);
+			$newData = array();
+			$n = 0;
+			foreach($data->mails as $k => $mails){
+				foreach($mails as $i => $value){
+					if($i == 'value'){
+						$newData[$k][$i] = Input::getSanitise($value);
+						$n++;
+					}elseif($i == 'note'){
+						$newData[$k][$i] = Input::getSanitise($value);
+						$n++;
+					}
+				}
+				if($n != 2){
+					$newData[$k] = array('value'=>'','note'=>'');
+				}
+			}
+			$data->mails = json_encode($newData,JSON_UNESCAPED_UNICODE);
 		}else{
 			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		
 		if(isset($data->addres)){
-			$data->addres = json_encode($data->addres,JSON_UNESCAPED_UNICODE);
+			$newData = array();
+			$n = 0;
+			foreach($data->addres as $k => $addres){
+				foreach($addres as $i => $value){
+					if($i == 'value'){
+						$newData[$k][$i] = Input::getSanitise($value);
+						$n++;
+					}elseif($i == 'note'){
+						$newData[$k][$i] = Input::getSanitise($value);
+						$n++;
+					}
+				}
+				if($n != 2){
+					$newData[$k] = array('value'=>'','note'=>'');
+				}
+			}
+			$data->addres = json_encode($newData,JSON_UNESCAPED_UNICODE);
 		}else{
 			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
 		}
