@@ -61,8 +61,8 @@ class Workshop {
 			WHERE workshop_id={$data->companyId}
 		");
 		
-		$workshops = $updWorkshops->fetch();
-		//var_dump($workshops);
+		$workshops = $updWorkshops->fetchRow();
+		var_dump($workshops);
 		if($workshops){
 			return $workshops;
 		}else{
