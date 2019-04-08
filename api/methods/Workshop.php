@@ -73,6 +73,10 @@ class Workshop {
 		}
 
 		$data->companyId = (int)$data->companyId;
+		if($data->companyId <= 0){
+			die('Fatal Error');
+		}
+		
 		$data->company_status = 1;
 		
 		$db = dataBase::pdo();
