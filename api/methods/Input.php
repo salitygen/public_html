@@ -128,6 +128,7 @@ class Input {
 		for($k=0;$k<count($data);$k++){
 			$n = 0;
 			foreach($data[$k] as $i => $value){
+				print $i;
 				if($i == 'value'){
 					$newData[$k]['value'] = Input::getSanitise($value);
 					$n++;
