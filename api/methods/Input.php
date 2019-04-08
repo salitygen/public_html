@@ -124,8 +124,6 @@ class Input {
 			$data->companyId = 0;
 		}
 		
-		$data->company_status = 1;
-		
 		return $data;
 		
 	}
