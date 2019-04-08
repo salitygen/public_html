@@ -15,7 +15,7 @@ $ws = Workshop::get($main->session->user_workshops_id);
 <div id="workshopInfo">
 	<form action="/?view=settings&params=general&task=updatecompany" method="POST">
 		<div class="center">
-		  <input type="checkbox" name="workshop_status" id="cbx" style="display:none" checked="<?php if($ws->workshop_status) ? print 'true' : print 'false'; ?>">
+		  <input type="checkbox" name="workshop_status" id="cbx" style="display:none" <?php if($ws->workshop_status) print 'checked="true"'; ?> >
 		  <label for="cbx" class="toggle"><span></span></label>    
 		</div>
 		<div class="workshopName">
