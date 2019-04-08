@@ -7,7 +7,4 @@ include $main->root.'/api/methods/Upload.php';
 include $main->root.'/api/methods/Workshop.php';
 include $main->root.'/api/methods/Login.php';
 include $main->root.'/api/methods/Rules.php';
-include $main->root.'/api/methods/Addres.php';
-include $main->root.'/api/methods/Mail.php';
-include $main->root.'/api/methods/Phone.php';
 ?>
