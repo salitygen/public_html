@@ -114,8 +114,9 @@ class Input {
 			$data->workshop_note = '';
 		}
 		
-		$data->workshop_status = (int)$data->workshop_status;
-		if($data->workshop_status <= 0){
+		if($data->workshop_status !== 'on'){
+			$data->workshop_status = 1;
+		}else{
 			$data->workshop_status = 0;
 		}
 
