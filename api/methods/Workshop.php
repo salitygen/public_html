@@ -40,20 +40,47 @@ class Workshop {
 	
 	public function update($data){
 		
-		$data->phones = json_encode($data->phones);
-		$data->mails = 	json_encode($data->mails);
-		$data->addres = json_encode($data->addres);
-		$data->workshop_name = (string)$data->workshop_name;
-		$data->workshop_note = (string)$data->workshop_note;
+		if(isset($data->phones)){
+			$data->phones = json_encode(Input::getSanitise($data->phones));
+		}else{
+			$data->phones = json_encode(array('value'=>'','note'=>''));
+		}
+		if(isset($data->mails)){
+			$data->mails = json_encode(Input::getSanitise($data->mails));
+		}else{
+			$data->mails = json_encode(array('value'=>'','note'=>''));
+		}
+		if(isset($data->addres)){
+			$data->addres = json_encode(Input::getSanitise($data->addres));
+		}else{
+			$data->addres = json_encode(array('value'=>'','note'=>''));
+		}
+		
+		if(isset($data->workshop_name)){
+			if(!$data->workshop_name = Input::getSanitise($data->workshop_name)){
+				$data->workshop_name = '';
+			}
+		}else{
+			$data->workshop_name = '';
+		}
+		
+		if(isset($data->workshop_note)){
+			if(!$data->workshop_note = Input::getSanitise($data->workshop_note)){
+				$data->workshop_note = '';
+			}
+		}else{
+			$data->workshop_note = '';
+		}
+
 		$data->companyId = (int)$data->companyId;
-		$int = 1;
+		$data->company_status = 1;
 		
 		$db = dataBase::pdo();
 
 		$updWorkshop = $db->exec("
 			UPDATE crm_workshops SET
 			workshop_name='{$data->workshop_name}',
-			workshop_status={$int},
+			workshop_status={$data->company_status},
 			workshop_addres_json='{$data->addres}',
 			workshop_phone_json='{$data->phones}',
 			workshop_mail_json='{$data->mails}',
