@@ -4,12 +4,20 @@ defined('EXEC') or die;
 class SystemMessage {
 	
 	public function set($type,$mess,$main){
+		
+		$data = new stdClass();
+		
 		if($type && $type !=''){
-			$main->sysmessage->type = $type;
+			$data->type = $type;
 		}
 		if($mess && $mess !=''){
-			$main->sysmessage->mess = $mess;
+			$data->mess = $mess;
 		}
+		
+		if(isset($data->type) && isset($data->mess)){
+			$main->sysmessage = $data;
+		}
+		
 	}
 	
 	public function get($main){
