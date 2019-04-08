@@ -21,7 +21,7 @@ if($task == 'logout'){
 if($task == 'updatecompany'){
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
-		if($status = Workshop::update($data)){
+		if(Workshop::update($data)){
 			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 		}
 	}
