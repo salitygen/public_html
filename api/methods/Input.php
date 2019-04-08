@@ -128,18 +128,14 @@ class Input {
 		for($k=0;$k<count($data);$k++){
 			$n = 0;
 			foreach($data[$k] as $i => $value){
-				print $i;
 				if($i === 'value'){
 					$newData[$k]['value'] = Input::getSanitise($value);
 					$n++;
-					print 'a';
 				}elseif($i === 'note'){
 					$newData[$k]['note'] = Input::getSanitise($value);
 					$n++;
-					print 'b';
 				}
 			}
-			print $n;
 			if($n != 2){
 				$newData[$k] = array('value'=>'','note'=>'');
 				if($nk > 0){
