@@ -22,7 +22,7 @@ if($task == 'updatecompany'){
 
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
-		if(Workshop::update($main,$data)){
+		if(Workshop::update($data)){
 			var_dump($data);
 		}
 	}else{
