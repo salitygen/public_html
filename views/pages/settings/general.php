@@ -14,7 +14,7 @@ $ws = Workshop::get($main->session->user_workshops_id);
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div id="workshopInfo">
 	<form action="/?view=settings&params=general&task=updatecompany" method="POST">
-		<label>
+		<label class="spin">
 			<input type="checkbox">
 			<span>I'm a checkbox</span>
 		</label>
