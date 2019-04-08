@@ -22,6 +22,9 @@ if($task == 'updatecompany'){
 
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
+		$data->phones = json_encode($data->phones);
+		$data->mails = json_encode($data->mails);
+		$data->addres = json_encode($data->addres);
 		//if(Workshop::update($main,$data)){
 			var_dump($data);//return true;
 		//}
