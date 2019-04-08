@@ -25,8 +25,6 @@ if($task == 'updatecompany'){
 		if(Workshop::update($data)){
 			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 		}
-	}else{
-		//return false;
 	}
 	
 }
