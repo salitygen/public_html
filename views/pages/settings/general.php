@@ -13,7 +13,7 @@ $ws = Workshop::get($main->session->user_workshops_id);
 	<p>Не работает</p>
 <?php endif;?>
 </div>
-<?php if($mess = SystemMessage::get()) print $mess; ?>
+<?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div id="workshopInfo">
 	<form action="/?view=settings&params=general&task=updatecompany" method="POST">
 		<div class="workshopName">
