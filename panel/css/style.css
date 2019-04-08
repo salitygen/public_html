@@ -323,7 +323,9 @@ div#workshopInfo {
     border: 1px solid #c4c4c4;
     background-color: #fff;
 }
-
+.companyStatus p.off {
+    background-color: #9a9999;
+}
 .toggle {
   position: relative;
   display: block;
