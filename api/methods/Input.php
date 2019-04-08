@@ -124,9 +124,9 @@ class Input {
 	public function validArray($data){
 		
 		$newData = array();
-		$n = 0;
 		$data = array_values($data);
 		for($k=0;$k<count($data);$k++){
+			$n = 0;
 			foreach($data[$k] as $i => $value){
 				if($i == 'value'){
 					$newData[$k][$i] = Input::getSanitise($value);
