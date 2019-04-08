@@ -18,10 +18,10 @@ div#leftPanel {
     position: fixed;
 }
 p.succes {
-    background-color: #97c491;
+    background-color: #cde4c9;
     padding: 12px;
-    border: 2px solid #1d880f;
-    color: #084700;
+    border: 2px solid #82b77c;
+    color: #0e7b00;
     border-radius: 3px;
     margin: 2px 0 16px 0;
     float: left;
