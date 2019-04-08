@@ -23,7 +23,7 @@ if($task == 'updatecompany'){
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
 		if(Workshop::update($data)){
-			print '<script>alert("Изменения успешно сохранены!")</script>';//var_dump($data);
+			
 		}
 	}else{
 		//return false;
