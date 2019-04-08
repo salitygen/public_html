@@ -10,9 +10,9 @@ class Workshop {
 		$workshop = $getWorkshop->fetch();
 		
 		if($workshop){
-			$workshop->mails = json_decode($workshop->workshop_mail_json);
-			$workshop->phones = json_decode($workshop->workshop_phone_json);
-			$workshop->addres = json_decode($workshop->workshop_addres_json);
+			$workshop->mails = json_decode(utf8_encode($workshop->workshop_mail_json));
+			$workshop->phones = json_decode(utf8_encode($workshop->workshop_phone_json));
+			$workshop->addres = json_decode(utf8_encode($workshop->workshop_addres_json));
 			return $workshop;
 		}else{
 			return false;
