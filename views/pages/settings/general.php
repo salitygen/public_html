@@ -1,9 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-//Start info collection
 $ws = Workshop::get($main->session->user_workshops_id);
-//End info collection
 ?>
 <p>Информация о вашей компании</p>
 <div class="companyStatus">
