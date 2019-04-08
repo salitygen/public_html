@@ -50,7 +50,7 @@ class Workshop {
 		
 		$db = dataBase::pdo();
 
-		$updWorkshops = exec("
+		$updWorkshops = $db->exec("
 			UPDATE crm_workshops SET
 			workshop_name='{$data->workshop_name}',
 			workshop_status={$int},
