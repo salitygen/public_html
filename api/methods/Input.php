@@ -126,6 +126,7 @@ class Input {
 	}
 	
 	public function validArray($data){
+		
 		$nk = 0;
 		$newData = array();
 		$data = array_values($data);
