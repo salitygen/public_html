@@ -113,6 +113,11 @@ class Input {
 		}else{
 			$data->workshop_note = '';
 		}
+		
+		$data->workshop_status = (int)$data->workshop_status;
+		if($data->workshop_status <= 0){
+			$data->workshop_status = 0;
+		}
 
 		$data->companyId = (int)$data->companyId;
 		if($data->companyId <= 0){
