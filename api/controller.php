@@ -23,6 +23,8 @@ if($task == 'updatecompany'){
 		$data = (object)$_POST;
 		if(Workshop::update($data)){
 			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+		}else{
+			SystemMessage::set('error','Изменения сохранить не удалось!',$main);
 		}
 	}
 }
