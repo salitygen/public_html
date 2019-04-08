@@ -46,6 +46,7 @@ class Workshop {
 		$data->workshop_name = (string)$data->workshop_name;
 		$data->workshop_note = (string)$data->workshop_note;
 		$data->companyId = (int)$data->companyId;
+		$int = 1;
 		
 		$db = dataBase::pdo();
 		
@@ -54,7 +55,6 @@ class Workshop {
 			workshop_name='{$data->workshop_name}',
 			workshop_status={$int},
 			workshop_addres_json='{$data->addres}',
-			workshop_state_json='',
 			workshop_phone_json='{$data->phones}',
 			workshop_mail_json='{$data->mails}',
 			workshop_note='{$data->workshop_note}'
