@@ -46,7 +46,7 @@ class Workshop {
 		$updWorkshop = $db->exec("
 			UPDATE crm_workshops SET
 			workshop_name='{$data->workshop_name}',
-			workshop_status={$data->company_status},
+			workshop_status={$data->workshop_status},
 			workshop_addres_json='{$data->addres}',
 			workshop_phone_json='{$data->phones}',
 			workshop_mail_json='{$data->mails}',
