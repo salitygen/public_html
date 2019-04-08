@@ -49,8 +49,8 @@ class Workshop {
 		$int = 1;
 		
 		$db = dataBase::pdo();
-		
-		$updWorkshops = $db->query("
+
+		$updWorkshops = exec("
 			UPDATE crm_workshops SET
 			workshop_name='{$data->workshop_name}',
 			workshop_status={$int},
@@ -60,11 +60,9 @@ class Workshop {
 			workshop_note='{$data->workshop_note}'
 			WHERE workshop_id={$data->companyId}
 		");
-		
-		$workshops = $updWorkshops->fetchRow();
-		var_dump($workshops);
-		if($workshops){
-			return $workshops;
+		var_dump($updWorkshops);
+		if($updWorkshops){
+			return $updWorkshops;
 		}else{
 			return false;
 		}
