@@ -77,19 +77,19 @@ class Input {
 	public function company($data){
 		
 		if(isset($data->phones)){
-			$data->phones = Input::validate($data->phones);
+			$data->phones = Input::validArray($data->phones);
 		}else{
 			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		
 		if(isset($data->mails)){
-			$data->mails = Input::validate($data->mails);
+			$data->mails = Input::validArray($data->mails);
 		}else{
 			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		
 		if(isset($data->addres)){
-			$data->addres = Input::validate($data->addres);
+			$data->addres = Input::validArray($data->addres);
 		}else{
 			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
 		}
@@ -121,7 +121,7 @@ class Input {
 		
 	}
 	
-	public function validate($data){
+	public function validArray($data){
 		
 		$newData = array();
 		$n = 0;
