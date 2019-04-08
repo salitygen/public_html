@@ -14,10 +14,10 @@ $ws = Workshop::get($main->session->user_workshops_id);
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div id="workshopInfo">
 	<form action="/?view=settings&params=general&task=updatecompany" method="POST">
-		<label class="spin">
-			<input type="checkbox">
-			<span>I'm a checkbox</span>
-		</label>
+		<div class="center">
+		  <input type="checkbox" id="cbx" style="display:none"/>
+		  <label for="cbx" class="toggle"><span></span></label>    
+		</div>
 		<div class="workshopName">
 			<label>Название</label>
 			<input type="text" required="required" name="workshop_name" value="<?php if($ws->workshop_name != '') print $ws->workshop_name; ?>">
