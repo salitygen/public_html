@@ -125,7 +125,7 @@ class Input {
 		
 		$newData = array();
 		$n = 0;
-		
+		$data = array_values($data);
 		for($k=0;$k<count($data);$k++){
 			foreach($data[$k] as $i => $value){
 				if($i == 'value'){
