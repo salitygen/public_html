@@ -129,11 +129,11 @@ class Input {
 			$n = 0;
 			foreach($data[$k] as $i => $value){
 				print $i;
-				if($i == 'value'){
+				if($i === 'value'){
 					$newData[$k]['value'] = Input::getSanitise($value);
 					$n++;
 					print 'a';
-				}elseif($i == 'note'){
+				}elseif($i === 'note'){
 					$newData[$k]['note'] = Input::getSanitise($value);
 					$n++;
 					print 'b';
