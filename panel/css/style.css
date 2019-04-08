@@ -194,7 +194,7 @@ p.username {
     float: right;
     position: absolute;
     right: 20px;
-    top: 81px;
+    top: 82px;
     background-color: #1d880f;
     padding: 5px 15px;
     margin: 0;
@@ -256,6 +256,8 @@ div#workshopInfo {
     resize: none;
     border-color: #c4c4c4;
     border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 15px;
 }
 
 .workshopPhones, .workshopMails,.workshopAddres {
