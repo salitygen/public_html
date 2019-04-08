@@ -41,17 +41,17 @@ class Workshop {
 	public function update($data){
 		
 		if(isset($data->phones)){
-			$data->phones = json_encode($data->phones);
+			$data->phones = json_encode($data->phones,JSON_UNESCAPED_UNICODE);
 		}else{
 			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		if(isset($data->mails)){
-			$data->mails = json_encode($data->mails);
+			$data->mails = json_encode($data->mails,JSON_UNESCAPED_UNICODE);
 		}else{
 			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
 		}
 		if(isset($data->addres)){
-			$data->addres = json_encode($data->addres);
+			$data->addres = json_encode($data->addres,JSON_UNESCAPED_UNICODE);
 		}else{
 			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
 		}
