@@ -122,7 +122,7 @@ class Input {
 	}
 	
 	public function validArray($data){
-		
+		$nk = 0;
 		$newData = array();
 		$data = array_values($data);
 		for($k=0;$k<count($data);$k++){
@@ -138,8 +138,14 @@ class Input {
 			}
 			if($n != 2){
 				$newData[$k] = array('value'=>'','note'=>'');
+				if($nk > 0){
+					unset($newData[$k]);
+				}
+				$nk++;
 			}
 		}
+		
+		$newData = array_values($newData);
 		
 		return json_encode($newData,JSON_UNESCAPED_UNICODE);
 		
