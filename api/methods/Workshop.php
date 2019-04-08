@@ -62,7 +62,7 @@ class Workshop {
 		");
 		
 		$workshops = $updWorkshops->fetch();
-		var_dump($workshops);
+		//var_dump($workshops);
 		if($workshops){
 			return $workshops;
 		}else{
