@@ -219,7 +219,6 @@ div#workshopInfo {
     border: 1px solid #cdcdcd;
     margin-top: 5px;
     border-radius: 4px;
-    position: relative;
     background-color: #ffffff;
 }
 
@@ -394,6 +393,6 @@ div#workshopInfo {
 
 .center {
   position: absolute;
-  top: 20px;
-  right: 23px;
+  top: 86px;
+  right: 130px;
 }
