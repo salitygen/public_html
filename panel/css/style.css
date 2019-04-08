@@ -279,6 +279,8 @@ div#workshopInfo {
     margin-bottom: 15px;
     position: relative;
     padding-top: 2px;
+    border-bottom: 1px solid #cecece;
+    padding-bottom: 16px;
 }
 
 .workshopPhones label, .workshopMails label,.workshopAddres label {
@@ -298,8 +300,6 @@ div#workshopInfo {
 .workshopPhones .phoneDiv, .workshopMails .mailDiv,.workshopAddres .addresDiv {
     float: left;
     width: 100%;
-    border-bottom: 1px solid  #cecece;
-    padding-bottom: 16px;
 }
 
 .workshopPhones .phoneDiv label, .workshopAddres .addresDiv label,.workshopMails .mailDiv label {
@@ -391,7 +391,7 @@ div#workshopInfo {
   transform: translateX(22px);
   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
   box-shadow: -1px 1px 0px #1d880f;
-} 
+}
 
 #cbx:checked + .toggle span:before {
   transform: scale(1);
