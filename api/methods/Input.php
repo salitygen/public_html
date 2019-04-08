@@ -115,9 +115,9 @@ class Input {
 		}
 		
 		if($data->workshop_status !== 'on'){
-			$data->workshop_status = 1;
-		}else{
 			$data->workshop_status = 0;
+		}else{
+			$data->workshop_status = 1;
 		}
 
 		$data->companyId = (int)$data->companyId;
