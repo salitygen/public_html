@@ -21,8 +21,9 @@ if($task == 'logout'){
 if($task == 'updatecompany'){
 
 	if(Rules::settingsWorkshop($main)){
+		$data = (object)$_POST;
 		//if(Workshop::update($main,$data)){
-			var_dump($_POST);//return true;
+			var_dump($data);//return true;
 		//}
 	}else{
 		//return false;
