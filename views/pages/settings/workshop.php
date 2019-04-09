@@ -86,6 +86,6 @@ $ws = Workshop::get(1);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="companyId" value="<?php print 1; //$main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
+		<button class="save" name="workshop_id" value="<?php print 1; //$main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
