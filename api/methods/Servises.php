@@ -51,7 +51,7 @@ class Service {
 			service_phone_json='{$data->phones}',
 			service_mail_json='{$data->mails}',
 			service_note='{$data->service_note}'
-			WHERE service_id={$data->companyId}
+			WHERE service_id={$data->serviceId}
 		");
 
 		if($updservice){

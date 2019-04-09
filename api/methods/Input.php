@@ -124,9 +124,9 @@ class Input {
 			$data->service_status = 0;
 		}
 
-		$data->companyId = (int)$data->companyId;
-		if($data->companyId <= 0){
-			$data->companyId = 0;
+		$data->serviceId = (int)$data->serviceId;
+		if($data->serviceId <= 0){
+			$data->serviceId = 0;
 		}
 		
 		return $data;
