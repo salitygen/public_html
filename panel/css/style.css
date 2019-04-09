@@ -396,19 +396,19 @@ div#workshopInfo {
   pointer-events: none;
 }
 
-[id^="cbx"]:checked + .toggle:before {
+[id^="cbx-"]:checked + .toggle:before {
   background: #81bd79;
   border-top: 1px solid #126b07;
   border-right: 1px solid #126b07;
 }
 
-[id^="cbx"]:checked + .toggle span {
+[id^="cbx-"]:checked + .toggle span {
   transform: translateX(22px);
   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
   box-shadow: -1px 1px 0px #1d880f;
 }
 
-[id^="cbx"]:checked + .toggle span:before {
+[id^="cbx-"]:checked + .toggle span:before {
   transform: scale(1);
   opacity: 0;
   transition: all 0.4s ease;
