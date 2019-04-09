@@ -5,32 +5,32 @@ class General {
 	
 	public function get($id){
 		
-/* 		$db = dataBase::pdo();
-		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_id={$id}");
-		$workshop = $getWorkshop->fetch();
+		$db = dataBase::pdo();
+		$getgeneral = $db->query("SELECT * FROM crm_generals WHERE general_id={$id}");
+		$general = $getgeneral->fetch();
 		
-		if($workshop){
-			$workshop->mails = json_decode($workshop->workshop_mail_json);
-			$workshop->phones = json_decode($workshop->workshop_phone_json);
-			$workshop->addres = json_decode($workshop->workshop_addres_json);
-			return $workshop;
+		if($general){
+			$general->mails = json_decode($general->general_mail_json);
+			$general->phones = json_decode($general->general_phone_json);
+			$general->addres = json_decode($general->general_addres_json);
+			return $general;
 		}else{
 			return false;
-		} */
+		}
 		
 	}
 	
 	public function getAll(){
 		
-/* 		$db = dataBase::pdo();
-		$getWorkshops = $db->query("SELECT * FROM crm_workshops");
-		$workshops = $getWorkshops->fetch();
+		$db = dataBase::pdo();
+		$getgenerals = $db->query("SELECT * FROM crm_generals");
+		$generals = $getgenerals->fetch();
 		
-		if($workshops){
-			return $workshops;
+		if($generals){
+			return $generals;
 		}else{
 			return false;
-		} */
+		}
 		
 	}
 	
@@ -40,25 +40,25 @@ class General {
 	
 	public function update($data){
 		
-/* 		$data = Input::company($data);
+		$data = Input::general($data);
 		$db = dataBase::pdo();
 
-		$updWorkshop = $db->exec("
-			UPDATE crm_workshops SET
-			workshop_name='{$data->workshop_name}',
-			workshop_status={$data->workshop_status},
-			workshop_addres_json='{$data->addres}',
-			workshop_phone_json='{$data->phones}',
-			workshop_mail_json='{$data->mails}',
-			workshop_note='{$data->workshop_note}'
-			WHERE workshop_id={$data->companyId}
+		$updgeneral = $db->exec("
+			UPDATE crm_generals SET
+			general_name='{$data->general_name}',
+			general_status={$data->general_status},
+			general_addres_json='{$data->addres}',
+			general_phone_json='{$data->phones}',
+			general_mail_json='{$data->mails}',
+			general_note='{$data->general_note}'
+			WHERE general_id={$data->companyId}
 		");
 
-		if($updWorkshop){
-			return $updWorkshop;
+		if($updgeneral){
+			return $updgeneral;
 		}else{
 			return false;
-		} */
+		}
 	
 	}
 	
