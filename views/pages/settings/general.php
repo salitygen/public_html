@@ -86,6 +86,6 @@ $ws = General::get();
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="serviceId" value="<?php print $main->session->group_general_id; ?>" type="submit">Сохранить</button>
+		<button class="save" type="submit">Сохранить</button>
 	</form>
 </div>
