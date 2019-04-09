@@ -86,6 +86,6 @@ $ws = Service::get($main->session->group_service_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="serviceId" value="<?php print $main->session->group_service_id; ?>" type="submit">Сохранить</button>
+		<button class="save" name="service_id" value="<?php print $main->session->group_service_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
