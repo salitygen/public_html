@@ -18,6 +18,15 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
+if($task == 'updateworkshop'){
+	if(Rules::settingsWorkshop($main)){
+		$data = (object)$_POST;
+		if(Workshop::update($data)){
+			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+		}
+	}
+}
+
 if($task == 'updateservice'){
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
