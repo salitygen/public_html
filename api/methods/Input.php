@@ -185,6 +185,15 @@ class Input {
 	
 	public function workshop($data){
 		
+		if(isset($data->workshop_id)){
+			$data->workshop_id = (int)$data->workshop_id;
+			if($data->workshop_id <= 0){
+				$data->workshop_id = 0;
+			}
+		}else{
+			$data->workshop_id = 0;
+		}
+		
 		if(isset($data->phones)){
 			$data->phones = Input::validArray($data->phones);
 		}else{
@@ -227,11 +236,6 @@ class Input {
 			}
 		}else{
 			$data->workshop_status = 0;
-		}
-
-		$data->companyId = (int)$data->companyId;
-		if($data->companyId <= 0){
-			$data->companyId = 0;
 		}
 		
 		return $data;

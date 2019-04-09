@@ -52,7 +52,7 @@ class Workshop {
 			workshop_mail_json='{$data->mails}',
 			workshop_service_id='{$data->service_id}',
 			workshop_note='{$data->workshop_note}'
-			WHERE workshop_id=1
+			WHERE workshop_id={$data->workshop_id}
 		");
 
 		if($updWorkshop){
