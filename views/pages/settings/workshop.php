@@ -21,6 +21,10 @@ $rules = 1; // прописано жестко
 <?php endif;?>
 </div>
 <?php endif;?>
+
+<?php if($mess = SystemMessage::get($main)) print $mess; ?>
+
+<?php if($rules) : ?>
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
 		<div id="workshopInfo">
@@ -102,9 +106,6 @@ $rules = 1; // прописано жестко
 		</div>
 	<?php endforeach;?>
 </div>
-<?php if($mess = SystemMessage::get($main)) print $mess; ?>
-<?php if($rules) : ?>
-<?php var_dump($ws); ?>
 <?php else:?>
 <div id="workshopInfo">
 	<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
