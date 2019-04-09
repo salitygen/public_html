@@ -5,7 +5,7 @@ Rules::settingsGeneral($main) or die('Access Denied');
 //$ws = Workshop::get(1);
 // TODO
 // $rules - придумать права доступа на просмотр и редактирование всех мастерских
-$ws = Workshop::getAll(1)
+$ws = Workshop::getAll();
 $rules = 1; // прописано жестко
 
 ?>
