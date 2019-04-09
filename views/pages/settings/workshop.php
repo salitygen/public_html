@@ -28,6 +28,13 @@ $rules = 1; // прописано жестко
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
 		<div id="workshopInfo">
+			<div class="companyStatus">
+			<?php if($value->workshop_status):?>
+				<p>Работает</p>
+			<?php else:?>
+				<p class="off">Не работает</p>
+			<?php endif;?>
+			</div>
 			<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
 				<div class="center">
 				  <input type="checkbox" name="workshop_status" id="cbx" style="display:none" <?php if($value->workshop_status) print 'checked="true"'; ?> >
