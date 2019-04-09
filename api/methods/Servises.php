@@ -40,7 +40,7 @@ class Service {
 	
 	public function update($data){
 		
-		$data = Input::company($data);
+		$data = Input::service($data);
 		$db = dataBase::pdo();
 
 		$updservice = $db->exec("
