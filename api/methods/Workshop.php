@@ -24,7 +24,7 @@ class Workshop {
 		
 		$db = dataBase::pdo();
 		$getWorkshops = $db->query("SELECT * FROM crm_workshops");
-		$workshops = $getWorkshops->fetchAll(PDO::FETCH_CLASS);
+		$workshops = $getWorkshops->fetchAll();
 		
 		if($workshops){
 			return $workshops;
@@ -38,7 +38,7 @@ class Workshop {
 		
 		$db = dataBase::pdo();
 		$getWorkshops = $db->query("SELECT * FROM crm_workshops WHERE workshop_service_id={$id}");
-		$workshops = $getWorkshops->fetchAll(PDO::FETCH_CLASS);
+		$workshops = $getWorkshops->fetchAll();
 		
 		if($workshops){
 			return $workshops;
