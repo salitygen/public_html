@@ -1,7 +1,13 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-$ws = Workshop::get(1);
+// для конкретной мастерской придумать прикомандированный ID пока прописано жетко!
+//$ws = Workshop::get(1);
+// TODO
+// $rules - придумать права доступа на просмотр и редактирование всех мастерских
+
+$rules = 1;
+
 ?>
 <p>Информация о сторонней мастерской</p>
 <div class="companyStatus">
@@ -12,6 +18,9 @@ $ws = Workshop::get(1);
 <?php endif;?>
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
+<?php if($rules) : ?>
+
+<?php else:?>
 <div id="workshopInfo">
 	<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
 		<div class="center">
@@ -89,3 +98,4 @@ $ws = Workshop::get(1);
 		<button class="save" name="workshop_id" value="<?php print 1; //$main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
+<?php endif;?>
