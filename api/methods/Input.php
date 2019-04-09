@@ -188,10 +188,19 @@ class Input {
 		if(isset($data->workshop_id)){
 			$data->workshop_id = (int)$data->workshop_id;
 			if($data->workshop_id <= 0){
-				$data->workshop_id = 0;
+				$data->workshop_id = 1;
 			}
 		}else{
-			$data->workshop_id = 0;
+			$data->workshop_id = 1;
+		}
+		
+		if(isset($data->service_id)){
+			$data->service_id = (int$data->service_id;
+			if($data->service_id <= 0){
+				$data->service_id = 1;
+			}
+		}else{
+			$data->workshop_id = 1;
 		}
 		
 		if(isset($data->phones)){
