@@ -5,28 +5,28 @@ $ws = Service::get($main->session->group_service_id);
 ?>
 <p>Информация о вашей компании</p>
 <div class="companyStatus">
-<?php if($ws->workshop_status):?>
+<?php if($ws->service_status):?>
 	<p>Работает</p>
 <?php else:?>
 	<p class="off">Не работает</p>
 <?php endif;?>
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
-<div id="workshopInfo">
+<div id="serviceInfo">
 	<form action="/?view=settings&params=general&task=updatecompany" method="POST">
 		<div class="center">
-		  <input type="checkbox" name="workshop_status" id="cbx" style="display:none" <?php if($ws->workshop_status) print 'checked="true"'; ?> >
+		  <input type="checkbox" name="service_status" id="cbx" style="display:none" <?php if($ws->service_status) print 'checked="true"'; ?> >
 		  <label for="cbx" class="toggle"><span></span></label>    
 		</div>
-		<div class="workshopName">
+		<div class="serviceName">
 			<label>Название</label>
-			<input type="text" required="required" name="workshop_name" value="<?php if($ws->workshop_name != '') print $ws->workshop_name; ?>">
+			<input type="text" required="required" name="service_name" value="<?php if($ws->service_name != '') print $ws->service_name; ?>">
 		</div>
-		<div class="workshopNote">
+		<div class="serviceNote">
 			<label>Дополнительная информация</label>
-			<textarea name="workshop_note" ><?php if($ws->workshop_note != '') print $ws->workshop_note; ?></textarea>
+			<textarea name="service_note" ><?php if($ws->service_note != '') print $ws->service_note; ?></textarea>
 		</div>
-		<div class="workshopPhones">
+		<div class="servicePhones">
 			<label>Номера телефонов</label>
 			<?php if($ws->phones) : ?>
 			<?php foreach($ws->phones as $k => $phone):?>
@@ -46,7 +46,7 @@ $ws = Service::get($main->session->group_service_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<div class="workshopMails">
+		<div class="serviceMails">
 			<label>Электронная почта</label>
 			<?php if($ws->mails) : ?>
 			<?php foreach($ws->mails as $k => $mail):?>
@@ -66,7 +66,7 @@ $ws = Service::get($main->session->group_service_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<div class="workshopAddres">
+		<div class="serviceAddres">
 			<label>Адреса компании</label>
 			<?php if($ws->addres) : ?>
 			<?php foreach($ws->addres as $k => $adres):?>
@@ -86,6 +86,6 @@ $ws = Service::get($main->session->group_service_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="companyId" value="<?php print $main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
+		<button class="save" name="companyId" value="<?php print $main->session->user_services_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
