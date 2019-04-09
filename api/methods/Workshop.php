@@ -27,6 +27,11 @@ class Workshop {
 		$workshops = $getWorkshops->fetchAll();
 		
 		if($workshops){
+			foreach($workshops as $k => $workshop){
+				$workshops[$k]->mails = json_decode($workshop->workshop_mail_json);
+				$workshops[$k]->phones = json_decode($workshop->workshop_phone_json);
+				$workshops[$k]->addres = json_decode($workshop->workshop_addres_json);
+			}
 			return $workshops;
 		}else{
 			return false;
@@ -41,6 +46,11 @@ class Workshop {
 		$workshops = $getWorkshops->fetchAll();
 		
 		if($workshops){
+			foreach($workshops as $k => $workshop){
+				$workshops[$k]->mails = json_decode($workshop->workshop_mail_json);
+				$workshops[$k]->phones = json_decode($workshop->workshop_phone_json);
+				$workshops[$k]->addres = json_decode($workshop->workshop_addres_json);
+			}
 			return $workshops;
 		}else{
 			return false;
