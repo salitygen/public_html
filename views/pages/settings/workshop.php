@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-$ws = Workshop::get($main->session->user_workshops_id);
+$ws = Workshop::get(1);
 ?>
 <p>Информация о вашей компании</p>
 <div class="companyStatus">
@@ -86,6 +86,6 @@ $ws = Workshop::get($main->session->user_workshops_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="companyId" value="<?php print $main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
+		<button class="save" name="companyId" value="<?php print 1; //$main->session->user_workshops_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
