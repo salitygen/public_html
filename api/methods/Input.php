@@ -78,6 +78,56 @@ class Input {
 		}
 	}
 	
+	public function general($data){
+		
+		if(isset($data->phones)){
+			$data->phones = Input::validArray($data->phones);
+		}else{
+			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
+		}
+		
+		if(isset($data->mails)){
+			$data->mails = Input::validArray($data->mails);
+		}else{
+			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
+		}
+		
+		if(isset($data->addres)){
+			$data->addres = Input::validArray($data->addres);
+		}else{
+			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
+		}
+		
+		if(isset($data->general_name)){
+			if(!$data->general_name = Input::getSanitise($data->general_name)){
+				$data->general_name = '';
+			}
+		}else{
+			$data->general_name = '';
+		}
+		
+		if(isset($data->general_note)){
+			if(!$data->general_note = Input::getSanitise($data->general_note)){
+				$data->general_note = '';
+			}
+		}else{
+			$data->general_note = '';
+		}
+		
+		if(isset($data->general_status)){
+			if($data->general_status === 'on'){
+				$data->general_status = 1;
+			}else{
+				$data->general_status = 0;
+			}
+		}else{
+			$data->general_status = 0;
+		}
+		
+		return $data;
+		
+	}
+	
 	public function service($data){
 		
 		if(isset($data->phones)){
