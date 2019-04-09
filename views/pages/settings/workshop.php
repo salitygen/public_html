@@ -13,7 +13,7 @@ $ws = Workshop::get(1);
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div id="workshopInfo">
-	<form action="/?view=settings&params=general&task=updateworkshop" method="POST">
+	<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
 		<div class="center">
 		  <input type="checkbox" name="workshop_status" id="cbx" style="display:none" <?php if($ws->workshop_status) print 'checked="true"'; ?> >
 		  <label for="cbx" class="toggle"><span></span></label>    
