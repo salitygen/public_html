@@ -37,8 +37,8 @@ $rules = 1; // прописано жестко
 			</div>
 			<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
 				<div class="center">
-				  <input type="checkbox" name="workshop_status" id="cbx<?php print $value->workshop_id; ?>" style="display:none" <?php if($value->workshop_status) print 'checked="true"'; ?> >
-				  <label for="cbx<?php print $value->workshop_id; ?>" class="toggle"><span></span></label>   
+				  <input type="checkbox" name="workshop_status" id="cbx-<?php print $value->workshop_id; ?>" style="display:none" <?php if($value->workshop_status) print 'checked="true"'; ?> >
+				  <label for="cbx-<?php print $value->workshop_id; ?>" class="toggle"><span></span></label>   
 				</div>
 				<div class="workshopName">
 					<label>Название</label>
