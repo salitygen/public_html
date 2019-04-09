@@ -8,4 +8,5 @@ include $main->root.'/api/methods/Workshop.php';
 include $main->root.'/api/methods/Login.php';
 include $main->root.'/api/methods/Rules.php';
 include $main->root.'/api/methods/SystemMessage.php';
+include $main->root.'/api/methods/ServiseCenter.php';
 ?>
