@@ -5,10 +5,13 @@ Rules::settingsGeneral($main) or die('Access Denied');
 //$ws = Workshop::get(1);
 // TODO
 // $rules - придумать права доступа на просмотр и редактирование всех мастерских
-
+$ws = Workshop::getAll(1)
 $rules = 1; // прописано жестко
 
 ?>
+<?php if($rules) : ?>
+<p>Список мастерских</p>
+<?php else:?>
 <p>Информация о сторонней мастерской</p>
 <div class="companyStatus">
 <?php if($ws->workshop_status):?>
@@ -17,6 +20,8 @@ $rules = 1; // прописано жестко
 	<p class="off">Не работает</p>
 <?php endif;?>
 </div>
+<?php endif;?>
+
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <?php if($rules) : ?>
 
