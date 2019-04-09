@@ -9,5 +9,5 @@ include $main->root.'/api/methods/Login.php';
 include $main->root.'/api/methods/Rules.php';
 include $main->root.'/api/methods/General.php';
 include $main->root.'/api/methods/SystemMessage.php';
-include $main->root.'/api/methods/ServiseCenter.php';
+include $main->root.'/api/methods/Servises.php';
 ?>
