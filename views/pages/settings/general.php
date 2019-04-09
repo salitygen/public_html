@@ -1,11 +1,11 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-$ws = Service::get($main->session->group_service_id);
+$ws = Service::get($main->session->group_general_id);
 ?>
 <p>Информация о сервисном центре</p>
 <div class="companyStatus">
-<?php if($ws->service_status):?>
+<?php if($ws->general_status):?>
 	<p>Работает</p>
 <?php else:?>
 	<p class="off">Не работает</p>
@@ -13,18 +13,18 @@ $ws = Service::get($main->session->group_service_id);
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div id="workshopInfo">
-	<form action="/?view=settings&params=general&task=updateservice" method="POST">
+	<form action="/?view=settings&params=general&task=updategeneral" method="POST">
 		<div class="center">
-		  <input type="checkbox" name="service_status" id="cbx" style="display:none" <?php if($ws->service_status) print 'checked="true"'; ?> >
+		  <input type="checkbox" name="general_status" id="cbx" style="display:none" <?php if($ws->general_status) print 'checked="true"'; ?> >
 		  <label for="cbx" class="toggle"><span></span></label>    
 		</div>
 		<div class="workshopName">
 			<label>Название</label>
-			<input type="text" required="required" name="service_name" value="<?php if($ws->service_name != '') print $ws->service_name; ?>">
+			<input type="text" required="required" name="general_name" value="<?php if($ws->general_name != '') print $ws->general_name; ?>">
 		</div>
 		<div class="workshopNote">
 			<label>Дополнительная информация</label>
-			<textarea name="service_note" ><?php if($ws->service_note != '') print $ws->service_note; ?></textarea>
+			<textarea name="general_note" ><?php if($ws->general_note != '') print $ws->general_note; ?></textarea>
 		</div>
 		<div class="workshopPhones">
 			<label>Номера телефонов</label>
@@ -86,6 +86,6 @@ $ws = Service::get($main->session->group_service_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="serviceId" value="<?php print $main->session->group_service_id; ?>" type="submit">Сохранить</button>
+		<button class="save" name="serviceId" value="<?php print $main->session->group_general_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
