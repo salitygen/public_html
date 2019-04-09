@@ -91,8 +91,8 @@ div#workshopList div#workshopInfo {
 }
 
 div#workshopList div#workshopInfo .center {
-    right: 125px;
-    top: 22px;
+    left: 570px;
+    top: 56px;
 }
 .menu ul li {
     float: left;
@@ -435,4 +435,8 @@ button.save {
 
 button.save:hover {
     background-color: #236499;
+}
+div#workshopList div#workshopInfo .companyStatus p {
+    left: 628px;
+    top: 53px;
 }
