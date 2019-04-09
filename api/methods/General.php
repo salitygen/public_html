@@ -20,7 +20,7 @@ class General {
 		
 	}
 	
-	public function getAll(){
+/* 	public function getAll(){ // TODO
 		
 		$db = dataBase::pdo();
 		$getgenerals = $db->query("SELECT * FROM crm_generals");
@@ -32,11 +32,11 @@ class General {
 			return false;
 		}
 		
-	}
+	} */
 	
-	public function add($data){
-
-	}
+	//public function add($data){ // TODO
+	//
+	//}
 	
 	public function update($data){
 		
@@ -62,13 +62,9 @@ class General {
 	
 	}
 	
-	public function block($id){
-
-	}
-	
-	public function remove($id){
-
-	}
+	//public function remove($id){ // TODO
+	//
+	//}
 	
 }
 ?>
