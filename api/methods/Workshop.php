@@ -34,6 +34,20 @@ class Workshop {
 		
 	}
 	
+	public function getAllByServiceId($id){
+		
+		$db = dataBase::pdo();
+		$getWorkshops = $db->query("SELECT * FROM crm_workshops WHERE workshop_service_id={$id}");
+		$workshops = $getWorkshops->fetchAll();
+		
+		if($workshops){
+			return $workshops;
+		}else{
+			return false;
+		}
+		
+	}
+	
 	public function add($data){
 
 	}
