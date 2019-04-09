@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
-$ws = Service::get($main->session->group_general_id);
+$ws = General::get();
 ?>
 <p>Информация о сервисном центре</p>
 <div class="companyStatus">
