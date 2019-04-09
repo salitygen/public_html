@@ -432,7 +432,28 @@ button.save {
     width: 150px;
     color: #fff;
 }
+div#workshopList div#workshopInfo.hide {
+    height: 25px;
+}
+div#workshopList div#workshopInfo.hide .companyStatus p {
+    right: 120px;
+    top: 20px;
+    left: unset;
+}
+div#workshopList div#workshopInfo.hide  .center {
+    left: unset;
+    top: 24px;
+    right: 250px;
+}
+div#workshopList div#workshopInfo.hide .workshopName label {
+    display: none;
+}
 
+div#workshopList div#workshopInfo.hide .workshopName input {
+    border: none;
+    margin: 0;
+    margin-top: -4px;
+}
 button.save:hover {
     background-color: #236499;
 }
