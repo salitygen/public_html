@@ -35,7 +35,7 @@ defined('EXEC') or die;
 			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Компания</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsWorkshop($main)) : ?>
-			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Сервис-центры</a></li>
+			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=services">Сервис-центры</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsWorkshop($main)) : ?>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
