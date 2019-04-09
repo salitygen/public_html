@@ -40,7 +40,7 @@ class Workshop {
 	
 	public function update($data){
 		
-		$data = Input::company($data);
+		$data = Input::workshop($data);
 		$db = dataBase::pdo();
 
 		$updWorkshop = $db->exec("
