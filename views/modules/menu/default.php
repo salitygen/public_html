@@ -32,7 +32,7 @@ defined('EXEC') or die;
 	<?php if($main->view == 'settings' && Rules::seeSettings($main)) : ?>
 		<ul class="level2">
 			<?php if(Rules::settingsGeneral($main)) : ?>
-			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Сервисный центр</a></li>
+			<li><a <?php if($main->params == 'general') print 'class="active"';?> href="/?view=settings&params=general">Сервис-центр</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsWorkshop($main)) : ?>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
