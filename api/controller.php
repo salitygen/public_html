@@ -18,7 +18,7 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
-if($task == 'updatecompany'){
+if($task == 'updateservice'){
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
 		if(Workshop::update($data)){
