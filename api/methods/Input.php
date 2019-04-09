@@ -145,7 +145,7 @@ class Input {
 				$data->service_id = 1;
 			}
 		}else{
-			$data->general_id = 1;
+			$data->service_id = 1;
 		}
 		
 		if(isset($data->phones)){
@@ -213,7 +213,7 @@ class Input {
 				$data->service_id = 1;
 			}
 		}else{
-			$data->workshop_id = 1;
+			$data->service_id = 1;
 		}
 		
 		if(isset($data->phones)){
