@@ -78,7 +78,62 @@ class Input {
 		}
 	}
 	
-	public function company($data){
+	public function service($data){
+		
+		if(isset($data->phones)){
+			$data->phones = Input::validArray($data->phones);
+		}else{
+			$data->phones = json_encode(array(array('value'=>'','note'=>'')));
+		}
+		
+		if(isset($data->mails)){
+			$data->mails = Input::validArray($data->mails);
+		}else{
+			$data->mails = json_encode(array(array('value'=>'','note'=>'')));
+		}
+		
+		if(isset($data->addres)){
+			$data->addres = Input::validArray($data->addres);
+		}else{
+			$data->addres = json_encode(array(array('value'=>'','note'=>'')));
+		}
+		
+		if(isset($data->service_name)){
+			if(!$data->service_name = Input::getSanitise($data->service_name)){
+				$data->service_name = '';
+			}
+		}else{
+			$data->service_name = '';
+		}
+		
+		if(isset($data->service_note)){
+			if(!$data->service_note = Input::getSanitise($data->service_note)){
+				$data->service_note = '';
+			}
+		}else{
+			$data->service_note = '';
+		}
+		
+		if(isset($data->service_status)){
+			if($data->service_status === 'on'){
+				$data->service_status = 1;
+			}else{
+				$data->service_status = 0;
+			}
+		}else{
+			$data->service_status = 0;
+		}
+
+		$data->companyId = (int)$data->companyId;
+		if($data->companyId <= 0){
+			$data->companyId = 0;
+		}
+		
+		return $data;
+		
+	}
+	
+	public function workshop($data){
 		
 		if(isset($data->phones)){
 			$data->phones = Input::validArray($data->phones);
