@@ -50,6 +50,7 @@ class Workshop {
 			workshop_addres_json='{$data->addres}',
 			workshop_phone_json='{$data->phones}',
 			workshop_mail_json='{$data->mails}',
+			workshop_service_id='{$data->service_id}',
 			workshop_note='{$data->workshop_note}'
 			WHERE workshop_id={$data->companyId}
 		");
