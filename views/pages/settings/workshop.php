@@ -24,7 +24,7 @@ $rules = 1; // прописано жестко
 
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <?php if($rules) : ?>
-
+<?php var_dump($ws); ?>
 <?php else:?>
 <div id="workshopInfo">
 	<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
