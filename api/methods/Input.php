@@ -130,6 +130,24 @@ class Input {
 	
 	public function service($data){
 		
+		if(isset($data->general_id)){
+			$data->general_id = (int)$data->general_id;
+			if($data->general_id <= 0){
+				$data->general_id = 1;
+			}
+		}else{
+			$data->general_id = 1;
+		}
+		
+		if(isset($data->service_id)){
+			$data->service_id = (int)$data->service_id;
+			if($data->service_id <= 0){
+				$data->service_id = 1;
+			}
+		}else{
+			$data->general_id = 1;
+		}
+		
 		if(isset($data->phones)){
 			$data->phones = Input::validArray($data->phones);
 		}else{
@@ -172,11 +190,6 @@ class Input {
 			}
 		}else{
 			$data->service_status = 0;
-		}
-
-		$data->serviceId = (int)$data->serviceId;
-		if($data->serviceId <= 0){
-			$data->serviceId = 0;
 		}
 		
 		return $data;
