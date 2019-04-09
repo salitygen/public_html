@@ -6,7 +6,7 @@ class General {
 	public function get($id){
 		
 		$db = dataBase::pdo();
-		$getgeneral = $db->query("SELECT * FROM crm_generals WHERE general_id={$id}");
+		$getgeneral = $db->query("SELECT * FROM crm_generals WHERE general_id=1");
 		$general = $getgeneral->fetch();
 		
 		if($general){
@@ -51,7 +51,7 @@ class General {
 			general_phone_json='{$data->phones}',
 			general_mail_json='{$data->mails}',
 			general_note='{$data->general_note}'
-			WHERE general_id={$data->companyId}
+			WHERE general_id=1
 		");
 
 		if($updgeneral){
