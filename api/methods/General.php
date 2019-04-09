@@ -3,7 +3,7 @@ defined('EXEC') or die;
 
 class General {
 	
-	public function get($id){
+	public function get(){
 		
 		$db = dataBase::pdo();
 		$getgeneral = $db->query("SELECT * FROM crm_generals WHERE general_id=1");
