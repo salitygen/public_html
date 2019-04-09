@@ -50,7 +50,7 @@ defined('EXEC') or die;
 			<li><a <?php if($main->params == 'notification') print 'class="active"';?> href="/?view=settings&params=notification">Оповещения</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsListServices($main)) : ?>
-			<li><a <?php if($main->params == 'services') print 'class="active"';?> href="/?view=settings&params=services">Перечень услуг</a></li>
+			<li><a <?php if($main->params == 'pricelist') print 'class="active"';?> href="/?view=settings&params=pricelist">Перечень услуг</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsHandbook($main)) : ?>
 			<li><a <?php if($main->params == 'handbook') print 'class="active"';?> href="/?view=settings&params=handbook">Справочники</a></li>
