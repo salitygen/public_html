@@ -3,7 +3,7 @@ defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
 $ws = Workshop::get(1);
 ?>
-<p>Информация о вашей компании</p>
+<p>Информация о сторонней мастерской</p>
 <div class="companyStatus">
 <?php if($ws->workshop_status):?>
 	<p>Работает</p>
