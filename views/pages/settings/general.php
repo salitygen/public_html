@@ -20,11 +20,11 @@ $ws = Service::get($main->session->group_service_id);
 		</div>
 		<div class="workshopName">
 			<label>Название</label>
-			<input type="text" required="required" name="workshop_name" value="<?php if($ws->service_name != '') print $ws->service_name; ?>">
+			<input type="text" required="required" name="service_name" value="<?php if($ws->service_name != '') print $ws->service_name; ?>">
 		</div>
 		<div class="workshopNote">
 			<label>Дополнительная информация</label>
-			<textarea name="workshop_note" ><?php if($ws->service_note != '') print $ws->service_note; ?></textarea>
+			<textarea name="service_note" ><?php if($ws->service_note != '') print $ws->service_note; ?></textarea>
 		</div>
 		<div class="workshopPhones">
 			<label>Номера телефонов</label>
@@ -86,6 +86,6 @@ $ws = Service::get($main->session->group_service_id);
 			</div>
 			<?php endif;?>
 		</div>
-		<button class="save" name="companyId" value="<?php print $main->session->group_service_id; ?>" type="submit">Сохранить</button>
+		<button class="save" name="serviceId" value="<?php print $main->session->group_service_id; ?>" type="submit">Сохранить</button>
 	</form>
 </div>
