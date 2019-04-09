@@ -24,7 +24,7 @@ class Workshop {
 		
 		$db = dataBase::pdo();
 		$getWorkshops = $db->query("SELECT * FROM crm_workshops");
-		$workshops = $getWorkshops->fetch();
+		$workshops = $getWorkshops->fetchAll();
 		
 		if($workshops){
 			return $workshops;
