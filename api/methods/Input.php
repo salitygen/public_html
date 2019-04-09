@@ -195,7 +195,7 @@ class Input {
 		}
 		
 		if(isset($data->service_id)){
-			$data->service_id = (int$data->service_id;
+			$data->service_id = (int)$data->service_id;
 			if($data->service_id <= 0){
 				$data->service_id = 1;
 			}
