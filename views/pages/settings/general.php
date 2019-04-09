@@ -3,7 +3,7 @@ defined('EXEC') or die;
 Rules::settingsGeneral($main) or die('Access Denied');
 $ws = General::get();
 ?>
-<p>Информация о сервисном центре</p>
+<p>Информация о компании</p>
 <div class="companyStatus">
 <?php if($ws->general_status):?>
 	<p>Работает</p>
