@@ -10,10 +10,10 @@ include $main->root.'/views/controller.php';
 	</head>
 	<body <?php if($main->view == 'settings') print 'class="level2"'; ?>>
 		<div id="leftPanel">
-		<?php print Render::view($main,'modules','menu',false);?>
+		<?php print Render::view($main,'module','menu',false);?>
 		</div>
 		<div id="dashBoard">
-			<?php print Render::view($main,'pages',false,true); ?>
+			<?php print Render::view($main,'page',false,true); ?>
 		</div>
 	</body>
 </html>
