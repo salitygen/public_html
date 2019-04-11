@@ -13,25 +13,19 @@ if($view){
 class Render {
 	
 	public function view($main){
-		//var_dump($main);
+
 		if(!$main->params){
 			$view = $main->root.'/views/pages/'.$main->view.'/default.php';
-			if(!is_file($view)){
-				return 'view page not exists';
-			}else{
-				ob_start();
-				include($view);
-				return ob_get_clean();
-			}
 		}else{
 			$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
-			if(!is_file($view)){
-				return 'view page not exists';
-			}else{
-				ob_start();
-				include($view);
-				return ob_get_clean();
-			}
+		}
+		
+		if(!is_file($view)){
+			return 'view page not exists';
+		}else{
+			ob_start();
+			include($view);
+			return ob_get_clean();
 		}
 	}
 	
