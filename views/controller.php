@@ -14,11 +14,11 @@ class Render {
 	
 	public function view($main){
 
-		if(!$main->params){
+		//if(!$main->params){
 			$view = $main->root.'/views/pages/'.$main->view.'/default.php';
-		}else{
-			$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
-		}
+		//}else{
+		//	$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
+		//}
 		
 		if(!is_file($view)){
 			return 'view page not exists';
