@@ -13,6 +13,8 @@ class Render {
 	
 	public function view($main, $type, $module, $params){
 		
+		$error = $main->root.'/views/pages/error.php';
+		
 		if($type == 'page'){
 			if($params){
 				$view = $main->root.'/views/pages/'.$main->view.'/default.php';
@@ -28,7 +30,9 @@ class Render {
 		}
 		
 		if(!is_file($view)){
-			return 'view page not exists';
+			ob_start();
+			include($error);
+			return ob_get_clean();
 		}else{
 			ob_start();
 			include($view);
