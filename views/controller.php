@@ -14,15 +14,10 @@ class Render {
 	public function view($main,$type,$module,$params){
 		
 		if($type == 'pages'){
-			if(!$main->params){
-				if($params){
-					$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
-				}else{
-					$view = $main->root.'/views/'.$type.'/'.$main->view.'/index.php';
-				}
+			if($params){
+				$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
 			}else{
 				$view = $main->root.'/views/'.$type.'/'.$main->view.'/'.$main->params.'.php';
-				$main->params = false;
 			}
 		}else if($type == 'modules'){
 			$view = $main->root.'/views/'.$type.'/'.$module.'/default.php';
