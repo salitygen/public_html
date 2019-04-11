@@ -2,7 +2,7 @@
 defined('EXEC') or die;
 ?>
 <div class="menu">
-	<?php print Render::view($main,'user',true);?>
+	<?php print Render::view($main,'modules','user',true);?>
 	<ul>
 		<?php if(Rules::showCompanyPerformance($main)) : ?>
 		<li><a class="icon-gauge <?php if($main->view == 'dashboard') print 'active';?>" href="/?view=dashboard">Показатели</a></li>
