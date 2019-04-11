@@ -14,6 +14,7 @@ class Render {
 	public function view($main, $type, $module, $params){
 		
 		$error = $main->root.'/views/pages/error.php';
+		$view = $error;
 		
 		if($type == 'page'){
 			if($params){
