@@ -13,7 +13,7 @@ include $main->root.'/views/controller.php';
 		<?php print Render::view($main,'modules','menu',false);?>
 		</div>
 		<div id="dashBoard">
-			<?php print Render::view($main,'pages',false,true); ?>
+			<?php print Render::view($main,'pages',false,false); ?>
 		</div>
 	</body>
 </html>
