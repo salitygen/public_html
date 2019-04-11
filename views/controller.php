@@ -13,6 +13,7 @@ if($view){
 class Render {
 	
 	public function view($main,$module,$params){
+		
 		if(!$module){
 			if(!$main->params){
 				$view = $main->root.'/views/pages/'.$main->view.'/default.php';
