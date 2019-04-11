@@ -11,20 +11,20 @@ if($view){
 
 class Render {
 	
-	public function view($main,$type,$module,$params){
+	public function view($main, $type, $module, $params){
 		
-		if($type == 'pages'){
+		if($type == 'page'){
 			if($params){
-				$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
+				$view = $main->root.'/views/pages/'.$main->view.'/default.php';
 			}else{
 				if($main->params){
-					$view = $main->root.'/views/'.$type.'/'.$main->view.'/'.$main->params.'.php';
+					$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
 				}else{
-					$view = $main->root.'/views/'.$type.'/'.$main->view.'/index.php';
+					$view = $main->root.'/views/pages/'.$main->view.'/index.php';
 				}
 			}
-		}else if($type == 'modules'){
-			$view = $main->root.'/views/'.$type.'/'.$module.'/default.php';
+		}else if($type == 'module'){
+			$view = $main->root.'/views/modules/'.$module.'/default.php';
 		}
 		
 		if(!is_file($view)){
