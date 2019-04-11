@@ -13,6 +13,7 @@ if($view){
 class Render {
 	
 	public function page($main){
+		var_dump($main);
 		$view = $main->root.'/views/pages/'.$main->view.'/default.php';
 		if(!is_file($view)){
 			return 'view page not exists';
