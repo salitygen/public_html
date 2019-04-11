@@ -11,17 +11,17 @@ if($view){
 
 class Render {
 	
-	public function view($main,$module,$params){
+	public function view($main,$type,$module,$params){
 		
-		if(!$module){
+		if($type == 'pages'){
 			if(!$main->params){
-				$view = $main->root.'/views/pages/'.$main->view.'/default.php';
+				$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
 			}else{
-				$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
+				$view = $main->root.'/views/'.$type.'/'.$main->view.'/'.$main->params.'.php';
 				$main->params = false;
 			}
-		}else{
-			$view = $main->root.'/views/modules/'.$module.'/default.php';
+		}else if($type == 'modules'){
+			$view = $main->root.'/views/'.$type.'/'.$module.'/default.php';
 		}
 		
 		if(!is_file($view)){
