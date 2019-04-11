@@ -8,7 +8,7 @@ if($view){
 }else{
 	header("location: /?view=dashboard");
 }
-
+ 
 class Render {
 	
 	public function view($main, $type, $module, $params){
