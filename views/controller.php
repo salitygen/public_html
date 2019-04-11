@@ -15,7 +15,11 @@ class Render {
 		
 		if($type == 'pages'){
 			if(!$main->params){
-				$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
+				if($params){
+					$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
+				}else{
+					//$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
+				}
 			}else{
 				$view = $main->root.'/views/'.$type.'/'.$main->view.'/'.$main->params.'.php';
 				$main->params = false;
