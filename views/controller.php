@@ -22,7 +22,6 @@ class Render {
 			}
 		}else{
 			$view = $main->root.'/views/modules/'.$module.'/default.php';
-			$module = false;
 		}
 		
 		if(!is_file($view)){
