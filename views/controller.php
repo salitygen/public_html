@@ -18,7 +18,7 @@ class Render {
 				if($params){
 					$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php';
 				}else{
-					$view = $main->root.'/views/'.$type.'/'.$main->view.'/default.php0';
+					$view = $main->root.'/views/'.$type.'/'.$main->view.'/'.$main->params.'.php';
 				}
 			}else{
 				$view = $main->root.'/views/'.$type.'/'.$main->view.'/'.$main->params.'.php';
