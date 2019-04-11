@@ -18,6 +18,7 @@ class Render {
 			$view = $main->root.'/views/pages/'.$main->view.'/default.php';
 		}else{
 			$view = $main->root.'/views/pages/'.$main->view.'/'.$main->params.'.php';
+			$main->params = false;
 		}
 		
 		if(!is_file($view)){
