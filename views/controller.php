@@ -5,7 +5,6 @@ if($view){
 	$main->view = $view;
 	$main->params = $params;
 	$main->task = $task;
-	$page = Render::view($main,false,false);
 }else{
 	header("location: /?view=dashboard");
 }
