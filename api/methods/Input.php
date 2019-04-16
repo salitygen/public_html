@@ -29,8 +29,8 @@ class Input {
 		}
 		$text = (string)$text;
 		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r","*", "%", "<", ">", "?", "!","/",".");
-		$goodquotes = array('-', '+', '#','"');
-		$repquotes = array("\-", "\+", "\#","&quot;");
+		$repquotes = array('-', '+', '#','"');
+		$goodquotes = array("\-", "\+", "\#","&quot;");
 		$text = htmlspecialchars($text);
 		$text = stripslashes($text);
 		$text = trim(strip_tags($text));
