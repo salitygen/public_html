@@ -286,6 +286,7 @@ class Input {
 		$newData = array();
 		
 		if(is_array($data)){
+			
 			$data = array_values($data);
 			for($k=0;$k<count($data);$k++){
 				$n = 0;
