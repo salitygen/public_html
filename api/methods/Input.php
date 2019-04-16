@@ -4,6 +4,7 @@ defined('EXEC') or die;
 class Input {
 
 	public function sanitise($text){
+		$text = (string)$text;
 		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r");
 		$goodquotes = array('-', '+', '#','"',"*", "%", "<", ">", "?", "!");
 		$repquotes = array("\-", "\+", "\#","&quot;","\*","\%","\<","\>","\?","\!");
@@ -20,12 +21,10 @@ class Input {
 	}
 	
 	public function getSanitise($text){
+		$text = (string)$text;
 		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r","*", "%", "<", ">", "?", "!","/",".");
 		$goodquotes = array('-', '+', '#','"');
 		$repquotes = array("\-", "\+", "\#","&quot;");
-		if(is_array($text)){
-			$text = 'Array';
-		}
 		$text = (string)$text;
 		$text = htmlspecialchars($text);
 		$text = stripslashes($text);
