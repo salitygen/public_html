@@ -7,7 +7,7 @@ class User {
 		
 		if(isset($data['login']) && isset($data['password'])){
 			
-			if(strlen((string)$data['login']) > 50 || strlen((string)$data['password']) > 50){
+			if(mb_strlen((string)$data['login']) > 50 || mb_strlen((string)$data['password']) > 50){
 				return false;
 			}
 			

@@ -39,7 +39,7 @@ class Input {
 	
 	public function task(){
 		if(isset($_GET['task'])){
-			if(strlen((string)$_GET['task']) <= 50){
+			if(mb_strlen((string)$_GET['task']) <= 50 && (string)$_GET['task']){
 				$task = Input::getSanitise($_GET['task']);
 				return $task;
 			}else{
@@ -52,7 +52,7 @@ class Input {
 	
 	public function view(){
 		if(isset($_GET['view'])){
-			if(strlen((string)$_GET['view']) <= 50 && (string)$_GET['view'] != ''){
+			if(mb_strlen((string)$_GET['view']) <= 50 && (string)$_GET['view'] != ''){
 				$view = Input::getSanitise($_GET['view']);
 				return $view;
 			}else{
@@ -65,7 +65,7 @@ class Input {
 	
 	public function getParams(){
 		if(isset($_GET['params'])){
-			if(strlen((string)$_GET['params']) <= 50 && (string)$_GET['params'] != ''){
+			if(mb_strlen((string)$_GET['params']) <= 50 && (string)$_GET['params'] != ''){
 				$params = Input::getSanitise($_GET['params']);
 				return $params;
 			}else{
