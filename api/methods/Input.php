@@ -288,6 +288,7 @@ class Input {
 		if(is_array($data)){
 			
 			$data = array_values($data);
+			
 			for($k=0;$k<count($data);$k++){
 				$n = 0;
 				foreach($data[$k] as $i => $value){
@@ -312,7 +313,9 @@ class Input {
 			return json_encode($newData,JSON_UNESCAPED_UNICODE);
 			
 		}else{
+			
 			return json_encode(array(array('value'=>'','note'=>'')));
+			
 		}
 
 		
