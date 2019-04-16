@@ -4,6 +4,9 @@ defined('EXEC') or die;
 class Input {
 
 	public function sanitise($text){
+		if(is_array($text){
+			$text = 'Array';
+		}
 		$text = (string)$text;
 		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r");
 		$goodquotes = array('-', '+', '#','"',"*", "%", "<", ">", "?", "!");
@@ -21,6 +24,9 @@ class Input {
 	}
 	
 	public function getSanitise($text){
+		if(is_array($text){
+			$text = 'Array';
+		}
 		$text = (string)$text;
 		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r","*", "%", "<", ">", "?", "!","/",".");
 		$goodquotes = array('-', '+', '#','"');
@@ -39,9 +45,13 @@ class Input {
 	
 	public function task(){
 		if(isset($_GET['task'])){
-			if(mb_strlen((string)$_GET['task']) <= 50 && (string)$_GET['task']){
-				$task = Input::getSanitise($_GET['task']);
-				return $task;
+			if(!is_array($_GET['task']){
+				if(mb_strlen((string)$_GET['task']) <= 50 && (string)$_GET['task']){
+					$task = Input::getSanitise($_GET['task']);
+					return $task;
+				}else{
+					return false;
+				}
 			}else{
 				return false;
 			}
@@ -52,9 +62,13 @@ class Input {
 	
 	public function view(){
 		if(isset($_GET['view'])){
-			if(mb_strlen((string)$_GET['view']) <= 50 && (string)$_GET['view'] != ''){
-				$view = Input::getSanitise($_GET['view']);
-				return $view;
+			if(!is_array($_GET['view']){
+				if(mb_strlen((string)$_GET['view']) <= 50 && (string)$_GET['view'] != ''){
+					$view = Input::getSanitise($_GET['view']);
+					return $view;
+				}else{
+					return false;
+				}
 			}else{
 				return false;
 			}
@@ -65,9 +79,13 @@ class Input {
 	
 	public function getParams(){
 		if(isset($_GET['params'])){
-			if(mb_strlen((string)$_GET['params']) <= 50 && (string)$_GET['params'] != ''){
-				$params = Input::getSanitise($_GET['params']);
-				return $params;
+			if(!is_array($_GET['params']){
+				if(mb_strlen((string)$_GET['params']) <= 50 && (string)$_GET['params'] != ''){
+					$params = Input::getSanitise($_GET['params']);
+					return $params;
+				}else{
+					return false;
+				}
 			}else{
 				return false;
 			}
