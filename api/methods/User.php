@@ -17,8 +17,8 @@ class User {
 			
 			$db = dataBase::pdo();
 			
-			$login = Input::sanitise($data['login']);
-			$pass = md5(Input::sanitise($data['password']));
+			$login = Input::postSanitise($data['login']);
+			$pass = md5(Input::postSanitise($data['password']));
 			$searchUser = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
 			$user = $searchUser->fetch();
 

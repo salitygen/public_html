@@ -3,7 +3,7 @@ defined('EXEC') or die;
 
 class Input {
 
-	public function sanitise($text){
+	public function postSanitise($text){
 		if(is_array($text)){
 			$text = 'Array';
 		}
@@ -115,7 +115,7 @@ class Input {
 		}
 		
 		if(isset($data->general_name)){
-			if(!$data->general_name = Input::getSanitise($data->general_name)){
+			if(!$data->general_name = Input::postSanitise($data->general_name)){
 				$data->general_name = '';
 			}
 		}else{
@@ -123,7 +123,7 @@ class Input {
 		}
 		
 		if(isset($data->general_note)){
-			if(!$data->general_note = Input::getSanitise($data->general_note)){
+			if(!$data->general_note = Input::postSanitise($data->general_note)){
 				$data->general_note = '';
 			}
 		}else{
@@ -183,7 +183,7 @@ class Input {
 		}
 		
 		if(isset($data->service_name)){
-			if(!$data->service_name = Input::getSanitise($data->service_name)){
+			if(!$data->service_name = Input::postSanitise($data->service_name)){
 				$data->service_name = '';
 			}
 		}else{
@@ -191,7 +191,7 @@ class Input {
 		}
 		
 		if(isset($data->service_note)){
-			if(!$data->service_note = Input::getSanitise($data->service_note)){
+			if(!$data->service_note = Input::postSanitise($data->service_note)){
 				$data->service_note = '';
 			}
 		}else{
@@ -251,7 +251,7 @@ class Input {
 		}
 		
 		if(isset($data->workshop_name)){
-			if(!$data->workshop_name = Input::getSanitise($data->workshop_name)){
+			if(!$data->workshop_name = Input::postSanitise($data->workshop_name)){
 				$data->workshop_name = '';
 			}
 		}else{
@@ -259,7 +259,7 @@ class Input {
 		}
 		
 		if(isset($data->workshop_note)){
-			if(!$data->workshop_note = Input::getSanitise($data->workshop_note)){
+			if(!$data->workshop_note = Input::postSanitise($data->workshop_note)){
 				$data->workshop_note = '';
 			}
 		}else{
@@ -293,10 +293,10 @@ class Input {
 				$n = 0;
 				foreach($data[$k] as $i => $value){
 					if($i === 'value'){
-						$newData[$k]['value'] = Input::getSanitise($value);
+						$newData[$k]['value'] = Input::postSanitise($value);
 						$n++;
 					}elseif($i === 'note'){
-						$newData[$k]['note'] = Input::getSanitise($value);
+						$newData[$k]['note'] = Input::postSanitise($value);
 						$n++;
 					}
 				}
