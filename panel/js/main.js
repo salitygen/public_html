@@ -1,24 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
 	
-	document.addEventListener('click',function(){
-		var block = this.getElementById('workshopInfo');
-		addClass(block,'hide');
+	document.querySelector('#workshopInfo').addEventListener('click', function(){
+		addClass(this,'hide');
 	});
 
 	function addClass(e,add){
 
-		//ADD CLASS HIDE on CLICK
-		if(e.className !== ''){
+		//ADD CLASS on CLICK
+		if(e.className != ''){
 			var arrClass = e.className.split(" ");
-			arrClass.forEach(function(cls){
-				if(add !== cls){
+			arrClass.forEach(function(cls,i){
+				if(add != cls){
 					e.className += " " +add;
+					alert(cls);
 				}
 			});
 		}else{
-			e.className += " " +add;
+			e.className += add;
 		}
 	}
+	
+});
 	
 	
 });
