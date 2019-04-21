@@ -1,26 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
 	
-/* 	//ADD CLASS HIDE on CLICK
-	var addClass = 'hide';
-	var findClass = document.getElementById("workshopInfo").className
-	if(findClass !== ''){
-		var arrClass = findClass.split(" ");
-		arrClass.forEach(function(cls){
-			if(addClass !== cls){
-				document.getElementById("workshopInfo").className += " " +addClass;
-			}
-		});
-	}else{
-		document.getElementById("workshopInfo").className += " " +addClass;
-	} */
-	
-	
-	var block = document.getElementById('workshopInfo');
-
-	block.addEventListener('click', function() {
-		this.className += "123";
+	document.addEventListener('click',function(){
+		var block = this.getElementById('workshopInfo');
+		addClass(block,'hide');
 	});
-	
+
+	function addClass(e,add){
+
+		//ADD CLASS HIDE on CLICK
+		if(e.className !== ''){
+			var arrClass = e.className.split(" ");
+			arrClass.forEach(function(cls){
+				if(add !== cls){
+					e.className += " " +add;
+				}
+			});
+		}else{
+			e.className += " " +add;
+		}
+	}
 	
 	
 });
