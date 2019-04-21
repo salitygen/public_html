@@ -8,7 +8,7 @@ class Input {
 			$text = 'Array';
 		}
 		$text = (string)$text;
-		$quotes = array("\x27", "\x22", "\x60", "\t", "\n", "\r");
+		$quotes = array("\x27", "\x22", "\x60", "\t");
 		$repquotes = array('-', '+', '#','"',"*", "%", "<", ">");
 		$goodquotes = array("\-", "\+", "\#","&quot;","\*","\%","\<","\>");
 		$text = htmlspecialchars($text);
