@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
 	
-	var item = document.querySelectorAll('#workshopInfo'),index;
+	addClassById('workshopInfo','click','hide');
 	
-	addClassById(item,'click','hide');
-	
+	//================================
+	//================================
 	//ADD CLASS on CLICK, HOVER.......
 	function addClassById(elem,type,adClass){
 
+		var item = document.querySelectorAll("#"+elem),index;
+	
 		for(index = 0; index < item.length; index++){
 			item[index].addEventListener(type, function () {
 				addClass(this,adClass);
