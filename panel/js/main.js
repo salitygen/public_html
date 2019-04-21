@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			arrClass.forEach(function(cls,i){
 				if(add != cls){
 					e.className += " " +add;
-					alert(cls);
 				}
 			});
 		}else{
