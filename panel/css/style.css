@@ -210,6 +210,7 @@ h1 {
     text-decoration: none;
     font-family: sans-serif;
     font-size: 14px;
+    outline: none;
 }
 
 p.username {
