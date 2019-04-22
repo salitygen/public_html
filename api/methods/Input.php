@@ -11,7 +11,7 @@ class Input {
 		$quotes = array("\x27", "\x22", "\x60", "\t");
 		//$repquotes = array('"',"<", ">","`","'");
 		//$goodquotes = array("&quot;","\<","\>","&#039","&#39");
-		$text = htmlspecialchars($text,ENT_HTML5);
+		//$text = htmlspecialchars($text,ENT_HTML5);
 		//$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
 		//$text = str_replace($repquotes,$goodquotes,$text);
