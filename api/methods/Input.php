@@ -292,7 +292,6 @@ class Input {
 				if(isset($data[$k])){
 					if(is_array($data[$k])){	
 						for($i=0;$i<count($data[$k]);$i++){
-							print array_keys($data[$k])[$i];
 							if(array_keys($data[$k])[$i] == 'value'){
 								$newData[$k]['value'] = Input::postSanitise($data[$k]['value']);
 								$n++;
