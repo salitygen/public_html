@@ -27,7 +27,7 @@ $rules = 1; // прописано жестко
 <?php if($rules) : ?>
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
-		<div id="workshopInfo">
+		<div class="workshopInfo">
 			<div class="companyStatus">
 			<?php if($value->workshop_status):?>
 				<p>Работает</p>
