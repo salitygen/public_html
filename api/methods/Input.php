@@ -7,6 +7,9 @@ class Input {
 		if(is_array($text)){
 			$text = 'Array';
 		}
+		if(is_object($text)){
+			$text = 'Object';
+		}
 		$text = (string)$text;
 		$quotes = array("\x27","\x22","\t");
 		$text = htmlspecialchars($text,ENT_QUOTES);
@@ -288,21 +291,25 @@ class Input {
 			
 			for($k=0;$k<count($data);$k++){
 				$n = 0;
-				foreach($data[$k] as $i => $value){
-					if($i === 'value'){
-						$newData[$k]['value'] = Input::postSanitise($value);
-						$n++;
-					}elseif($i === 'note'){
-						$newData[$k]['note'] = Input::postSanitise($value);
-						$n++;
+				if(!is_object($data[$k])){
+					foreach($data[$k] as $i => $value){
+						if($i === 'value'){
+							$newData[$k]['value'] = Input::postSanitise($value);
+							$n++;
+						}elseif($i === 'note'){
+							$newData[$k]['note'] = Input::postSanitise($value);
+							$n++;
+						}
 					}
-				}
-				if($n != 2){
+					if($n != 2){
+						$newData[$k] = array('value'=>'','note'=>'');
+						if($nk > 0){
+							unset($newData[$k]);
+						}
+						$nk++;
+					}
+				}else{
 					$newData[$k] = array('value'=>'','note'=>'');
-					if($nk > 0){
-						unset($newData[$k]);
-					}
-					$nk++;
 				}
 			}
 			
