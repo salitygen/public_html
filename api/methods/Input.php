@@ -12,7 +12,7 @@ class Input {
 		//$repquotes = array('"',"<", ">","`","'");
 		//$goodquotes = array("&quot;","\<","\>","&#039","&#39");
 		$text = htmlspecialchars($text,ENT_HTML5);
-		$text = trim(strip_tags($text));
+		//$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
 		//$text = str_replace($repquotes,$goodquotes,$text);
 		//$text = addslashes($text);
