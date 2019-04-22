@@ -57,10 +57,10 @@ body {
     padding: 0;
     float: left;
     list-style-type: none;
-    border-bottom: 1px solid #4a4a4a;
+    border-bottom: 1px solid #3b4148;
     width: 180px;
     overflow: hidden;
-    margin-top: 240px;
+    margin-top: 241px;
 }
 .menu ul a.active {
     background-color: #222426;
@@ -75,8 +75,8 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-family: sans-serif;
-    border-bottom: 1px solid #161719;
-    border-top: 1px solid #4a4a4a;
+    border-bottom: 1px solid #222529;
+    border-top: 1px solid #3b4148;
     padding: 10px 5px;
 }
 div#workshopList {
@@ -112,7 +112,7 @@ div#workshopList .slideBlock .center {
     height: 100%;
     background-color: #222426;
     width: 180px;
-    border-left: 1px solid #636363;
+    border-left: 1px solid #3b4148;
     margin: 0;
 }
 
@@ -134,8 +134,8 @@ div#dashBoard {
     width: calc(100% - 220px);
 }
 .menu ul.level2 a.active {
-    background-color: #4b4b4b;
-    border-color: #4b4b4b;
+    background-color: #3b4148;
+    border-color: #3b4148;
     color: #d4d4d4;
 }
 .level2 .menu ul {
@@ -159,10 +159,11 @@ h1 {
     position: absolute;
     overflow: hidden;
     top: 0;
+    border-bottom: 1px solid #222529;
 }
 
 .user .statusbar {
-    background-color: #626262;
+    background-color: #434d58;
     color: #fff;
     width: 140px;
     height: 17px;
@@ -177,7 +178,7 @@ h1 {
 .user .avatar {
     width: 90px;
     height: 90px;
-    border: 2px solid #8b8b8b;
+    border: 2px solid #424a54;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
@@ -201,7 +202,7 @@ h1 {
     width: 120px;
     margin: 0 30px;
     text-align: center;
-    border-top: 1px solid #4a4a4a;
+    border-top: 1px solid #3b4148;
     padding-top: 12px;
 }
 
