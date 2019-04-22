@@ -1,4 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(function(){
+	$('#workshopInfo').click(function(e){
+		e.addClass('hide');
+	});
+});
+/* document.addEventListener('DOMContentLoaded', function() {
 	
 	addClassById('workshopInfo','click','hide');
 	
@@ -31,4 +36,4 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 	}
 	
-});
+}); */
