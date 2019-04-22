@@ -1,6 +1,6 @@
 $(function(){
 	$('#workshopInfo').click(function(){
-		this.addClass('hide');
+		$(this).addClass('hide');
 	});
 });
 /* document.addEventListener('DOMContentLoaded', function() {
