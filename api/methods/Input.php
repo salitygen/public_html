@@ -297,7 +297,7 @@ class Input {
 								$newData[$k]['value'] = Input::postSanitise($data[$k]['value']);
 								$n++;
 							}elseif(array_keys($data[$k])[$i] == 'note'){
-								$newData[$k]['note'] = Input::postSanitise($data[$k]['value']);
+								$newData[$k]['note'] = Input::postSanitise($data[$k]['note']);
 								$n++;
 							}
 						}
