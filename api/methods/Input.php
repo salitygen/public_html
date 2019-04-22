@@ -16,7 +16,7 @@ class Input {
 		$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
 		$text = str_replace($repquotes,$goodquotes,$text);
-		$text = addslashes($text);
+		//$text = addslashes($text);
 		if($text != ''){
 			return $text;
 		}else{
