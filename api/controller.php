@@ -31,7 +31,7 @@ if($task == 'updateworkshop'){
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
 		if(Workshop::update($data)){
-			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+			//SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 		}
 	}
 }
