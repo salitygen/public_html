@@ -282,8 +282,6 @@ class Input {
 	
 	public function validArray($data){
 		
-		var_dump($data);
-		
 		$nk = 0;
 		$newData = array();
 		
