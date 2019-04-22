@@ -286,19 +286,21 @@ class Input {
 		$newData = array();
 		
 		if(is_array($data)){
-			
 			$data = array_values($data);
-			
 			for($k=0;$k<count($data);$k++){
 				$n = 0;
 				if(!is_object($data[$k])){
-					foreach($data[$k] as $i => $value){
-						if($i === 'value'){
-							$newData[$k]['value'] = Input::postSanitise($value);
-							$n++;
-						}elseif($i === 'note'){
-							$newData[$k]['note'] = Input::postSanitise($value);
-							$n++;
+					for($i=0;$i<count($data[$k]);$i++)){
+						if(isset($data[$k][$i])){
+							if(key($data[$k][$i]) == 'value'){
+								$newData[$k]['value'] = Input::postSanitise($data[$k][$i]);
+								$n++;
+							}
+						}elseif(isset($data[$k][$i])){
+							if(key($data[$k][$i]) == 'note'){
+								$newData[$k]['note'] = Input::postSanitise($data[$k][$i]);
+								$n++;
+							}
 						}
 					}
 					if($n != 2){
