@@ -43,7 +43,7 @@ class General {
 		$data = Input::general($data);
 		$db = dataBase::pdo();
 
-		$updgeneral = "
+		$updgeneral = $db->exec("
 			UPDATE crm_generals SET
 			general_name='{$data->general_name}',
 			general_status={$data->general_status},
@@ -52,9 +52,7 @@ class General {
 			general_mail_json='{$data->mails}',
 			general_note='{$data->general_note}'
 			WHERE general_id=1
-		";
-		
-		var_dump($updgeneral);
+		");
 
 		if($updgeneral){
 			return $updgeneral;
