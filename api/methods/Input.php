@@ -293,10 +293,10 @@ class Input {
 					if(is_array($data[$k])){
 						for($i=0;$i<count($data[$k]);$i++){
 							if(array_keys($data[$k])[$i] !== null){
-								if(array_keys($data[$k])[$i] == 'value'){
+								if(array_keys($data[$k])[$i] === 'value'){
 									$newData[$k]['value'] = Input::postSanitise($data[$k]['value']);
 									$n++;
-								}elseif(array_keys($data[$k])[$i] == 'note'){
+								}elseif(array_keys($data[$k])[$i] === 'note'){
 									$newData[$k]['note'] = Input::postSanitise($data[$k]['note']);
 									$n++;
 								}
