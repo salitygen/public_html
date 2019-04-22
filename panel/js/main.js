@@ -1,5 +1,5 @@
 $(function(){
-	$('#workshopInfo').click(function(){
+	$('.slideBlock').click(function(){
 		$(this).toggleClass('hide');
 	});
 });
