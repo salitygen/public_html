@@ -9,12 +9,12 @@ class Input {
 		}
 		$text = (string)$text;
 		$quotes = array("\x27", "\x22", "\x60", "\t");
-		$repquotes = array('"',"<", ">","`","'");
-		$goodquotes = array("&quot;","\<","\>","&#39","&#39");
+		//$repquotes = array('"',"<", ">","`","'");
+		//$goodquotes = array("&quot;","\<","\>","&#039","&#39");
 		$text = htmlspecialchars($text);
 		$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
-		$text = str_replace($repquotes,$goodquotes,$text);
+		//$text = str_replace($repquotes,$goodquotes,$text);
 		$text = addslashes($text);
 		if($text != ''){
 			return $text;
