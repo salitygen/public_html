@@ -8,14 +8,11 @@ class Input {
 			$text = 'Array';
 		}
 		$text = (string)$text;
-		$quotes = array("\x27", "\x22", "\x60", "\t");
-		//$repquotes = array('"',"<", ">","`","'");
-		//$goodquotes = array("&quot;","\<","\>","&#039","&#39");
-		//$text = htmlspecialchars($text,ENT_QUOTES);
-		//$text = trim(strip_tags($text));
+		$quotes = array("\x27", "\x22","\x60", "\t");
+		$text = htmlspecialchars($text,ENT_QUOTES);
+		$text = trim(strip_tags($text));
 		$text = str_replace($quotes,'',$text);
-		//$text = str_replace($repquotes,$goodquotes,$text);
-		//$text = addslashes($text);
+		$text = addslashes($text);
 		if($text != ''){
 			return $text;
 		}else{
