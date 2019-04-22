@@ -12,7 +12,7 @@ $ws = General::get();
 <?php endif;?>
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
-<div id="workshopInfo">
+<div id="slideBlock">
 	<form action="/?view=settings&params=general&task=updategeneral" method="POST">
 		<div class="center">
 		  <input type="checkbox" name="general_status" id="cbx" style="display:none" <?php if($ws->general_status) print 'checked="true"'; ?> >
