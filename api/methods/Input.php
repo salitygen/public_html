@@ -312,10 +312,16 @@ class Input {
 							$nk++;
 						}
 					}else{
-						$newData[$k] = array('value'=>'','note'=>'');
+						if($n == 0){
+							$newData[$k] = array('value'=>'','note'=>'');
+							$nk++;
+						}
 					}
 				}else{
-					$newData[$k] = array('value'=>'','note'=>'');
+					if($n == 0){
+						$newData[$k] = array('value'=>'','note'=>'');
+						$nk++;
+					}
 				}
 			}
 			
