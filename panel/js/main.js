@@ -18,7 +18,7 @@ $(function(){
 	});
 	
 	$('.workshopPhones .controls button.icon-plus').click(function(){
-		var workPhones = $(this).parent().parent();
+		var workPhones = $(this).parent().parent().parent();
 		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
 		var inputs = '<hr>';
 			inputs +='<div class="phoneDiv">';
@@ -26,10 +26,10 @@ $(function(){
 			inputs +='<input type="text" name="phones['+index+'][value]" value="">';
 			inputs +='<label>Комментарий</label>';
 			inputs +='<input type="text" name="phones['+index+'][note]" value="">';
-			inputs +='</div>';
 			inputs +='<div class="controls">';
 			inputs +='<button class="icon-plus"></button>';
 			inputs +='<button class="icon-cancel"></button>';
+			inputs +='</div>';
 			inputs +='</div>';
 		workPhones.append(inputs); 
 		return false;
