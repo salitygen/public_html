@@ -60,6 +60,10 @@ $rules = 1; // прописано жестко
 						<label>Комментарий</label>
 						<input type="text" name="phones[<?php print $k; ?>][note]" value="<?php print $phone->note; ?>">
 					</div>
+					<div class="controls">
+						<button class="icon-plus"></button>
+						<button class="icon-cancel"></button>
+					</div>
 					<?php endforeach;?>
 					<?php else:?>
 					<div class="phoneDiv">
@@ -68,11 +72,10 @@ $rules = 1; // прописано жестко
 						<label>Комментарий</label>
 						<input type="text" name="phones[0][note]" value="" placeholder="">
 					</div>
-					<?php endif;?>
 					<div class="controls">
 						<button class="icon-plus"></button>
-						<button class="icon-cancel"></button>
 					</div>
+					<?php endif;?>
 				</div>
 				<div class="workshopMails">
 					<label>Электронная почта</label>
@@ -84,6 +87,10 @@ $rules = 1; // прописано жестко
 						<label>Комментарий</label>
 						<input type="text" name="mails[<?php print $k; ?>][note]" value="<?php print $mail->note; ?>">
 					</div>
+					<div class="controls">
+						<button class="icon-plus"></button>
+						<button class="icon-cancel"></button>
+					</div>
 					<?php endforeach;?>
 					<?php else:?>
 					<div class="mailDiv">
@@ -92,11 +99,10 @@ $rules = 1; // прописано жестко
 						<label>Комментарий</label>
 						<input type="text" name="mails[0][note]" value="" placeholder="">
 					</div>
-					<?php endif;?>
 					<div class="controls">
 						<button class="icon-plus"></button>
-						<button class="icon-cancel"></button>
 					</div>
+					<?php endif;?>
 				</div>
 				<div class="workshopAddres">
 					<label>Адреса компании</label>
@@ -108,6 +114,10 @@ $rules = 1; // прописано жестко
 						<label>Комментарий</label>
 						<input type="text" name="addres[<?php print $k; ?>][note]" value="<?php print $adres->note; ?>">
 					</div>
+					<div class="controls">
+						<button class="icon-plus"></button>
+						<button class="icon-cancel"></button>
+					</div>
 					<?php endforeach;?>
 					<?php else:?>
 					<div class="addresDiv">
@@ -116,11 +126,10 @@ $rules = 1; // прописано жестко
 						<label>Комментарий</label>
 						<input type="text" name="addres[0][note]" value="" placeholder="">
 					</div>
-					<?php endif;?>
 					<div class="controls">
 						<button class="icon-plus"></button>
-						<button class="icon-cancel"></button>
 					</div>
+					<?php endif;?>
 				</div>
 				<button class="save icon-floppy" name="workshop_id" value="<?php print $value->workshop_id; ?>" type="submit">Сохранить</button>
 			</form>
