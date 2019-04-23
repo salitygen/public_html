@@ -5,12 +5,12 @@ $(function(){
 	});
 	
 	$('p.succes i.close').click(function(){
-		$(this).parent().slideUp('slow', function(){
+		$(this).parent().fadeOut('slow', function(){
 			$(this).remove();
 		});
 	});
 	
-	$('p.succes').delay(5000).slideUp('slow', function(){
+	$('p.succes').delay(5000).fadeOut('slow', function(){
 		$(this).remove();
 	});
 	
