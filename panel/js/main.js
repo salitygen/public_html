@@ -1,7 +1,7 @@
 $(function(){
 	
 	$('.slideBlock').click(function(){
-		$(this).toggleClass('hide');
+		//$(this).toggleClass('hide');
 	});
 	
 	$('p.succes i.close').click(function(){
