@@ -92,8 +92,9 @@ div#workshopList .slideBlock {
 }
 
 div#workshopList .slideBlock .center {
-    left: 570px;
-    top: 56px;
+    left: unset;
+    top: 24px;
+    right: 250px;
 }
 .menu ul li {
     float: left;
@@ -253,12 +254,12 @@ p.username {
 
 .workshopName label {
     float: left;
-    width: 100%;
+    margin: 4px 10px 0px 0px;
 }
 
 .workshopName input {
     font-size: 22px;
-    margin-top: 10px;
+    margin-top: -4px;
     float: left;
     width: 358px;
     padding: 4px;
@@ -461,8 +462,9 @@ button.save:hover {
     background-color: #236499;
 }
 div#workshopList .slideBlock .companyStatus p {
-    left: 628px;
-    top: 53px;
+    right: 120px;
+    top: 20px;
+    left: unset;
 }
 p.succes i.close {
     position: absolute;
