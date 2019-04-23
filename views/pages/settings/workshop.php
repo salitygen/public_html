@@ -69,6 +69,10 @@ $rules = 1; // прописано жестко
 						<input type="text" name="phones[0][note]" value="" placeholder="">
 					</div>
 					<?php endif;?>
+					<div class="controls">
+						<button class="icon-plus"></button>
+						<button class="icon-cancel"></button>
+					</div>
 				</div>
 				<div class="workshopMails">
 					<label>Электронная почта</label>
@@ -79,10 +83,6 @@ $rules = 1; // прописано жестко
 						<input type="text" name="mails[<?php print $k; ?>][value]" value="<?php print $mail->value; ?>">
 						<label>Комментарий</label>
 						<input type="text" name="mails[<?php print $k; ?>][note]" value="<?php print $mail->note; ?>">
-						<div class="controls">
-							<button class="icon-plus"></button>
-							<button class="icon-cancel"></button>
-						</div>
 					</div>
 					<?php endforeach;?>
 					<?php else:?>
@@ -93,6 +93,10 @@ $rules = 1; // прописано жестко
 						<input type="text" name="mails[0][note]" value="" placeholder="">
 					</div>
 					<?php endif;?>
+					<div class="controls">
+						<button class="icon-plus"></button>
+						<button class="icon-cancel"></button>
+					</div>
 				</div>
 				<div class="workshopAddres">
 					<label>Адреса компании</label>
@@ -113,6 +117,10 @@ $rules = 1; // прописано жестко
 						<input type="text" name="addres[0][note]" value="" placeholder="">
 					</div>
 					<?php endif;?>
+					<div class="controls">
+						<button class="icon-plus"></button>
+						<button class="icon-cancel"></button>
+					</div>
 				</div>
 				<button class="save icon-floppy" name="workshop_id" value="<?php print $value->workshop_id; ?>" type="submit">Сохранить</button>
 			</form>
