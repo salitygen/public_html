@@ -62,7 +62,9 @@ $rules = 1; // прописано жестко
 					</div>
 					<div class="controls">
 						<button class="icon-plus"></button>
+						<?if($k !== 0):?>
 						<button class="icon-cancel"></button>
+						<?php endif;?>
 					</div>
 					<?php endforeach;?>
 					<?php else:?>
