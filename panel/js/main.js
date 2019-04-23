@@ -2,6 +2,7 @@ $(function(){
 	
 	$('button.openClose').click(function(){
 		$(this).parent().parent().parent().toggleClass('hide');
+		$(this).parent().parent().parent().find('input[name="workshop_name"]').removeAttr('disable');
 		return false;
 	});
 	
