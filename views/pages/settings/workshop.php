@@ -110,7 +110,7 @@ $rules = 1; // прописано жестко
 					</div>
 					<?php endif;?>
 				</div>
-				<button class="save" name="workshop_id" value="<?php print $value->workshop_id; ?>" type="submit">Сохранить</button>
+				<button class="save icon-floppy" name="workshop_id" value="<?php print $value->workshop_id; ?>" type="submit">Сохранить</button>
 			</form>
 		</div>
 	<?php endforeach;?>
