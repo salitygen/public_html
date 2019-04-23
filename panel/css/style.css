@@ -23,7 +23,8 @@ p.succes {
     border: 2px solid #1d880f;
     color: #084700;
     border-radius: 3px;
-    margin: 2px 0 16px 0;
+    margin: 4px 0 12px 0;
+    position: relative;
     float: left;
     width: calc(100% - 27px);
 }
@@ -462,4 +463,11 @@ button.save:hover {
 div#workshopList .slideBlock .companyStatus p {
     left: 628px;
     top: 53px;
+}
+p.succes i.close {
+    position: absolute;
+    right: 8px;
+    font-size: 20px;
+    top: 11px;
+    cursor: pointer;
 }
