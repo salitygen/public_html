@@ -28,17 +28,20 @@ $rules = 1; // прописано жестко
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
 		<div class="slideBlock">
-			<div class="companyStatus">
-			<?php if($value->workshop_status):?>
-				<p>Работает</p>
-			<?php else:?>
-				<p class="off">Не работает</p>
-			<?php endif;?>
-			</div>
 			<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
-				<div class="center">
-				  <input type="checkbox" name="workshop_status" id="cbx<?php print $value->workshop_id; ?>" style="display:none" <?php if($value->workshop_status) print 'checked="true"'; ?> >
-				  <label for="cbx<?php print $value->workshop_id; ?>" class="toggle"><span></span></label>   
+				<div class="panel">
+					<div class="companyStatus">
+					<?php if($value->workshop_status):?>
+						<p>Работает</p>
+					<?php else:?>
+						<p class="off">Не работает</p>
+					<?php endif;?>
+					</div>
+					<div class="center">
+					  <input type="checkbox" name="workshop_status" id="cbx<?php print $value->workshop_id; ?>" style="display:none" <?php if($value->workshop_status) print 'checked="true"'; ?> >
+					  <label for="cbx<?php print $value->workshop_id; ?>" class="toggle"><span></span></label>   
+					</div>
+					<button class="openClose"></button>
 				</div>
 				<div class="workshopName">
 					<label>Название</label>
