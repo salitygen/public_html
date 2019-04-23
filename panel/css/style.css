@@ -92,9 +92,9 @@ div#workshopList .slideBlock {
 }
 
 div#workshopList .slideBlock .center {
+    top: 6px;
+    right: 184px;
     left: unset;
-    top: 24px;
-    right: 250px;
 }
 .menu ul li {
     float: left;
@@ -227,7 +227,7 @@ p.username {
     top: 83px;
     width: 82px;
     background-color: #1d880f;
-    padding: 5px 15px;
+    padding: 4px 15px 5px 15px;
     margin: 0;
     border-radius: 2px;
     text-align: center;
@@ -462,14 +462,36 @@ button.save:hover {
     background-color: #236499;
 }
 div#workshopList .slideBlock .companyStatus p {
-    right: 120px;
-    top: 20px;
-    left: unset;
+    right: 70px;
+    top: 3px;
 }
 p.succes i.close {
     position: absolute;
     right: 8px;
     font-size: 20px;
     top: 11px;
+    cursor: pointer;
+}
+.panel {
+    float: right;
+    width: 280px;
+    position: absolute;
+    top: 18px;
+    height: 31px;
+    right: 20px;
+    border-radius: 2px;
+}
+
+button.openClose {
+    position: absolute;
+    background-color: #edeaea;
+    border: 1px solid #d3d3d3;
+    width: 64px;
+    border-radius: 2px;
+    font-size: 21px;
+    padding: 0 0px 2px 0;
+    color: #6d6e70;
+    right: 0px;
+    top: 3px;
     cursor: pointer;
 }
