@@ -2,7 +2,8 @@ $(function(){
 	
 	$('button.openClose').click(function(){
 		$(this).parent().parent().parent().toggleClass('hide');
-		$(this).parent().parent().parent().find('input[name="workshop_name"]').removeAttr('disabled');
+		var input = $(this).parent().parent().parent().find('input[name="workshop_name"]');
+		input.attr('disabled') ? input.removeAttr('disabled') : input.attr('disabled','disabled');
 		return false;
 	});
 	
