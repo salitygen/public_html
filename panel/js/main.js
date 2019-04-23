@@ -5,7 +5,7 @@ $(function(){
 	});
 	
 	$('p.succes i.close').click(function(){
-		$('p.succes').slideUp('slow', function(){
+		$(this).parent().slideUp('slow', function(){
 			$(this).remove();
 		});
 	});
