@@ -262,7 +262,7 @@ p.username {
     margin-top: -4px;
     float: left;
     width: 358px;
-    padding: 4px;
+    padding: 4px 4px 4px 4px;
     border-radius: 3px;
     border: 1px solid #c4c4c4;
     background-color: #fff;
@@ -448,6 +448,7 @@ div#workshopList .slideBlock.hide .workshopName input {
     border: none;
     margin: 0;
     margin-top: -4px;
+    padding: 5px 4px 4px 5px;
 }
 button.save:hover {
     background-color: #236499;
