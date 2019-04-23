@@ -44,7 +44,7 @@ $rules = 1; // прописано жестко
 					<button class="openClose icon-down-open"></button>
 				</div>
 				<div class="workshopName">
-					<input type="text" required="required" name="workshop_name" value="<?php if($value->workshop_name != '') print $value->workshop_name; ?>">
+					<input type="text" disabled="disabled" required="required" name="workshop_name" value="<?php if($value->workshop_name != '') print $value->workshop_name; ?>">
 				</div>
 				<div class="workshopNote">
 					<label>Дополнительная информация</label>
