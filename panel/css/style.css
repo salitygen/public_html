@@ -439,16 +439,7 @@ button.save {
 div#workshopList .slideBlock.hide {
     height: 25px;
 }
-div#workshopList .slideBlock.hide .companyStatus p {
-    right: 120px;
-    top: 20px;
-    left: unset;
-}
-div#workshopList .slideBlock.hide  .center {
-    left: unset;
-    top: 24px;
-    right: 250px;
-}
+
 div#workshopList .slideBlock.hide .workshopName label {
     display: none;
 }
@@ -493,5 +484,6 @@ button.openClose {
     color: #6d6e70;
     right: 0px;
     top: 3px;
+    outline: none;
     cursor: pointer;
 }
