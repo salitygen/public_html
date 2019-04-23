@@ -60,12 +60,12 @@ $rules = 1; // прописано жестко
 						<input type="text" name="phones[<?php print $k; ?>][value]" value="<?php print $phone->value; ?>">
 						<label>Комментарий</label>
 						<input type="text" name="phones[<?php print $k; ?>][note]" value="<?php print $phone->note; ?>">
-					</div>
-					<div class="controls">
-						<button class="icon-plus"></button>
-						<?if($k !== 0):?>
-						<button class="icon-cancel"></button>
-						<?php endif;?>
+						<div class="controls">
+							<button class="icon-plus"></button>
+							<?if($k !== 0):?>
+							<button class="icon-cancel"></button>
+							<?php endif;?>
+						</div>
 					</div>
 					<?php endforeach;?>
 					<?php else:?>
@@ -74,9 +74,9 @@ $rules = 1; // прописано жестко
 						<input type="text" name="phones[0][value]" value="" placeholder="">
 						<label>Комментарий</label>
 						<input type="text" name="phones[0][note]" value="" placeholder="">
-					</div>
-					<div class="controls">
-						<button class="icon-plus"></button>
+						<div class="controls">
+							<button class="icon-plus"></button>
+						</div>
 					</div>
 					<?php endif;?>
 				</div>
@@ -90,12 +90,12 @@ $rules = 1; // прописано жестко
 						<input type="text" name="mails[<?php print $k; ?>][value]" value="<?php print $mail->value; ?>">
 						<label>Комментарий</label>
 						<input type="text" name="mails[<?php print $k; ?>][note]" value="<?php print $mail->note; ?>">
-					</div>
-					<div class="controls">
-						<button class="icon-plus"></button>
-						<?if($k !== 0):?>
-						<button class="icon-cancel"></button>
-						<?php endif;?>
+						<div class="controls">
+							<button class="icon-plus"></button>
+							<?if($k !== 0):?>
+							<button class="icon-cancel"></button>
+							<?php endif;?>
+						</div>
 					</div>
 					<?php endforeach;?>
 					<?php else:?>
@@ -104,9 +104,9 @@ $rules = 1; // прописано жестко
 						<input type="text" name="mails[0][value]" value="" placeholder="">
 						<label>Комментарий</label>
 						<input type="text" name="mails[0][note]" value="" placeholder="">
-					</div>
-					<div class="controls">
-						<button class="icon-plus"></button>
+						<div class="controls">
+							<button class="icon-plus"></button>
+						</div>
 					</div>
 					<?php endif;?>
 				</div>
@@ -120,12 +120,12 @@ $rules = 1; // прописано жестко
 						<input type="text" name="addres[<?php print $k; ?>][value]" value="<?php print $adres->value; ?>">
 						<label>Комментарий</label>
 						<input type="text" name="addres[<?php print $k; ?>][note]" value="<?php print $adres->note; ?>">
-					</div>
-					<div class="controls">
-						<button class="icon-plus"></button>
-						<?if($k !== 0):?>
-						<button class="icon-cancel"></button>
-						<?php endif;?>
+						<div class="controls">
+							<button class="icon-plus"></button>
+							<?if($k !== 0):?>
+							<button class="icon-cancel"></button>
+							<?php endif;?>
+						</div>
 					</div>
 					<?php endforeach;?>
 					<?php else:?>
@@ -134,9 +134,9 @@ $rules = 1; // прописано жестко
 						<input type="text" name="addres[0][value]" value="" placeholder="">
 						<label>Комментарий</label>
 						<input type="text" name="addres[0][note]" value="" placeholder="">
-					</div>
-					<div class="controls">
-						<button class="icon-plus"></button>
+						<div class="controls">
+							<button class="icon-plus"></button>
+						</div>
 					</div>
 					<?php endif;?>
 				</div>
