@@ -2,6 +2,7 @@ $(function(){
 	
 	$('button.openClose').click(function(){
 		$(this).parent().parent().parent().toggleClass('hide');
+		return false;
 	});
 	
 	$('p.succes i.close').click(function(){
