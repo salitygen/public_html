@@ -5,7 +5,13 @@ $(function(){
 	});
 	
 	$('p.succes i.close').click(function(){
-		$(this).parent().remove();
+		$('p.succes').slideUp('slow', function(){
+			$(this).remove();
+		});
+	});
+	
+	$('p.succes').delay(5000).slideUp('slow', function(){
+		$(this).remove();
 	});
 	
 });
