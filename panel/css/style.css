@@ -318,6 +318,7 @@ p.username {
 
 .workshopPhones .phoneDiv, .workshopMails .mailDiv,.workshopAddres .addresDiv {
     float: left;
+    margin: 2px 0;
 }
 
 .workshopPhones .phoneDiv label, .workshopAddres .addresDiv label,.workshopMails .mailDiv label {
