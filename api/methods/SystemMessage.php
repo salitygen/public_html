@@ -22,7 +22,7 @@ class SystemMessage {
 	
 	public function get($main){
 		if(isset($main->sysmessage)){
-			return '<p class="'.$main->sysmessage->type.'">'.$main->sysmessage->mess.'<p>';
+			return '<p class="'.$main->sysmessage->type.'">'.$main->sysmessage->mess.'<i class="close icon-cancel-circled"></i></p>';
 		}else{
 			return false;
 		}
