@@ -20,7 +20,7 @@ $(function(){
 	$('body').on('click','.workshopPhones .controls button.icon-plus',function(){
 		var workPhones = $(this).parent().parent().parent();
 		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
-		var inputs ='<div class="phoneDiv">';
+		var inputs  ='<div class="phoneDiv">';
 			inputs +='<label>Телефон</label>';
 			inputs +='<input type="text" name="phones['+index+'][value]" value="">';
 			inputs +='<label>Комментарий</label>';
