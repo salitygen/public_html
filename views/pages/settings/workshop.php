@@ -54,6 +54,7 @@ $rules = 1; // прописано жестко
 					<label>Номера телефонов</label>
 					<?php if($value->phones) : ?>
 					<?php foreach($value->phones as $k => $phone):?>
+					<?if($k !== 0) print '<hr>';?>
 					<div class="phoneDiv">
 						<label>Телефон</label>
 						<input type="text" name="phones[<?php print $k; ?>][value]" value="<?php print $phone->value; ?>">
@@ -83,6 +84,7 @@ $rules = 1; // прописано жестко
 					<label>Электронная почта</label>
 					<?php if($value->mails) : ?>
 					<?php foreach($value->mails as $k => $mail):?>
+					<?if($k !== 0) print '<hr>';?>
 					<div class="mailDiv">
 						<label>Почтовый ящик</label>
 						<input type="text" name="mails[<?php print $k; ?>][value]" value="<?php print $mail->value; ?>">
@@ -112,6 +114,7 @@ $rules = 1; // прописано жестко
 					<label>Адреса компании</label>
 					<?php if($value->addres) : ?>
 					<?php foreach($value->addres as $k => $adres):?>
+					<?if($k !== 0) print '<hr>';?>
 					<div class="addresDiv">
 						<label>Адрес</label>
 						<input type="text" name="addres[<?php print $k; ?>][value]" value="<?php print $adres->value; ?>">
@@ -120,7 +123,7 @@ $rules = 1; // прописано жестко
 					</div>
 					<div class="controls">
 						<button class="icon-plus"></button>
-						<?if($k !== 0):?>
+						<?if($k !== 0)?>
 						<button class="icon-cancel"></button>
 						<?php endif;?>
 					</div>
