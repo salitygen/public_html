@@ -17,7 +17,7 @@ $(function(){
 		$(this).remove();
 	});
 	
-	$('.workshopPhones .controls button.icon-plus').click(function(){
+	$('body').on('click','.workshopPhones .controls button.icon-plus',function(){
 		var workPhones = $(this).parent().parent().parent();
 		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
 		var inputs ='<div class="phoneDiv">';
@@ -34,7 +34,7 @@ $(function(){
 		return false;
 	});
 	
-	$('.workshopPhones .controls button.icon-cancel').click(function(){
+	$('body').on('click','.workshopPhones .controls button.icon-cancel',function(){
 		var removeBlock = $(this).parent().parent();
 		removeBlock.remove();
 		return false;
