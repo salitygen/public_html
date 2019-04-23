@@ -39,6 +39,52 @@ $(function(){
 		removeBlock.remove();
 		return false;
 	});
+	
+	$('body').on('click','.workshopMails .controls button.icon-plus',function(){
+		var workPhones = $(this).parent().parent().parent();
+		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+		var inputs  ='<div class="phoneDiv">';
+			inputs +='<label>Почтовый ящик</label>';
+			inputs +='<input type="text" name="mails['+index+'][value]" value="">';
+			inputs +='<label>Комментарий</label>';
+			inputs +='<input type="text" name="mails['+index+'][note]" value="">';
+			inputs +='<div class="controls">';
+			inputs +='<button class="icon-plus"></button>';
+			inputs +='<button class="icon-cancel"></button>';
+			inputs +='</div>';
+			inputs +='</div>';
+		workPhones.append(inputs); 
+		return false;
+	});
+	
+	$('body').on('click','.workshopMails .controls button.icon-cancel',function(){
+		var removeBlock = $(this).parent().parent();
+		removeBlock.remove();
+		return false;
+	});
+	
+	$('body').on('click','.workshopAddres .controls button.icon-plus',function(){
+		var workPhones = $(this).parent().parent().parent();
+		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+		var inputs  ='<div class="phoneDiv">';
+			inputs +='<label>Адрес</label>';
+			inputs +='<input type="text" name="addres['+index+'][value]" value="">';
+			inputs +='<label>Комментарий</label>';
+			inputs +='<input type="text" name="addres['+index+'][note]" value="">';
+			inputs +='<div class="controls">';
+			inputs +='<button class="icon-plus"></button>';
+			inputs +='<button class="icon-cancel"></button>';
+			inputs +='</div>';
+			inputs +='</div>';
+		workPhones.append(inputs); 
+		return false;
+	});
+	
+	$('body').on('click','.workshopAddres .controls button.icon-cancel',function(){
+		var removeBlock = $(this).parent().parent();
+		removeBlock.remove();
+		return false;
+	});
 
 	// WORKSHOPS SETTINGS PAGE END
 	
