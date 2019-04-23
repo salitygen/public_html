@@ -26,7 +26,7 @@ $(function(){
 			inputs +='<label>Комментарий</label>';
 			inputs +='<input type="text" name="phones['+index+'][note]" value="">';
 			inputs +='</div>';
-		workPhones.append(inputs);
+		workPhones.append(inputs); 
 		return false;
 	});
 
