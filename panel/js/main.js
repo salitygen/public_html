@@ -34,6 +34,12 @@ $(function(){
 		workPhones.append(inputs); 
 		return false;
 	});
+	
+	$('.workshopPhones .controls button.icon-cancel').click(function(){
+		var removeBlock = $(this).parent().parent();
+		removeBlock.remove();
+		return false;
+	});
 
 	// WORKSHOPS SETTINGS PAGE END
 	
