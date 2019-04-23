@@ -26,6 +26,10 @@ $(function(){
 			inputs +='<label>Комментарий</label>';
 			inputs +='<input type="text" name="phones['+index+'][note]" value="">';
 			inputs +='</div>';
+			inputs +='<div class="controls">';
+			inputs +='<button class="icon-plus"></button>';
+			inputs +='<button class="icon-cancel"></button>';
+			inputs +='</div>';
 		workPhones.append(inputs); 
 		return false;
 	});
