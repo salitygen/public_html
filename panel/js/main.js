@@ -5,9 +5,7 @@ $(function(){
 	});
 	
 	$('p.succes i.close').click(function(){
-		$(this).parent().fadeOut('slow', function(){
-			$(this).remove();
-		});
+		$(this).parent().remove();
 	});
 	
 	$('p.succes').delay(5000).fadeOut('slow', function(){
