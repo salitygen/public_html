@@ -1003,7 +1003,7 @@ class Rules {
 	//Может ли видеть покупателей
 	public function contractorsSeeCustomer($main){
 		if(!$main->session->group_super_users){
-			if(!$main->session->group_contractors_see_customer){
+			if(!$main->session->group_contractor_see_customer){
 				return false;
 			}else{
 				return true;
