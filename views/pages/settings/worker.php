@@ -7,7 +7,7 @@ $workerUsers = Workers::getUsers();
 <p>Группы</p>
 <?php
 foreach($workerGroups as $key => $value){
-	print HTML::Name($main,'groups',$key) . ' - ' . $value . '<br>';
+	print HTML::Name($main,'groups',$key) .' - '. $key . ' - ' . $value . '<br>';
 }
 
 //group_id
