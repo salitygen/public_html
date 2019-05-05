@@ -3,40 +3,32 @@ defined('EXEC') or die;
 
 class Workers {
 	
-	public function Groups() {
+	public function getGroups() {
+			
+		$db = dataBase::pdo();
+		$getGroups = $db->query("SELECT * FROM crm_groups");
+		$groups = $getGroups->fetch();
 		
-		function get(){
-			
-			$db = dataBase::pdo();
-			$getGroups = $db->query("SELECT * FROM crm_groups");
-			$groups = $getGroups->fetch();
-			
-			if($groups){
-				return $groups;
-			}else{
-				return false;
-			}
-			
+		if($groups){
+			return $groups;
+		}else{
+			return false;
 		}
 		
 	}
 	
-	public function Users() {
+	public function getUsers() {
+
+		$db = dataBase::pdo();
+		$getUsers = $db->query("SELECT * FROM crm_users");
+		$users = $getUsers->fetch();
 		
-		function get(){
-			
-			$db = dataBase::pdo();
-			$getUsers = $db->query("SELECT * FROM crm_users");
-			$users = $getUsers->fetch();
-			
-			if($users){
-				return $users;
-			}else{
-				return false;
-			}
-			
+		if($users){
+			return $users;
+		}else{
+			return false;
 		}
-		
+
 	}
 
 	
