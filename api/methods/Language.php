@@ -5,7 +5,7 @@ class HTML {
 	
 	public function Name($main,$type,$text){
 		
-		$dataIni = parse_ini_file($main->root .'/lang/'.$type.'_'. $main->lang .'.ini');
+		$dataIni = parse_ini_file($main->root .'/lang/'.$type.'_'. $main->session->lang .'.ini');
 		return $dataIni[strtoupper($text)];
 		
 	}
