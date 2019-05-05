@@ -5,7 +5,7 @@ class Workers {
 	
 	public function Groups() {
 		
-		public function get(){
+		function get(){
 			
 			$db = dataBase::pdo();
 			$getGroups = $db->query("SELECT * FROM crm_groups");
@@ -23,7 +23,7 @@ class Workers {
 	
 	public function Users() {
 		
-		public function get(){
+		function get(){
 			
 			$db = dataBase::pdo();
 			$getUsers = $db->query("SELECT * FROM crm_users");
