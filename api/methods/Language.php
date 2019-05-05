@@ -7,14 +7,14 @@ class HTML {
 		
 		$langFile = $main->root .'/lang/'.$type.'_'. $main->session->user_lang .'.ini'
 		
-		if(is_file($langFile)){
+		if(!is_file($langFile)){
 			
-			$dataIni = parse_ini_file($langFile);
-			return $dataIni[strtoupper($text)];
+			return $text;
 			
 		}else{
 			
-			return $text;
+			$dataIni = parse_ini_file($langFile);
+			return $dataIni[strtoupper($text)];
 			
 		}
 		
