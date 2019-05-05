@@ -9,7 +9,7 @@ class HTML {
 		
 		if(!is_file($langFile)){
 			
-			return $text;
+			return strtoupper($text);
 			
 		}else{
 			
@@ -17,7 +17,7 @@ class HTML {
 			if(isset($dataIni[strtoupper($text)])){
 				return $dataIni[strtoupper($text)];
 			}else{
-				return $text;
+				return strtoupper($text);
 			}
 			
 		}
