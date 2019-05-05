@@ -308,7 +308,7 @@ class Rules {
 	//Отображать ли показатели компании
 	public function showCompanyPerformance($main){
 		if(!$main->session->group_super_users){
-			if(!$main->session->group_company_performance){
+			if(!$main->session->group_general_company_performance){
 				return false;
 			}else{
 				return true;
