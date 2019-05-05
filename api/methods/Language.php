@@ -5,8 +5,18 @@ class HTML {
 	
 	public function Name($main,$type,$text){
 		
-		$dataIni = parse_ini_file($main->root .'/lang/'.$type.'_'. $main->session->user_lang .'.ini');
-		return $dataIni[strtoupper($text)];
+		$langFile = $main->root .'/lang/'.$type.'_'. $main->session->user_lang .'.ini'
+		
+		if(is_file($langFile)){
+			
+			$dataIni = parse_ini_file($langFile);
+			return $dataIni[strtoupper($text)];
+			
+		}else{
+			
+			return $text;
+			
+		}
 		
 	}
 	
