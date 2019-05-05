@@ -3,10 +3,14 @@ defined('EXEC') or die;
 
 class HTML {
 	
-	public function Name($main,$type,$text){
+	public function Name($main,$type,$text,$upper = true){
 		
 		$dataIni = parse_ini_file($main->root .'/lang/'.$type.'_'. $main->lang .'.ini');
-		return $dataIni[strtoupper($text)];
+		if($upper === true){
+			return $dataIni[strtoupper($text)];
+		}else{
+			return $dataIni[$text];
+		}
 		
 	}
 	
