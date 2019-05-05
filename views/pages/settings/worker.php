@@ -6,7 +6,7 @@ $workerUsers = Workers::getUsers();
 
 
 foreach($workerGroups as $key => $value){
-	print HTML::Name($main,'groups',$key) . ' - ' . $value;
+	print HTML::Name($main,'groups',$key) . ' - ' . $value . '<br>';
 }
 
 //var_dump($workerGroups);
