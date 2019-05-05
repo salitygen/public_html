@@ -4,10 +4,13 @@ Rules::settingsWorkers($main) or die('Access Denied');
 $workerGroups = Workers::getGroups();
 $workerUsers = Workers::getUsers();
 
-print HTML::Name($main,'groups','GROUP_ID');
-//var_dump($main);
-var_dump($workerGroups);
-var_dump($workerUsers);
-?>
+
+foreach($workerGroups as $key => $value){
+	print HTML::Name($main,'groups',$key) . ' - ' . $value;
+}
+
+//var_dump($workerGroups);
+//var_dump($workerUsers);
+?> 
 
 <p>Сотрудники</p>
