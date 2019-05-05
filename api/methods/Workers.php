@@ -3,7 +3,7 @@ defined('EXEC') or die;
 
 class Workers {
 	
-	class Groups {
+	public function Groups() {
 		
 		public function get(){
 			
@@ -21,7 +21,7 @@ class Workers {
 		
 	}
 	
-	class Users {
+	public function Users() {
 		
 		public function get(){
 			
