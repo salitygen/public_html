@@ -17,7 +17,11 @@ class HTML {
 			
 			$dataIni = parse_ini_file($langFile);
 			if(isset($dataIni[$text])){
-				return $dataIni[$text];
+				if($dataIni[$text] != ''){
+					return $dataIni[$text];
+				}else{
+					return $text;
+				}
 			}else{
 				return $text;
 			}
