@@ -51,7 +51,7 @@ foreach($workerGroups as $key => $value){
 
 <?php
 
-var_dump($groupData);
+var_dump($group);
 
 //group_id
 //group_service_id
