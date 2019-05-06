@@ -16,7 +16,7 @@ foreach($workerGroups as $key => $value){
 	
 	$name = explode('_',$key)[1];
 	
-	if($fl != $key){
+	if($fl !== $key){
 		$fl = $key;
 		$k = 0;
 	}
