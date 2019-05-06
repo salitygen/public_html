@@ -40,7 +40,7 @@ foreach($workerGroups as $key => $value){
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
 		<form>
-		<?php print  $data->id; ?>
+		<?php //print  $data->id; ?>
 		<?php 
 			foreach($data->checkBoxses as $key => $checkbox){
 				print '<div class="chkblock"><h3>'. HTML::Name($main,'groups',$key) .'</h3>'.$checkbox.'</div>';
