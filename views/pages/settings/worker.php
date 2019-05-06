@@ -8,7 +8,7 @@ $workerUsers = Workers::getUsers();
 
 <?php
 
-$ch = array();
+$ch = new stdClass;
 $fl = 0;
 
 foreach($workerGroups as $key => $value){
@@ -16,10 +16,10 @@ foreach($workerGroups as $key => $value){
 	$name = explode('_',$key)[1];
 	
 	if($fl != $key){
-		$ch[''.$name.''] = '';
+		$ch->{$name} = '';
 		$fl = $key;
 	}
-	$ch[''.$name.''] .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+	$ch->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 	
 }
 
