@@ -88,7 +88,7 @@ div#workshopList {
     width: 458px;
     font-size: 14px;
     margin: 2px 4px 5px 3px;
-    display: inline-block;
+    /* display: inline-block; */
     border: 1px solid #e8e8e8;
     background-color: #f9f9f9;
     padding: 0px 10px 15px 10px;
@@ -537,35 +537,35 @@ button.openClose {
     cursor: pointer;
 }
 div#bid0 {
-    height: 178px;
+    /* height: 178px; */
 }
 
 div#bid2 {
-    height: 178px;
+    /* height: 178px; */
 }
 
 div#bid4 {
-    height: 330px;
+    /* height: 330px; */
 }
 
 div#bid5 {
-    height: 330px;
+    /* height: 330px; */
 }
 
 div#bid6 {
-    height: 255px;
+    /* height: 255px; */
 }
 
 div#bid7 {
-    height: 255px;
+    /* height: 255px; */
 }
 
 div#bid11 {
-    height: 521px;
+    /* height: 521px; */
 }
 
 div#bid9 {
-    height: 521px;
+    /* height: 521px; */
 }
 
 .chkblock h3 {
