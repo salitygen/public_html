@@ -7,7 +7,7 @@ $workerUsers = Workers::getUsers();
 <p>Группы</p>
 <?php
 
-$groupData = new stdClass;
+$groupData = new stdClass();
 $fl = '';
 
 foreach($workerGroups as $key => $value){
