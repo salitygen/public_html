@@ -4,7 +4,7 @@ Rules::settingsWorkers($main) or die('Access Denied');
 $workerGroups = Workers::getGroups();
 $workerUsers = Workers::getUsers();
 ?> 
-<label>Группы</label>
+<p>Группы</p>
 <?php
 $checkboxes  = '';
 $f1 = $f2 = $f3 = $f4 = $f5 = $f6 = $f7 = $f8 = $f9 = $f10 = $f11 = $f12 = 0;
@@ -123,4 +123,4 @@ print $checkboxes . '</div>';
 //var_dump($workerGroups);
 //var_dump($workerUsers);
 ?>
-<label>Сотрудники</label>
+<p>Сотрудники</p>
