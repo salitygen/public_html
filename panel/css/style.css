@@ -84,7 +84,16 @@ div#workshopList {
     float: left;
     width: 100%;
 }
+.chkblock {
+    float: left;
+    width: 500px;
+    font-size: 14px;
+}
 
+.chkblock label {
+    float: left;
+    width: 100%;
+}
 div#workshopList .slideBlock {
     margin-bottom: 15px;
     position: relative;
