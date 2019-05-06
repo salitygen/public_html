@@ -10,14 +10,15 @@ $workerUsers = Workers::getUsers();
 
 $ch = new stdClass;
 $fl = 0;
+$k = 0;
 
 foreach($workerGroups as $key => $value){
 	
 	$name = explode('_',$key)[1];
 	
 	if($fl != $key){
-		$k = 0;
 		$fl = $key;
+		$k = 0;
 	}
 	
 	$ch->{$name}[$k] = '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
