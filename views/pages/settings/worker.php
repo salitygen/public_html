@@ -4,7 +4,7 @@ Rules::settingsWorkers($main) or die('Access Denied');
 $workerGroups = Workers::getGroups();
 $workerUsers = Workers::getUsers();
 ?> 
-<p>Группы</p>
+<label>Группы</label>
 <?php
 $checkboxes  = '';
 $f1 = $f2 = $f3 = $f4 = $f5 = $f6 = $f7 = $f8 = $f9 = $f10 = $f11 = $f12 = 0;
@@ -19,7 +19,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Основные</h3>';
 			$f1++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'tasks'){
 		
@@ -27,7 +27,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Задачи</h3>';
 			$f2++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'orders'){
 
@@ -35,7 +35,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Заказы</h3>';
 			$f3++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'shop'){
 		
@@ -43,7 +43,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Магазин</h3>';
 			$f4++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'tills'){
 
@@ -51,7 +51,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Кассы</h3>';
 			$f5++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'account'){
 		
@@ -59,7 +59,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Счета</h3>';
 			$f6++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'returns'){
 		
@@ -67,7 +67,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Возвраты</h3>';
 			$f7++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'storage'){
 
@@ -75,7 +75,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Склад</h3>';
 			$f8++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'contractor'){
 
@@ -83,7 +83,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Контрагенты</h3>';
 			$f9++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'reports'){
 
@@ -91,7 +91,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Отчеты</h3>';
 			$f10++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}elseif($group == 'settings'){
 
@@ -99,7 +99,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Настройки</h3>';
 			$f11++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}else{
 		
@@ -107,7 +107,7 @@ foreach($workerGroups as $key => $value){
 			$checkboxes .= '<h3>Прочее</h3>';
 			$f12++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>'; */
+		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>'; */
 		
 	}
 
@@ -123,4 +123,4 @@ print $checkboxes;
 //var_dump($workerGroups);
 //var_dump($workerUsers);
 ?>
-<p>Сотрудники</p>
+<label>Сотрудники</label>
