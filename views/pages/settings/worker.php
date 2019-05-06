@@ -16,10 +16,12 @@ foreach($workerGroups as $key => $value){
 	$name = explode('_',$key)[1];
 	
 	if($fl != $key){
-		$ch->{$name} = '';
+		$k = 0;
 		$fl = $key;
 	}
-	$ch->{$name} = 123; //.= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+	
+	$ch->{$name}[$k] = '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+	$k++;
 	
 }
 
