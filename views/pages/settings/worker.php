@@ -7,8 +7,10 @@ $workerUsers = Workers::getUsers();
 <p>Группы</p>
 <?php
 
-$groupData = new stdClass();
-$groupData->checkBoxses = new stdClass();
+$group = new stdClass();
+$group->data = new stdClass();
+$group->data->checkBoxses = new stdClass();
+
 $fl = '';
 
 foreach($workerGroups as $key => $value){
@@ -22,20 +24,20 @@ foreach($workerGroups as $key => $value){
 		
 		if($fl != $name){
 			$fl = $name;
-			$groupData->checkBoxses->{$name} = '';
+			$group->data->checkBoxses->{$name} = '';
 		}
 		
-		$groupData->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}else{
 		
-		$groupData->{$name} = ''. HTML::Name($main,'groups',$key) .' : '.$value.'';
+		$group->data->{$name} = ''. HTML::Name($main,'groups',$key) .' : '.$value.'';
 		
 	}
 	
 }
 ?>
-<?php foreach($groupData as $key => $value){ ?>
+<?php foreach($group as $key => $value){ ?>
 	<div class="slideBlock hide">
 		<form>
 		<?php 
