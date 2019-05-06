@@ -5,13 +5,11 @@ $workerGroups = Workers::getGroups();
 $workerUsers = Workers::getUsers();
 ?> 
 <p>Группы</p>
+
 <?php
-$ch = new stdClass();
-
+$ch = array();
 foreach($workerGroups as $key => $value){
-	
-	$ch->explode('_',$key)[1] .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
-
+	$ch[explode('_',$key)[1]] .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 }
 
 var_dump($ch);
