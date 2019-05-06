@@ -7,8 +7,8 @@ $workerUsers = Workers::getUsers();
 <p>Группы</p>
 <?php
 
-$groupData = new \stdClass();
-$groupData->checkBoxses = false;
+$groupData = new stdClass();
+$groupData->checkBoxses = new stdClass();
 $fl = '';
 
 foreach($workerGroups as $key => $value){
