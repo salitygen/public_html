@@ -95,4 +95,9 @@ $(function(){
 	  columnWidth: 488
 	});
 	
+	$('.listChkBlocks').packery({
+	  itemSelector: '.chkblock',
+	  gutter: 10
+	});
+	
 });
