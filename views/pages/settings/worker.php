@@ -37,13 +37,13 @@ foreach($workerGroups as $key => $value){
 	
 }
 ?>
-<?php foreach($group as $key => $value){ ?>
+<?php foreach($group as $key){ ?>
 	<div class="slideBlock hide">
 		<form>
 		<?php 
-		 if(!is_object($value)){
-			print $value;
-		 }
+			foreach($key as $data){
+				print $data;
+			}
 		?>
 		</form>
 	</div> 
