@@ -7,9 +7,18 @@ $workerUsers = Workers::getUsers();
 <p>Группы</p>
 
 <?php
+
 $ch = array();
+$fl = 0;
+
 foreach($workerGroups as $key => $value){
+	
+	if($fl != $key){
+		$ch[explode('_',$key)[1]] = '';
+		$fl = $key;
+	}
 	$ch[explode('_',$key)[1]] .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+	
 }
 
 var_dump($ch);
