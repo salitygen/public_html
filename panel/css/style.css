@@ -88,6 +88,7 @@ div#workshopList {
     width: 458px;
     font-size: 14px;
     margin: 2px 4px 5px 3px;
+    float: left;
     /* display: inline-block; */
     border: 1px solid #e8e8e8;
     background-color: #f9f9f9;
