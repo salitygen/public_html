@@ -19,8 +19,13 @@ foreach($workerGroups as $key => $value){
 		$fl = $name;
 		$ch->{$name} = '';
 	}
-
-	$ch->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+	
+	if($name != 'id'
+	||$name != 'service'
+	||$name != 'name'
+	||$name != 'desc'){
+		$ch->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+	}
 	
 }
 
