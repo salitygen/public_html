@@ -103,11 +103,11 @@ foreach($workerGroups as $key => $value){
 		
 	}else{
 		
-		if($f12 == 0){
+/* 		if($f12 == 0){
 			$checkboxes .= '<h3>Прочее</h3>';
 			$f12++;
 		}
-		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>'; */
 		
 	}
 
