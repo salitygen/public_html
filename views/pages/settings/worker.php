@@ -22,15 +22,14 @@ foreach($workerGroups as $key => $value){
 		
 		if($fl != $name){
 			$fl = $name;
-			$ch->{$name} = '';
+			$checkBoxses->{$name} = '';
 		}
 		
 		$checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}else{
 		
-		//$groupData->{$name} = '';
-		//$groupData->{$name} = '<p>'. HTML::Name($main,'groups',$key) .' : '.$value.'</p>';
+		$groupData->{$name} = '<p>'. HTML::Name($main,'groups',$key) .' : '.$value.'</p>';
 		
 	}
 	
