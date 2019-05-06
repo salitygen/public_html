@@ -7,7 +7,6 @@ $workerUsers = Workers::getUsers();
 <p>Группы</p>
 <?php
 
-$checkBoxses = new stdClass;
 $groupData = new stdClass;
 $fl = '';
 
@@ -22,20 +21,20 @@ foreach($workerGroups as $key => $value){
 		
 		if($fl != $name){
 			$fl = $name;
-			$checkBoxses->{$name} = '';
+			$groupData->checkBoxses->{$name} = '';
 		}
 		
-		$checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
+		$groupData->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}else{
 		
-		$groupData->{$name} = '<p>'. HTML::Name($main,'groups',$key) .' : '.$value.'</p>';
+		$groupData->{$name} = ''. HTML::Name($main,'groups',$key) .' : '.$value.'';
 		
 	}
 	
 }
+
 var_dump($groupData);
-var_dump($checkBoxses);
 
 //group_id
 //group_service_id
