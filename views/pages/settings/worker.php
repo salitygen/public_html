@@ -34,6 +34,16 @@ foreach($workerGroups as $key => $value){
 	}
 	
 }
+?>
+<?php foreach($groupData as $key => $value){ ?>
+	<div class="slideBlock hide">
+		<form>
+		<?php print $value; ?>
+		</form>
+	</div> 
+<?php } ?>
+
+<?php
 
 var_dump($groupData);
 
