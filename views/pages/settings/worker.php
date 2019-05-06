@@ -41,12 +41,10 @@ foreach($workerGroups as $key => $value){
 	<div class="slideBlock hide">
 		<form>
 			<?php print  $data->id; ?>
-			<?php
-			
-				foreach($data->checkBoxses as $checkbox){
-					print $checkbox . '<br>' ;
-				}
-			
+			<?php 
+			foreach($data->checkBoxses as $key => $checkbox){
+					print $key.' - '.$checkbox;
+			}
 			?>
 		</form>
 	</div> 
