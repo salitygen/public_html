@@ -113,6 +113,8 @@ foreach($workerGroups as $key => $value){
 
 }
 
+print $checkboxes;
+
 //group_id
 //group_service_id
 //group_name
