@@ -20,7 +20,7 @@ foreach($workerGroups as $key => $value){
 	
 	$k++;
 	
-	if($fl !== $key){
+	if($fl != $key){
 		$fl = $key;
 		$k = 0;
 	}
