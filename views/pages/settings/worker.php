@@ -6,57 +6,108 @@ $workerUsers = Workers::getUsers();
 ?> 
 <p>Группы</p>
 <?php
+$checkboxes  = '';
+$f1 = $f2 = $f3 = $f4 = $f5 = $f6 = $f7 = $f8 = $f9 = $f10 = $f11 = $f12 = 0;
+
 foreach($workerGroups as $key => $value){
 	
 	$group = explode('_',$key)[1];
 	
 	if($group == 'general'){
-		print '<h3>Основные</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+		
+		if($f1 == 0){
+			$checkboxes .= '<h3>Основные</h3>';
+			$f1++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'tasks'){
-		print '<h3>Задачи</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+		
+		if($f2 == 0){
+			$checkboxes .= '<h3>Задачи</h3>';
+			$f2++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'orders'){
-		print '<h3>Заказы</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+
+		if($f3 == 0){
+			$checkboxes .= '<h3>Заказы</h3>';
+			$f3++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'shop'){
-		print '<h3>Магазин</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+		
+		if($f4 == 0){
+			$checkboxes .= '<h3>Магазин</h3>';
+			$f4++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'tills'){
-		print '<h3>Кассы</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+
+		if($f5 == 0){
+			$checkboxes .= '<h3>Кассы</h3>';
+			$f5++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'account'){
-		print '<h3>Счета</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+		
+		if($f6 == 0){
+			$checkboxes .= '<h3>Счета</h3>';
+			$f6++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'returns'){
-		print '<h3>Возвраты</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+		
+		if($f7 == 0){
+			$checkboxes .= '<h3>Возвраты</h3>';
+			$f7++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'storage'){
-		print '<h3>Склад</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+
+		if($f8 == 0){
+			$checkboxes .= '<h3>Склад</h3>';
+			$f8++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'contractor'){
-		print '<h3>Контрагенты</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+
+		if($f9 == 0){
+			$checkboxes .= '<h3>Контрагенты</h3>';
+			$f9++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'reports'){
-		print '<h3>Отчеты</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+
+		if($f10 == 0){
+			$checkboxes .= '<h3>Отчеты</h3>';
+			$f10++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}elseif($group == 'settings'){
-		print '<h3>Настройки</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+
+		if($f11 == 0){
+			$checkboxes .= '<h3>Настройки</h3>';
+			$f11++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}else{
-		print '<h3>Прочее</h3>';
-		print HTML::Name($main,'groups',$key) .' - ' . $value . '<br>';
+		
+		if($f12 == 0){
+			$checkboxes .= '<h3>Прочее</h3>';
+			$f12++;
+		}
+		$checkboxes .= '<p><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</p>';
 		
 	}
 
