@@ -88,4 +88,11 @@ $(function(){
 
 	// WORKSHOPS SETTINGS PAGE END
 	
+	// 
+	
+	$('.slideBlock form').masonry({
+	  itemSelector: '.chkblock',
+	  columnWidth: 480
+	});
+	
 });
