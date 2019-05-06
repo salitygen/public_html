@@ -90,7 +90,7 @@ $(function(){
 	
 	// 
 	
-	$('.slideBlock form').masonry({
+	$('.listChkBlocks').masonry({
 	  itemSelector: '.chkblock',
 	  columnWidth: 488
 	});
