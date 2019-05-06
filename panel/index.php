@@ -8,6 +8,7 @@ include $main->root.'/views/controller.php';
 	<link href="/panel/css/style.css" rel="stylesheet">
 	<link href="/panel/css/fontello.css" rel="stylesheet">
 	<script type="text/javascript" src="/panel/js/jquery-3.4.0.min.js"></script>
+	<script type="text/javascript" src="/panel/js/masonry.pkgd.min.js"></script>
 	<script type="text/javascript" src="/panel/js/main.js"></script>
 	</head>
 	<body <?php if($main->view == 'settings') print 'class="level2"'; ?>>
