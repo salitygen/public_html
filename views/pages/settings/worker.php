@@ -9,21 +9,14 @@ $workerUsers = Workers::getUsers();
 <?php
 
 $ch = new stdClass;
-$fl = 0;
-$k = 0;
+$fl = '';
+
 
 foreach($workerGroups as $key => $value){
 	
 	$name = explode('_',$key)[1];
-	
-	$ch->{$name}[$k] = '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
-	
-	$k++;
-	
-	if($fl != $key){
-		$fl = $key;
-		$k = 0;
-	}
+	$ch->{$name} = '';
+	$ch->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 	
 }
 
