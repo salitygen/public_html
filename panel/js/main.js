@@ -92,7 +92,7 @@ $(function(){
 	
 	$('.slideBlock form').masonry({
 	  itemSelector: '.chkblock',
-	  columnWidth: 458
+	  columnWidth: 480
 	});
 	
 });
