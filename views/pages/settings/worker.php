@@ -29,8 +29,8 @@ foreach($workerGroups as $key => $value){
 		
 	}else{
 		
-		$groupData->{$name} = '';
-		$groupData->{$name} = '<p>'. HTML::Name($main,'groups',$key) .' : '.$value.'</p>';
+		//$groupData->{$name} = '';
+		//$groupData->{$name} = '<p>'. HTML::Name($main,'groups',$key) .' : '.$value.'</p>';
 		
 	}
 	
