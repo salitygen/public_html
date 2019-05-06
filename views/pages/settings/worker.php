@@ -37,14 +37,17 @@ foreach($workerGroups as $key => $value){
 	
 }
 ?>
-<?php foreach($group as $key){ ?>
+<?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
 		<form>
-		<?php 
-			foreach($key as $data){
-				print $data;
-			}
-		?>
+			<?php print  $data->id; ?>
+			<?php
+			
+				foreach($data->checkBoxses as $checkbox){
+					print $checkbox . '<br>' ;
+				}
+			
+			?>
 		</form>
 	</div> 
 <?php } ?>
