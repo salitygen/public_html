@@ -29,7 +29,7 @@ foreach($workerGroups as $key => $value){
 	}
 	
 }
-print 123;
+
 var_dump($ch);
 
 //group_id
