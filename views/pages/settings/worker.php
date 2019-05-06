@@ -16,7 +16,7 @@ foreach($workerGroups as $key => $value){
 	if($group == 'general'){
 		
 		if($f1 == 0){
-			$checkboxes .= '<h3>Основные</h3>';
+			$checkboxes .= '<div class="chkblock"><h3>Основные</h3>';
 			$f1++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -24,7 +24,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'tasks'){
 		
 		if($f2 == 0){
-			$checkboxes .= '<h3>Задачи</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Задачи</h3>';
 			$f2++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -32,7 +32,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'orders'){
 
 		if($f3 == 0){
-			$checkboxes .= '<h3>Заказы</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Заказы</h3>';
 			$f3++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -40,7 +40,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'shop'){
 		
 		if($f4 == 0){
-			$checkboxes .= '<h3>Магазин</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Магазин</h3>';
 			$f4++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -48,7 +48,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'tills'){
 
 		if($f5 == 0){
-			$checkboxes .= '<h3>Кассы</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Кассы</h3>';
 			$f5++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -56,7 +56,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'account'){
 		
 		if($f6 == 0){
-			$checkboxes .= '<h3>Счета</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Счета</h3>';
 			$f6++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -64,7 +64,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'returns'){
 		
 		if($f7 == 0){
-			$checkboxes .= '<h3>Возвраты</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Возвраты</h3>';
 			$f7++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -72,7 +72,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'storage'){
 
 		if($f8 == 0){
-			$checkboxes .= '<h3>Склад</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Склад</h3>';
 			$f8++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -80,7 +80,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'contractor'){
 
 		if($f9 == 0){
-			$checkboxes .= '<h3>Контрагенты</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Контрагенты</h3>';
 			$f9++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -88,7 +88,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'reports'){
 
 		if($f10 == 0){
-			$checkboxes .= '<h3>Отчеты</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Отчеты</h3>';
 			$f10++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -96,7 +96,7 @@ foreach($workerGroups as $key => $value){
 	}elseif($group == 'settings'){
 
 		if($f11 == 0){
-			$checkboxes .= '<h3>Настройки</h3>';
+			$checkboxes .= '</div><div class="chkblock"><h3>Настройки</h3>';
 			$f11++;
 		}
 		$checkboxes .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
@@ -113,7 +113,7 @@ foreach($workerGroups as $key => $value){
 
 }
 
-print $checkboxes;
+print $checkboxes . '</div>';
 
 //group_id
 //group_service_id
