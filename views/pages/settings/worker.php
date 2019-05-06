@@ -16,9 +16,9 @@ foreach($workerGroups as $key => $value){
 	$name = explode('_',$key)[1];
 	
 	if($name != 'id'
-	||$name != 'service'
-	||$name != 'name'
-	||$name != 'desc'){
+	&& $name != 'service'
+	&& $name != 'name'
+	&& $name != 'desc'){
 		
 		if($fl != $name){
 			$fl = $name;
