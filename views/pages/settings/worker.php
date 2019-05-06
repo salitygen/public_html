@@ -15,15 +15,16 @@ foreach($workerGroups as $key => $value){
 	
 	$name = explode('_',$key)[1];
 	
-	if($fl != $name){
-		$fl = $name;
-		$ch->{$name} = '';
-	}
-	
 	if($name != 'id'
 	||$name != 'service'
 	||$name != 'name'
 	||$name != 'desc'){
+		
+		if($fl != $name){
+			$fl = $name;
+			$ch->{$name} = '';
+		}
+
 		$ch->{$name} .= '<label><input type="checkbox" name="'.$key.'" value="'.$value.'">'. HTML::Name($main,'groups',$key) .'</label>';
 	}
 	
