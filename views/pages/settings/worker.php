@@ -27,7 +27,7 @@ foreach($workerGroups as $key => $value){
 			$group->data->checkBoxses->{$name} = '';
 		}
 		
-		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'">'. HTML::Name($main,'groups',$key) .'</label>';
+		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
 		
 	}else{
 		
