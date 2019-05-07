@@ -1,6 +1,11 @@
 <?php
 defined('EXEC') or die;
-include $main->root.'/api/methods/main.php';
+
+//include $main->root.'/api/methods/main.php';
+
+foreach(glob($main->root.'/api/methods/*.php') as $filename){
+    include $filename;
+}
 
 if($task == 'login'){
 	$user = User::find($_POST);
