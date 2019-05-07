@@ -92,7 +92,7 @@ $(function(){
 	
 	$('.listChkBlocks').masonry({
 	  itemSelector: '.chkblock',
-	  columnWidth: 488
+	  columnWidth: 487
 	});
 	
 /* 	$('.listChkBlocks').packery({
