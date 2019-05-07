@@ -1,10 +1,11 @@
 <?php
 defined('EXEC') or die;
 
-//include $main->root.'/api/methods/main.php';
-
+include $main->root.'/api/methods/Session.php'; // Должен идти первым
 foreach(glob($main->root.'/api/methods/*.php') as $filename){
-    include $filename;
+    if(!strripos($filename,'Session')){
+		include $filename;
+	}
 }
 
 if($task == 'login'){
