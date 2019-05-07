@@ -90,10 +90,10 @@ $(function(){
 	
 	// 
 	
-	$('.listChkBlocks').masonry({
-	  itemSelector: '.chkblock',
-	  columnWidth: 487
-	});
+	//$('.listChkBlocks').masonry({
+	//  itemSelector: '.chkblock',
+	//  columnWidth: 487
+	//});
 	
 /* 	$('.listChkBlocks').packery({
 	  itemSelector: '.chkblock',
