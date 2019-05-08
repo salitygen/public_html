@@ -3,7 +3,7 @@ defined('EXEC') or die;
 
 class Users {
 	
-	public function findLofinPass($data){
+	public function findLoginPass($data){
 		
 		if(isset($data['login']) && isset($data['password'])){
 			
