@@ -9,7 +9,7 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 }
 
 if($task == 'login'){
-	$user = Users::findLofinPass($_POST);
+	$user = Users::findLoginPass($_POST);
 	if($user){
 		if($user->user_status == 1){
 			Session::create($user->user_id);
