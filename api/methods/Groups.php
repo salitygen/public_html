@@ -3,10 +3,10 @@ defined('EXEC') or die;
 
 class Groups {
 	
-	public function get() {
+	public function get($id) {
 			
 		$db = dataBase::pdo();
-		$getGroups = $db->query("SELECT * FROM crm_groups");
+		$getGroups = $db->query("SELECT * FROM crm_groups WHERE group_id={$id}");
 		$groups = $getGroups->fetch();
 		
 		if($groups){
@@ -17,66 +17,31 @@ class Groups {
 		
 	}
 	
-/* 	public function getUsers() {
-
-		$db = dataBase::pdo();
-		$getUsers = $db->query("SELECT * FROM crm_users");
-		$users = $getUsers->fetch();
+	public function getAll(){
 		
-		if($users){
-			return $users;
+		$db = dataBase::pdo();
+		$getGroups = $db->query("SELECT * FROM crm_groups");
+		$groups = $getGroups->fetch();
+		
+		if($groups){
+			return $groups;
 		}else{
 			return false;
 		}
 
-	} */
-
+	}
 	
-/* 	public function getAll(){ // TODO
-		
-		$db = dataBase::pdo();
-		$getgenerals = $db->query("SELECT * FROM crm_generals");
-		$generals = $getgenerals->fetch();
-		
-		if($generals){
-			return $generals;
-		}else{
-			return false;
-		}
-		
-	} */
-	
-	//public function add($data){ // TODO
-	//
-	//}
-	
-	public function update($data){
-		
-		$data = Input::general($data);
-		$db = dataBase::pdo();
-
-		$updgeneral = $db->exec("
-			UPDATE crm_generals SET
-			general_name='{$data->general_name}',
-			general_status={$data->general_status},
-			general_addres_json='{$data->addres}',
-			general_phone_json='{$data->phones}',
-			general_mail_json='{$data->mails}',
-			general_note='{$data->general_note}'
-			WHERE general_id=1
-		");
-
-		if($updgeneral){
-			return $updgeneral;
-		}else{
-			return false;
-		}
+	public function add($data){
 	
 	}
 	
-	//public function remove($id){ // TODO
-	//
-	//}
+	public function update($data){
+	
+	}
+	
+	public function remove($id){
+	
+	}
 	
 }
 ?>

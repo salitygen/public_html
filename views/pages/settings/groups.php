@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
-$groups = Groups::get();
+$groups = Groups::getAll();
 ?> 
 <p>Группы</p>
 <?php
