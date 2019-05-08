@@ -1,9 +1,9 @@
 <?php
 defined('EXEC') or die;
 
-class Workers {
+class Groups {
 	
-	public function getGroups() {
+	public function get() {
 			
 		$db = dataBase::pdo();
 		$getGroups = $db->query("SELECT * FROM crm_groups");
@@ -17,7 +17,7 @@ class Workers {
 		
 	}
 	
-	public function getUsers() {
+/* 	public function getUsers() {
 
 		$db = dataBase::pdo();
 		$getUsers = $db->query("SELECT * FROM crm_users");
@@ -29,7 +29,7 @@ class Workers {
 			return false;
 		}
 
-	}
+	} */
 
 	
 /* 	public function getAll(){ // TODO

@@ -1,9 +1,9 @@
 <?php
 defined('EXEC') or die;
 
-class User {
+class Users {
 	
-	public function find($data){
+	public function findLofinPass($data){
 		
 		if(isset($data['login']) && isset($data['password'])){
 			

@@ -1,8 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsWorkers($main) or die('Access Denied');
-$workerGroups = Workers::getGroups();
-$workerUsers = Workers::getUsers();
+$groups = Groups::get();
 ?> 
 <p>Группы</p>
 <?php
@@ -13,7 +12,7 @@ $group->data->checkBoxses = new stdClass();
 
 $fl = '';
 
-foreach($workerGroups as $key => $value){
+foreach($groups as $key => $value){
 	
 	$name = explode('_',$key)[1];
 	
@@ -52,14 +51,3 @@ foreach($workerGroups as $key => $value){
 		</form>
 	</div> 
 <?php } ?>
-
-<?php
-//group_id
-//group_service_id
-//group_name
-//group_desc
-
-//var_dump($workerGroups);
-//var_dump($workerUsers);
-?>
-<p>Сотрудники</p>
