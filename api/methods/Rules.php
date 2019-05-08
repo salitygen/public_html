@@ -201,6 +201,7 @@ class Rules {
 		if(!$main->session->group_super_users){
 			if(Rules::settingsGeneral($main)					//Имеет доступ к общим настройкам
 			||Rules::settingsIntegration($main)					//Имеет доступ к центру интеграций
+			||settingsService($main)							//Имеет доступ к настройкам сервисных центров
 			||Rules::settingsWorkshop($main)					//Имеет доступ к настройкам мастерских
 			||Rules::settingsUsers($main)						//Имеет доступ к настройкам пользователей
 			||Rules::settingsGroups($main)						//Имеет доступ к настройкам групп
@@ -1429,6 +1430,19 @@ class Rules {
 	public function settingsIntegration($main){
 		if(!$main->session->group_super_users){
 			if(!$main->session->group_settings_integration){
+				return false;
+			}else{
+				return true;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	//Имеет ли доступ к настройкам сервисных центров
+	public function settingsService($main){
+		if(!$main->session->group_super_users){
+			if(!$main->session->group_settings_service){
 				return false;
 			}else{
 				return true;
