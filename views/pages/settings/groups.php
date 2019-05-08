@@ -1,40 +1,36 @@
 <?php
+
 defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
+
 ?> 
+
 <p>Группы</p>
+
 <?php
 
 $group = new stdClass();
 $group->data = new stdClass();
 $group->data->checkBoxses = new stdClass();
-
 $fl = '';
 
 foreach($groups as $key => $value){
-	
 	$name = explode('_',$key)[1];
-	
 	if($name != 'id'
 	&& $name != 'service'
 	&& $name != 'name'
 	&& $name != 'desc'){
-		
 		if($fl != $name){
 			$fl = $name;
 			$group->data->checkBoxses->{$name} = '';
 		}
-		
 		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
-		
 	}else{
-		
 		$group->data->{$name} = ''. HTML::Name($main,'groups',$key) .' : '.$value.'';
-		
 	}
-	
 }
+
 ?>
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
