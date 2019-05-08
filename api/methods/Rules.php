@@ -202,7 +202,8 @@ class Rules {
 			if(Rules::settingsGeneral($main)					//Имеет доступ к общим настройкам
 			||Rules::settingsIntegration($main)					//Имеет доступ к центру интеграций
 			||Rules::settingsWorkshop($main)					//Имеет доступ к настройкам мастерских
-			||Rules::settingsWorkers($main)						//Имеет доступ к настройкам сотрудников
+			||Rules::settingsUsers($main)						//Имеет доступ к настройкам пользователей
+			||Rules::settingsGroups($main)						//Имеет доступ к настройкам групп
 			||Rules::settingsStatuses($main)					//Имеет доступ к настройкам статусов
 			||Rules::settingsRules($main)						//Имеет доступ к настройкам групп
 			||Rules::settingsSalePrices($main)					//Имеет доступ к настройкам цен и скидок
@@ -1450,10 +1451,23 @@ class Rules {
 		}
 	}
 	
-	//Имеет ли доступ к настройкам сотрудников	
-	public function settingsWorkers($main){
+	//Имеет ли доступ к настройкам групп	
+	public function settingsGroups($main){
 		if(!$main->session->group_super_users){
-			if(!$main->session->group_settings_workers){
+			if(!$main->session->group_settings_groups){
+				return false;
+			}else{
+				return true;
+			}
+		}else{
+			return true;
+		}
+	}
+	
+	//Имеет ли доступ к настройкам пользователей
+	public function settingsUsers($main){
+		if(!$main->session->group_super_users){
+			if(!$main->session->group_settings_users){
 				return false;
 			}else{
 				return true;

@@ -40,10 +40,10 @@ defined('EXEC') or die;
 			<?php if(Rules::settingsWorkshop($main)) : ?>
 			<li><a <?php if($main->params == 'workshop') print 'class="active"';?> href="/?view=settings&params=workshop">Мастерские</a></li>
 			<?php endif;?>
-			<?php if(Rules::settingsWorkers($main)) : // Изменить на settingsUsers() ?>
+			<?php if(Rules::settingsGroups($main)) : ?>
 			<li><a <?php if($main->params == 'groups') print 'class="active"';?> href="/?view=settings&params=groups">Группы</a></li>
 			<?php endif;?>
-			<?php if(Rules::settingsWorkers($main)) : ?>
+			<?php if(Rules::settingsUsers($main)) : ?>
 			<li><a <?php if($main->params == 'workers') print 'class="active"';?> href="/?view=settings&params=workers">Сотрудники</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsStatuses($main)) : ?>

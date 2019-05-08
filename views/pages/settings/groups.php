@@ -1,6 +1,6 @@
 <?php
 defined('EXEC') or die;
-Rules::settingsWorkers($main) or die('Access Denied');
+Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::get();
 ?> 
 <p>Группы</p>

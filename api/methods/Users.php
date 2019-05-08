@@ -34,6 +34,10 @@ class Users {
 		
 	}
 	
+	public function get(){
+		
+	}
+	
 }
 
 
