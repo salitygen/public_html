@@ -1,14 +1,10 @@
 <?php
-
 defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
 $services = Service::getAll();
-
 ?> 
-
 <p>Группы</p>
-
 <?php
 
 $group = new stdClass();
