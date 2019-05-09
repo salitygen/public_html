@@ -28,7 +28,7 @@ $rules = 1; // прописано жестко
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
 		<div class="slideBlock hide">
-			<form action="/?view=settings&params=workshop&task=updateworkshop" method="POST">
+			<form action="/?view=settings&params=workshop&task=update" method="POST">
 				<div class="panel">
 					<div class="companyStatus">
 					<?php if($value->workshop_status):?>
