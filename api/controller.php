@@ -33,14 +33,34 @@ if($task == 'updategeneral'){
 	}
 }
 
-if($task == 'updateworkshop'){
+
+// ==================================
+
+if($main->task == 'updateworkshop'){
+	$Name = $main->view;
+	$Param = ucfirst($main->params);
+	$NameParam = $Name.$Param;
+	if(method_exists('Rules',$NameParam)){
+		if(Rules::$NameParam($main)){
+			$data = (object)$_POST;
+			if($Param::update($data)){
+				SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+			}
+		}
+	}
+}
+
+// ==================================
+
+
+/* if($task == 'updateworkshop'){
 	if(Rules::settingsWorkshop($main)){
 		$data = (object)$_POST;
 		if(Workshop::update($data)){
 			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 		}
 	}
-}
+} */
 
 if($task == 'updateservice'){
 	if(Rules::settingsService($main)){
