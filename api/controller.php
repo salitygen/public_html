@@ -24,20 +24,6 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
-
-
-print 123;
-var_dump($main);
-
-
-
-
-
-
-
-
-
-
 if($task == 'updategeneral'){
 	if(Rules::settingsGeneral($main)){
 		$data = (object)$_POST;
