@@ -24,7 +24,7 @@ class Service {
 		
 		$db = dataBase::pdo();
 		$getservices = $db->query("SELECT * FROM crm_services");
-		$services = $getservices->fetch();
+		$services = $getservices->fetchAll();
 		
 		if($services){
 			return $services;
