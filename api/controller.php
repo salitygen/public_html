@@ -24,60 +24,28 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
-if($task == 'updategeneral'){
-	if(Rules::settingsGeneral($main)){
-		$data = (object)$_POST;
-		if(General::update($data)){
-			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
-		}
-	}
-}
 
-
-// ==================================
-
-if($main->task == 'updateworkshop'){
+if($main->task == 'update'){
+	
 	$Name = $main->view;
 	$Param = ucfirst($main->params);
 	$NameParam = $Name.$Param;
+	
 	if(method_exists('Rules',$NameParam)){
+		
 		if(Rules::$NameParam($main)){
+			
 			$data = (object)$_POST;
+			
 			if($Param::update($data)){
 				SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 			}
+			
 		}
+		
 	}
+	
 }
 
-// ==================================
-
-
-/* if($task == 'updateworkshop'){
-	if(Rules::settingsWorkshop($main)){
-		$data = (object)$_POST;
-		if(Workshop::update($data)){
-			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
-		}
-	}
-} */
-
-if($task == 'updateservice'){
-	if(Rules::settingsService($main)){
-		$data = (object)$_POST;
-		if(Service::update($data)){
-			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
-		}
-	}
-}
-
-if($task == 'updategroups'){
-	if(Rules::settingsGroups($main)){
-		$data = (object)$_POST;
-		if(Groups::update($data)){
-			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
-		}
-	}
-}
 
 ?>
