@@ -24,21 +24,24 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
-
-if($main->task == 'update'){
+if(isset($main->task)){
 	
-	$Name = $main->view;
-	$Param = ucfirst($main->params);
-	$NameParam = $Name.$Param;
-	
-	if(method_exists('Rules',$NameParam)){
+	if($main->task == 'update'){
 		
-		if(Rules::$NameParam($main)){
+		$Name = $main->view;
+		$Param = ucfirst($main->params);
+		$NameParam = $Name.$Param;
+		
+		if(method_exists('Rules',$NameParam)){
 			
-			$data = (object)$_POST;
-			
-			if($Param::update($data)){
-				SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+			if(Rules::$NameParam($main)){
+				
+				$data = (object)$_POST;
+				
+				if($Param::update($data)){
+					SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+				}
+				
 			}
 			
 		}
