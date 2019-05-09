@@ -34,8 +34,8 @@ foreach($groups as $key => $value){
 ?>
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
-		<form>
-		<?php //print  $data->id; ?>
+		<form action="/?view=settings&params=groups&task=updategroups" method="POST">
+		<?php var_dump($data); ?>
 			<div class="listChkBlocks">
 			<?php $n = 0;
 				foreach($data->checkBoxses as $key => $checkbox){
