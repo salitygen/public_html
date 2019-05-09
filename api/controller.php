@@ -26,7 +26,7 @@ if($task == 'logout'){
 
 
 
-
+print 123;
 var_dump($main);
 
 
