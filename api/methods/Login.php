@@ -13,6 +13,7 @@ if($sessionHash){
 }
 
 $task = Input::task();
+
 if(!defined('ISLOGIN')){
 	if(isset($_GET) && isset($_POST)){	
 		unset($_GET);
@@ -22,10 +23,22 @@ if(!defined('ISLOGIN')){
 		}
 	}
 }else{
+	
 	$page = null;
 	$view = Input::view();
+	
 	if($task || $view){
+		
 		$params = Input::getParams();
+		
+		if($view){
+			$main->view = $view;
+			$main->params = $params;
+			$main->task = $task;
+		}else{
+			header("location: /?view=dashboard");
+		}
+		
 	}
 }
 

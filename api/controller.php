@@ -8,14 +8,6 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 	}
 }
 
-if($view){
-	$main->view = $view;
-	$main->params = $params;
-	$main->task = $task;
-}else{
-	header("location: /?view=dashboard");
-}
-
 if($task == 'login'){
 	$user = Users::findLoginPass($_POST);
 	if($user){
