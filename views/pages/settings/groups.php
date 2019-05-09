@@ -4,7 +4,7 @@ Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
 $services = Service::getAll();
 
-Rules::settingsASD();
+var_dump(method_exists(Rules::settingsASD()));
 
 ?> 
 <p>Группы</p>
