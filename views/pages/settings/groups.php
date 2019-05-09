@@ -3,6 +3,7 @@
 defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
+$groups = Groups::getAll();
 
 ?> 
 
@@ -55,7 +56,7 @@ foreach($groups as $key => $value){
 				}
 			?>
 			</div>
-			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"></button>
+			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 		</form>
 	</div> 
 <?php } ?>
