@@ -27,7 +27,7 @@ foreach($groups as $key => $value){
 		}
 		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
 	}else{
-		$group->data->{$name} = ''. HTML::Name($main,'groups',$key) .' : '.$value.'';
+		$group->data->{$name} = $value;
 	}
 }
 
@@ -35,7 +35,15 @@ foreach($groups as $key => $value){
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
 		<form action="/?view=settings&params=groups&task=updategroups" method="POST">
-		<?php var_dump($data); ?>
+			<div class="groupName">
+				<input type="text" required="required" name="group_name" value="<?php print $data->name; ?>">
+			</div>
+			<div class="groupService">
+				<input type="text" required="required" name="group_service" value="<?php print $data->service; ?>">
+			</div>
+			<div class="groupDesc">
+				<textarea name="group_desc"><?php print $data->desc; ?></textarea>
+			</div>
 			<div class="listChkBlocks">
 			<?php $n = 0;
 				foreach($data->checkBoxses as $key => $checkbox){
@@ -44,6 +52,7 @@ foreach($groups as $key => $value){
 				}
 			?>
 			</div>
+			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"></button>
 		</form>
 	</div> 
 <?php } ?>
