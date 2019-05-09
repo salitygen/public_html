@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
-Rules::settingsGeneral($main) or die('Access Denied');
-$ws = Service::get($main->session->group_service_id);
+Rules::settingsService($main) or die('Access Denied');
+$ws = Service::get($main->session->group_service_id); 
 ?>
 <p>Информация о сервисном центре</p>
 <div class="companyStatus">
@@ -13,7 +13,7 @@ $ws = Service::get($main->session->group_service_id);
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="slideBlock">
-	<form action="/?view=settings&params=services&task=update" method="POST">
+	<form action="/?view=settings&params=service&task=update" method="POST">
 		<div class="center">
 		  <input type="checkbox" name="service_status" id="cbx" style="display:none" <?php if($ws->service_status) print 'checked="true"'; ?> >
 		  <label for="cbx" class="toggle"><span></span></label>    
