@@ -24,6 +24,12 @@ if($task == 'logout'){
 	header('Location: /');
 }
 
+
+print $view;
+print $params;
+print $task;
+
+
 if($task == 'updategeneral'){
 	if(Rules::settingsGeneral($main)){
 		$data = (object)$_POST;
