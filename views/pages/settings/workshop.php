@@ -1,6 +1,6 @@
 <?php
 defined('EXEC') or die;
-Rules::settingsGeneral($main) or die('Access Denied');
+Rules::settingsWorkshop($main) or die('Access Denied');
 // для конкретной мастерской придумать прикомандированный ID пока прописано жетко!
 //$ws = Workshop::get(1);
 // TODO

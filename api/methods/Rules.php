@@ -201,7 +201,7 @@ class Rules {
 		if(!$main->session->group_super_users){
 			if(Rules::settingsGeneral($main)					//Имеет доступ к общим настройкам
 			||Rules::settingsIntegration($main)					//Имеет доступ к центру интеграций
-			||settingsService($main)							//Имеет доступ к настройкам сервисных центров
+			||Rules::settingsService($main)						//Имеет доступ к настройкам сервисных центров
 			||Rules::settingsWorkshop($main)					//Имеет доступ к настройкам мастерских
 			||Rules::settingsUsers($main)						//Имеет доступ к настройкам пользователей
 			||Rules::settingsGroups($main)						//Имеет доступ к настройкам групп

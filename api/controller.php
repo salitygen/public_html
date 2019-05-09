@@ -25,7 +25,7 @@ if($task == 'logout'){
 }
 
 if($task == 'updategeneral'){
-	if(Rules::settingsWorkshop($main)){
+	if(Rules::settingsGeneral($main)){
 		$data = (object)$_POST;
 		if(General::update($data)){
 			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
@@ -43,9 +43,18 @@ if($task == 'updateworkshop'){
 }
 
 if($task == 'updateservice'){
-	if(Rules::settingsWorkshop($main)){
+	if(Rules::settingsService($main)){
 		$data = (object)$_POST;
 		if(Service::update($data)){
+			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+		}
+	}
+}
+
+if($task == 'updategroups'){
+	if(Rules::settingsGroups($main)){
+		$data = (object)$_POST;
+		if(Groups::update($data)){
 			SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 		}
 	}
