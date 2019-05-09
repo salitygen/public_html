@@ -5,7 +5,7 @@ $groups = Groups::getAll();
 $services = Service::getAll();
 
 var_dump(method_exists('Rules','settingsGeneral'));
-var_dump($main);
+
 ?> 
 <p>Группы</p>
 <?php
