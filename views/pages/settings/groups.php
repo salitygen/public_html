@@ -28,7 +28,15 @@ foreach($groups as $key => $value){
 		}
 		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
 	}else{
-		$group->data->{$name} = $value;
+		if($name == 'service'){
+			$group->data->{$name} = '<select name="group_service">';
+			foreach($services as $service){
+				$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'<option>';
+			}
+			$group->data->{$name} .= '</select>';
+		}else{
+			$group->data->{$name} = $value;
+		}
 	}
 }
 
@@ -42,7 +50,7 @@ foreach($groups as $key => $value){
 			</div>
 			<div class="groupService">
 				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE') ?></label>
-				<input type="text" required="required" name="group_service" value="<?php print $data->service; ?>">
+				<?php print $data->service; ?>
 			</div>
 			<div class="groupDesc">
 				<label><?php print HTML::Name($main,'groups','GROUP_DESC') ?></label>
