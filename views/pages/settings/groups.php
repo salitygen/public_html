@@ -31,7 +31,7 @@ foreach($groups as $key => $value){
 		if($name == 'service'){
 			$group->data->{$name} = '<select name="group_service">';
 			foreach($services as $service){
-				$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'<option>';
+				$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'</option>';
 			}
 			$group->data->{$name} .= '</select>';
 		}else{
