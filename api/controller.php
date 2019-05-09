@@ -8,6 +8,14 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 	}
 }
 
+if($view){
+	$main->view = $view;
+	$main->params = $params;
+	$main->task = $task;
+}else{
+	header("location: /?view=dashboard");
+}
+
 if($task == 'login'){
 	$user = Users::findLoginPass($_POST);
 	if($user){
@@ -23,12 +31,6 @@ if($task == 'logout'){
 	Session::drop($sessionHash);
 	header('Location: /');
 }
-
-
-print $view;
-print $params;
-print $task;
-
 
 if($task == 'updategeneral'){
 	if(Rules::settingsGeneral($main)){

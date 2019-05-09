@@ -1,14 +1,6 @@
 <?php
 defined('EXEC') or die;
 
-if($view){
-	$main->view = $view;
-	$main->params = $params;
-	$main->task = $task;
-}else{
-	header("location: /?view=dashboard");
-}
- 
 class Render {
 	
 	public function view($main, $type, $module, $params){
