@@ -35,10 +35,10 @@ if(!defined('ISLOGIN')){
 			$main->view = $view;
 			$main->params = $params;
 			$main->task = $task;
-		}else{
-			header("location: /?view=dashboard");
 		}
 		
+	}else{
+		header("location: /?view=dashboard");
 	}
 }
 
