@@ -4,7 +4,7 @@ defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
 $services = Service::getAll();
-
+var_dump($services);
 ?> 
 
 <p>Группы</p>
@@ -29,11 +29,12 @@ foreach($groups as $key => $value){
 		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
 	}else{
 		if($name == 'service'){
-			$group->data->{$name} = '<select name="group_service">';
+			//$group->data->{$name} = '<select name="group_service">';
 			foreach($services as $service){
-				$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'<option>';
+				
+				//$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'<option>';
 			}
-			$group->data->{$name} .= '</select>';
+			//$group->data->{$name} .= '</select>';
 		}else{
 			$group->data->{$name} = $value;
 		}
