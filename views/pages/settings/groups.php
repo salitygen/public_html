@@ -3,7 +3,7 @@
 defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
-$groups = Groups::getAll();
+$services = Service::getAll();
 
 ?> 
 
