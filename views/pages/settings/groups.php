@@ -36,12 +36,15 @@ foreach($groups as $key => $value){
 	<div class="slideBlock hide">
 		<form action="/?view=settings&params=groups&task=updategroups" method="POST">
 			<div class="groupName">
+				<label><?php print HTML::Name($main,'groups','GROUP_NAME') ?></label>
 				<input type="text" required="required" name="group_name" value="<?php print $data->name; ?>">
 			</div>
 			<div class="groupService">
+				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE') ?></label>
 				<input type="text" required="required" name="group_service" value="<?php print $data->service; ?>">
 			</div>
 			<div class="groupDesc">
+				<label><?php print HTML::Name($main,'groups','GROUP_DESC') ?></label>
 				<textarea name="group_desc"><?php print $data->desc; ?></textarea>
 			</div>
 			<div class="listChkBlocks">
