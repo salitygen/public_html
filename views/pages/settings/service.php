@@ -33,6 +33,7 @@ if(isset($_GET['id'])){
 				  <input type="checkbox" name="service_status" id="cbx" style="display:none" <?php if($service->service_status) print 'checked="true"'; ?> >
 				  <label for="cbx" class="toggle"><span></span></label>    
 				</div>
+				<button class="openClose icon-down-open"></button>
 			</div>
 			<div class="workshopName">
 				<label>Название</label>
