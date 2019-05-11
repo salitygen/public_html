@@ -8,6 +8,12 @@ Rules::settingsWorkshop($main) or die('Access Denied');
 $ws = Workshop::getAll();
 $rules = 1; // прописано жестко
 
+if(isset($_GET['id'])){
+	$opened = (int)Input::getSanitise($_GET['id']);
+}else{
+	$opened = 0;
+}
+
 ?>
 <?php if($rules) : ?>
 <p>Список мастерских</p>
@@ -27,7 +33,7 @@ $rules = 1; // прописано жестко
 <?php if($rules) : ?>
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
-		<div class="slideBlock hide">
+		<div class="slideBlock <?php print ($opened == $data->id ? 'show' : 'hide'); ?>">
 			<form action="/?view=settings&params=workshop&task=update" method="POST">
 				<div class="panel">
 					<div class="companyStatus">
