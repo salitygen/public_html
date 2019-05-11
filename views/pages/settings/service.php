@@ -2,7 +2,6 @@
 defined('EXEC') or die;
 Rules::settingsService($main) or die('Access Denied');
 $ws = Service::get($main->session->group_service_id); 
-var_dump($ws);
 ?>
 <p>Информация о сервисном центре</p>
 <div class="companyStatus">
