@@ -33,8 +33,8 @@ if(isset($_GET['id'])){
 <?php if($rules) : ?>
 <div id="workshopList">
 	<?php foreach($ws as $value):?>
-		<div class="slideBlock <?php print ($opened == $data->id ? 'show' : 'hide'); ?>">
-			<form action="/?view=settings&params=workshop&task=update" method="POST">
+		<div class="slideBlock <?php print ($opened == $value->workshop_id ? 'show' : 'hide'); ?>">
+			<form action="/?view=settings&params=workshop&task=update&id=<?php print $value->workshop_id; ?>" method="POST">
 				<div class="panel">
 					<div class="companyStatus">
 					<?php if($value->workshop_status):?>

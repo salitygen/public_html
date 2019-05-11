@@ -2,13 +2,6 @@
 defined('EXEC') or die;
 Rules::settingsService($main) or die('Access Denied');
 $ws = Service::get($main->session->group_service_id); 
-
-if(isset($_GET['id'])){
-	$opened = (int)Input::getSanitise($_GET['id']);
-}else{
-	$opened = 0;
-}
-
 ?>
 <p>Информация о сервисном центре</p>
 <div class="companyStatus">
@@ -19,7 +12,7 @@ if(isset($_GET['id'])){
 <?php endif;?>
 </div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
-<div class="slideBlock <?php print ($opened == $data->id ? 'show' : 'hide'); ?> ">
+<div class="slideBlock">
 	<form action="/?view=settings&params=service&task=update" method="POST">
 		<div class="center">
 		  <input type="checkbox" name="service_status" id="cbx" style="display:none" <?php if($ws->service_status) print 'checked="true"'; ?> >
