@@ -37,6 +37,7 @@ foreach($groups as $key => $value){
 }
 
 ?>
+<div class="groupList">
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
 		<form action="/?view=settings&params=groups&task=update" method="POST">
@@ -66,3 +67,4 @@ foreach($groups as $key => $value){
 		</form>
 	</div> 
 <?php } ?>
+</div>
