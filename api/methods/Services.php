@@ -27,6 +27,11 @@ class Service {
 		$services = $getservices->fetchAll();
 		
 		if($services){
+			foreach($services as $k => $service){
+				$services[$k]->mails = json_decode($service->service_mail_json);
+				$services[$k]->phones = json_decode($service->service_phone_json);
+				$services[$k]->addres = json_decode($service->service_addres_json);
+			}
 			return $services;
 		}else{
 			return false;
