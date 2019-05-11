@@ -3,9 +3,6 @@ defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
 $services = Service::getAll();
-
-var_dump(method_exists('Rules','settingsGeneral'));
-
 ?> 
 <p>Группы</p>
 <?php
