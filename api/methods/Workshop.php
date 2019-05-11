@@ -20,7 +20,7 @@ class Workshop {
 		
 	}
 	
-	public function getWorkshop($id){
+	public function getService($id){
 		
 		$db = dataBase::pdo();
 		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_service_id={$id}");
