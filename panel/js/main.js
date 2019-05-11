@@ -9,6 +9,8 @@ $(function(){
 		return false;
 	});
 	
+	$('.slideBlock.show input').removeAttr('disabled');
+	
 	$('p.succes i.close').click(function(){
 		$(this).parent().remove();
 	});
