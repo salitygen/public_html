@@ -65,6 +65,5 @@ foreach($groups as $key => $value){
 				<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 			</div>
 		</form>
-		<button class="openClose icon-down-open"></button>
 	</div> 
 <?php } ?>
