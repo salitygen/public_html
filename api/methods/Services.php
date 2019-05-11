@@ -7,7 +7,7 @@ class Service {
 		
 		$db = dataBase::pdo();
 		$getservice = $db->query("SELECT * FROM crm_services WHERE service_id={$id}");
-		$service = $getservice->fetch();
+		$service = $getservice->fetchAll();
 		
 		if($service){
 			$service->mails = json_decode($service->service_mail_json);
