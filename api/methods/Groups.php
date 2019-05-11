@@ -37,6 +37,7 @@ class Groups {
 	
 	public function update($data){
 		
+		$db = dataBase::pdo();
 		$data = Input::group($data);
 		$queryString = '';
 		
