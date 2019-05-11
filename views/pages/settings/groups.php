@@ -26,6 +26,7 @@ foreach($groups as $key => $value){
 	}else{ 
 		if($name == 'service'){
 			$group->data->{$name} = '<select name="group_service_id">';
+				$group->data->{$name} .= '<option value="0" '.($value == 0 ? 'selected' : '').'>'. HTML::Name($main,'groups','GROUP_SERVICE_ALL') .'</option>';
 			foreach($services as $service){
 				$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'</option>';
 			}
