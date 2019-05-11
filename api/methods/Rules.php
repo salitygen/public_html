@@ -203,7 +203,7 @@ class Rules {
 			||Rules::settingsIntegration($main)					//Имеет доступ к центру интеграций
 			||Rules::settingsService($main)						//Имеет доступ к настройкам сервисных центров
 			||Rules::settingsWorkshop($main)					//Имеет доступ к настройкам мастерских
-			||Rules::settingsUsers($main)						//Имеет доступ к настройкам пользователей
+			||Rules::settingsWorkers($main)						//Имеет доступ к настройкам пользователей
 			||Rules::settingsGroups($main)						//Имеет доступ к настройкам групп
 			||Rules::settingsStatuses($main)					//Имеет доступ к настройкам статусов
 			||Rules::settingsSalePrices($main)					//Имеет доступ к настройкам цен и скидок
@@ -1478,9 +1478,9 @@ class Rules {
 	}
 	
 	//Имеет ли доступ к настройкам пользователей
-	public function settingsUsers($main){
+	public function settingsWorkers($main){
 		if(!$main->session->group_super_users){
-			if(!$main->session->group_settings_users){
+			if(!$main->session->group_settings_workers){
 				return false;
 			}else{
 				return true;

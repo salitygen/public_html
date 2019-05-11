@@ -43,7 +43,7 @@ defined('EXEC') or die;
 			<?php if(Rules::settingsGroups($main)) : ?>
 			<li><a <?php if($main->params == 'groups') print 'class="active"';?> href="/?view=settings&params=groups">Группы</a></li>
 			<?php endif;?>
-			<?php if(Rules::settingsUsers($main)) : ?>
+			<?php if(Rules::settingsWorkers($main)) : ?>
 			<li><a <?php if($main->params == 'workers') print 'class="active"';?> href="/?view=settings&params=workers">Сотрудники</a></li>
 			<?php endif;?>
 			<?php if(Rules::settingsStatuses($main)) : ?>

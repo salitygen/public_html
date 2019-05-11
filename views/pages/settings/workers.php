@@ -1,6 +1,6 @@
 <?php
 defined('EXEC') or die;
-Rules::settingsUsers($main) or die('Access Denied'); // Изменить на settingsUsers()
+Rules::settingsWorkers($main) or die('Access Denied');
 $users = Users::get();
 ?>
 <p>Сотрудники</p>
