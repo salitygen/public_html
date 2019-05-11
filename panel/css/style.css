@@ -538,7 +538,7 @@ button.openClose {
     margin-left: 4px;
     cursor: pointer;
 }
-.listChkBlocks {
+.slideBlock.hide .listChkBlocks {
     height: 0!important;
     overflow: hidden;
 }
