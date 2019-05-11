@@ -3,6 +3,13 @@ defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
 $services = Service::getAll();
+
+if(isset($_GET['id'])){
+	$opened = (int)Input::getSanitise($_GET['id']);
+}else{
+	$opened = 0;
+}
+
 ?> 
 <p>Группы</p>
 <?php
@@ -41,8 +48,8 @@ foreach($groups as $key => $value){
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="groupList">
 <?php foreach($group as $data){ ?>
-	<div class="slideBlock hide">
-		<form action="/?view=settings&params=groups&task=update" method="POST">
+	<div class="slideBlock <?php ($opened == $data->id ? 'show' : 'hide') ?> ">
+		<form action="/?view=settings&params=groups&task=update&id=<?php print $data->id; ?>" method="POST">
 			<div class="panel">
 				<button class="openClose icon-down-open"></button>
 			</div>
