@@ -2,8 +2,8 @@
 defined('EXEC') or die;
 Rules::settingsWorkshop($main) or die('Access Denied');
 
-if($main->session->workshop_service_id !== 0){
-	$workshops = Workshop::getService($main->session->workshop_service_id); 
+if($main->session->group_service_id !== 0){
+	$workshops = Workshop::getService($main->session->group_service_id); 
 }else{
 	$workshops = Workshop::getAll();
 }
