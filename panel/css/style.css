@@ -551,3 +551,40 @@ button.openClose {
     color: #fff;
     padding: 5px 10px;
 }
+.slideBlock.hide label {
+    display: none;
+}
+
+.slideBlock.hide button.save {
+    display: none;
+}
+
+.slideBlock.hide .groupName input {
+    border: none;
+    margin: 0;
+    margin-top: -4px;
+    padding: 5px 4px 4px 5px;
+}
+
+.slideBlock.hide {
+    height: 25px;
+}
+
+.groupName input {
+    font-size: 22px;
+    margin-top: -4px;
+    float: left;
+    width: 358px;
+    padding: 4px 4px 4px 4px;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+}
+
+.slideBlock.hide .groupService {
+    display: none;
+}
+
+.slideBlock.hide .groupDesc {
+    display: none;
+}
