@@ -44,7 +44,6 @@ foreach($groups as $key => $value){
 				<button class="openClose icon-down-open"></button>
 			</div>
 			<div class="groupName">
-				<label><?php print HTML::Name($main,'groups','GROUP_NAME'); ?></label>
 				<input type="text" required="required" name="group_name" value="<?php print $data->name; ?>">
 			</div>
 			<div class="groupService">
