@@ -59,8 +59,8 @@ foreach($groups as $key => $value){
 					$n++;
 				}
 			?>
+				<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 			</div>
-			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 		</form>
 		<button class="openClose icon-down-open"></button>
 	</div> 
