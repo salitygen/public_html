@@ -22,8 +22,8 @@ foreach($groups as $key => $value){
 			$fl = $name;
 			$group->data->checkBoxses->{$name} = '';
 		}
-		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="'.$key.'" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
-	}else{
+		$group->data->checkBoxses->{$name} .= '<label><input type="checkbox" name="ch['.$key.']" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
+	}else{ 
 		if($name == 'service'){
 			$group->data->{$name} = '<select name="group_service">';
 			foreach($services as $service){
