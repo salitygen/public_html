@@ -40,6 +40,9 @@ foreach($groups as $key => $value){
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
 		<form action="/?view=settings&params=groups&task=update" method="POST">
+			<div class="panel">
+				<button class="openClose icon-down-open"></button>
+			</div>
 			<div class="groupName">
 				<label><?php print HTML::Name($main,'groups','GROUP_NAME'); ?></label>
 				<input type="text" required="required" name="group_name" value="<?php print $data->name; ?>">
