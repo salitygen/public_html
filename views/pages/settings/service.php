@@ -2,7 +2,7 @@
 defined('EXEC') or die;
 Rules::settingsService($main) or die('Access Denied');
 
-if($main->session->group_service_id == 0){
+if($main->session->group_service_id !== 0){
 	$services = Service::get($main->session->group_service_id); 
 }else{
 	$services = Service::getAll(); 
