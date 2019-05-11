@@ -470,7 +470,6 @@ class Input {
 			'group_settings_users',
 			'group_settings_statuses',
 			'group_settings_groups',
-			'group_settings_rules',
 			'group_settings_sale_prices',
 			'group_settings_form_designer',
 			'group_settings_list_services',
