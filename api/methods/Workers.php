@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 
-class Users {
+class Workers {
 	
 	public function findLoginPass($data){
 		

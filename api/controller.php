@@ -9,10 +9,10 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 }
 
 if($task == 'login'){
-	$user = Users::findLoginPass($_POST);
-	if($user){
-		if($user->user_status == 1){
-			Session::create($user->user_id);
+	$worker = Workers::findLoginPass($_POST);
+	if($worker){
+		if($worker->user_status == 1){
+			Session::create($worker->user_id);
 		}
 	}
 	header('Location: /');
