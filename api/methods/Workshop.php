@@ -60,7 +60,7 @@ class Workshop {
 		
 	}
 	
-	public function getAllByServiceId($id){
+/* 	public function getAllByServiceId($id){
 		
 		$db = dataBase::pdo();
 		$getWorkshops = $db->query("SELECT * FROM crm_workshops WHERE workshop_service_id={$id}");
@@ -77,7 +77,7 @@ class Workshop {
 			return false;
 		}
 		
-	}
+	} */
 	
 	public function add($data){
 
