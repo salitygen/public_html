@@ -628,7 +628,14 @@ button.openClose {
     font-family: sans-serif;
     font-size: 15px;
 }
+.groupList {
+    float: left;
+    width: 100%;
+}
 
+.groupList .slideBlock {
+    position: relative;
+}
 .groupDesc label {
     float: left;
     width: 100%;
