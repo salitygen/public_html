@@ -537,9 +537,7 @@ button.openClose {
     margin-left: 4px;
     cursor: pointer;
 }
-.slideBlock.hide .listChkBlocks label {
-    display: unset;
-}
+
 .chkblock h3 {
     float: left;
     background-color: #222426;
@@ -548,9 +546,6 @@ button.openClose {
     margin-left: -10px;
     color: #fff;
     padding: 5px 10px;
-}
-.slideBlock.hide label {
-    display: none;
 }
 
 .slideBlock.hide button.save {
