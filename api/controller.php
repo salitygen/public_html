@@ -40,10 +40,16 @@ if(isset($main->task)){
 				
 				if($Param::update($data)){
 					SystemMessage::set('succes','Изменения успешно сохранены!',$main);
+				}else{
+					SystemMessage::set('error','Изменения не были сохранены, ошибка запроса к базе данных!',$main);
 				}
 				
+			}else{
+				SystemMessage::set('error','Изменения не были сохранены, недостаточно прав!',$main);
 			}
 			
+		}else{
+			SystemMessage::set('error','Изменения не были сохранены, ошибка в запросе!',$main);
 		}
 		
 	}
