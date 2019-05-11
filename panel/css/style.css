@@ -32,6 +32,7 @@ p.error {
     background-color: #c49191;
     padding: 12px;
     border: 2px solid #880f0f;
+    position: relative;
     color: #470000;
     border-radius: 3px;
     margin: 2px 0 16px 0;
@@ -474,13 +475,14 @@ div#workshopList .slideBlock .companyStatus p {
     right: 70px;
     top: 3px;
 }
-p.succes i.close {
+p.succes i.close,p.error i.close {
     position: absolute;
     right: 8px;
     font-size: 20px;
     top: 11px;
     cursor: pointer;
 }
+
 .panel {
     float: right;
     width: 280px;
