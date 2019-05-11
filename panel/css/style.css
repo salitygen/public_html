@@ -256,6 +256,7 @@ p.username {
     margin-top: 5px;
     border-radius: 4px;
     background-color: #ffffff;
+    position: relative;
 }
 
 .workshopName {
