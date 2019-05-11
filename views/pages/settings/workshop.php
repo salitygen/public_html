@@ -2,11 +2,11 @@
 defined('EXEC') or die;
 Rules::settingsWorkshop($main) or die('Access Denied');
 
-//if($main->session->group_service_id !== 0){
-//	$workshops = Workshop::get($main->session->group_service_id); 
-//}else{
+if($main->session->workshop_service_id !== 0){
+	$workshops = Workshop::get($main->session->workshop_service_id); 
+}else{
 	$workshops = Workshop::getAll();
-//}
+}
 
 if(isset($_GET['id'])){
 	$opened = (int)Input::getSanitise($_GET['id']);
