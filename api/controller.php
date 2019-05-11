@@ -49,7 +49,7 @@ if(isset($main->task)){
 			}
 			
 		}else{
-			SystemMessage::set('error','Изменения не были сохранены, ошибка в запросе!',$main);
+			SystemMessage::set('error','Изменения не были сохранены, нет подходящего метода обработки!',$main);
 		}
 		
 	}
