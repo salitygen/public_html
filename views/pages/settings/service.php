@@ -7,14 +7,20 @@ if($main->session->group_service_id == 0){
 }else{
 	$services = Service::getAll(); 
 }
+
+if(isset($_GET['id'])){
+	$opened = (int)Input::getSanitise($_GET['id']);
+}else{
+	$opened = 0;
+}
  
 ?>
 <p>Сервисные центры</p>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div id="serviceList">
 	<?php foreach($services as $service): ?>
-	<div class="slideBlock">
-		<form action="/?view=settings&params=service&task=update" method="POST">
+	<div class="slideBlock <?php print ($opened !== $service->service_id ? 'hide' : 'show' ); ?>">
+		<form action="/?view=settings&params=service&task=update&id=<?php print $service->service_id; ?>" method="POST">
 			<div class="panel">
 				<div class="companyStatus">
 				<?php if($service->service_status):?>
