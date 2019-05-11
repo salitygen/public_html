@@ -7,13 +7,15 @@ class Service {
 		
 		$db = dataBase::pdo();
 		$getservice = $db->query("SELECT * FROM crm_services WHERE service_id={$id}");
-		$service = $getservice->fetchAll();
+		$services = $getservice->fetchAll();
 		
-		if($service){
-			$service->mails = json_decode($service->service_mail_json);
-			$service->phones = json_decode($service->service_phone_json);
-			$service->addres = json_decode($service->service_addres_json);
-			return $service;
+		if($services){
+			foreach($services as $k => $service){
+				$services[$k]->mails = json_decode($service->service_mail_json);
+				$services[$k]->phones = json_decode($service->service_phone_json);
+				$services[$k]->addres = json_decode($service->service_addres_json);
+			}
+			return $services;
 		}else{
 			return false;
 		}
