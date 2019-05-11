@@ -537,7 +537,8 @@ button.openClose {
     margin-left: 4px;
     cursor: pointer;
 }
-.slideBlock.hide .listChkBlocks {
+.slideBlock.hide .listChkBlocks label {
+    display: unset;
 }
 .chkblock h3 {
     float: left;
