@@ -467,7 +467,7 @@ class Input {
 			'group_settings_integration',
 			'group_settings_workshop',
 			'group_settings_service',
-			'group_settings_users',
+			'group_settings_workers',
 			'group_settings_statuses',
 			'group_settings_groups',
 			'group_settings_sale_prices',
