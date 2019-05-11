@@ -48,7 +48,7 @@ foreach($groups as $key => $value){
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="groupList">
 <?php foreach($group as $data){ ?>
-	<div class="slideBlock <?php print ($opened !== $data->id ? 'hide' : ''); ?>">
+	<div class="slideBlock <?php print ($opened !== $data->id ? 'hide' : 'show' ); ?>">
 		<form action="/?view=settings&params=groups&task=update&id=<?php print $data->id; ?>" method="POST">
 			<div class="panel">
 				<button class="openClose icon-down-open"></button>
