@@ -6,6 +6,23 @@ class Workshop {
 	public function get($id){
 		
 		$db = dataBase::pdo();
+		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_id={$id}");
+		$workshop = $getWorkshop->fetch();
+		
+		if($workshop){
+			$workshop->mails = json_decode($workshop->workshop_mail_json);
+			$workshop->phones = json_decode($workshop->workshop_phone_json);
+			$workshop->addres = json_decode($workshop->workshop_addres_json);
+			return $workshop;
+		}else{
+			return false;
+		}
+		
+	}
+	
+	public function getWorkshop($id){
+		
+		$db = dataBase::pdo();
 		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_service_id={$id}");
 		$workshop = $getWorkshop->fetch();
 		
