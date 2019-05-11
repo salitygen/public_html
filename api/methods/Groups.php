@@ -36,7 +36,7 @@ class Groups {
 	}
 	
 	public function update($data){
-	
+		var_dump($data);
 	}
 	
 	public function remove($id){
