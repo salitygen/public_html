@@ -7,13 +7,15 @@ class Workshop {
 		
 		$db = dataBase::pdo();
 		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_id={$id}");
-		$workshop = $getWorkshop->fetch();
+		$workshops = $getWorkshop->fetchAll();
 		
-		if($workshop){
-			$workshop->mails = json_decode($workshop->workshop_mail_json);
-			$workshop->phones = json_decode($workshop->workshop_phone_json);
-			$workshop->addres = json_decode($workshop->workshop_addres_json);
-			return $workshop;
+		if($workshops){
+			foreach($workshops as $k => $workshop){
+				$workshops[$k]->mails = json_decode($workshop->workshop_mail_json);
+				$workshops[$k]->phones = json_decode($workshop->workshop_phone_json);
+				$workshops[$k]->addres = json_decode($workshop->workshop_addres_json);
+			}
+			return $workshops;
 		}else{
 			return false;
 		}
@@ -24,13 +26,15 @@ class Workshop {
 		
 		$db = dataBase::pdo();
 		$getWorkshop = $db->query("SELECT * FROM crm_workshops WHERE workshop_service_id={$id}");
-		$workshop = $getWorkshop->fetch();
+		$workshops = $getWorkshop->fetchAll();
 		
-		if($workshop){
-			$workshop->mails = json_decode($workshop->workshop_mail_json);
-			$workshop->phones = json_decode($workshop->workshop_phone_json);
-			$workshop->addres = json_decode($workshop->workshop_addres_json);
-			return $workshop;
+		if($workshops){
+			foreach($workshops as $k => $workshop){
+				$workshops[$k]->mails = json_decode($workshop->workshop_mail_json);
+				$workshops[$k]->phones = json_decode($workshop->workshop_phone_json);
+				$workshops[$k]->addres = json_decode($workshop->workshop_addres_json);
+			}
+			return $workshops;
 		}else{
 			return false;
 		}
