@@ -37,6 +37,7 @@ foreach($groups as $key => $value){
 }
 
 ?>
+<?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="groupList">
 <?php foreach($group as $data){ ?>
 	<div class="slideBlock hide">
