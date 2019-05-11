@@ -256,7 +256,6 @@ p.username {
     margin-top: 5px;
     border-radius: 4px;
     background-color: #ffffff;
-    overflow: hidden;
     position: relative;
 }
 
@@ -540,8 +539,6 @@ button.openClose {
     cursor: pointer;
 }
 .slideBlock.hide .listChkBlocks {
-    height: 0!important;
-    overflow: hidden;
 }
 .chkblock h3 {
     float: left;
@@ -568,6 +565,7 @@ button.openClose {
 }
 
 .slideBlock.hide {
+    overflow: hidden;
     height: 25px;
 }
 
