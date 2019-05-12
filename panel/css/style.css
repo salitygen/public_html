@@ -632,6 +632,13 @@ p.succes i.close,p.error i.close {
     width: 100%;
 }
 */
+
+.grouplist {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .grouplist label {
     float: left;
     width: 100%;
