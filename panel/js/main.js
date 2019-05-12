@@ -1,6 +1,6 @@
 $(function(){
 	
-	// WORKSHOPS SETTINGS PAGE START
+	// SETTINGS PAGE START
 	
 	$('button.openClose').click(function(){
 		$(this).parent().parent().parent().toggleClass('hide');
@@ -11,17 +11,17 @@ $(function(){
 	
 	$('.slideBlock.show input').removeAttr('disabled');
 	
-	$('p.succes i.close').click(function(){
+	$('p.succes i.close,p.error i.close').click(function(){
 		$(this).parent().remove();
 	});
 	
-	$('p.succes').delay(5000).fadeOut('slow', function(){
+	$('p.succes,p.error').delay(5000).fadeOut('slow', function(){
 		$(this).remove();
 	});
 	
-	$('body').on('click','.workshopPhones .controls button.icon-plus',function(){
-		var workPhones = $(this).parent().parent().parent();
-		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+	$('body').on('click','.phones .controls button.icon-plus',function(){
+		var phones = $(this).parent().parent().parent();
+		var index = parseInt(phones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
 		var inputs  ='<div class="phoneDiv">';
 			inputs +='<label>Телефон</label>';
 			inputs +='<input type="text" name="phones['+index+'][value]" value="">';
@@ -32,19 +32,19 @@ $(function(){
 			inputs +='<button class="icon-cancel"></button>';
 			inputs +='</div>';
 			inputs +='</div>';
-		workPhones.append(inputs); 
+		phones.append(inputs); 
 		return false;
 	});
 	
-	$('body').on('click','.workshopPhones .controls button.icon-cancel',function(){
+	$('body').on('click','.phones .controls button.icon-cancel',function(){
 		var removeBlock = $(this).parent().parent();
 		removeBlock.remove();
 		return false;
 	});
 	
-	$('body').on('click','.workshopMails .controls button.icon-plus',function(){
-		var workPhones = $(this).parent().parent().parent();
-		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+	$('body').on('click','.mails .controls button.icon-plus',function(){
+		var mails = $(this).parent().parent().parent();
+		var index = parseInt(mails.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
 		var inputs  ='<div class="phoneDiv">';
 			inputs +='<label>Почтовый ящик</label>';
 			inputs +='<input type="text" name="mails['+index+'][value]" value="">';
@@ -55,19 +55,19 @@ $(function(){
 			inputs +='<button class="icon-cancel"></button>';
 			inputs +='</div>';
 			inputs +='</div>';
-		workPhones.append(inputs); 
+		mails.append(inputs); 
 		return false;
 	});
 	
-	$('body').on('click','.workshopMails .controls button.icon-cancel',function(){
+	$('body').on('click','.mails .controls button.icon-cancel',function(){
 		var removeBlock = $(this).parent().parent();
 		removeBlock.remove();
 		return false;
 	});
 	
-	$('body').on('click','.workshopAddres .controls button.icon-plus',function(){
-		var workPhones = $(this).parent().parent().parent();
-		var index = parseInt(workPhones.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+	$('body').on('click','.addres .controls button.icon-plus',function(){
+		var addres = $(this).parent().parent().parent();
+		var index = parseInt(addres.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
 		var inputs  ='<div class="phoneDiv">';
 			inputs +='<label>Адрес</label>';
 			inputs +='<input type="text" name="addres['+index+'][value]" value="">';
@@ -78,28 +78,21 @@ $(function(){
 			inputs +='<button class="icon-cancel"></button>';
 			inputs +='</div>';
 			inputs +='</div>';
-		workPhones.append(inputs); 
+		addres.append(inputs); 
 		return false;
 	});
 	
-	$('body').on('click','.workshopAddres .controls button.icon-cancel',function(){
+	$('body').on('click','.addres .controls button.icon-cancel',function(){
 		var removeBlock = $(this).parent().parent();
 		removeBlock.remove();
 		return false;
 	});
-
-	// WORKSHOPS SETTINGS PAGE END
-	
-	// 
 	
 	$('.listChkBlocks').masonry({
 	  itemSelector: '.chkblock',
 	  columnWidth: 487
 	});
-	
-/* 	$('.listChkBlocks').packery({
-	  itemSelector: '.chkblock',
-	  gutter: 10
-	}); */
+
+	// SETTINGS PAGE END
 	
 });
