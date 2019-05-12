@@ -33,10 +33,10 @@ var_dump($workers);
 				</div>
 				<button class="openClose icon-down-open"></button>
 			</div>
-			<div class="workerName">
+			<div class="workerName name">
 				<input type="text" disabled="disabled" required="required" name="user_name" value="<?php if($worker->user_name != '') print $worker->user_name; ?>">
 			</div>
-			<div class="workerNote">
+			<div class="workerNote note">
 				<label>Дополнительная информация</label>
 				<textarea name="worker_note" ><?php if($worker->user_note != '') print $worker->user_note; ?></textarea>
 			</div>
