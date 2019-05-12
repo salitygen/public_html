@@ -3,22 +3,34 @@ defined('EXEC') or die;
 Rules::settingsWorkers($main) or die('Access Denied');
 
 if($main->session->user_service_id !== 0){
-	$selectAll = false; 
-	$services = Service::get($main->session->user_service_id); 
+	
+	if($main->session->user_workshop_id !== 0){
+		
+		$selectAll = false; 
+		$selectAll2 = false; 
+		$services = Service::get($main->session->user_service_id); 
+		$workshops = Workshop::getService($main->session->user_workshop_id); 
+		$workers = Workers::getWorkshop($main->session->user_workshop_id);
+		
+	}else{
+		
+		$selectAll = false; 
+		$selectAll2 = true; 
+		$services = Service::get($main->session->user_service_id);
+		$workshops = Workshop::getAll(); 
+		$workers = Workers::getService($main->session->user_service_id);
+		
+	}
+	
 }else{
+	
 	$selectAll = true;
-	$services = Service::getAll(); 
-}
-
-if($main->session->user_workshop_id !== 0){
-	$selectAll2 = false; 
-	$workshops = Workshop::getService($main->session->user_workshop_id); 
-}else{
 	$selectAll2 = true; 
-	$workshops = Workshop::getAll();
+	$services = Service::getAll();
+	$workshops = Workshop::getAll(); 
+	$workers = Workers::getAll();
+	
 }
-
-$workers = Workers::getAll();
 
 if(isset($_GET['id'])){
 	$opened = (int)Input::getSanitise($_GET['id']);
