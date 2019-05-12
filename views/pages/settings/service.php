@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
 	<div class="slideBlock <?php print ($opened !== $service->service_id ? 'hide' : 'show' ); ?>">
 		<form action="/?view=settings&params=service&task=update&id=<?php print $service->service_id; ?>" method="POST">
 			<div class="panel">
-				<div class="companyStatus">
+				<div class="status">
 				<?php if($service->service_status):?>
 					<p>Работает</p>
 				<?php else:?>

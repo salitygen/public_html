@@ -20,7 +20,7 @@ var_dump($workers);
 	<div class="slideBlock <?php print ($opened !== $worker->user_id ? 'hide' : 'show' ); ?>">
 		<form action="/?view=settings&params=workers&task=update&id=<?php print $worker->user_id; ?>" method="POST">
 			<div class="panel">
-				<div class="userStatus">
+				<div class="status">
 					<?php if($worker->user_status):?>
 					<p>Работает</p>
 					<?php else:?>

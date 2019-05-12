@@ -24,7 +24,7 @@ if(isset($_GET['id'])){
 	<div class="slideBlock <?php print ($opened !== $workshop->workshop_id ? 'hide' : 'show' ); ?>">
 		<form action="/?view=settings&params=workshop&task=update&id=<?php print $workshop->workshop_id; ?>" method="POST">
 			<div class="panel">
-				<div class="companyStatus">
+				<div class="status">
 				<?php if($workshop->workshop_status):?>
 					<p>Работает</p>
 				<?php else:?>

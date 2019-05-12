@@ -4,7 +4,7 @@ Rules::settingsGeneral($main) or die('Access Denied');
 $company = General::get();
 ?>
 <p>Информация о компании</p>
-<div class="companyStatus">
+<div class="status">
 <?php if($company->general_status):?>
 	<p>Работает</p>
 <?php else:?>
