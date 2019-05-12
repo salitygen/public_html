@@ -10,10 +10,6 @@ if(isset($_GET['id'])){
 	$opened = 0;
 }
 
-?> 
-<p>Группы</p>
-<?php
-
 $group = new stdClass();
 $group->data = new stdClass();
 $group->data->checkBoxses = new stdClass();
@@ -45,6 +41,7 @@ foreach($groups as $key => $value){
 }
 
 ?>
+<p>Группы</p>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="groupList">
 <?php foreach($group as $data){ ?>
