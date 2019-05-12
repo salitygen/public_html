@@ -50,14 +50,14 @@ foreach($groups as $key => $value){
 			<div class="panel">
 				<button class="openClose icon-down-open"></button>
 			</div>
-			<div class="groupName">
+			<div class="groupName name">
 				<input type="text" required="required" name="group_name" value="<?php print $data->name; ?>">
 			</div>
-			<div class="groupService">
+			<div class="groupService grouplist">
 				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
 				<?php print $data->service; ?>
 			</div>
-			<div class="groupNote">
+			<div class="groupNote note">
 				<label><?php print HTML::Name($main,'groups','GROUP_DESC'); ?></label>
 				<textarea name="group_desc"><?php print $data->desc; ?></textarea>
 			</div>
