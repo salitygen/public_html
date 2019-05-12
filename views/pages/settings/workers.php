@@ -1,9 +1,7 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsWorkers($main) or die('Access Denied');
-
 $groups = Groups::getAll();
-var_dump($groups);
 
 if($main->session->user_service_id !== 0){
 	
@@ -95,7 +93,16 @@ if(isset($_GET['id'])){
 					<?php endforeach;?>
 				</select>
 			</div>
-
+			<div class="workerGroup grouplist">
+				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
+				<select name="user_group_id">
+					<?php foreach($groups as $group): ?>
+					<option value="<?php print $group->group_id; ?>"<?php print ($worker->user_group_id == $group->group_id ? 'selected' : ''); ?>>
+					<?php print $group->group_name; ?>
+					</option>
+					<?php endforeach;?>
+				</select>
+			</div>
 			<div class="workerNote note">
 				<label>Дополнительная информация</label>
 				<textarea name="worker_note" ><?php if($worker->user_note != '') print $worker->user_note; ?></textarea>
