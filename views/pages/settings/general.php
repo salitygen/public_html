@@ -22,7 +22,7 @@ $company = General::get();
 			<button class="openClose icon-down-open"></button>
 		</div>
 		<div class="companyName name">
-			<input type="text" disabled="disabled" required="required" name="general_name" value="<?php if($company->general_name != '') print $company->general_name; ?>">
+			<input type="text" required="required" name="general_name" value="<?php if($company->general_name != '') print $company->general_name; ?>">
 		</div>
 		<div class="companyNote note">
 			<label>Дополнительная информация</label>
