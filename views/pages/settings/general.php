@@ -19,7 +19,6 @@ $ws = General::get();
 		  <label for="cbx" class="toggle"><span></span></label>    
 		</div>
 		<div class="companyName">
-			<label>Название</label>
 			<input type="text" required="required" name="general_name" value="<?php if($ws->general_name != '') print $ws->general_name; ?>">
 		</div>
 		<div class="companyNote">
