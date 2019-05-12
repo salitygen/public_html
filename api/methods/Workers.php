@@ -33,7 +33,20 @@ class Workers {
 		
 	}
 	
-	public function get(){
+	public function get($id){
+		
+	}
+	
+	public function getAll(){
+		
+		$getAllUsers = $db->query("SELECT * FROM crm_users ");
+		$users = $getAllUsers->fetchAll();
+
+		if($users){
+			return $users;
+		}else{
+			return false;
+		}
 		
 	}
 	
