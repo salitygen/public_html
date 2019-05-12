@@ -483,11 +483,7 @@ button.openClose {
     cursor: pointer;
 }
 
-.slideBlock.hide .name input {
-    border: none;
-    margin-top: -4px;
-    color: #000;
-}
+.slideBlock.hide .name input {border: none;padding: 5px 4px 4px 5px;color: #000;}
 
 p.succes i.close,p.error i.close {
     position: absolute;
@@ -556,10 +552,6 @@ p.succes i.close,p.error i.close {
 }
 
 .slideBlock.hide .groupName input {
-    border: none;
-    margin: 0;
-    margin-top: -4px;
-    padding: 5px 4px 4px 5px;
 }
 
 .slideBlock.hide {
