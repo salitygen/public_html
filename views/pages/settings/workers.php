@@ -2,6 +2,26 @@
 defined('EXEC') or die;
 Rules::settingsWorkers($main) or die('Access Denied');
 
+if($main->session->user_service_id !== 0){
+	$selectAll = false; 
+	// $selectAll - Добавляет в выпадающий список возможность переместить мастерскую во "все"
+	// сервис центры, на данный момент отключено если пользователь сам не находится везде т.е у него "user_service_id" не "0"
+	$services = Service::get($main->session->user_service_id); 
+}else{
+	$selectAll = true;
+	$services = Service::getAll(); 
+}
+
+if($main->session->user_workshop_id !== 0){
+	$selectAll2 = false; 
+	// $selectAll2 - Добавляет в выпадающий список возможность переместить мастерскую во "все"
+	// сервис центры, на данный момент отключено если пользователь сам не находится везде т.е у него "user_service_id" не "0"
+	$workshops = Workshop::getService($main->session->user_workshop_id); 
+}else{
+	$selectAll2 = true; 
+	$workshops = Workshop::getAll();
+}
+
 $workers = Workers::getAll();
 
 if(isset($_GET['id'])){
@@ -36,6 +56,36 @@ var_dump($main);
 			</div>
 			<div class="workerName name">
 				<input type="text" disabled="disabled" required="required" name="user_name" value="<?php if($worker->user_name != '') print $worker->user_name; ?>">
+			</div>
+			<div class="workerService grouplist">
+				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
+				<select name="user_service_id">
+					<?php if($selectAll):?>
+					<option value="0" <?php print ($worker->user_service_id == 0 ? 'selected' : ''); ?>>
+					<?php print HTML::Name($main,'groups','GROUP_SERVICE_ALL'); ?>
+					</option>
+					<?php endif;?>
+					<?php foreach($services as $service): ?>
+					<option value="<?php print $service->service_id; ?>"<?php print ($worker->user_service_id == $service->service_id ? 'selected' : ''); ?>>
+					<?php print $service->service_name; ?>
+					</option>
+					<?php endforeach;?>
+				</select>
+			</div>
+			<div class="workerWorkshop grouplist">
+				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
+				<select name="user_workshop_id">
+					<?php if($selectAll2):?>
+					<option value="0" <?php print ($worker->user_workshop_id == 0 ? 'selected' : ''); ?>>
+					<?php print HTML::Name($main,'groups','GROUP_SERVICE_ALL'); ?>
+					</option>
+					<?php endif;?>
+					<?php foreach($workshops as $workshop): ?>
+					<option value="<?php print $workshop->workshop_id; ?>"<?php print ($worker->user_workshop_id == $workshop->workshop_id ? 'selected' : ''); ?>>
+					<?php print $workshop->workshop_name; ?>
+					</option>
+					<?php endforeach;?>
+				</select>
 			</div>
 			<div class="workerNote note">
 				<label>Дополнительная информация</label>
