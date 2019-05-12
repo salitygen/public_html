@@ -11,6 +11,7 @@ if(isset($_GET['id'])){
 }
 
 var_dump($workers);
+var_dump($main);
 
 ?>
 <p>Сотрудники</p>
