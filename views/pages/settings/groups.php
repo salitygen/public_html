@@ -63,7 +63,10 @@ foreach($groups as $key => $value){
 			</div>
 			<div class="listChkBlocks">
 			<?php foreach($data->checkBoxses as $key => $checkbox): ?>
-				<div class="chkblock"><h3><?php print HTML::Name($main,'groups',$key); ?></h3><?php print $checkbox;?></div>
+				<div class="chkblock">
+					<h3><?php print HTML::Name($main,'groups',$key); ?></h3>
+					<?php print $checkbox; ?>
+				</div>
 			<?php endforeach;?>
 			</div>
 			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
