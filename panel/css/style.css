@@ -256,7 +256,7 @@ p.username {
     position: relative;
 }
 
-.workshopName, .groupName, .workerName, .serviceName, .companyName {
+.name {
     float: left;
     width: 100%;
     margin-bottom: 10px;
@@ -269,7 +269,7 @@ p.username {
     margin: 4px 10px 0px 0px;
 }
 
-.workshopName input, .workerName input, .groupName input, .serviceName input, .companyName input {
+.name input {
     font-size: 22px;
     margin-top: -4px;
     float: left;
@@ -279,7 +279,7 @@ p.username {
     border: 1px solid #c4c4c4;
     background-color: #fff;
 }
-.workshopNote, .serviceNote, .groupNote,.companyNote,.workerNote {
+.note {
     float: left;
     width: 100%;
     margin-bottom: 15px;
@@ -287,12 +287,12 @@ p.username {
     border-bottom: 1px solid #cecece;
 }
 
-.workshopNote label,.serviceNote label,.workerNote label,.companyNote label,.groupNote label {
+.note label {
     float: left;
     width: 100%;
 }
 
-.workshopNote textarea, .companyNote textarea, .groupNote textarea, .workerNote textarea,.serviceNote textarea {
+.note textarea {
     float: left;
     width: 720px;
     height: 140px;
@@ -304,7 +304,7 @@ p.username {
     font-size: 15px;
 }
 
-.workshopPhones, .workshopMails, .workshopAddres, .companyPhones, .companyMails, .companyAddres, .servicePhones, .serviceMails, .serviceAddres, .workerPhones, .workerMails, .workerAddres {
+.phones,.mails,.addres {
     float: left;
     width: 100%;
     margin-bottom: 15px;
@@ -314,7 +314,7 @@ p.username {
     padding-bottom: 16px;
 }
 
-.workshopPhones label, .workshopMails label, .workshopAddres label,.servicePhones label, .serviceMails label, .serviceAddres label,.companyPhones label, .companyMails label, .companyAddres label,.workerPhones label, .workerMails label, .workerAddres label {
+.phones label, .mails label, .addres label {
     float: left;
     margin-bottom: 10px;
     position: absolute;
@@ -607,8 +607,6 @@ button.openClose {
     font-size: 15px;
 }
 .groupList {
-    float: left;
-    width: 100%;
 }
 
 .groupList .slideBlock {
@@ -619,12 +617,12 @@ button.openClose {
     width: 100%;
 }
 
-.groupService label {
+.grouplist label {
     float: left;
     width: 100%;
 }
 
-.groupService select {
+.grouplist select {
     font-size: 22px;
     margin-top: 10px;
     float: left;
