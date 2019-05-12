@@ -304,7 +304,7 @@ p.username {
     font-size: 15px;
 }
 
-.workshopPhones, .workshopMails,.workshopAddres {
+.workshopPhones, .workshopMails, .workshopAddres, .companyPhones, .companyMails, .companyAddres, .servicePhones, .serviceMails, .serviceAddres, .workerPhones, .workerMails, .workerAddres {
     float: left;
     width: 100%;
     margin-bottom: 15px;
