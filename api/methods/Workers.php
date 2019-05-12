@@ -18,11 +18,11 @@ class Workers {
 				return false;
 			}
 			
-			$searchUser = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
-			$user = $searchUser->fetch();
+			$searchWorker = $db->query("SELECT * FROM crm_users WHERE user_login='{$login}' AND user_pass='{$pass}'");
+			$worker = $searchWorker->fetch();
 
-			if($user){
-				return $user;
+			if($worker){
+				return $worker;
 			}else{
 				return false;
 			}
@@ -39,11 +39,11 @@ class Workers {
 	
 	public function getAll(){
 		
-		$getAllUsers = $db->query("SELECT * FROM crm_users ");
-		$users = $getAllUsers->fetchAll();
+		$getAllWorkers = $db->query("SELECT * FROM crm_users");
+		$workers = $getAllWorkers->fetchAll();
 
-		if($users){
-			return $users;
+		if($workers){
+			return $workers;
 		}else{
 			return false;
 		}
