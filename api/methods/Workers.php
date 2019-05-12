@@ -37,6 +37,36 @@ class Workers {
 		
 	}
 	
+	public function getService($id){
+		
+		$db = dataBase::pdo();
+		
+		$getAllServiceWorkers = $db->query("SELECT * FROM crm_users WHERE user_service_id='{$id}'");
+		$workers = $getAllServiceWorkers->fetchAll();
+
+		if($workers){
+			return $workers;
+		}else{
+			return false;
+		}
+		
+	}
+	
+	public function getWorkshop($id){
+		
+		$db = dataBase::pdo();
+		
+		$getAllWorkshopWorkers = $db->query("SELECT * FROM crm_users WHERE user_workshop_id='{$id}'");
+		$workers = $getAllWorkshopWorkers->fetchAll();
+
+		if($workers){
+			return $workers;
+		}else{
+			return false;
+		}
+		
+	}
+	
 	public function getAll(){
 		
 		$db = dataBase::pdo();
