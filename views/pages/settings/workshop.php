@@ -2,6 +2,8 @@
 defined('EXEC') or die;
 Rules::settingsWorkshop($main) or die('Access Denied');
 
+$services = Service::getAll();
+
 if($main->session->group_service_id !== 0){
 	$workshops = Workshop::getService($main->session->group_service_id); 
 }else{
@@ -37,6 +39,15 @@ if(isset($_GET['id'])){
 			</div>
 			<div class="workshopName">
 				<input type="text" disabled="disabled" required="required" name="workshop_name" value="<?php if($workshop->workshop_name != '') print $workshop->workshop_name; ?>">
+			</div>
+			<div class="groupService">
+				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
+				<select name="workshop_service_id">
+					<option value="0" <?php print ($workshop->workshop_service_id == 0 ? 'selected' : ''); ?>><?php print HTML::Name($main,'groups','GROUP_SERVICE_ALL'); ?></option>
+					<?php foreach($services as $service): ?>
+					<option value="<?php print $service->service_id; ?>"<?php print ($workshop->workshop_service_id == $service->service_id ? 'selected' : ''); ?>><?php print $service->service_name; ?></option>
+					<?php endforeach;?>
+				</select>
 			</div>
 			<div class="workshopNote">
 				<label>Дополнительная информация</label>
