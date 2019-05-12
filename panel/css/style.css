@@ -565,73 +565,12 @@ p.succes i.close,p.error i.close {
     height: 25px;
 }
 
-/* .groupName input {
-    font-size: 22px;
-    margin-top: -4px;
-    float: left;
-    width: 358px;
-    padding: 4px 4px 4px 4px;
-    border-radius: 3px;
-    border: 1px solid #c4c4c4;
-    background-color: #fff;
-} */
-
-/* .slideBlock.hide .groupDesc {
-    display: none;
-} */
-
-/* .groupName {
-    float: left;
-    width: 100%;
-    margin-bottom: 10px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #d7d7d7;
-}
-
-.groupService {
-    float: left;
-    width: 100%;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #cecece;
-}
-
-.groupDesc {
-    float: left;
-    width: 100%;
-    margin-bottom: 15px;
-    padding-bottom: 17px;
-    border-bottom: 1px solid #cecece;
-} */
-
 .listChkBlocks {
     float: left;
     width: 100%;
     margin-bottom: 15px;
     padding-bottom: 15px;
 }
-
-/* .groupDesc textarea {
-    float: left;
-    width: 720px;
-    height: 140px;
-    margin-top: 10px;
-    resize: none;
-    border-color: #c4c4c4;
-    border-radius: 2px;
-    font-family: sans-serif;
-    font-size: 15px;
-} */
-
-/* .groupList .slideBlock {
-    position: relative;
-}
-
-.groupDesc label {
-    float: left;
-    width: 100%;
-}
-*/
 
 .grouplist {
     float: left;
