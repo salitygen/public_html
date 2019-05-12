@@ -1,7 +1,9 @@
 <?php
 defined('EXEC') or die;
 Rules::settingsWorkers($main) or die('Access Denied');
+
 $groups = Groups::getAll();
+var_dump($groups);
 
 if($main->session->user_service_id !== 0){
 	
