@@ -346,12 +346,6 @@ class Input {
 			die('Error in Data!');
 		}
 		
-		if(isset($data->group_service_id)){
-			$data->group_service_id = (int)Input::postSanitise($data->group_service_id);
-		}else{
-			$data->group_service_id = 0;
-		}
-		
 		if(isset($data->group_name)){
 			$data->group_name = Input::postSanitise($data->group_name);
 		}else{
