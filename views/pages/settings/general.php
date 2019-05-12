@@ -18,15 +18,15 @@ $ws = General::get();
 		  <input type="checkbox" name="general_status" id="cbx" style="display:none" <?php if($ws->general_status) print 'checked="true"'; ?> >
 		  <label for="cbx" class="toggle"><span></span></label>    
 		</div>
-		<div class="workshopName">
+		<div class="companyName">
 			<label>Название</label>
 			<input type="text" required="required" name="general_name" value="<?php if($ws->general_name != '') print $ws->general_name; ?>">
 		</div>
-		<div class="workshopNote">
+		<div class="companyNote">
 			<label>Дополнительная информация</label>
 			<textarea name="general_note" ><?php if($ws->general_note != '') print $ws->general_note; ?></textarea>
 		</div>
-		<div class="workshopPhones">
+		<div class="companyPhones">
 			<label>Номера телефонов</label>
 			<?php if($ws->phones) : ?>
 			<?php foreach($ws->phones as $k => $phone):?>
@@ -46,7 +46,7 @@ $ws = General::get();
 			</div>
 			<?php endif;?>
 		</div>
-		<div class="workshopMails">
+		<div class="companyMails">
 			<label>Электронная почта</label>
 			<?php if($ws->mails) : ?>
 			<?php foreach($ws->mails as $k => $mail):?>
@@ -66,7 +66,7 @@ $ws = General::get();
 			</div>
 			<?php endif;?>
 		</div>
-		<div class="workshopAddres">
+		<div class="companyAddres">
 			<label>Адреса компании</label>
 			<?php if($ws->addres) : ?>
 			<?php foreach($ws->addres as $k => $adres):?>
