@@ -8,7 +8,7 @@ if($main->session->user_service_id !== 0){
 		
 		$selectAll = false; 
 		$selectAll2 = false; 
-		$services = Service::get($main->session->user_service_id); 
+		$services = Service::getAll();
 		$workshops = Workshop::getService($main->session->user_workshop_id); 
 		$workers = Workers::getWorkshop($main->session->user_workshop_id);
 		
