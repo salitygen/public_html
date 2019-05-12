@@ -39,6 +39,8 @@ class Workers {
 	
 	public function getAll(){
 		
+		$db = dataBase::pdo();
+		
 		$getAllWorkers = $db->query("SELECT * FROM crm_users");
 		$workers = $getAllWorkers->fetchAll();
 
