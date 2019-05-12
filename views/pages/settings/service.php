@@ -36,7 +36,7 @@ if(isset($_GET['id'])){
 				<button class="openClose icon-down-open"></button>
 			</div>
 			<div class="serviceName name">
-				<input type="text" required="required" name="service_name" value="<?php if($service->service_name != '') print $service->service_name; ?>">
+				<input type="text" disabled="disabled" required="required" name="service_name" value="<?php if($service->service_name != '') print $service->service_name; ?>">
 			</div>
 			<div class="serviceNote note">
 				<label>Дополнительная информация</label>
