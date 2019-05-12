@@ -256,7 +256,7 @@ p.username {
     position: relative;
 }
 
-.workshopName, .groupName,.workerName {
+.workshopName, .groupName, .workerName, .serviceName, .companyName {
     float: left;
     width: 100%;
     margin-bottom: 10px;
@@ -264,7 +264,7 @@ p.username {
     border-bottom: 1px dashed #d7d7d7;
 }
 
-.workshopName label {
+.workshopName label,.groupName label,.workerName label,.serviceName label,.companyName label {
     float: left;
     margin: 4px 10px 0px 0px;
 }
@@ -279,7 +279,7 @@ p.username {
     border: 1px solid #c4c4c4;
     background-color: #fff;
 }
-.workshopNote, .serviceNote, .groupNote,.companyNote {
+.workshopNote, .serviceNote, .groupNote,.companyNote,.workerNote {
     float: left;
     width: 100%;
     margin-bottom: 15px;
