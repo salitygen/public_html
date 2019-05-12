@@ -43,7 +43,7 @@ foreach($groups as $key => $value){
 ?>
 <p>Группы</p>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
-<div class="groupList">
+<div id="groupList">
 	<?php foreach($group as $data): ?>
 	<div class="slideBlock <?php print ($opened !== $data->id ? 'hide' : 'show' ); ?>">
 		<form action="/?view=settings&params=groups&task=update&id=<?php print $data->id; ?>" method="POST">
