@@ -4,8 +4,8 @@ Rules::settingsWorkshop($main) or die('Access Denied');
 
 $services = Service::getAll();
 
-if($main->session->group_service_id !== 0){
-	$workshops = Workshop::getService($main->session->group_service_id); 
+if($main->session->user_workshop_id !== 0){
+	$workshops = Workshop::getService($main->session->user_workshop_id); 
 }else{
 	$workshops = Workshop::getAll();
 }
