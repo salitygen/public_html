@@ -450,10 +450,6 @@ button.save {
     color: #fff;
 }
 
-div#workshopList .slideBlock.hide .workshopName label {
-    display: none;
-}
-
 div#workshopList .slideBlock.hide .workshopName input, div#groupList .slideBlock.hide .groupName input, div#workerList .slideBlock.hide .workerName input, div#serviceList .slideBlock.hide .serviceName input,div#companyList .slideBlock.hide .companyName input {
     border: none;
     margin-top: -4px;
@@ -463,8 +459,6 @@ button.save:hover {
     background-color: #236499;
 }
 
-div#workshopList .slideBlock .status p {
-}
 p.succes i.close,p.error i.close {
     position: absolute;
     right: 8px;
