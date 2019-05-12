@@ -21,14 +21,14 @@ $company = General::get();
 			</div>
 			<button class="openClose icon-down-open"></button>
 		</div>
-		<div class="companyName">
+		<div class="companyName name">
 			<input type="text" required="required" name="general_name" value="<?php if($company->general_name != '') print $company->general_name; ?>">
 		</div>
-		<div class="companyNote">
+		<div class="companyNote note">
 			<label>Дополнительная информация</label>
 			<textarea name="general_note" ><?php if($company->general_note != '') print $company->general_note; ?></textarea>
 		</div>
-		<div class="companyPhones">
+		<div class="companyPhones phones">
 			<label>Номера телефонов</label>
 			<?php if($company->phones) : ?>
 			<?php foreach($company->phones as $k => $phone):?>
@@ -48,7 +48,7 @@ $company = General::get();
 			</div>
 			<?php endif;?>
 		</div>
-		<div class="companyMails">
+		<div class="companyMails mails">
 			<label>Электронная почта</label>
 			<?php if($company->mails) : ?>
 			<?php foreach($company->mails as $k => $mail):?>
@@ -68,7 +68,7 @@ $company = General::get();
 			</div>
 			<?php endif;?>
 		</div>
-		<div class="companyAddres">
+		<div class="companyAddres addres">
 			<label>Адреса компании</label>
 			<?php if($company->addres) : ?>
 			<?php foreach($company->addres as $k => $adres):?>
