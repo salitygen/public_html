@@ -18,7 +18,6 @@ $fl = '';
 foreach($groups as $key => $value){
 	$name = explode('_',$key)[1];
 	if($name != 'id'
-	&& $name != 'service'
 	&& $name != 'name'
 	&& $name != 'desc'){
 		if($fl != $name){
@@ -27,16 +26,9 @@ foreach($groups as $key => $value){
 		}
 		$group->data->checkBoxses->{$name} .= '<label><input type="hidden" name="ch['.$key.']" value="0"><input type="checkbox" value="1" name="ch['.$key.']" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key) .'</label>';
 	}else{ 
-		if($name == 'service'){
-			$group->data->{$name} = '<select name="group_service_id">';
-				$group->data->{$name} .= '<option value="0" '.($value == 0 ? 'selected' : '').'>'. HTML::Name($main,'groups','GROUP_SERVICE_ALL') .'</option>';
-			foreach($services as $service){
-				$group->data->{$name} .= '<option value="'. $service->service_id .'"'.($value == $service->service_id ? 'selected' : '').'>'.$service->service_name.'</option>';
-			}
-			$group->data->{$name} .= '</select>';
-		}else{
-			$group->data->{$name} = $value;
-		}
+
+		$group->data->{$name} = $value;
+		
 	}
 }
 
