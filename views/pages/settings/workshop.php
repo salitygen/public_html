@@ -37,10 +37,10 @@ if(isset($_GET['id'])){
 				</div>
 				<button class="openClose icon-down-open"></button>
 			</div>
-			<div class="workshopName">
+			<div class="workshopName name">
 				<input type="text" disabled="disabled" required="required" name="workshop_name" value="<?php if($workshop->workshop_name != '') print $workshop->workshop_name; ?>">
 			</div>
-			<div class="groupService">
+			<div class="groupService grouplist">
 				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
 				<select name="workshop_service_id">
 					<option value="0" <?php print ($workshop->workshop_service_id == 0 ? 'selected' : ''); ?>>
@@ -53,11 +53,11 @@ if(isset($_GET['id'])){
 					<?php endforeach;?>
 				</select>
 			</div>
-			<div class="workshopNote">
+			<div class="workshopNote note">
 				<label>Дополнительная информация</label>
 				<textarea name="workshop_note" ><?php if($workshop->workshop_note != '') print $workshop->workshop_note; ?></textarea>
 			</div>
-			<div class="workshopPhones">
+			<div class="workshopPhones phones">
 				<label>Номера телефонов</label>
 				<?php if($workshop->phones) : ?>
 				<?php foreach($workshop->phones as $k => $phone):?>
@@ -86,7 +86,7 @@ if(isset($_GET['id'])){
 				</div>
 				<?php endif;?>
 			</div>
-			<div class="workshopMails">
+			<div class="workshopMails mails">
 				<label>Электронная почта</label>
 				<?php if($workshop->mails) : ?>
 				<?php foreach($workshop->mails as $k => $mail):?>
@@ -115,7 +115,7 @@ if(isset($_GET['id'])){
 				</div>
 				<?php endif;?>
 			</div>
-			<div class="workshopAddres">
+			<div class="workshopAddres addres">
 				<label>Адреса компании</label>
 				<?php if($workshop->addres) : ?>
 				<?php foreach($workshop->addres as $k => $adres):?>
