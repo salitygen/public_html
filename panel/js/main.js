@@ -44,8 +44,8 @@ $(function(){
 	
 	$('body').on('click','.mails .controls button.icon-plus',function(){
 		var mails = $(this).parent().parent().parent();
-		var index = parseInt(mails.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
-		var inputs  ='<div class="phoneDiv">';
+		var index = parseInt(mails.find('.mailDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+		var inputs  ='<div class="mailDiv">';
 			inputs +='<label>Почтовый ящик</label>';
 			inputs +='<input type="text" name="mails['+index+'][value]" value="">';
 			inputs +='<label>Комментарий</label>';
@@ -67,8 +67,8 @@ $(function(){
 	
 	$('body').on('click','.addres .controls button.icon-plus',function(){
 		var addres = $(this).parent().parent().parent();
-		var index = parseInt(addres.find('.phoneDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
-		var inputs  ='<div class="phoneDiv">';
+		var index = parseInt(addres.find('.addresDiv input').last().attr('name').split('[')[1].split(']')[0]) + 1;
+		var inputs  ='<div class="addresDiv">';
 			inputs +='<label>Адрес</label>';
 			inputs +='<input type="text" name="addres['+index+'][value]" value="">';
 			inputs +='<label>Комментарий</label>';
