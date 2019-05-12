@@ -229,7 +229,7 @@ h1 {
 p.username {
     margin: 10px 0;
 }
-.companyStatus p {
+.status p {
     float: right;
     position: absolute;
     font-size: 14px;
@@ -357,7 +357,7 @@ p.username {
     border: 1px solid #c4c4c4;
     background-color: #fff;
 }
-.companyStatus p.off {
+.status p.off {
     background-color: #9a9999;
 }
 .toggle {
@@ -463,7 +463,7 @@ button.save:hover {
     background-color: #236499;
 }
 
-div#workshopList .slideBlock .companyStatus p {
+div#workshopList .slideBlock .status p {
     right: 70px;
     top: 3px;
 }
