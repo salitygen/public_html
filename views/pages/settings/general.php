@@ -4,19 +4,22 @@ Rules::settingsGeneral($main) or die('Access Denied');
 $company = General::get();
 ?>
 <p>Информация о компании</p>
-<div class="status">
-<?php if($company->general_status):?>
-	<p>Работает</p>
-<?php else:?>
-	<p class="off">Не работает</p>
-<?php endif;?>
-</div>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="slideBlock">
 	<form action="/?view=settings&params=general&task=update" method="POST">
-		<div class="center">
-		  <input type="checkbox" name="general_status" id="cbx" style="display:none" <?php if($company->general_status) print 'checked="true"'; ?> >
-		  <label for="cbx" class="toggle"><span></span></label>    
+		<div class="panel">
+			<div class="status">
+				<?php if($company->general_status):?>
+				<p>Работает</p>
+				<?php else:?>
+				<p class="off">Не работает</p>
+				<?php endif;?>
+			</div>
+			<div class="center">
+			  <input type="checkbox" name="general_status" id="cbx" style="display:none" <?php if($company->general_status) print 'checked="true"'; ?> >
+			  <label for="cbx" class="toggle"><span></span></label>    
+			</div>
+			<button class="openClose icon-down-open"></button>
 		</div>
 		<div class="companyName">
 			<input type="text" required="required" name="general_name" value="<?php if($company->general_name != '') print $company->general_name; ?>">
