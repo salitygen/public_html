@@ -26,7 +26,6 @@ if(isset($_GET['id'])){
 	$opened = 0;
 }
 
-
 ?>
 <p>Сотрудники</p>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
