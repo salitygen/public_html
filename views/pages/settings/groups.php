@@ -2,7 +2,6 @@
 defined('EXEC') or die;
 Rules::settingsGroups($main) or die('Access Denied');
 $groups = Groups::getAll();
-$services = Service::getAll();
 
 if(isset($_GET['id'])){
 	$opened = (int)Input::getSanitise($_GET['id']);
