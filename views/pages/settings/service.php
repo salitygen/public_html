@@ -35,15 +35,15 @@ if(isset($_GET['id'])){
 				</div>
 				<button class="openClose icon-down-open"></button>
 			</div>
-			<div class="workshopName">
+			<div class="serviceName">
 				<label>Название</label>
 				<input type="text" required="required" name="service_name" value="<?php if($service->service_name != '') print $service->service_name; ?>">
 			</div>
-			<div class="workshopNote">
+			<div class="serviceNote">
 				<label>Дополнительная информация</label>
 				<textarea name="service_note" ><?php if($service->service_note != '') print $service->service_note; ?></textarea>
 			</div>
-			<div class="workshopPhones">
+			<div class="servicePhones">
 				<label>Номера телефонов</label>
 				<?php if($service->phones) : ?>
 				<?php foreach($service->phones as $k => $phone):?>
@@ -63,7 +63,7 @@ if(isset($_GET['id'])){
 				</div>
 				<?php endif;?>
 			</div>
-			<div class="workshopMails">
+			<div class="serviceMails">
 				<label>Электронная почта</label>
 				<?php if($service->mails) : ?>
 				<?php foreach($service->mails as $k => $mail):?>
@@ -83,7 +83,7 @@ if(isset($_GET['id'])){
 				</div>
 				<?php endif;?>
 			</div>
-			<div class="workshopAddres">
+			<div class="serviceAddres">
 				<label>Адреса компании</label>
 				<?php if($service->addres) : ?>
 				<?php foreach($service->addres as $k => $adres):?>
