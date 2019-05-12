@@ -281,7 +281,7 @@ p.username {
     border: 1px solid #c4c4c4;
     background-color: #fff;
 }
-.workshopNote {
+.workshopNote, .serviceNote, .groupNote,.companyNote {
     float: left;
     width: 100%;
     margin-bottom: 15px;
@@ -576,7 +576,6 @@ button.openClose {
 }
 
 .slideBlock.hide .groupService {
-    display: none;
 }
 
 .slideBlock.hide .groupDesc {
