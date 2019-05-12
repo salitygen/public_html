@@ -100,8 +100,6 @@ div#workshopList, div#groupList,div#workersList {
     float: left;
     width: 100%;
 }
-div#workshopList .slideBlock, div#groupList .slideBlock, div#workerList .slideBlock {
-}
 
 div#workshopList .slideBlock .center {
     top: 6px;
@@ -437,6 +435,7 @@ p.username {
   top: 87px;
   right: 144px;
 }
+
 button.save {
     float: right;
     font-size: 15px;
@@ -449,8 +448,6 @@ button.save {
     outline: none;
     width: 148px;
     color: #fff;
-}
-div#workshopList .slideBlock.hide, div#groupList .slideBlock.hide, div#workerList .slideBlock.hide {
 }
 
 div#workshopList .slideBlock.hide .workshopName label {
@@ -465,8 +462,7 @@ div#workshopList .slideBlock.hide .workshopName input, div#groupList .slideBlock
 button.save:hover {
     background-color: #236499;
 }
-div#workshopList .slideBlock.hide .workshopName input[disabled="disabled"], div#groupList .slideBlock.hide .groupName input[disabled="disabled"], div#workerList .slideBlock.hide .workerName input[disabled="disabled"] {
-}
+
 div#workshopList .slideBlock .companyStatus p {
     right: 70px;
     top: 3px;
@@ -571,9 +567,6 @@ button.openClose {
     border-radius: 3px;
     border: 1px solid #c4c4c4;
     background-color: #fff;
-}
-
-.slideBlock.hide .groupService {
 }
 
 .slideBlock.hide .groupDesc {
