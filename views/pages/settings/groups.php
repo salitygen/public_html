@@ -57,7 +57,7 @@ foreach($groups as $key => $value){
 				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
 				<?php print $data->service; ?>
 			</div>
-			<div class="groupDesc">
+			<div class="groupNote">
 				<label><?php print HTML::Name($main,'groups','GROUP_DESC'); ?></label>
 				<textarea name="group_desc"><?php print $data->desc; ?></textarea>
 			</div>
