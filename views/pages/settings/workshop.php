@@ -3,6 +3,7 @@ defined('EXEC') or die;
 Rules::settingsWorkshop($main) or die('Access Denied');
 
 if($main->session->user_service_id !== 0){
+	$selectAll = false; // Добавляет в выпадающий список возможность переместить мастерскую на все сервис центры на данный момент отключено если пользователь сам не находится везде
 	$services = Service::get($main->session->user_service_id); 
 }else{
 	$services = Service::getAll(); 
@@ -47,9 +48,11 @@ if(isset($_GET['id'])){
 			<div class="groupService grouplist">
 				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
 				<select name="workshop_service_id">
+					<?php if($selectAll):?>
 					<option value="0" <?php print ($workshop->workshop_service_id == 0 ? 'selected' : ''); ?>>
 					<?php print HTML::Name($main,'groups','GROUP_SERVICE_ALL'); ?>
 					</option>
+					<?php endif;?>
 					<?php foreach($services as $service): ?>
 					<option value="<?php print $service->service_id; ?>"<?php print ($workshop->workshop_service_id == $service->service_id ? 'selected' : ''); ?>>
 					<?php print $service->service_name; ?>
