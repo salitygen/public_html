@@ -35,6 +35,17 @@ class Workers {
 	
 	public function get($id){
 		
+		$db = dataBase::pdo();
+		
+		$getOneWorkers = $db->query("SELECT * FROM crm_users WHERE user_id='{$id}'");
+		$workers = $getOneWorkers->fetchAll();
+
+		if($workers){
+			return $workers;
+		}else{
+			return false;
+		}
+		
 	}
 	
 	public function getService($id){
