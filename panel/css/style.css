@@ -10,41 +10,7 @@
   font-weight: bold;
   font-style: normal;
 }
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #efefef;
-}
-.menu {
-    float: left;
-}
-.menu ul {
-    margin: 0;
-    padding: 0;
-    float: left;
-    list-style-type: none;
-    border-bottom: 1px solid #3b4148;
-    width: 180px;
-    overflow: hidden;
-    margin-top: 241px;
-}
-.menu ul a.active {
-    background-color: #222426;
-    width: calc(100% - 9px);
-    position: relative;
-    z-index: 9;
-}
-.menu ul a {
-    float: left;
-    width: calc(100% - 10px);
-    color: #D4D5D6;
-    text-decoration: none;
-    font-size: 14px;
-    font-family: sans-serif;
-    border-bottom: 1px solid #222529;
-    border-top: 1px solid #3b4148;
-    padding: 10px 5px;
-}
+
 div#leftPanel {
     float: left;
     background-color: #2f343a;
@@ -73,7 +39,14 @@ p.error {
     float: left;
     width: calc(100% - 27px);
 }
-
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+}
+.menu {
+    float: left;
+}
 .level2 div#dashBoard {
     float: left;
     margin-left: 380px;
@@ -81,8 +54,34 @@ p.error {
     font-family: sans-serif;
     color: #4f4f4f;
 }
-
-div#workshopList,div#groupList {
+.menu ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+    border-bottom: 1px solid #3b4148;
+    width: 180px;
+    overflow: hidden;
+    margin-top: 241px;
+}
+.menu ul a.active {
+    background-color: #222426;
+    width: calc(100% - 9px);
+    position: relative;
+    z-index: 9;
+}
+.menu ul a {
+    float: left;
+    width: calc(100% - 10px);
+    color: #D4D5D6;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    border-bottom: 1px solid #222529;
+    border-top: 1px solid #3b4148;
+    padding: 10px 5px;
+}
+div#workshopList, div#groupList,div#workersList {
     float: left;
     width: 100%;
 }
@@ -101,12 +100,7 @@ div#workshopList,div#groupList {
     float: left;
     width: 100%;
 }
-div#workshopList .slideBlock, 
-div#groupList .slideBlock, 
-div#workerList .slideBlock {
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden;
+div#workshopList .slideBlock, div#groupList .slideBlock, div#workerList .slideBlock {
 }
 
 div#workshopList .slideBlock .center {
@@ -260,6 +254,8 @@ p.username {
     margin-top: 5px;
     border-radius: 4px;
     background-color: #ffffff;
+    margin-bottom: 15px;
+    position: relative;
 }
 
 .workshopName, .groupName,.workerName {
@@ -455,7 +451,6 @@ button.save {
     color: #fff;
 }
 div#workshopList .slideBlock.hide, div#groupList .slideBlock.hide, div#workerList .slideBlock.hide {
-    height: 25px;
 }
 
 div#workshopList .slideBlock.hide .workshopName label {
