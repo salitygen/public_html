@@ -46,7 +46,6 @@ class Groups {
 		}
 		
 		$updgroup = $db->exec("UPDATE crm_groups SET 
-		group_service_id = {$data->group_service_id},
 		group_name = '{$data->group_name}', {$queryString} 
 		group_desc = '{$data->group_desc}' WHERE group_id = {$data->group_id}");
 		
