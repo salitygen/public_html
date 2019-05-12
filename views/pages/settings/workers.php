@@ -64,7 +64,7 @@ if(isset($_GET['id'])){
 			</div>
 			<div class="workerService grouplist">
 				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
-				<select name="user_service_id">
+				<select name="user_service_id" <?php print (!$selectAll && !$selectAll2 ? 'disabled="disabled"' : ''); ?>>
 					<?php if($selectAll):?>
 					<option value="0" <?php print ($worker->user_service_id == 0 ? 'selected' : ''); ?>>
 					<?php print HTML::Name($main,'groups','GROUP_SERVICE_ALL'); ?>
