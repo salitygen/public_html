@@ -2,6 +2,8 @@
 defined('EXEC') or die;
 Rules::settingsWorkers($main) or die('Access Denied');
 
+$groups = Groups::getAll();
+
 if($main->session->user_service_id !== 0){
 	
 	if($main->session->user_workshop_id !== 0){
@@ -88,6 +90,16 @@ if(isset($_GET['id'])){
 					<?php foreach($workshops as $workshop): ?>
 					<option value="<?php print $workshop->workshop_id; ?>"<?php print ($worker->user_workshop_id == $workshop->workshop_id ? 'selected' : ''); ?>>
 					<?php print $workshop->workshop_name; ?>
+					</option>
+					<?php endforeach;?>
+				</select>
+			</div>
+			<div class="workerGroup grouplist">
+				<label><?php print HTML::Name($main,'groups','GROUP_SERVICE'); ?></label>
+				<select name="user_group_id">
+					<?php foreach($groups as $group): ?>
+					<option value="<?php print $group->group_id; ?>"<?php print ($worker->user_group_id == $group->group_id ? 'selected' : ''); ?>>
+					<?php print $group->group_name; ?>
 					</option>
 					<?php endforeach;?>
 				</select>
