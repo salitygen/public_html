@@ -10,35 +10,6 @@
   font-weight: bold;
   font-style: normal;
 }
-
-div#leftPanel {
-    float: left;
-    background-color: #2f343a;
-    height: 100%;
-    position: fixed;
-}
-p.succes {
-    background-color: #97c491;
-    padding: 12px;
-    border: 2px solid #1d880f;
-    color: #084700;
-    border-radius: 3px;
-    margin: 4px 0 12px 0;
-    position: relative;
-    float: left;
-    width: calc(100% - 27px);
-}
-p.error {
-    background-color: #c49191;
-    padding: 12px;
-    border: 2px solid #880f0f;
-    position: relative;
-    color: #470000;
-    border-radius: 3px;
-    margin: 2px 0 16px 0;
-    float: left;
-    width: calc(100% - 27px);
-}
 body {
     margin: 0;
     padding: 0;
@@ -46,13 +17,6 @@ body {
 }
 .menu {
     float: left;
-}
-.level2 div#dashBoard {
-    float: left;
-    margin-left: 380px;
-    width: calc(100% - 400px);
-    font-family: sans-serif;
-    color: #4f4f4f;
 }
 .menu ul {
     margin: 0;
@@ -81,6 +45,43 @@ body {
     border-top: 1px solid #3b4148;
     padding: 10px 5px;
 }
+div#leftPanel {
+    float: left;
+    background-color: #2f343a;
+    height: 100%;
+    position: fixed;
+}
+p.succes {
+    background-color: #97c491;
+    padding: 12px;
+    border: 2px solid #1d880f;
+    color: #084700;
+    border-radius: 3px;
+    margin: 4px 0 12px 0;
+    position: relative;
+    float: left;
+    width: calc(100% - 27px);
+}
+p.error {
+    background-color: #c49191;
+    padding: 12px;
+    border: 2px solid #880f0f;
+    position: relative;
+    color: #470000;
+    border-radius: 3px;
+    margin: 2px 0 16px 0;
+    float: left;
+    width: calc(100% - 27px);
+}
+
+.level2 div#dashBoard {
+    float: left;
+    margin-left: 380px;
+    width: calc(100% - 400px);
+    font-family: sans-serif;
+    color: #4f4f4f;
+}
+
 div#workshopList,div#groupList {
     float: left;
     width: 100%;
@@ -100,7 +101,9 @@ div#workshopList,div#groupList {
     float: left;
     width: 100%;
 }
-div#workshopList .slideBlock, div#groupList .slideBlock, div#workerList .slideBlock {
+div#workshopList .slideBlock, 
+div#groupList .slideBlock, 
+div#workerList .slideBlock {
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
