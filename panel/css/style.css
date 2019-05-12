@@ -287,12 +287,12 @@ p.username {
     border-bottom: 1px solid #cecece;
 }
 
-.workshopNote label {
+.workshopNote label,.serviceNote label,.workerNote label,.companyNote label,.groupNote label {
     float: left;
     width: 100%;
 }
 
-.workshopNote textarea, .companyNote textarea, .groupNote textarea, .workerNote textarea {
+.workshopNote textarea, .companyNote textarea, .groupNote textarea, .workerNote textarea,.serviceNote textarea {
     float: left;
     width: 720px;
     height: 140px;
@@ -314,7 +314,7 @@ p.username {
     padding-bottom: 16px;
 }
 
-.workshopPhones label, .workshopMails label,.workshopAddres label {
+.workshopPhones label, .workshopMails label, .workshopAddres label,.servicePhones label, .serviceMails label, .serviceAddres label,.companyPhones label, .companyMails label, .companyAddres label,.workerPhones label, .workerMails label, .workerAddres label {
     float: left;
     margin-bottom: 10px;
     position: absolute;
@@ -328,12 +328,12 @@ p.username {
     text-shadow: -1px -1px 0px #5d5d5d;
 }
 
-.workshopPhones .phoneDiv, .workshopMails .mailDiv,.workshopAddres .addresDiv {
+.phoneDiv, .mailDiv, .addresDiv {
     float: left;
     margin: 2px 0;
 }
 
-.workshopPhones .phoneDiv label, .workshopAddres .addresDiv label,.workshopMails .mailDiv label {
+.phoneDiv label, .addresDiv label, .mailDiv label {
     width: 110px;
     padding: 10px 0;
     margin: 0;
@@ -346,7 +346,7 @@ p.username {
     text-shadow: unset;
 }
 
-.workshopPhones .phoneDiv input, .workshopMails .mailDiv input,.workshopAddres .addresDiv input {
+.phoneDiv input,.mailDiv input,.addresDiv input {
     float: left;
     width: 240px;
     font-size: 16px;
