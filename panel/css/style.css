@@ -101,7 +101,7 @@ div#workshopList, div#groupList,div#workersList {
     width: 100%;
 }
 
-div#workshopList .slideBlock .center {
+.slideBlock .center {
     top: 6px;
     right: 184px;
     left: unset;
@@ -232,9 +232,9 @@ p.username {
 .status p {
     float: right;
     position: absolute;
+    right: 70px;
+    top: 3px;
     font-size: 14px;
-    right: 20px;
-    top: 83px;
     width: 82px;
     background-color: #1d880f;
     padding: 4px 15px 5px 15px;
@@ -464,8 +464,6 @@ button.save:hover {
 }
 
 div#workshopList .slideBlock .status p {
-    right: 70px;
-    top: 3px;
 }
 p.succes i.close,p.error i.close {
     position: absolute;
