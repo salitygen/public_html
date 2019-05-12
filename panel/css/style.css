@@ -271,7 +271,7 @@ p.username {
     margin: 4px 10px 0px 0px;
 }
 
-.workshopName input,.workerName input, groupName input {
+.workshopName input, .workerName input, .groupName input, .serviceName input, .companyName input {
     font-size: 22px;
     margin-top: -4px;
     float: left;
@@ -457,17 +457,15 @@ div#workshopList .slideBlock.hide .workshopName label {
     display: none;
 }
 
-div#workshopList .slideBlock.hide .workshopName input, div#groupList .slideBlock.hide .groupName input, div#workerList .slideBlock.hide .workerName input {
+div#workshopList .slideBlock.hide .workshopName input, div#groupList .slideBlock.hide .groupName input, div#workerList .slideBlock.hide .workerName input, div#serviceList .slideBlock.hide .serviceName input,div#companyList .slideBlock.hide .companyName input {
     border: none;
-    margin: 0;
     margin-top: -4px;
-    padding: 5px 4px 4px 5px;
+    color: #000;
 }
 button.save:hover {
     background-color: #236499;
 }
 div#workshopList .slideBlock.hide .workshopName input[disabled="disabled"], div#groupList .slideBlock.hide .groupName input[disabled="disabled"], div#workerList .slideBlock.hide .workerName input[disabled="disabled"] {
-    color: #000;
 }
 div#workshopList .slideBlock .companyStatus p {
     right: 70px;
