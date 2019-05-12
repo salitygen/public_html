@@ -631,7 +631,7 @@ p.succes i.close,p.error i.close {
     float: left;
     width: 100%;
 }
-
+*/
 .grouplist label {
     float: left;
     width: 100%;
@@ -646,4 +646,4 @@ p.succes i.close,p.error i.close {
     border-radius: 3px;
     border: 1px solid #c4c4c4;
     background-color: #fff;
-} */
+}
