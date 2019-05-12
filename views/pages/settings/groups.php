@@ -44,7 +44,7 @@ foreach($groups as $key => $value){
 <p>Группы</p>
 <?php if($mess = SystemMessage::get($main)) print $mess; ?>
 <div class="groupList">
-<?php foreach($group as $data): ?>
+	<?php foreach($group as $data): ?>
 	<div class="slideBlock <?php print ($opened !== $data->id ? 'hide' : 'show' ); ?>">
 		<form action="/?view=settings&params=groups&task=update&id=<?php print $data->id; ?>" method="POST">
 			<div class="panel">
@@ -72,5 +72,5 @@ foreach($groups as $key => $value){
 			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $data->id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 		</form>
 	</div> 
-<?php endforeach;?>
+	<?php endforeach;?>
 </div>
