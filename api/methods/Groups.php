@@ -21,7 +21,7 @@ class Groups {
 		
 		$db = dataBase::pdo();
 		$getGroups = $db->query("SELECT * FROM crm_groups");
-		$groups = $getGroups->fetch();
+		$groups = $getGroups->fetchAll();
 		
 		if($groups){
 			return $groups;
