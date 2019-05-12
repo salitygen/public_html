@@ -8,6 +8,7 @@ if($main->session->user_service_id !== 0){
 	// сервис центры, на данный момент отключено! если пользователь сам не находится везде т.е у него не 0
 	$services = Service::get($main->session->user_service_id); 
 }else{
+	$selectAll = true;
 	$services = Service::getAll(); 
 }
 
