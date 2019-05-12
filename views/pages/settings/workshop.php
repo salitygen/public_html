@@ -4,8 +4,8 @@ Rules::settingsWorkshop($main) or die('Access Denied');
 
 if($main->session->user_service_id !== 0){
 	$selectAll = false; 
-	// Добавляет в выпадающий список возможность переместить мастерскую на все
-	// сервис центры, на данный момент отключено! если пользователь сам не находится везде т.е у него не 0
+	// $selectAll - Добавляет в выпадающий список возможность переместить мастерскую во "все"
+	// сервис центры, на данный момент отключено если пользователь сам не находится везде т.е у него "user_service_id" не "0"
 	$services = Service::get($main->session->user_service_id); 
 }else{
 	$selectAll = true;
