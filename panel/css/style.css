@@ -81,7 +81,7 @@ body {
     border-top: 1px solid #3b4148;
     padding: 10px 5px;
 }
-div#workshopList {
+div#workshopList,div#groupList {
     float: left;
     width: 100%;
 }
@@ -100,7 +100,7 @@ div#workshopList {
     float: left;
     width: 100%;
 }
-div#workshopList .slideBlock {
+div#workshopList .slideBlock, div#groupList .slideBlock, div#workerList .slideBlock {
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
@@ -451,7 +451,7 @@ button.save {
     width: 148px;
     color: #fff;
 }
-div#workshopList .slideBlock.hide {
+div#workshopList .slideBlock.hide, div#groupList .slideBlock.hide, div#workerList .slideBlock.hide {
     height: 25px;
 }
 
