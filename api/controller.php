@@ -41,7 +41,7 @@ if(isset($main->task)){
 				if($Param::update($data)){
 					SystemMessage::set('succes','Изменения успешно сохранены!',$main);
 				}else{
-					SystemMessage::set('error','Изменения не были сохранены, ошибка запроса к базе данных!',$main);
+					SystemMessage::set('error','Вы не внесли никаких изменений!',$main);
 				}
 				
 			}else{
@@ -49,7 +49,7 @@ if(isset($main->task)){
 			}
 			
 		}else{
-			SystemMessage::set('error','Изменения не были сохранены, нет подходящего метода для обработки запроса!',$main);
+			SystemMessage::set('error','Изменения не были сохранены, система не может обработать этот запрос!',$main);
 		}
 		
 	}
