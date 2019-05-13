@@ -30,7 +30,7 @@ if(isset($_GET['id'])){
 			
 				<?php
 				
-					$n = 0;
+					$n = $fl = 0;
 					
 					foreach($group as $key => $value){
 						
