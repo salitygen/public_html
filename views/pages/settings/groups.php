@@ -31,9 +31,11 @@ if(isset($_GET['id'])){
 				<?php
 				
 					$n = 0;
+					
 					foreach($group as $key => $value){
 						
 						$name = explode('_',$key)[1];
+						
 						if($name != 'id'
 						&& $name != 'name'
 						&& $name != 'desc'){
@@ -56,6 +58,7 @@ if(isset($_GET['id'])){
 						}		
 					
 					}
+					
 				?>
 				
 			</div>
