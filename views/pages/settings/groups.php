@@ -41,7 +41,7 @@ if(isset($_GET['id'])){
 						if($key2 !== null){
 							$name2 = explode('_',$key2)[1];
 						}else{
-							$name2 = false;
+							$name2 = '';
 						}
 						
  						if($name != 'id'
