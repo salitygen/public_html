@@ -34,14 +34,15 @@ if(isset($_GET['id'])){
 
 					foreach($group as $key => $value){
 						
+						next($group);
 						$name = explode('_',$key)[1];
+						$name2 = explode('_',key($group))[1];
 						
  						if($name != 'id'
 						&& $name != 'name'
 						&& $name != 'desc'){
 							
 							if($n1 != $name){
-								$n2 = $n1;
 								$n1 = $name;
 								print '<div class="chkblock">';
 								print '<h3>'. HTML::Name($main,'groups',$name) .'</h3>';
@@ -51,9 +52,6 @@ if(isset($_GET['id'])){
 							print '<input type="hidden" name="ch['.$key.']" value="0">';
 							print '<input type="checkbox" value="1" name="ch['.$key.']" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key);
 							print '</label>';
-							
-							next($group);
-							$name2 = explode('_',key($group))[1];
 							
 							if($name2 != $name){
 								
