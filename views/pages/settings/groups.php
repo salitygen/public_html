@@ -38,7 +38,7 @@ if(isset($_GET['id'])){
 						print $key.'<br>';						
 						next($group);
 						print key($group);
-						prev($group);
+						//prev($group);
 						print '</br>';
 						
 						
