@@ -43,11 +43,11 @@ if(isset($_GET['id'])){
 							
 							if($fl != $name){
 								$fl = $name;
-								if($n !== 0){
+								if($n != 0){
 									print '</div>';
 								}
 								print '<div class="chkblock">';
-								print '<h3>'. HTML::Name($main,'groups',$key) .'</h3>';
+								print '<h3>'. HTML::Name($main,'groups',$name) .'</h3>';
 								$n++;
 							}
 							
