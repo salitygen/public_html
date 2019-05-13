@@ -44,9 +44,8 @@ if(isset($_GET['id'])){
 
 						$name = explode('_',$key)[1];
 						$key2 = key($group);
-						print $key2;
-						print ',';
-						$name2 = explode('_',$key2)[1];
+						var_dump($key2);
+						//$name2 = explode('_',$key2)[1];
 						
  						if($name != 'id'
 						&& $name != 'name'
