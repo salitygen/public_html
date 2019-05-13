@@ -30,8 +30,9 @@ if(isset($_GET['id'])){
 			
 				<?php
 				
-					$n = $fl = 0;
-					
+					$n = 0;
+					$fl = '';
+
 					foreach($group as $key => $value){
 						
 						$name = explode('_',$key)[1];
@@ -62,7 +63,7 @@ if(isset($_GET['id'])){
 				?>
 				
 			</div>
-			<button class="save icon-floppy" name="workshop_id" value="<?php print $workshop->workshop_id; ?>" type="submit">Сохранить</button>
+			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $group->group_id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 		</form>
 	</div>
 	<?php endforeach;?>
