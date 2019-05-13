@@ -31,16 +31,21 @@ if(isset($_GET['id'])){
 				<?php
 				
 					$n1 = '';
+					$key2 = '';
+					$group2 = $group;
+					end($group2);
+					$end = key($group2);
+					unset($group2);
 
 					foreach($group as $key => $value){
 						
-						end($group);
-						if($key != key($group)){
+						if($key2 != $end){
 							next($group);
 						}
-						
+
 						$name = explode('_',$key)[1];
-						$name2 = explode('_',key($group))[1];
+						$key2 = key($group);
+						$name2 = explode('_',$key2)[1];
 						
  						if($name != 'id'
 						&& $name != 'name'
