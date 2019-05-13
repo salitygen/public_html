@@ -31,7 +31,6 @@ if(isset($_GET['id'])){
 				<?php
 				
 					$n1 = '';
-					$key2 = '';
 					$group2 = $group;
 					end($group2);
 					$end = key($group2);
@@ -39,9 +38,7 @@ if(isset($_GET['id'])){
 
 					foreach($group as $key => $value){
 						
-						if($key2 != $end){
-							print $key2;
-							print $end;
+						if($key != $end){
 							next($group);
 						}
 
