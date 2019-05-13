@@ -37,7 +37,10 @@ if(isset($_GET['id'])){
 						next($group);
 						$name = explode('_',$key)[1];
 						$key2 = key($group);
-						$name2 = explode('_',$key2)[1];
+						
+						if($key2 == true){
+							$name2 = explode('_',$key2)[1];
+						}
 						
  						if($name != 'id'
 						&& $name != 'name'
