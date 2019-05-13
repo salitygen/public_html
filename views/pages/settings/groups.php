@@ -38,9 +38,9 @@ if(isset($_GET['id'])){
 
 					foreach($group as $key => $value){
 						
-						if($key != $end){
+						//if($key != $end){
 							next($group);
-						}
+						//}
 
 						$name = explode('_',$key)[1];
 						$key2 = key($group);
