@@ -34,7 +34,10 @@ if(isset($_GET['id'])){
 
 					foreach($group as $key => $value){
 						
-						next($group);
+						if($value != end($group)){
+							next($group);
+						}
+						
 						$name = explode('_',$key)[1];
 						$name2 = explode('_',key($group))[1];
 						
