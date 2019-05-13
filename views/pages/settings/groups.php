@@ -30,33 +30,35 @@ if(isset($_GET['id'])){
 			
 				<?php
 				
-					$n = 0;
-					$fl = '';
+					$n1 = '';
 
 					foreach($group as $key => $value){
 						
 						$name = explode('_',$key)[1];
+						print $key.'<br>';
+						print key(next($roup)).'<br>';
 						
-						if($name != 'id'
+/* 						if($name != 'id'
 						&& $name != 'name'
 						&& $name != 'desc'){
 							
-							if($fl != $name){
-								$fl = $name;
-								if($n != 0){
-									print '</div>';
-								}
+							if($n1 != $name){
+								$n2 = $n1;
+								$n1 = $name;
 								print '<div class="chkblock">';
 								print '<h3>'. HTML::Name($main,'groups',$name) .'</h3>';
-								$n++;
 							}
 							
 							print '<label>';
 							print '<input type="hidden" name="ch['.$key.']" value="0">';
 							print '<input type="checkbox" value="1" name="ch['.$key.']" '.($value == 1 ? 'checked="checked"' : '').'>'. HTML::Name($main,'groups',$key);
 							print '</label>';
+							
+							if($n2 != $name){
+								print '</div>';
+							}
 						
-						}		
+						} */		
 					
 					}
 					
