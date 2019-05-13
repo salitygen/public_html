@@ -34,7 +34,8 @@ if(isset($_GET['id'])){
 
 					foreach($group as $key => $value){
 						
-						if($value != end($group)){
+						end($group);
+						if($key != key($group)){
 							next($group);
 						}
 						
