@@ -13,7 +13,7 @@ if(isset($_GET['poll'])){
 	if(defined('ISLOGIN')){
 
 		$count = (int)Input::getSanitise($_GET['poll']);
-		$timeout = 25;
+		$timeout = 20;
 		$now = time();
 		$db = dataBase::pdo();
 
