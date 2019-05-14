@@ -1,9 +1,9 @@
 $(function(){
 	
 	var phpsessid = $.cookie('PHPSESSID');
-	var hash = getHash();
+	var hash = getHash(phpsessid);
 	
-	function getHash(){
+	function getHash(phpsessid){
 		$.ajax({
 			url: '/api/polling.php?get_hash='+phpsessid,
 			success: function(data){
