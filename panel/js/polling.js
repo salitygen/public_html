@@ -14,7 +14,7 @@ $(function(){
 	
 	function pool(hash){
 		
-		var count = $.cookie('count').trim();
+		var count = $.cookie('count');
 		$.ajax({
 			async:true,
 			cache: false,
