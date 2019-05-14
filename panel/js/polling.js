@@ -3,7 +3,7 @@ $(function(){
 	function pool(){
 
 		var count = $.cookie('count').trim();
-			$.ajax({
+			var xhr = $.ajax({
 				async:true,
 				cache: false,
 				url: '/api/polling.php?poll='+count,
@@ -25,5 +25,9 @@ $(function(){
 		}
 	
 	setTimeout(pool, 1000);
+	
+	$('a').click(function(){
+		xhr.abort();
+	})
 	
 });
