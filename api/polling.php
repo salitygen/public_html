@@ -2,6 +2,9 @@
 define('EXEC',1);
 ini_set('display_errors','Off');
 
+session_id('725b660ba532d7d5f021719c2e686d68');
+print_r($_SESSION);
+/* 
 if(isset($_GET['poll'])){
 	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
@@ -56,5 +59,5 @@ if(isset($_GET['poll'])){
 
 	
 }
-
+ */
 ?>
