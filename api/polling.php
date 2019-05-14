@@ -1,7 +1,6 @@
 <?php
 define('EXEC',1);
 session_start();
-print '1234';
 
 if(isset($_GET['poll'])){
 	
@@ -11,7 +10,9 @@ if(isset($_GET['poll'])){
 	include $main->root.'/config/pdo.php';
 	//include $main->root.'/api/controller.php';
 	
-	//if(defined('ISLOGIN')){
+	define('ISLOGIN',1);
+	
+	if(defined('ISLOGIN')){
 
 		$count = (int)$_GET['poll'];
 		$timeout = 20;
@@ -43,11 +44,11 @@ if(isset($_GET['poll'])){
 
 		print 'next';
 		
-	//}else{
+	}else{
 		
-	//	die('Access Denied');
+		die('Access Denied');
 		
-	//}
+	}
 	
 }
 
