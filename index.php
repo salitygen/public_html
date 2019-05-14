@@ -6,12 +6,20 @@ include 'config/config.php';
 include 'config/pdo.php';
 include 'api/controller.php';
 
-if(defined('ISLOGIN')){
-	// Admin panel template connection
-	include 'panel/index.php';
+if(isset($_GET['count'])){
+	
+	include 'api/polling.php';
+	
 }else{
-	// Site template connection
-	include 'site/index.php';
+	
+	if(defined('ISLOGIN')){
+		// Admin panel template connection
+		include 'panel/index.php';
+	}else{
+		// Site template connection
+		include 'site/index.php';
+	}
+	
 }
 
 ?>
