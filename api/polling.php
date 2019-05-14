@@ -15,12 +15,11 @@ if(isset($_GET['poll'])){
 			if($session->session_stat && $session->user_status){
 				$main->session = $session;
 				define('ISLOGIN',1);
-				print 1;
 			}
 		}
 	}
 	
-/* 	if(defined('ISLOGIN')){
+	if(defined('ISLOGIN')){
 
 		$count = (int)Input::getSanitise($_GET['poll']);
 		$timeout = 25;
@@ -47,7 +46,7 @@ if(isset($_GET['poll'])){
 		
 	}else{
 		die('Access Denied');
-	} */
+	}
 	
 }
 
