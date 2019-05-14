@@ -1,20 +1,20 @@
 <?php
 define('EXEC',1);
-session_start();
+//session_start();
 
 if(isset($_GET['poll'])){
 	
-	define('POLLING',1);
+	//define('POLLING',1);
 	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/config/pdo.php';
-	include $main->root.'/api/controller.php';
+	//include $main->root.'/api/controller.php';
 	
 	if(defined('ISLOGIN')){
 
-		$count = (int)Input::getSanitise($_GET['poll']);
-		$timeout = 20;
-		$now = time();
+		//$count = (int)Input::getSanitise($_GET['poll']);
+		//$timeout = 20;
+		//$now = time();
 		$db = dataBase::pdo();
 
 		while((time() - $now) < $timeout){
