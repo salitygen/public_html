@@ -1,10 +1,6 @@
 <?php
 defined('EXEC') or die;
-
-if(isset($_GET['poll'])){
-	include $main->root.'/api/polling.php';
-}else{
-	include $main->root.'/views/controller.php';
+include $main->root.'/views/controller.php';
 ?>
 <html>
 	<head>
@@ -27,6 +23,3 @@ if(isset($_GET['poll'])){
 		</div>
 	</body>
 </html>
-<?php 
-}
-?>
