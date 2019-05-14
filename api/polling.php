@@ -54,7 +54,7 @@ if(isset($_GET['poll'])){
 		
 	}
 	
-}elseif(isset($_GET['get_hash'] && !isset($_GET['poll'])){
+}elseif(isset($_GET['get_hash']) && !isset($_GET['poll'])){
 	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/api/methods/Input.php';
