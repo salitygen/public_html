@@ -2,6 +2,7 @@ $(function(){
 	
 	var phpsessid = $.cookie('PHPSESSID');
 	var hash = getHash(phpsessid);
+	alert(hash);
 	
 	function getHash(phpsessid){
 		$.ajax({
