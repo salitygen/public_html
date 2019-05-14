@@ -12,10 +12,9 @@ if(isset($_GET['poll'])){
 	if(isset($_GET['hash'])){
 		
 		$sessionHash = Input::getSanitise($_GET['hash']);
-		$sessionId = Input::getSanitise($_GET['sessid']);
 		
 		if($sessionHash){
-			$session = Session::checkLongPolling($sessionHash,$sessionId);
+			$session = Session::check($sessionHash,true);
 			if($session){
 				if($session->session_stat && $session->user_status){
 					define('ISLOGIN',1);
