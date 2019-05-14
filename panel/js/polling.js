@@ -12,7 +12,7 @@ $(function(){
 						if(count != data){
 							alert(data);
 							$.cookie('count',data);
-							pool();
+							setTimeout(pool, 1000);
 						}
 					}else{
 						setTimeout(pool, 1000);
