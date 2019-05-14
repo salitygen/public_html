@@ -1,5 +1,5 @@
 <?php
-defined('EXEC',1);
+define('EXEC',1);
 
 print $_SERVER['DOCUMENT_ROOT'];
 
