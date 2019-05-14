@@ -7,6 +7,17 @@ if(isset($_GET['poll'])){
 	include $main->root.'/config/pdo.php';
 	include $main->root.'/api/controller.php';
 	
+	$sessionHash = Session::getHash();
+	if($sessionHash){
+		$session = Session::check($sessionHash);
+		if($session){
+			if($session->session_stat && $session->user_status){
+				$main->session = $session;
+				define('ISLOGIN',1);
+			}
+		}
+	}
+	
 	if(defined('ISLOGIN')){
 
 		$count = (int)Input::getSanitise($_GET['poll']);
