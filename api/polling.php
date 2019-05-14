@@ -1,11 +1,11 @@
 <?php
 defined('EXEC',1);
 
-print $_SERWER['DOCUMENT_ROOT'];
+print $_SERVER['DOCUMENT_ROOT'];
 
 if(isset($_GET['poll'])){
 	
-	include $_SERWER['DOCUMENT_ROOT'].'/config/config.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/config/pdo.php';
 	include $main->root.'/api/controller.php';
 
