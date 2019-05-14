@@ -4,7 +4,7 @@ $(function(){
 
 		var count = $.cookie('count').trim();
 			$.ajax({
-				async:true,
+				//async:true,
 				cache: false,
 				url: '/api/polling.php?poll='+count,
 				success: function(data){
