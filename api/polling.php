@@ -3,7 +3,10 @@ define('EXEC',1);
 //ini_set('display_errors','Off');
 
 session_id('725b660ba532d7d5f021719c2e686d68');
+session_start();
 print_r($_SESSION);
+session_destroy();
+
 /* 
 if(isset($_GET['poll'])){
 	
