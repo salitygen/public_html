@@ -21,7 +21,7 @@ $(function(){
 			cache: false,
 			url: '/api/polling.php?poll='+count+'&hash='+hash,
 			success: function(data){
-				if(data.trim() != 'next'){
+				if(data.trim() != '0'){
 					if(count != data.trim()){
 						alert(data.trim());
 						$.cookie('count',data.trim(),{ path: '/' });
