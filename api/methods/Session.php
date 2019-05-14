@@ -92,9 +92,7 @@ class Session {
 		
 		$db = dataBase::pdo();
 		
-		if($longPoll){
-			$sHash = $sHash;
-		}else{
+		if(!$longPoll){
 			$sHash = md5(session_id().''.$sHash);
 		}
 		
