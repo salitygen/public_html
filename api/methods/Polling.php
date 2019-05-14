@@ -3,7 +3,7 @@ defined('EXEC') or die;
 
 if(isset($_GET['count'])){
 
-	$count = (int)$_GET['count'];
+	$count = (int)Input::getSanitise($_GET['count']);
 	$timeout = 25;
 	$now = time();
 	$db = dataBase::pdo();
