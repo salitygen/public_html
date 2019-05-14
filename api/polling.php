@@ -1,6 +1,12 @@
 <?php
 defined('EXEC',1);
 
+if(isset($_GET['poll'])){
+	
+	include $_SERWER['DOCUMENT_ROOT'].'/config/config.php';
+	include $main->root.'/config/pdo.php';
+	include $main->root.'/api/controller.php';
+
 	$count = (int)Input::getSanitise($_GET['poll']);
 	$timeout = 25;
 	$now = time();
@@ -23,5 +29,7 @@ defined('EXEC',1);
 	}
 
 	print 'next';
+	
+}
 
 ?>
