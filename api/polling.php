@@ -70,7 +70,9 @@ if(isset($_GET['poll'])){
 	print md5($sessionId.''.$_SESSION['session_hash']);
 	
 }else{
+	
 	die('Access Denied');
+	
 }
 
 ?>
