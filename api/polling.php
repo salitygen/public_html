@@ -32,6 +32,8 @@ if(isset($_GET['poll'])){
 
 		print 'next';
 		
+	}else{
+		die('Access Denied');
 	}
 	
 }
