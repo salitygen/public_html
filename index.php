@@ -6,7 +6,7 @@ include 'config/config.php';
 include 'config/pdo.php';
 include 'api/controller.php';
 
-if(isset($_GET['count'])){
+if(isset($_GET['poll'])){
 	
 	include 'api/polling.php';
 	
