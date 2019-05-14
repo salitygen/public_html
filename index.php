@@ -6,20 +6,13 @@ include 'config/config.php';
 include 'config/pdo.php';
 include 'api/controller.php';
 
-if(isset($_GET['poll'])){
-	
-	include 'api/polling.php';
-	
+if(defined('ISLOGIN')){
+	// Admin panel template connection
+	include 'panel/index.php';
 }else{
-	
-	if(defined('ISLOGIN')){
-		// Admin panel template connection
-		include 'panel/index.php';
-	}else{
-		// Site template connection
-		include 'site/index.php';
-	}
-	
+	// Site template connection
+	include 'site/index.php';
 }
+	
 
 ?>
