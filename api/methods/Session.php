@@ -88,6 +88,22 @@ class Session {
 	
 	}
 	
+	public function checkLongPolling($sHash,$sIid){
+		
+		$db = dataBase::pdo();
+		$sHash = md5($sIid.''.$sHash);
+		$searchUserSession = $db->query("
+		SELECT * FROM crm_sessions,crm_users,crm_groups,crm_rules_users WHERE session_hash='{$sHash}' AND crm_sessions.session_user_id = crm_users.user_id AND crm_users.user_group_id = crm_groups.group_id AND crm_users.user_rules_id = crm_rules_users.rules_id");
+		$sessions = $searchUserSession->fetch();
+		
+		if($sessions){
+			return $sessions;
+		}else{
+			return false;
+		}
+
+	}
+	
 	public function check($sHash){
 		
 		$db = dataBase::pdo();
