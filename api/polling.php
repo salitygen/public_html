@@ -1,6 +1,6 @@
 <?php
 define('EXEC',1);
-ini_set('display_errors','Off');
+//ini_set('display_errors','Off');
 
 session_id('725b660ba532d7d5f021719c2e686d68');
 print_r($_SESSION);
