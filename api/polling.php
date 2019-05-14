@@ -48,7 +48,7 @@ if(isset($_GET['poll'])){
 			
 		}else{
 			
-			die('Access Denied');
+			die('Access Denied1');
 			
 		}
 		
