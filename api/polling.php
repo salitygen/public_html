@@ -12,8 +12,10 @@ if(isset($_GET['poll'])){
 	if(isset($_GET['hash'])){
 		
 		$sessionHash = Input::getSanitise($_GET['hash']);
+		$sessionId = Input::getSanitise($_GET['sessid']);
+		
 		if($sessionHash){
-			$session = Session::check($sessionHash);
+			$session = Session::checkLongPolling($sessionHash,$sessionId);
 			if($session){
 				if($session->session_stat && $session->user_status){
 					define('ISLOGIN',1);
@@ -66,7 +68,7 @@ if(isset($_GET['poll'])){
 	$sessionId = Input::getSanitise($_GET['get_hash']);
 	session_id($sessionId);
 	session_start();
-	print $_SESSION['session_hash'];
+	print md5($sessionId.''.$_SESSION['session_hash']);
 	
 }else{
 	die('Access Denied');
