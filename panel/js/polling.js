@@ -6,7 +6,7 @@ $(function(){
 			$.ajax({
 				async:true,
 				cache: false,
-				url: '/polling.php?poll='+count,
+				url: '/api/polling.php?poll='+count,
 				success: function(data){
 					if(data.trim() != 'next'){
 						if(count != data.trim()){

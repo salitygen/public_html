@@ -1,5 +1,5 @@
 <?php
-defined('EXEC') or die;
+defined('EXEC',1);
 
 	$count = (int)Input::getSanitise($_GET['poll']);
 	$timeout = 25;
