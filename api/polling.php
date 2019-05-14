@@ -45,11 +45,11 @@ if(isset($_GET['poll'])){
 				
 			}
 
-			print 'next';
+			print '0';
 			
 		}else{
 			
-			die('Access Denied1');
+			die('Access Denied');
 			
 		}
 		
