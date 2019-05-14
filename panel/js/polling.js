@@ -1,17 +1,17 @@
 $(function(){
 	
 	var phpsessid = $.cookie('PHPSESSID');
-	var hash = getHash(phpsessid);
-	alert(hash);
 	
 	function getHash(phpsessid){
 		$.ajax({
 			url: '/api/polling.php?get_hash='+phpsessid,
 			success: function(data){
-				return data;
+				setTimeout(pool(data), 1000);
 			}
 		});
 	}
+	
+	getHash(phpsessid);
 	
 	function pool(hash){
 		
@@ -37,7 +37,5 @@ $(function(){
 		});
 		
 	}
-	
-	setTimeout(pool(hash), 1000);
 	
 });
