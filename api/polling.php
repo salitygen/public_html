@@ -10,7 +10,7 @@ if(isset($_GET['poll'])){
 	include $main->root.'/config/pdo.php';
 	//include $main->root.'/api/controller.php';
 	
-	if(defined('ISLOGIN')){
+	//if(defined('ISLOGIN')){
 
 		//$count = (int)Input::getSanitise($_GET['poll']);
 		//$timeout = 20;
@@ -42,9 +42,9 @@ if(isset($_GET['poll'])){
 
 		print 'next';
 		
-	}else{
-		die('Access Denied');
-	}
+	//}else{
+	//	die('Access Denied');
+	//}
 	
 }
 
