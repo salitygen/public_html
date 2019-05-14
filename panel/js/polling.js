@@ -1,7 +1,7 @@
 $(function(){
 	
 	function pool(){
-		
+
 		var count = $.cookie('count').trim();
 			$.ajax({
 				async:true,
@@ -11,7 +11,7 @@ $(function(){
 					if(data.trim() != 'next'){
 						if(count != data.trim()){
 							alert(data.trim());
-							$.cookie('count',data.trim());
+							$.cookie('count',data.trim(),{ path: '/' });
 							setTimeout(pool, 1000);
 						}
 					}else{
