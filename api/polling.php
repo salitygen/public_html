@@ -1,6 +1,7 @@
 <?php
 define('EXEC',1);
 session_start();
+print '1234';
 
 if(isset($_GET['poll'])){
 	
