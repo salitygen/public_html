@@ -2,16 +2,16 @@ $(function(){
 	
 	function pool(){
 		
-		var count = $.cookie('count');
+		var count = $.cookie('count').trim();
 			$.ajax({
 				async:true,
 				cache: false,
 				url: '/?poll='+count,
 				success: function(data){
-					if(data != 'next'){
-						if(count != data){
-							alert(data);
-							$.cookie('count',data);
+					if(data.trim() != 'next'){
+						if(count != data.trim()){
+							alert(data.trim());
+							$.cookie('count',data.trim());
 							setTimeout(pool, 1000);
 						}
 					}else{
