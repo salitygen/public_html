@@ -53,8 +53,19 @@ if(isset($_GET['poll'])){
 		}
 		
 	}
-
 	
+}elseif(isset($_GET['get_hash'] && !isset($_GET['poll'])){
+	
+	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
+	include $main->root.'/api/methods/Input.php';
+
+	$sessionId = Input::getSanitise($_GET['get_hash']);
+	session_id($sessionId);
+	session_start();
+	print $_SESSION['session_hash'];
+	
+}else{
+	die('Access Denied');
 }
 
 ?>
