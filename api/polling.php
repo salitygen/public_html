@@ -1,8 +1,6 @@
 <?php
 define('EXEC',1);
 
-print $_SERVER['DOCUMENT_ROOT'];
-
 if(isset($_GET['poll'])){
 	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
