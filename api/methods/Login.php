@@ -38,9 +38,7 @@ if(!defined('ISLOGIN')){
 		}
 		
 	}else{
-		if(!defined('POLLING')){
-			header("location: /?view=dashboard");
-		}
+		header("location: /?view=dashboard");
 	}
 }
 
