@@ -1,13 +1,16 @@
 $(function(){
 	
 	var phpsessid = $.cookie('PHPSESSID');
+	var hash = getHash();
 	
-	$.ajax({
-		url: '/api/polling.php?get_hash='+phpsessid,
-		success: function(data){
-			var hash = data;
-		}
-	});
+	function getHash(){
+		$.ajax({
+			url: '/api/polling.php?get_hash='+phpsessid,
+			success: function(data){
+				return data;
+			}
+		});
+	}
 	
 	function pool(hash){
 		
