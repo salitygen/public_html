@@ -24,6 +24,7 @@ if(isset($_GET['poll'])){
 			if(isset($_COOKIE['abort'])){
 				$abort = (int)$_COOKIE['abort'];
 				if($abort == 1){
+					print $abort;
 					exit;
 				}
 			}
