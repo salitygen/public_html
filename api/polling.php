@@ -1,47 +1,59 @@
 <?php
 define('EXEC',1);
-//session_start();
+ini_set('display_errors','Off');
 
 if(isset($_GET['poll'])){
 	
-	//define('POLLING',1);
-	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/config/pdo.php';
-	//include $main->root.'/api/controller.php';
+	include $main->root.'/api/methods/Input.php';
+	include $main->root.'/api/methods/Session.php';
 	
-	define('ISLOGIN',1);
-	
-	if(defined('ISLOGIN')){
+	if(isset($_GET['hash'])){
+		
+		$sessionHash = Input::getSanitise($_GET['hash']);
+		if($sessionHash){
+			$session = Session::check($sessionHash);
+			if($session){
+				if($session->session_stat && $session->user_status){
+					define('ISLOGIN',1);
+				}
+			}
+		}
+		
+		if(defined('ISLOGIN')){
 
-		$count = (int)$_GET['poll'];
-		$timeout = 20;
-		$now = time();
-		$db = dataBase::pdo();
+			$count = (int)Input::getSanitise($_GET['poll']);
+			$timeout = 20;
+			$now = time();
+			$db = dataBase::pdo();
 
-		while((time() - $now) < $timeout){
-			
-			$row = $db->query("SELECT * FROM crm_users");
-			$data = $row->rowCount();
-			
-			if($data != $count){
+			while((time() - $now) < $timeout){
 				
-				print $data;
-				exit;
+				$row = $db->query("SELECT * FROM crm_users");
+				$data = $row->rowCount();
+				
+				if($data != $count){
+					
+					print $data;
+					exit;
+					
+				}
+				
+				sleep(1);
 				
 			}
+
+			print 'next';
 			
-			sleep(1);
+		}else{
+			
+			die('Access Denied');
 			
 		}
-
-		print 'next';
-		
-	}else{
-		
-		die('Access Denied');
 		
 	}
+
 	
 }
 
