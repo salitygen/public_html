@@ -1,7 +1,7 @@
 <?php
 defined('EXEC') or die;
 
-	$count = (int)Input::getSanitise($_GET['count']);
+	$count = (int)Input::getSanitise($_GET['poll']);
 	$timeout = 25;
 	$now = time();
 	$db = dataBase::pdo();
