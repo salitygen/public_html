@@ -1,5 +1,4 @@
 <?php
-defined('EXEC') or die;
 
 if(isset($_GET['count'])){
 
