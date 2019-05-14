@@ -18,7 +18,7 @@ $(function(){
 		$.ajax({
 			async:true,
 			cache: false,
-			url: '/api/polling.php?poll='+count,
+			url: '/api/polling.php?poll='+count+'&hash='+hash,
 			success: function(data){
 				if(data.trim() != 'next'){
 					if(count != data.trim()){
