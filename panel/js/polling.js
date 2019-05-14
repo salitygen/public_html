@@ -1,6 +1,15 @@
 $(function(){
 	
-	function pool(){
+	var phpsessid = $.cookie('PHPSESSID');
+	
+	$.ajax({
+		url: '/api/polling.php?get_hash='+phpsessid,
+		success: function(data){
+			var hash = data;
+		}
+	});
+	
+	function pool(hash){
 		
 		var count = $.cookie('count').trim();
 		$.ajax({
@@ -12,23 +21,19 @@ $(function(){
 					if(count != data.trim()){
 						alert(data.trim());
 						$.cookie('count',data.trim(),{ path: '/' });
-						setTimeout(pool, 1000);
+						setTimeout(pool(hash), 1000);
 					}
 				}else{
-					setTimeout(pool, 1000);
+					setTimeout(pool(hash), 1000);
 				}	
 			},
 			error: function(){
-				setTimeout(pool, 10000);
+				setTimeout(pool(hash), 10000);
 			}
 		});
 		
-/* 		$('a').click(function(){
-			xhr.abort();
-		}); */
-		
 	}
 	
-	setTimeout(pool, 1000);
+	setTimeout(pool(hash), 1000);
 	
 });
