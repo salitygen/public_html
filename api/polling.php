@@ -1,6 +1,5 @@
 <?php
-
-if(isset($_GET['count'])){
+defined('EXEC') or die;
 
 	$count = (int)Input::getSanitise($_GET['count']);
 	$timeout = 25;
@@ -25,6 +24,5 @@ if(isset($_GET['count'])){
 
 	print 'next';
 	
-}
 
 ?>
