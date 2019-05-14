@@ -24,6 +24,6 @@ $(function(){
 			});
 		}
 	
-	//pool();
+	setTimeout(pool, 1000);
 	
 });
