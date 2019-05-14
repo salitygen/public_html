@@ -8,7 +8,7 @@ defined('EXEC') or die;
 
 	while((time() - $now) < $timeout){
 		
-		$row = $db->query("SELECT * FROM db_updating_table");
+		$row = $db->query("SELECT * FROM crm_users");
 		$data = $row->rowCount();
 		
 		if($data != $count){
