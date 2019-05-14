@@ -19,6 +19,13 @@ if(isset($_GET['poll'])){
 
 		while((time() - $now) < $timeout){
 			
+			if(isset($_COOKIE['abort'])){
+				$abort = (int)$_COOKIE['abort'];
+				if($abort == 1){
+					exit;
+				}
+			}
+			
 			$row = $db->query("SELECT * FROM crm_users");
 			$data = $row->rowCount();
 			
