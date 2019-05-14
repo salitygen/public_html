@@ -1,7 +1,8 @@
 $(function(){
 	
 	function pool(){
-
+		
+		$.cookie('abort','0',{ path: '/' });
 		var count = $.cookie('count').trim();
 		var xhr = $.ajax({
 			async:true,
@@ -25,6 +26,7 @@ $(function(){
 		
 		$('a').click(function(){
 			xhr.abort();
+			$.cookie('abort','1',{ path: '/' });
 		});
 		
 	}
