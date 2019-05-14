@@ -1,6 +1,6 @@
 <?php
 define('EXEC',1);
-session_start();
+//session_start();
 
 if(isset($_GET['poll'])){
 	
