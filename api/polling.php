@@ -23,6 +23,5 @@ defined('EXEC') or die;
 	}
 
 	print 'next';
-	
 
 ?>
