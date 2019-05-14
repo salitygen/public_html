@@ -52,6 +52,10 @@ if(isset($_GET['poll'])){
 			
 		}
 		
+	}else{
+		
+		die('Access Denied');
+		
 	}
 	
 }elseif(isset($_GET['get_hash']) && !isset($_GET['poll'])){
