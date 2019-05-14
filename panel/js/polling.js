@@ -2,9 +2,8 @@ $(function(){
 	
 	function pool(){
 		
-		$.cookie('abort','0',{ path: '/' });
 		var count = $.cookie('count').trim();
-		var xhr = $.ajax({
+		$.ajax({
 			async:true,
 			cache: false,
 			url: '/api/polling.php?poll='+count,
@@ -24,10 +23,9 @@ $(function(){
 			}
 		});
 		
-		$('a').click(function(){
+/* 		$('a').click(function(){
 			xhr.abort();
-			$.cookie('abort','1',{ path: '/' });
-		});
+		}); */
 		
 	}
 	
