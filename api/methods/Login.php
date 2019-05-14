@@ -38,7 +38,9 @@ if(!defined('ISLOGIN')){
 		}
 		
 	}else{
-		header("location: /?view=dashboard");
+		if(!isset($_GET['poll'])){
+			header("location: /?view=dashboard");
+		}
 	}
 }
 
