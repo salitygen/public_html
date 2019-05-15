@@ -46,14 +46,14 @@ if($task == 'logout'){
 
 if(isset($main->task)){
 	
-	if(isset($_POST['csrf'])){
+/* 	if(isset($_POST['csrf'])){
 		$data = Input::getSanitise($_POST['csrf']);
 		if(!CSRF::check($data)){
 			die('Acces denied');
 		}
 	}else{
 		die('Acces denied');
-	}
+	} */
 	
 	if($main->task == 'update'){
 		
