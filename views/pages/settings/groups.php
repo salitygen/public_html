@@ -74,6 +74,7 @@ if(isset($_GET['id'])){
 				?>
 				
 			</div>
+			<input type="hidden" name="csrf" value="<?php print $main->csrf; ?>">
 			<button class="save icon-floppy" type="submit" name="group_id" value="<?php print $group->group_id; ?>"><?php print HTML::Name($main,'global','SAVE') ?></button>
 		</form>
 	</div>

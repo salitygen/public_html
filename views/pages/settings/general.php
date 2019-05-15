@@ -115,6 +115,7 @@ $company = General::get();
 			</div>
 			<?php endif;?>
 		</div>
+		<input type="hidden" name="csrf" value="<?php print $main->csrf; ?>">
 		<button class="save" type="submit">Сохранить</button>
 	</form>
 </div>

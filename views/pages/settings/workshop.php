@@ -152,6 +152,7 @@ if(isset($_GET['id'])){
 				</div>
 				<?php endif;?>
 			</div>
+			<input type="hidden" name="csrf" value="<?php print $main->csrf; ?>">
 			<button class="save icon-floppy" name="workshop_id" value="<?php print $workshop->workshop_id; ?>" type="submit">Сохранить</button>
 		</form>
 	</div>

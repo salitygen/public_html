@@ -107,6 +107,7 @@ if(isset($_GET['id'])){
 				<label>Дополнительная информация</label>
 				<textarea name="worker_note" ><?php if($worker->user_note != '') print $worker->user_note; ?></textarea>
 			</div>
+			<input type="hidden" name="csrf" value="<?php print $main->csrf; ?>">
 			<button class="save icon-floppy" name="workshop_id" value="<?php print $worker->user_id; ?>" type="submit">Сохранить</button>
 		</form>
 	</div>
