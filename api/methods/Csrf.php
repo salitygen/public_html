@@ -14,7 +14,7 @@ class CSRF {
 		return (string)$csrf;
 	}
 	
-	public function check($data){
+	public function check($data = false){
 		
 		if($data){
 			
