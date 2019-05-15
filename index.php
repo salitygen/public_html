@@ -15,6 +15,4 @@ if(defined('ISLOGIN')){
 	// Site template connection
 	include 'site/index.php';
 }
-	
-
 ?>
