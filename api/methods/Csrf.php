@@ -5,12 +5,12 @@ class CSRF {
 	
 	public function set() {
 		$csrf = md5(md5(time().rand(0, 1000)) . rand(0, 1000));
-		setcookie('csrf', $csrf);
+		$_SESSION['csrf'] = $csrf;
 		return (string)$csrf;
 	}
 	
 	public function get() {
-		$csrf = Input::getSanitise($_COOKIE['csrf']);
+		$csrf = Input::getSanitise($_SESSION['csrf']);
 		return (string)$csrf;
 	}
 	
