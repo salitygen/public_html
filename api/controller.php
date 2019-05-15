@@ -8,14 +8,15 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 	}
 }
 
+if(isset($_POST['csrf'])){
+	$csrdata = Input::getSanitise($_POST['csrf']);
+}else{
+	$csrdata = false;
+}
+
 if($task == 'login'){
 	
-	if(isset($_POST['csrf'])){
-		$data = Input::getSanitise($_POST['csrf']);
-		if(!CSRF::check($data)){
-			die('Acces denied');
-		}
-	}else{
+	if(!CSRF::check($csrdata)){
 		die('Acces denied');
 	}
 	
@@ -30,12 +31,7 @@ if($task == 'login'){
 
 if($task == 'logout'){
 	
-	if(isset($_POST['csrf'])){
-		$data = Input::getSanitise($_POST['csrf']);
-		if(!CSRF::check($data)){
-			die('Acces denied');
-		}
-	}else{
+	if(!CSRF::check($csrdata)){
 		die('Acces denied');
 	}
 	
@@ -46,16 +42,11 @@ if($task == 'logout'){
 
 if(isset($main->task)){
 	
-/* 	if(isset($_POST['csrf'])){
-		$data = Input::getSanitise($_POST['csrf']);
-		if(!CSRF::check($data)){
+	if($main->task == 'update'){
+		
+		if(!CSRF::check($csrdata)){
 			die('Acces denied');
 		}
-	}else{
-		die('Acces denied');
-	} */
-	
-	if($main->task == 'update'){
 		
 		$Name = $main->view;
 		$Param = ucfirst($main->params);
