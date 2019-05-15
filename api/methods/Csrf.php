@@ -17,7 +17,7 @@ class CSRF {
 	public function check($data){
 		
 		$data = Input::postSanitise($data);
-		$csrf = CSRF::get()
+		$csrf = CSRF::get();
 		if($data !== $csrf){
 			return false;
 		}else{
