@@ -11,6 +11,7 @@ defined('EXEC') or die;
 			<input type="text" name="login">
 			<label>Password</label>
 			<input type="password" name="password">
+			<input type="hidden" name="csrf" value="<?php print $csrf; ?>">
 			<button type="submit">Войти</button>
 		</form>
 	</body>
