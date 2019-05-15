@@ -8,17 +8,17 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 	}
 }
 
-if(isset($_POST['csrf'])){
-	$data = Input::getSanitise($_POST['csrf']);
-	if(!CSRF::check($data)){
+if($task == 'login'){
+	
+	if(isset($_POST['csrf'])){
+		$data = Input::getSanitise($_POST['csrf']);
+		if(!CSRF::check($data)){
+			die('Acces denied');
+		}
+	}else{
 		die('Acces denied');
 	}
-}else{
-	die('Acces denied');
-}
-
-
-if($task == 'login'){
+	
 	$worker = Workers::findLoginPass($_POST);
 	if($worker){
 		if($worker->user_status == 1){
@@ -29,12 +29,31 @@ if($task == 'login'){
 }
 
 if($task == 'logout'){
+	
+	if(isset($_POST['csrf'])){
+		$data = Input::getSanitise($_POST['csrf']);
+		if(!CSRF::check($data)){
+			die('Acces denied');
+		}
+	}else{
+		die('Acces denied');
+	}
+	
 	$sessionHash = Session::getHash();
 	Session::drop($sessionHash);
 	header('Location: /');
 }
 
 if(isset($main->task)){
+	
+	if(isset($_POST['csrf'])){
+		$data = Input::getSanitise($_POST['csrf']);
+		if(!CSRF::check($data)){
+			die('Acces denied');
+		}
+	}else{
+		die('Acces denied');
+	}
 	
 	if($main->task == 'update'){
 		
