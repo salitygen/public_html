@@ -1,6 +1,7 @@
 <?php
 defined('EXEC') or die;
 include $main->root.'/views/controller.php';
+CSRF::set();
 ?>
 <html>
 	<head>
