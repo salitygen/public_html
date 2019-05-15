@@ -48,7 +48,10 @@ class Session {
 	public function drop($sessionHash){
 		if($sessionHash){
 			$db = dataBase::pdo();
-			$sessionHash = md5(session_id().''.$sessionHash);
+			
+			$userAgent = $_SERVER['HTTP_USER_AGENT'];
+			
+			$sessionHash = md5(md5(session_id().''.$sessionHash) . $userAgent);
 			$sessions = $db->exec("DELETE FROM crm_sessions WHERE session_hash='{$sessionHash}'");
 			
 			if($sessions){
@@ -68,9 +71,11 @@ class Session {
 		
 		if($_SERVER['REMOTE_ADDR']){
 			
+			$userAgent = $_SERVER['HTTP_USER_AGENT'];
 			$sessIp = $_SERVER['REMOTE_ADDR'];
+			
 			$sessionHash = md5($sessIp.''.rand(0,1000).''.time().''.$userId);
-			$sessionHashDb = md5(session_id().''.$sessionHash);
+			$sessionHashDb = md5(md5(session_id().''.$sessionHash) . $userAgent);
 			$sessions = $db->exec("INSERT INTO crm_sessions (session_ip,session_hash,session_stat,session_user_id,session_date) VALUES ('{$sessIp}','{$sessionHashDb}',1,{$userId},NOW())");
 			
 			if($sessions){
@@ -92,8 +97,12 @@ class Session {
 		
 		$db = dataBase::pdo();
 		
+		$userAgent = $_SERVER['HTTP_USER_AGENT'];
+		
 		if(!$longPoll){
-			$sHash = md5(session_id().''.$sHash);
+			$sHash = md5(md5(session_id().''.$sHash) . $userAgent);
+		}else{
+			$sHash = md5($sHash . $userAgent);
 		}
 		
 		$searchUserSession = $db->query("
