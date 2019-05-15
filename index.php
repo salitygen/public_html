@@ -5,7 +5,7 @@ session_start();
 include 'config/config.php';
 include 'config/pdo.php';
 include 'api/controller.php';
-$csrf = CSRF::set();
+$main->csrf = CSRF::set();
 
 if(defined('ISLOGIN')){
 	// Admin panel template connection
