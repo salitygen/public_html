@@ -8,6 +8,16 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 	}
 }
 
+if(isset($_POST['csrf'])){
+	$data = Input::getSanitise($_POST['csrf']);
+	if(!CSRF::check($data)){
+		die('Acces denied');
+	}
+}else{
+	die('Acces denied');
+}
+
+
 if($task == 'login'){
 	$worker = Workers::findLoginPass($_POST);
 	if($worker){
