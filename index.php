@@ -5,6 +5,7 @@ session_start();
 include 'config/config.php';
 include 'config/pdo.php';
 include 'api/controller.php';
+var_dump($main);
 $main->csrf = CSRF::set();
 
 if(defined('ISLOGIN')){
