@@ -20,6 +20,7 @@ class CSRF {
 			
 			$data = Input::postSanitise($data);
 			$csrf = CSRF::get();
+			CSRF::set();
 			if($data == $csrf){
 				return true;
 			}else{
