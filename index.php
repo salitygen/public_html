@@ -1,4 +1,5 @@
 <?php
+header("X-Frame-Options: SAMEORIGIN");
 define('EXEC',1);
 session_start();
 // The order of connection is important!
