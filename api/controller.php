@@ -11,7 +11,11 @@ foreach(glob($main->root.'/api/methods/*.php') as $filename){
 if(isset($_POST['csrf'])){
 	$csrdata = Input::getSanitise($_POST['csrf']);
 }else{
-	$csrdata = false;
+	if(isset($_GET['csrf'])){
+		$csrdata = Input::getSanitise($_GET['csrf']);
+	}else{
+		$csrdata = false;
+	}
 }
 
 if($task == 'login'){
