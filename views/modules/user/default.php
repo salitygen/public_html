@@ -11,6 +11,6 @@ defined('EXEC') or die;
 		<p class="username"><?php print $main->session->group_name; ?></p>
 	</div>
 	<div class="buttons">
-		<a class="icon-off" href="/?task=logout">Выйти</a>
+		<a class="icon-off" href="/?task=logout&csrf=<?php print $csrf; ?>">Выйти</a>
 	</div>
 </div>
