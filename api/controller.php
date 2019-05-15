@@ -20,7 +20,7 @@ if(isset($_POST['csrf'])){
 
 if($task == 'login'){
 	
-	if(!CSRF::check($csrdata)){
+	if(!$csrf = CSRF::check($csrdata)){
 		die('Acces denied');
 	}
 	
@@ -35,7 +35,7 @@ if($task == 'login'){
 
 if($task == 'logout'){
 	
-	if(!CSRF::check($csrdata)){
+	if(!$csrf = CSRF::check($csrdata)){
 		die('Acces denied');
 	}
 	
@@ -48,7 +48,7 @@ if(isset($main->task)){
 	
 	if($main->task == 'update'){
 		
-		if(!CSRF::check($csrdata)){
+		if(!$csrf = CSRF::check($csrdata)){
 			die('Acces denied');
 		}
 		
