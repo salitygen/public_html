@@ -46,7 +46,9 @@ class Session {
 	}
 	
 	public function drop($sessionHash){
+		
 		if($sessionHash){
+			
 			$db = dataBase::pdo();
 			
 			$userAgent = $_SERVER['HTTP_USER_AGENT'];
@@ -60,8 +62,11 @@ class Session {
 			}else{
 				return false;
 			}
+			
 		}else{
+			
 			return false;
+			
 		}
 	}
 	
