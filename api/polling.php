@@ -34,7 +34,7 @@ if(isset($_GET['poll'])){
 				$row = $db->query("SELECT * FROM crm_logs WHERE log_id>{$id}");
 				$data = $row->fetchAll();
 				
-				//var_dump($data);
+				var_dump($data);
 				
 				if(count($data) == 1){
 					
