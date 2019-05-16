@@ -24,21 +24,15 @@ if(isset($_GET['poll'])){
 		
 		if(defined('ISLOGIN')){
 
-			$id = (int)Input::getSanitise($_GET['poll']);
+			$count = (int)Input::getSanitise($_GET['poll']);
 			$timeout = 24;
 			$now = time();
 			$db = dataBase::pdo();
 
 			while((time() - $now) < $timeout){
 				
-				$row = $db->query("SELECT * FROM crm_logs WHERE log_id>{$id}");
-				$data = $row->fetchAll();
-				
-				var_dump($data);
-				
-				if(count($data) == 1){
-					
-				}
+				$row = $db->query("SELECT * FROM crm_logs");
+				$data = $row->rowCount();
 				
 				if($data != $count){
 					
