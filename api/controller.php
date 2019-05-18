@@ -4,7 +4,7 @@ defined('EXEC') or die;
 include $main->root.'/api/methods/Pdo.php';
 include $main->root.'/api/methods/Session.php';
 foreach(glob($main->root.'/api/methods/*.php') as $filename){
-    if(!strripos($filename,'Session') || !strripos($filename,'Pdo')){
+    if(!strripos($filename,'Session') && !strripos($filename,'Pdo')){
 		include $filename;
 	}
 }
