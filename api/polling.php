@@ -2,7 +2,8 @@
 define('EXEC',1);
 ini_set('display_errors','Off');
 
-if(isset($_GET['get']) || isset($_GET['set'])){
+if(isset($_GET['get']) 
+|| isset($_GET['set'])){
 	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/config/pdo.php';
@@ -26,7 +27,8 @@ if(isset($_GET['get']) || isset($_GET['set'])){
 			
 			$db = dataBase::pdo();
 
-			if(isset($_GET['get']) && !isset($_GET['set'])){
+			if(isset($_GET['get']) 
+			&& !isset($_GET['set'])){
 				
 				$lastLogId = (int)Input::getSanitise($_GET['get']);
 				$timeout = 24;
@@ -68,7 +70,9 @@ if(isset($_GET['get']) || isset($_GET['set'])){
 		
 	}
 	
-}elseif(isset($_GET['get_hash']) && !isset($_GET['set']) && !isset($_GET['get'])){
+}elseif(isset($_GET['get_hash']) 
+	&& !isset($_GET['set']) 
+	&& !isset($_GET['get'])){
 	
 	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/api/methods/Input.php';
