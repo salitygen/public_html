@@ -1,9 +1,10 @@
 <?php
 defined('EXEC') or die;
 
-include $main->root.'/api/methods/Session.php'; // Должен идти первым
+include $main->root.'/api/methods/Pdo.php';
+include $main->root.'/api/methods/Session.php';
 foreach(glob($main->root.'/api/methods/*.php') as $filename){
-    if(!strripos($filename,'Session')){
+    if(!strripos($filename,'Session') || !strripos($filename,'Pdo')){
 		include $filename;
 	}
 }
