@@ -8,6 +8,7 @@ include 'api/controller.php';
 $main->csrf = CSRF::set();
 
 if(defined('ISLOGIN')){
+	//
 	include 'admin/index.php';
 }else{
 	include 'login/index.php';
