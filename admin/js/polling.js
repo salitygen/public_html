@@ -21,10 +21,11 @@ $(function(){
 			cache: false,
 			url: '/api/polling.php?poll='+count+'&hash='+hash,
 			success: function(data){
-				if(data.trim() != '0'){
-					if(count != data.trim()){
-						alert(data.trim());
-						$.cookie('count',data.trim(),{ path: '/' });
+				data = data.trim();
+				if(data != '0'){
+					if(count != data){
+						alert(data);
+						$.cookie('count',data,{ path: '/' });
 						setTimeout(pool(hash), 1000);
 					}
 				}else{
