@@ -2,10 +2,10 @@
 define('EXEC',1);
 ini_set('display_errors','Off');
 
-if(isset($_GET['poll'])){
+if(isset($_GET['get']) || isset($_GET['set'])){
 	
-	include $_SERVER['DOCUMENT_ROOT'].'/config.php';
-	include $main->root.'/api/methods/Pdo.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
+	include $main->root.'/config/pdo.php';
 	include $main->root.'/api/methods/Input.php';
 	include $main->root.'/api/methods/Session.php';
 	
@@ -23,29 +23,38 @@ if(isset($_GET['poll'])){
 		}
 		
 		if(defined('ISLOGIN')){
-
-			$count = (int)Input::getSanitise($_GET['poll']);
-			$timeout = 24;
-			$now = time();
+			
 			$db = dataBase::pdo();
 
-			while((time() - $now) < $timeout){
+			if(isset($_GET['get']) && !isset($_GET['set'])){
 				
-				$row = $db->query("SELECT * FROM crm_logs");
-				$data = $row->rowCount();
-				
-				if($data != $count){
+				$lastLogId = (int)Input::getSanitise($_GET['get']);
+				$timeout = 24;
+				$now = time();
+
+				while((time() - $now) < $timeout){
 					
-					print $data;
-					exit;
+					$logs = $db->query("SELECT * FROM crm_logs WHERE log_id > {$lastLogId}");
+					$data = $logs->fetchAll();
+					
+					if($data != $count){
+						
+						print $data;
+						exit;
+						
+					}
+					
+					sleep(1);
 					
 				}
+
+				print '0';
 				
-				sleep(1);
+			}elseif(isset($_GET['set'])){
+				
+				$count = (int)Input::getSanitise($_GET['set']);
 				
 			}
-
-			print '0';
 			
 		}else{
 			
@@ -59,9 +68,9 @@ if(isset($_GET['poll'])){
 		
 	}
 	
-}elseif(isset($_GET['get_hash']) && !isset($_GET['poll'])){
+}elseif(isset($_GET['get_hash']) && !isset($_GET['set']) && !isset($_GET['get'])){
 	
-	include $_SERVER['DOCUMENT_ROOT'].'/config.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/config/config.php';
 	include $main->root.'/api/methods/Input.php';
 
 	$sessionId = Input::getSanitise($_GET['get_hash']);
