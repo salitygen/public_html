@@ -8,10 +8,8 @@ include 'api/controller.php';
 $main->csrf = CSRF::set();
 
 if(defined('ISLOGIN')){
-	// Admin panel template connection
-	include 'panel/index.php';
+	include 'admin/index.php';
 }else{
-	// Site template connection
-	include 'site/index.php';
+	include 'login/index.php';
 }
 ?>
