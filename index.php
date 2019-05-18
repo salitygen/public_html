@@ -3,8 +3,7 @@ header("X-Frame-Options: SAMEORIGIN");
 define('EXEC',1);
 session_start();
 // The order of connection is important!
-include 'config/config.php';
-include 'config/pdo.php';
+include 'config.php';
 include 'api/controller.php';
 $main->csrf = CSRF::set();
 
